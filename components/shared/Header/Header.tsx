@@ -5,12 +5,12 @@ export function Header() {
         <div>
           <h1 className='font-neue inline-block uppercase'>
             <a href='index.html' className='text-white'>
-              Avilon
+              LFA
             </a>
           </h1>
         </div>
         <nav className='p-0'>
-          <ul className='m-0 p-0 flex list-none items-center space-x-6 font-neue uppercase text-3xs'>
+          <ul className='m-0 p-0 flex list-none items-center space-x-6 font-neue uppercase text-3xs text-lfaWhite'>
             <li className='relative whitespace-nowrap'>
               <a className='' href='#hero'>
                 Home

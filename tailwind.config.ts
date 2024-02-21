@@ -36,6 +36,7 @@ const config: Config = {
       },
       charcoal: {
         100: '#7A7979',
+        1000: '#252525',
       },
       gray: {
         50: '#464646',
@@ -44,6 +45,7 @@ const config: Config = {
         300: '#494A52',
       },
       white: '#FFFFFF',
+      lfaWhite: '#FFFAEF',
       greige: '#E4DDD6',
       cyan: '#74F1FB',
       error: '#F95E76',

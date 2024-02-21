@@ -1,6 +1,5 @@
 import { Client } from '@/domain/types/client.types'
 import { StrapiResponse } from '@/domain/types/common.types'
-import { Project } from '@/domain/types/project.types'
 import { apiInstance } from './api'
 
 const BASE_URL = '/clients'

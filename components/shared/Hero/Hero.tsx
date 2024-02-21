@@ -7,21 +7,25 @@ export function Hero() {
       <div className='flex flex-col'>
         <span className='inline-block mb-[-60px]'>
           <div className='flex items-center'>
-            <h1 className='text-left text-6xl font-keppler font-bold'>We</h1>
+            <h1 className='text-left text-6xl font-keppler font-bold text-white'>
+              We
+            </h1>
             <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-            <h1 className='italic text-6xl font-keppler font-thin'>
+            <h1 className='italic text-6xl font-keppler font-thin text-white'>
               Design & Build
             </h1>
           </div>
         </span>
         <span className='inline-block mb-[-40px]'>
           <div className='flex items-center'>
-            <h1 className='text-left text-6xl font-neue'>Spaces To</h1>
+            <h1 className='text-left text-6xl font-neue text-white'>
+              Spaces To
+            </h1>
           </div>
         </span>
         <span className='inline-block'>
           <div className='flex items-center'>
-            <h1 className='italic text-6xl font-keppler font-thin'>
+            <h1 className='italic text-6xl font-keppler font-thin text-white'>
               Inspire & Nurture
             </h1>
           </div>

@@ -17,8 +17,9 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: beige;
+  color: #464646;
+  font-family: var(--font-neue);
+  background: #E4DDD6;
 }
 
 @layer utilities {

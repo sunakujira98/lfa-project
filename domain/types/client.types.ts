@@ -1,4 +1,4 @@
-import { StrapiImageAttributes, StrapiImageDetails } from './common.types'
+import { StrapiImageAttributes } from './common.types'
 
 export type ClientAttribute = {
   clientName: string
