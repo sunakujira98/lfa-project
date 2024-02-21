@@ -1,6 +1,5 @@
 'use client'
 import { useGetAllProjectQuery } from '@/hooks/query/useProjectQuery'
-import Image from 'next/image'
 
 export function FeaturedProduct() {
   const { data } = useGetAllProjectQuery()

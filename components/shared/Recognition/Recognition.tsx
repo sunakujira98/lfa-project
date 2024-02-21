@@ -16,7 +16,7 @@ export function Recognition() {
         <div className='flex flex-row gap-20'>
           {data?.data.map((news) => {
             return (
-              <div className='flex flex-col items-center  gap-6'>
+              <div className='flex flex-col items-center gap-6' key={news.id}>
                 <img
                   src={`http://localhost:1337${news.attributes.image.data.attributes.url}`}
                   className='max-w-64'

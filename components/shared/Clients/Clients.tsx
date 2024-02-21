@@ -13,7 +13,7 @@ export function Clients() {
           <div className='flex flex-row gap-24 animate-marquee whitespace-nowrap'>
             {data?.data.map((client) => {
               return (
-                <div className='py-4'>
+                <div className='py-4' key={client.id}>
                   <img
                     src={`http://localhost:1337${client.attributes.image.data.attributes.url}`}
                   />
@@ -24,7 +24,7 @@ export function Clients() {
           <div className='px-24 absolute top-0 flex flex-row gap-24 animate-marquee2 whitespace-nowrap'>
             {data?.data.map((client) => {
               return (
-                <div className='py-4'>
+                <div className='py-4' key={`client-2nd-marquee-${id}`}>
                   <img
                     src={`http://localhost:1337${client.attributes.image.data.attributes.url}`}
                   />

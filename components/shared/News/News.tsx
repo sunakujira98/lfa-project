@@ -15,7 +15,7 @@ export function News() {
         <div className='grid grid-cols-1 gap-20 md:grid-cols-3'>
           {data?.data.map((news) => {
             return (
-              <div className='flex flex-row gap-6'>
+              <div className='flex flex-row gap-6' key={news.id}>
                 <img
                   src={`http://localhost:1337${news.attributes.thumbnail.data.attributes.url}`}
                   className='max-w-36 max-h-36 aspect-square'
