@@ -1,6 +1,5 @@
 'use client'
 
-import { SectionName } from '@/domain/types/common.types'
 import { useCommonStore } from '@/store/common.store'
 import { useEffect, useRef, useState } from 'react'
 import { twMerge } from 'tailwind-merge'
@@ -10,8 +9,8 @@ export function Header() {
   const showBgRef = useRef(false)
   const navbarRef = useRef<HTMLElement>(null)
 
-  const currentSection = useCommonStore((state) => state.currentSection)
-  const setScrollToSection = useCommonStore((state) => state.setScrollToSection)
+  // const currentSection = useCommonStore((state) => state.currentSection)
+  // const setScrollToSection = useCommonStore((state) => state.setScrollToSection)
   const setNavbarHeight = useCommonStore((state) => state.setNavbarHeight)
 
   useEffect(() => {
@@ -38,9 +37,9 @@ export function Header() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  const onSetScrollToSection = (section: SectionName) => () => {
-    setScrollToSection(section)
-  }
+  // const onSetScrollToSection = (section: SectionName) => () => {
+  //   setScrollToSection(section)
+  // }
 
   return (
     <nav

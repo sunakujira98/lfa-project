@@ -1,3 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
+
 export function Testimonial() {
   return (
     <div className='max-w-screen-xl mx-auto py-10'>

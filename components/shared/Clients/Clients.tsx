@@ -1,3 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
+
 'use client'
 
 import { useGetAllClientQuery } from '@/hooks/query/useClientQuery'

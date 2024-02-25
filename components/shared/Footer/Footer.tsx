@@ -1,3 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
+
 export function Footer() {
   return (
     <footer className='bg-charcoal-1000 pt-16 pb-6'>

@@ -1,3 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
+
 'use client'
 
 import { useGetAllServiceQuery } from '@/hooks/query/useServiceQuery'
@@ -13,7 +15,7 @@ export function Service() {
             <div className='flex flex-col border-t-[1px]'>
               {data?.data.map((service) => {
                 return (
-                  <div className='border-b-[1px] py-4'>
+                  <div className='border-b-[1px] py-4' key={service.id}>
                     <button className='w-full hover:bg-greige p-4 rounded-full'>
                       <div className='flex justify-between items-center'>
                         <span className='text-xs'>
