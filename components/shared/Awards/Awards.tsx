@@ -19,6 +19,7 @@ export function Awards() {
                   <img
                     src={`http://localhost:1337${client.attributes.image.data.attributes.url}`}
                     className='max-w-20'
+                    alt={client.attributes.awardName}
                   />
                 </div>
               )
@@ -31,6 +32,7 @@ export function Awards() {
                   <img
                     src={`http://localhost:1337${client.attributes.image.data.attributes.url}`}
                     className='max-w-20'
+                    alt={client.attributes.awardName}
                   />
                 </div>
               )

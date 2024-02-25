@@ -15,36 +15,42 @@ export function Footer() {
                   <img
                     src='/images/instagram-1.png'
                     className='max-w-44 max-h-max-w-44 aspect-square'
+                    alt='instagram'
                   />
                 </div>
                 <div className='flex flex-row'>
                   <img
                     src='/images/instagram-1.png'
                     className='max-w-44 max-h-max-w-44 aspect-square'
+                    alt='instagram'
                   />
                 </div>
                 <div className='flex flex-row'>
                   <img
                     src='/images/instagram-1.png'
                     className='max-w-44 max-h-max-w-44 aspect-square'
+                    alt='instagram'
                   />
                 </div>
                 <div className='flex flex-row'>
                   <img
                     src='/images/instagram-1.png'
                     className='max-w-44 max-h-max-w-44 aspect-square'
+                    alt='instagram'
                   />
                 </div>
                 <div className='flex flex-row'>
                   <img
                     src='/images/instagram-1.png'
                     className='max-w-44 max-h-max-w-44 aspect-square'
+                    alt='instagram'
                   />
                 </div>
                 <div className='flex flex-row'>
                   <img
                     src='/images/instagram-1.png'
                     className='max-w-44 max-h-max-w-44 aspect-square'
+                    alt='instagram'
                   />
                 </div>
               </div>

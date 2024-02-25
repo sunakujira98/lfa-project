@@ -21,6 +21,7 @@ export function News() {
                 <img
                   src={`http://localhost:1337${news.attributes.thumbnail.data.attributes.url}`}
                   className='max-w-36 max-h-36 aspect-square'
+                  alt={news.attributes.title}
                 />
                 <div className='flex flex-col gap-2'>
                   <span className='text-3xs'>

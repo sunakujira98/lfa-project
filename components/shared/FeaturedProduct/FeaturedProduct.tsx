@@ -19,6 +19,7 @@ export function FeaturedProduct() {
               <img
                 src={`http://localhost:1337${project.attributes.thumbnail.data.attributes.formats.large.url}`}
                 className='w-screen bg-cover bg-center'
+                alt={project.attributes.title}
               />
               <div className='flex flex-col pt-4'>
                 <h3 className='font-vinila text-2xl text-gray-50 tracking-wide font-light'>

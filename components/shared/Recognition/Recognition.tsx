@@ -22,6 +22,7 @@ export function Recognition() {
                 <img
                   src={`http://localhost:1337${news.attributes.image.data.attributes.url}`}
                   className='max-w-64'
+                  alt={news.attributes.title}
                 />
                 <div className='flex flex-col gap-2'>
                   <span className='text-3xs uppercase'>

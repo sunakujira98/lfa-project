@@ -24,6 +24,7 @@ export function Service() {
                         <img
                           src={`http://localhost:1337${service.attributes.icon.data.attributes.url}`}
                           className='text-charcoal-1000'
+                          alt={service.attributes.title}
                         />
                       </div>
                     </button>
