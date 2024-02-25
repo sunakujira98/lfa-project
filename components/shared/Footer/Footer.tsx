@@ -157,14 +157,14 @@ export function Footer() {
                   <path
                     d='M16 4V28'
                     stroke='#FFFAEF'
-                    stroke-width='1.33333'
-                    stroke-linecap='square'
+                    strokeWidth='1.33333'
+                    strokeLinecap='square'
                   />
                   <path
                     d='M8 12L16 4L24 12'
                     stroke='#FFFAEF'
-                    stroke-width='1.33333'
-                    stroke-linecap='square'
+                    strokeWidth='1.33333'
+                    strokeLinecap='square'
                   />
                 </svg>
               </a>

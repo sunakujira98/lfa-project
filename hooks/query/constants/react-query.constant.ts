@@ -5,4 +5,5 @@ export enum EQueryKey {
   'ARTICLE' = 'article',
   'RECOGNITION' = 'recognition',
   'SERVICE' = 'service',
+  'TESTIMONIAL' = 'testimonial',
 }
