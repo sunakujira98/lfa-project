@@ -1,3 +1,11 @@
+export type SectionName =
+  | 'home'
+  | 'about'
+  | 'roadmap'
+  | 'utilities'
+  | 'faq'
+  | 'galleries'
+
 export type StrapiResponse<T> = {
   data: T[]
   meta: {

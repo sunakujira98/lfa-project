@@ -7,7 +7,7 @@ export function News() {
   const { data } = useGetAllArticleQuery()
 
   return (
-    <div className='max-w-screen-xl mx-auto py-10'>
+    <div className='max-w-screen-xl mx-auto pt-10'>
       <div className='container pb-8'>
         <span className='font-neue text-3xs text-gray-50'>NEWS</span>
       </div>
@@ -30,8 +30,8 @@ export function News() {
             )
           })}
         </div>
-        <div className='flex items-center justify-center py-10'>
-          View All News
+        <div className='flex items-center justify-center py-10 text-3xs'>
+          VIEW ALL NEWS
         </div>
       </div>
     </div>
