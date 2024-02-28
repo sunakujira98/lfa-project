@@ -1,4 +1,12 @@
-import { StrapiImageDetails } from './common.types'
+import { AvailableComponents, StrapiImageDetails } from './common.types'
+import { Award } from './award.types'
+import { Industry } from './industry.types'
+import { Service } from './services.types'
+
+export type ProjectDetail = {
+  id: number
+  __component: AvailableComponents
+}
 
 export type ProjectAttribute = {
   title: string
@@ -7,6 +15,8 @@ export type ProjectAttribute = {
   updatedAt: string // date
   publishedAt: string // date
   isFeatured: boolean
+  location: string
+  completionDate: string // date
   thumbnail: {
     data: {
       id: number
@@ -21,6 +31,16 @@ export type ProjectAttribute = {
         }
       }
     }
+  }
+  industry: {
+    data: Industry
+  }
+  service: {
+    data: Service
+  }
+  detail: ProjectDetail[]
+  awards: {
+    data: Award[]
   }
 }
 

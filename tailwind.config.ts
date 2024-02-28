@@ -48,6 +48,7 @@ const config: Config = {
       white: '#FFFFFF',
       lfaWhite: '#FFFAEF',
       greige: '#CCC0B4',
+      greigeMultiply: '#E4DDD6',
       cyan: '#74F1FB',
       error: '#F95E76',
       transparent: 'transparent',
@@ -61,6 +62,6 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [require('@headlessui/tailwindcss')({ prefix: 'ui' })],
 }
 export default config

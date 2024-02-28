@@ -1,8 +1,9 @@
 'use client'
 
-import { useCommonStore } from '@/store/common.store'
 import { useEffect, useRef, useState } from 'react'
 import { twMerge } from 'tailwind-merge'
+
+import { useCommonStore } from '@/store/common.store'
 
 export function Header() {
   const [showBg, setShowBg] = useState(false)
@@ -72,7 +73,7 @@ export function Header() {
             <ul className='md:flex items-center justify-between text-base text-gray-700 md:pt-0'>
               <li>
                 <a
-                  className='inline-block no-underline hover:text-black hover:underline py-2 px-4 text-3xl'
+                  className='inline-block no-underline hover:text-black hover:underline py-2  text-3xl'
                   href='#'
                 >
                   LFA
@@ -90,7 +91,7 @@ export function Header() {
               </a>
             </li>
             <li className='relative whitespace-nowrap'>
-              <a className='nav-link scrollto' href='#about'>
+              <a className='nav-link scrollto' href='/projects'>
                 Projects
               </a>
             </li>

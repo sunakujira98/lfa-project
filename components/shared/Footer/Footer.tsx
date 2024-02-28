@@ -3,7 +3,7 @@
 export function Footer() {
   return (
     <footer className='bg-charcoal-1000 pt-16 pb-6'>
-      <div className='container mx-auto px-8'>
+      <div className='container mx-auto'>
         <div className='w-full flex flex-col md:flex-row py-6 gap-28'>
           <div className='flex-1 mb-6 text-black'>
             <div className='flex flex-col'>

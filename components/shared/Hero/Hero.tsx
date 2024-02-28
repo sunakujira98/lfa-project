@@ -1,10 +1,7 @@
 export function Hero() {
   return (
-    <div
-      className='carousel relative container mx-auto'
-      style={{ maxWidth: '1680px' }}
-    >
-      <div className='carousel-innter relative overflow-hidden w-full'>
+    <div className='relative container mx-auto' style={{ maxWidth: '1680px' }}>
+      <div className='relative overflow-hidden w-full'>
         <div
           className='block h-screen mx-auto flex pt-6 md:pt-0 md:items-center bg-cover bg-right'
           style={{ backgroundImage: "url('/images/bg-hero.png')" }}

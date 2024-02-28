@@ -6,6 +6,16 @@ export type SectionName =
   | 'faq'
   | 'galleries'
 
+export type AvailableComponents =
+  | 'images.full-image'
+  | 'images.side-by-side-image'
+  | 'text.1-line-1-font-text'
+
+export type StrapiSingleResponse<T> = {
+  data: T
+  meta: object
+}
+
 export type StrapiResponse<T> = {
   data: T[]
   meta: {
