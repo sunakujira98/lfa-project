@@ -2,21 +2,24 @@ import { StrapiImageAttributes } from './common.types'
 
 export type TestimonialAttribute = {
   fullName: string
-  description: string
-  titleCompany: string
-  companyImage: {
+  description?: string
+  title?: string
+  company?: string
+  image?: {
     data: {
       id: number
       attributes: StrapiImageAttributes
     }
   }
-  video: {
+  video?: {
     data: {
       id: number
       attributes: StrapiImageAttributes
     }
   }
   createdAt: string
+  updatedAt: string
+  publishedAt: string
 }
 
 export type Testimonial = {

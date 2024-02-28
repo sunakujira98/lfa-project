@@ -82,7 +82,7 @@ export function ProjectDetail({ projectId }: ProjectDetailProps) {
             </div>
           </div>
         </div>
-        <div className='bg-charcoal-1000'>
+        <div className='bg-charcoal-1000 mb-5'>
           <div className='max-w-screen-xl mx-auto py-10'>
             <span className='font-neue text-3xs text-lfaWhite'>AWARDS</span>
             <div className='flex justify-between whitespace-nowrap'>
@@ -100,11 +100,12 @@ export function ProjectDetail({ projectId }: ProjectDetailProps) {
             </div>
           </div>
         </div>
-        <div className='max-w-screen-xl mx-auto py-10'>
+
+        <ProjectComponentResolver detail={data.data.attributes.detail} />
+        {/* <div className='max-w-screen-xl mx-auto py-10'>
           <div className='container flex justify-center'>
-            <ProjectComponentResolver detail={data.data.attributes.detail} />
           </div>
-        </div>
+        </div> */}
       </>
     )
   )

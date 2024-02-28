@@ -19,10 +19,17 @@ type FullImageProps = {
 
 export function FullImage({ data }: FullImageProps) {
   return (
-    <img
-      src={`http://localhost:1337${data.image.data.attributes.url}`}
-      className='w-screen'
-      alt={data.image.data.attributes.name}
-    />
+    <div
+      className='relative container mx-auto py-5'
+      style={{ maxWidth: '1680px' }}
+    >
+      <div className='h-full mx-auto flex md:pt-0 md:items-center bg-cover bg-right'>
+        <img
+          src={`http://localhost:1337${data.image.data.attributes.url}`}
+          className='w-screen'
+          alt={data.image.data.attributes.name}
+        />
+      </div>
+    </div>
   )
 }

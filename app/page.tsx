@@ -6,7 +6,7 @@ import { Hero } from '@/components/shared/Hero'
 import { News } from '@/components/shared/News/News'
 import { Recognition } from '@/components/shared/Recognition'
 import { Service } from '@/components/shared/Service'
-import { Testimonial } from '@/components/shared/Testimonial'
+import { TestimonialSection } from '@/section/TestimonialSection/TestimonialSection'
 
 export default function Home() {
   return (
@@ -16,7 +16,7 @@ export default function Home() {
       <Clients />
       <AboutUs />
       <Service />
-      <Testimonial />
+      <TestimonialSection />
       <Awards />
       <News />
       <Recognition />
