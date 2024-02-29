@@ -86,7 +86,7 @@ export function Header() {
         <div className='order-2 md:order-3 flex items-center' id='nav-content'>
           <ul className='m-0 p-0 flex list-none items-center space-x-6 font-neue uppercase text-3xs'>
             <li className='relative whitespace-nowrap'>
-              <a className='' href='#hero'>
+              <a className='' href='/'>
                 Home
               </a>
             </li>
@@ -106,7 +106,7 @@ export function Header() {
               </a>
             </li>
             <li className='relative whitespace-nowrap'>
-              <a className='nav-link scrollto' href='#team'>
+              <a className='nav-link scrollto' href='/testimonial'>
                 Testimonials
               </a>
             </li>

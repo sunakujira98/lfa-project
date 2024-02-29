@@ -36,7 +36,7 @@ export function AboutUsSection() {
                 <h1 className='font-vinila text-6xl'>Cultivating</h1>
                 <h1 className='font-keppler text-6xl'>Growth</h1>
                 <h1 className='font-vinila text-6xl'>Together</h1>
-                <p className='text-sm text-center font-light'>
+                <p className='text-center'>
                   As an award-winning Design & Build Studio in Singapore, we
                   collaborate with local businesses to craft exceptional work
                   and commercial spaces. Our expertise lies in creating

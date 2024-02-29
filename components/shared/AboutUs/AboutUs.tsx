@@ -7,7 +7,7 @@ export function AboutUs() {
             <h1 className='font-keppler text-6xl'>We Design & Build</h1>
             <h1 className='text-6xl'>Spaces To</h1>
             <h1 className='font-keppler text-6xl'>Inspire & Nurture</h1>
-            <p className='text-md text-center font-light'>
+            <p className='text-center'>
               As an award-winning Design & Build Studio in Singapore, we
               collaborate with local businesses to craft exceptional work and
               commercial spaces. Our expertise lies in creating commercial

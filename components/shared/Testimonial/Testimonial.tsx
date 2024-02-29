@@ -34,9 +34,7 @@ export function Testimonial({ data }: TestimonialProps) {
                   stroke='#464646'
                 />
               </svg>
-              <p className='text-xs font-light'>
-                {data.attributes.description}
-              </p>
+              <p>{data.attributes.description}</p>
             </div>
           </div>
           <div className='w-1/3 flex justify-end'>

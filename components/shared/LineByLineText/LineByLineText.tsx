@@ -38,9 +38,7 @@ export function LineByLineText({ data }: LineByLineTextProps) {
                 </h1>
               )
             })}
-            <p className='text-xs text-center pt-6 font-thin py-6'>
-              {data.description}
-            </p>
+            <p className='text-center py-6'>{data.description}</p>
           </div>
         </div>
       </div>

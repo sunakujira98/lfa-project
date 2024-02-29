@@ -3,7 +3,7 @@
 import { Testimonial } from '@/components/shared/Testimonial'
 import { useGetAllTestimonialQuery } from '@/hooks/query/useTestimonialQuery'
 
-export function TestimonialSection() {
+export function BigTestimonial() {
   const { data, isSuccess } = useGetAllTestimonialQuery()
 
   return (

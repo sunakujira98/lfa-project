@@ -35,7 +35,7 @@ export function Service() {
           </div>
           <div className='w-2/3'>
             <div className='border-t-[1px] border-l-[1px] rounded-tl-[40px] rounded p-8 h-full'>
-              <p className='text-xs font-light'>
+              <p>
                 Lorem ipsum dolor sit amet consectetur. Facilisis id commodo
                 ultrices dignissim blandit dignissim dolor. Nisl laoreet in eget
                 morbi commodo purus urna risus felis. Vulputate at blandit
