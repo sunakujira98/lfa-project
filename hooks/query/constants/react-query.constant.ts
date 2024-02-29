@@ -8,4 +8,5 @@ export enum EQueryKey {
   'TESTIMONIAL' = 'testimonial',
   'INDUSTRY' = 'industry',
   'REGION' = 'region',
+  'TEAM' = 'team',
 }

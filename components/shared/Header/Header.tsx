@@ -96,7 +96,7 @@ export function Header() {
               </a>
             </li>
             <li className='relative whitespace-nowrap'>
-              <a className='nav-link scrollto' href='#features'>
+              <a className='nav-link scrollto' href='/about'>
                 About
               </a>
             </li>
