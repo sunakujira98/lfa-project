@@ -1,9 +1,8 @@
 import React from 'react'
-import { twMerge } from 'tailwind-merge'
 
 import { SvgProps } from '../svg.types'
 
-const EmailIcon: React.FC<SvgProps> = ({ className, ...props }) => (
+const EmailIcon: React.FC<SvgProps> = ({ ...props }) => (
   <svg
     xmlns='http://www.w3.org/2000/svg'
     width='32'

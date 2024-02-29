@@ -3,6 +3,7 @@
 'use client'
 
 import { Testimonial } from '@/domain/types/testimonial.types'
+
 import { QuoteIcon } from '../svg/icons'
 
 type SideBySideTestimonialProps = {
