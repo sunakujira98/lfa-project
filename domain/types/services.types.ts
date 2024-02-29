@@ -9,6 +9,12 @@ export type ServiceAttribute = {
       attributes: StrapiImageAttributes
     }
   }
+  image?: {
+    data: {
+      id: number
+      attributes: StrapiImageAttributes
+    }
+  }
   createdAt: string
 }
 
