@@ -3,7 +3,6 @@
 'use client'
 
 import { Service } from '@/domain/types/services.types'
-import { useGetAllServiceQuery } from '@/hooks/query/useServiceQuery'
 
 type ServiceWithImageProps = {
   service: Service
