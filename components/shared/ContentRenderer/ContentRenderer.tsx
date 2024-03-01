@@ -5,7 +5,6 @@ type ContentRendererProps = {
 }
 
 export function ContentRenderer({ data }: ContentRendererProps) {
-  console.log('dataaa', data)
   const resolveParagraph = (content: TContent) => {
     if (content.type === 'heading') {
       if (content.level === 1) {

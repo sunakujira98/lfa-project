@@ -89,7 +89,7 @@ export function ProjectDetail({ projectId }: ProjectDetailProps) {
                 return (
                   <div className='py-4' key={award.id}>
                     <img
-                      src={`http://localhost:1337${award.attributes.image.data.attributes.url}`}
+                      src={`${process.env.NEXT_PUBLIC_CMS_HOST}${award.attributes.image.data.attributes.url}`}
                       className='max-w-20'
                       alt={award.attributes.awardName}
                     />

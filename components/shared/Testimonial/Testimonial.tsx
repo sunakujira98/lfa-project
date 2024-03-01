@@ -13,7 +13,7 @@ export function Testimonial({ data }: TestimonialProps) {
       <div className='container pb-10'>
         {data.attributes.video?.data?.attributes?.url && (
           <video
-            src={`http://localhost:1337${data.attributes.video.data.attributes.url}`}
+            src={`${process.env.NEXT_PUBLIC_CMS_HOST}${data.attributes.video.data.attributes.url}`}
             className='w-screen bg-cover bg-center'
             controls
             muted
@@ -50,7 +50,7 @@ export function Testimonial({ data }: TestimonialProps) {
               </div>
               {data.attributes.image?.data?.attributes?.url && (
                 <img
-                  src={`http://localhost:1337${data.attributes.image.data.attributes.url}`}
+                  src={`${process.env.NEXT_PUBLIC_CMS_HOST}${data.attributes.image.data.attributes.url}`}
                   className='max-w-56'
                   alt={data.attributes.fullName}
                 />

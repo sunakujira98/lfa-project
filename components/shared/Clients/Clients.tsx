@@ -17,7 +17,7 @@ export function Clients() {
               return (
                 <div className='py-4' key={client.id}>
                   <img
-                    src={`http://localhost:1337${client.attributes.image.data.attributes.url}`}
+                    src={`${process.env.NEXT_PUBLIC_CMS_HOST}${client.attributes.image.data.attributes.url}`}
                     alt={client.attributes.clientName}
                   />
                 </div>
@@ -29,7 +29,7 @@ export function Clients() {
               return (
                 <div className='py-4' key={`client-2nd-marquee-${client.id}`}>
                   <img
-                    src={`http://localhost:1337${client.attributes.image.data.attributes.url}`}
+                    src={`${process.env.NEXT_PUBLIC_CMS_HOST}${client.attributes.image.data.attributes.url}`}
                     alt={client.attributes.clientName}
                   />
                 </div>

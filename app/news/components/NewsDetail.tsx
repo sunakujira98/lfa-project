@@ -14,7 +14,6 @@ type NewsDetailProps = {
 export function NewsDetail({ newsId }: NewsDetailProps) {
   const { data, isSuccess } = useGetArticleByIdQuery(newsId)
 
-  console.log(data)
   return (
     isSuccess && (
       <>
@@ -25,7 +24,7 @@ export function NewsDetail({ newsId }: NewsDetailProps) {
           <div
             className='block h-screen mx-auto flex pt-6 md:pt-0 md:items-center bg-cover bg-right'
             style={{
-              backgroundImage: `url(http://localhost:1337${data?.data.attributes.thumbnail?.data.attributes.url})`,
+              backgroundImage: `url(${process.env.NEXT_PUBLIC_CMS_HOST}${data?.data.attributes.thumbnail?.data.attributes.url})`,
             }}
           >
             <div className='flex flex-col h-screen'>

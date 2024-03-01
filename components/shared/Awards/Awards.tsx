@@ -17,7 +17,7 @@ export function Awards() {
               return (
                 <div className='py-4' key={client.id}>
                   <img
-                    src={`http://localhost:1337${client.attributes.image.data.attributes.url}`}
+                    src={`${process.env.NEXT_PUBLIC_CMS_HOST}${client.attributes.image.data.attributes.url}`}
                     className='max-w-20'
                     alt={client.attributes.awardName}
                   />
@@ -30,7 +30,7 @@ export function Awards() {
               return (
                 <div className='py-4' key={`client-2nd-marquee-${client.id}`}>
                   <img
-                    src={`http://localhost:1337${client.attributes.image.data.attributes.url}`}
+                    src={`${process.env.NEXT_PUBLIC_CMS_HOST}${client.attributes.image.data.attributes.url}`}
                     className='max-w-20'
                     alt={client.attributes.awardName}
                   />

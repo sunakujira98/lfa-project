@@ -17,7 +17,7 @@ export function FeaturedProduct() {
           return (
             <div className='container pb-10' key={project.id}>
               <img
-                src={`http://localhost:1337${project.attributes.thumbnail.data.attributes.formats.large.url}`}
+                src={`${process.env.NEXT_PUBLIC_CMS_HOST}${project.attributes.thumbnail.data.attributes.formats.large.url}`}
                 className='w-screen bg-cover bg-center'
                 alt={project.attributes.title}
               />

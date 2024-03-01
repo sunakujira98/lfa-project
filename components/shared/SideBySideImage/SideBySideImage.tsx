@@ -41,7 +41,7 @@ export function SideBySideImage({ data }: FullImageProps) {
             return (
               <div key={index}>
                 <img
-                  src={`http://localhost:1337${image.attributes.url}`}
+                  src={`${process.env.NEXT_PUBLIC_CMS_HOST}${image.attributes.url}`}
                   alt={image.attributes.name}
                   className='h-full w-full'
                 />

@@ -22,7 +22,7 @@ export function Service() {
                           {service.attributes.title}
                         </span>
                         <img
-                          src={`http://localhost:1337${service.attributes.icon.data.attributes.url}`}
+                          src={`${process.env.NEXT_PUBLIC_CMS_HOST}${service.attributes.icon.data.attributes.url}`}
                           className='text-charcoal-1000'
                           alt={service.attributes.title}
                         />

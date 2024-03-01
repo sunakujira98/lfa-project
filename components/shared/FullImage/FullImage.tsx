@@ -25,7 +25,7 @@ export function FullImage({ data }: FullImageProps) {
     >
       <div className='h-full mx-auto flex md:pt-0 md:items-center bg-cover bg-right'>
         <img
-          src={`http://localhost:1337${data.image.data.attributes.url}`}
+          src={`${process.env.NEXT_PUBLIC_CMS_HOST}${data.image.data.attributes.url}`}
           className='w-screen'
           alt={data.image.data.attributes.name}
         />

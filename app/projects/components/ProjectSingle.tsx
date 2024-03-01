@@ -10,7 +10,7 @@ export function ProjectSingle({ project }: ProjectSingleProps) {
   return (
     <div className='flex flex-col gap' key={project.id}>
       <img
-        src={`http://localhost:1337${project.attributes.thumbnail.data.attributes.url}`}
+        src={`${process.env.NEXT_PUBLIC_CMS_HOST}${project.attributes.thumbnail.data.attributes.url}`}
         className='max-w-96 h-52 aspect-auto'
         alt={project.attributes.title}
       />

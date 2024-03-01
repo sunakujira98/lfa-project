@@ -10,7 +10,7 @@ export function Team({ data }: TeamProps) {
     <div className='flex flex-col pb-6'>
       <div className='relative h-80 bg-greige'>
         <img
-          src={`http://localhost:1337${data.attributes.image?.data?.attributes.url}`}
+          src={`${process.env.NEXT_PUBLIC_CMS_HOST}${data.attributes.image?.data?.attributes.url}`}
           className='max-h-80 max-w-60 aspect-auto left-0 bottom-0'
           alt={data.attributes.name}
         />
