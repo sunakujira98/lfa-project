@@ -1,9 +1,11 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 'use client'
 
-import { ContentRenderer } from '@/components/shared/ContentRenderer/ContentRenderer'
-import { StrapiComponentResolver } from '@/components/shared/StrapiComponentResolver'
-import { useGetArticleByIdQuery } from '@/hooks/query/useGetArticleQuery'
 import dayjs from 'dayjs'
+
+import { ContentRenderer } from '@/components/shared/ContentRenderer/ContentRenderer'
+import { useGetArticleByIdQuery } from '@/hooks/query/useGetArticleQuery'
 
 type NewsDetailProps = {
   newsId: string

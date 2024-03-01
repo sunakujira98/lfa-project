@@ -33,8 +33,8 @@ export function ContentRenderer({ data }: ContentRendererProps) {
     <div className='max-w-screen-xl mx-auto py-10'>
       <div className='container'>
         <div className='flex flex-col gap-8'>
-          {data.map((content) => {
-            return <div>{resolveParagraph(content)}</div>
+          {data.map((content, index) => {
+            return <div key={index}>{resolveParagraph(content)}</div>
           })}
         </div>
       </div>

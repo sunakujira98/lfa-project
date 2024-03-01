@@ -1,8 +1,11 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 import { FullImage } from '@/components/shared/FullImage/FullImage'
 import { LineByLineText } from '@/components/shared/LineByLineText'
 import { SideBySideImage } from '@/components/shared/SideBySideImage'
 import { Testimonial } from '@/components/shared/Testimonial'
 import { ProjectDetail } from '@/domain/types/project.types'
+
 import { ContentRenderer } from '../ContentRenderer/ContentRenderer'
 
 type StrapiComponentsResolverProps = {

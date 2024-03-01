@@ -2,8 +2,9 @@
 
 'use client'
 
-import { News as TNews } from '@/domain/types/article.types'
 import dayjs from 'dayjs'
+
+import { Article as TNews } from '@/domain/types/article.types'
 
 type NewsProps = {
   news: TNews

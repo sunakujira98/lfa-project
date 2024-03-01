@@ -1,3 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
+
 import { TTeam } from '@/domain/types/team.types'
 
 type TeamProps = {

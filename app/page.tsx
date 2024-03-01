@@ -4,12 +4,9 @@ import { BigTestimonial } from '@/components/shared/BigTestimonial'
 import { Clients } from '@/components/shared/Clients'
 import { FeaturedProduct } from '@/components/shared/FeaturedProduct'
 import { Hero } from '@/components/shared/Hero'
-import {
-  News,
-  SideBySideNews,
-} from '@/components/shared/SideBySideNews/SideBySideNews'
 import { Recognition } from '@/components/shared/Recognition'
 import { Service } from '@/components/shared/Service'
+import { SideBySideNews } from '@/components/shared/SideBySideNews/SideBySideNews'
 
 export default function Home() {
   return (
