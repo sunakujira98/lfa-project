@@ -13,7 +13,7 @@ export function ServiceWithImage({ service }: ServiceWithImageProps) {
     <div className='flex justify-between gap-6 border-t-[1px] py-10 gap-10'>
       <div className='w-1/3'>
         <img
-          src={`${process.env.NEXT_PUBLIC_CMS_HOST}${service.attributes.image.data.attributes.url}`}
+          src={`${process.env.NEXT_PUBLIC_CMS_HOST}${service.attributes.image?.data.attributes.url}`}
           className='max-w-80'
           alt={service.attributes.title}
         />
