@@ -29,6 +29,7 @@ export function AboutUsSection() {
             </div>
           </div>
         </div>
+
         <div className='max-w-screen-xl h-screen mx-auto py-10'>
           <div className='container flex justify-center'>
             <div className='flex items-center mx-auto max-w-[65%]'>
@@ -57,7 +58,8 @@ export function AboutUsSection() {
                 className='h-full w-full aspect-auto'
               />
             </div>
-            <div className='grid grid-cols-4 xl:grid-cols-5 gap-4'>
+
+            <div className='grid grid-cols-5 xl:grid-cols-5 gap-4'>
               {teams.data.map((team) => {
                 return <Team data={team} />
               })}
