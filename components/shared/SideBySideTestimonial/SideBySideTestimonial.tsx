@@ -17,7 +17,7 @@ export function SideBySideTestimonial({
     <div className='flex justify-between gap-6 border-t-[1px] py-10 gap-10'>
       <div className='w-1/3'>
         <video
-          src={`${process.env.NEXT_PUBLIC_CMS_HOST}${testimonial.attributes.video.data.attributes.url}`}
+          src={`${process.env.NEXT_PUBLIC_CMS_HOST}${testimonial.attributes.video?.data.attributes.url}`}
           className='max-w-96'
           controls
         />
