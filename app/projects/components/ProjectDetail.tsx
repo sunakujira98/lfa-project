@@ -2,9 +2,8 @@
 
 'use client'
 
+import { StrapiComponentResolver } from '@/components/shared/StrapiComponentResolver'
 import { useGetProjectByIdQuery } from '@/hooks/query/useProjectQuery'
-
-import { ProjectComponentResolver } from './ProjectComponentResolver'
 
 type ProjectDetailProps = {
   projectId: string
@@ -101,7 +100,7 @@ export function ProjectDetail({ projectId }: ProjectDetailProps) {
           </div>
         </div>
 
-        <ProjectComponentResolver detail={data.data.attributes.detail} />
+        <StrapiComponentResolver detail={data.data.attributes.detail} />
         {/* <div className='max-w-screen-xl mx-auto py-10'>
           <div className='container flex justify-center'>
           </div>

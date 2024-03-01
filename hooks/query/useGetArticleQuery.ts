@@ -14,3 +14,16 @@ export const useGetAllArticleQuery = () => {
 
   return query
 }
+
+export const useGetArticleByIdQuery = (id: string) => {
+  const query = useQuery({
+    queryKey: [EQueryKey.ARTICLE, id],
+    queryFn: async () => {
+      const response = await ArticleApi.getById(id)
+
+      return response
+    },
+  })
+
+  return query
+}

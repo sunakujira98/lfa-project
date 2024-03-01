@@ -1,9 +1,24 @@
-import { StrapiImageAttributes } from './common.types'
+import { AvailableComponents, StrapiImageAttributes } from './common.types'
+
+export type ArticleDetail = {
+  id: number
+  __component: AvailableComponents
+}
+
+export type TContent = {
+  type: 'heading' | 'paragraph'
+  children: {
+    type: string
+    text: string
+  }[]
+  level?: number
+}
 
 export type ArticleAttribute = {
   title: string
-  description: string
-  thumbnail: {
+  shortDescription?: string
+  content: TContent[]
+  thumbnail?: {
     data: {
       id: number
       attributes: StrapiImageAttributes

@@ -2,11 +2,11 @@
 
 import { Project } from '@/domain/types/project.types'
 
-type SingleProjectProps = {
+type ProjectSingleProps = {
   project: Project
 }
 
-export function SingleProject({ project }: SingleProjectProps) {
+export function ProjectSingle({ project }: ProjectSingleProps) {
   return (
     <div className='flex flex-col gap' key={project.id}>
       <img

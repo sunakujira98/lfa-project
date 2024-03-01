@@ -3,14 +3,15 @@ import { LineByLineText } from '@/components/shared/LineByLineText'
 import { SideBySideImage } from '@/components/shared/SideBySideImage'
 import { Testimonial } from '@/components/shared/Testimonial'
 import { ProjectDetail } from '@/domain/types/project.types'
+import { ContentRenderer } from '../ContentRenderer/ContentRenderer'
 
-type ProjectComponentResolverProps = {
+type StrapiComponentsResolverProps = {
   detail: ProjectDetail[]
 }
 
-export function ProjectComponentResolver({
+export function StrapiComponentResolver({
   detail,
-}: ProjectComponentResolverProps) {
+}: StrapiComponentsResolverProps) {
   return (
     <div>
       {detail.map((componentDetail) => {
@@ -18,6 +19,13 @@ export function ProjectComponentResolver({
           case 'text.1-line-1-font-text':
             return (
               <LineByLineText
+                data={componentDetail as any}
+                key={componentDetail.id}
+              />
+            )
+          case 'text.paragraph':
+            return (
+              <ContentRenderer
                 data={componentDetail as any}
                 key={componentDetail.id}
               />

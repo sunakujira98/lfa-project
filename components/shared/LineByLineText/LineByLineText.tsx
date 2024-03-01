@@ -19,7 +19,7 @@ type LineByLineTextProps = {
 
 export function LineByLineText({ data }: LineByLineTextProps) {
   return (
-    <div className='max-w-screen-xl mx-auto py-'>
+    <div className='max-w-screen-xl mx-auto'>
       <div className='container'>
         <div className='flex items-center mx-auto max-w-[65%]'>
           <div className='flex flex-col items-center'>

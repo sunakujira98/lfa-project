@@ -11,8 +11,8 @@ export function TestimonialSection() {
     <>
       <div className='container py-28'>
         <div className='flex justify-between gap-40'>
-          <h3 className='font-thin'>Testimonials</h3>
-          <div className='flex flex-col'>
+          <h3 className='font-thin w-1/3'>Testimonials</h3>
+          <div className='flex flex-col w-2/3'>
             <h4 className='font-thin' style={{ paddingBottom: '50px' }}>
               Our clients' stories reveal how we craft award-winning office
               designs, blending the best office interior design principles with

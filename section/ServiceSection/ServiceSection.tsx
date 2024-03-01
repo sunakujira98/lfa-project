@@ -10,8 +10,8 @@ export function ServiceSection() {
     <>
       <div className='container py-28'>
         <div className='flex justify-between gap-40'>
-          <h3 className='font-thin'>Services</h3>
-          <div className='flex flex-col'>
+          <h3 className='font-thin w-1/3'>Services</h3>
+          <div className='flex flex-col w-2/3'>
             <h4 className='font-thin' style={{ paddingBottom: '50px' }}>
               Explore the pinnacle of commercial interior design in Singapore
               with LFA Studio, a name synonymous with excellence in office and

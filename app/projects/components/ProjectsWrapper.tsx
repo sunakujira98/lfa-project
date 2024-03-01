@@ -3,7 +3,7 @@
 import { useGetAllProjectQuery } from '@/hooks/query/useProjectQuery'
 
 import { ProjectFilter } from './ProjectFilter'
-import { SingleProject } from './SingleProject'
+import { ProjectSingle } from './ProjectSingle'
 
 export function ProjectsWrapper() {
   const { data } = useGetAllProjectQuery()
@@ -13,7 +13,7 @@ export function ProjectsWrapper() {
       <ProjectFilter />
       <div className='grid grid-cols-3'>
         {data?.data.map((project) => {
-          return <SingleProject project={project} key={project.id} />
+          return <ProjectSingle project={project} key={project.id} />
         })}
       </div>
     </>

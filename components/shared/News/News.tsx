@@ -2,41 +2,44 @@
 
 'use client'
 
+import { News as TNews } from '@/domain/types/article.types'
 import dayjs from 'dayjs'
 
-import { useGetAllArticleQuery } from '@/hooks/query/useGetArticleQuery'
+type NewsProps = {
+  news: TNews
+}
 
-export function News() {
-  const { data } = useGetAllArticleQuery()
+export function News({ news }: NewsProps) {
+  const truncateString = (str: string, maxLength: number) => {
+    if (str.length > maxLength) {
+      return str.slice(0, maxLength) + '...'
+    } else {
+      return str
+    }
+  }
 
   return (
-    <div className='max-w-screen-xl mx-auto pt-10'>
-      <div className='container pb-8'>
-        <span className='font-neue text-3xs text-gray-50'>NEWS</span>
+    <div className='container pt-10'>
+      <div className='grid grid-cols-1 gap-20'>
+        <div className='flex flex-row gap-6' key={news.id}>
+          <img
+            src={`http://localhost:1337${news.attributes.thumbnail.data.attributes.url}`}
+            className='max-w-96 h-64'
+            alt={news.attributes.title}
+          />
+        </div>
       </div>
-      <div className='container border-y-[1px] pt-10'>
-        <div className='grid grid-cols-1 gap-20 md:grid-cols-3'>
-          {data?.data.map((news) => {
-            return (
-              <div className='flex flex-row gap-6' key={news.id}>
-                <img
-                  src={`http://localhost:1337${news.attributes.thumbnail.data.attributes.url}`}
-                  className='max-w-36 max-h-36 aspect-square'
-                  alt={news.attributes.title}
-                />
-                <div className='flex flex-col gap-2'>
-                  <span className='text-3xs'>
-                    {dayjs(news.attributes.createdAt).format('DD-MM-YYYY')}
-                  </span>
-                  <span className='text-xs'>{news.attributes.title}</span>
-                </div>
-              </div>
-            )
-          })}
-        </div>
-        <div className='flex items-center justify-center py-10 text-3xs'>
-          VIEW ALL NEWS
-        </div>
+      <div className='flex flex-col py-6 text-3xs gap-2'>
+        <a href={`/news/${news.id}`}>
+          <h4 className='font-light'>{news.attributes.title}</h4>
+        </a>
+        <span className='text-3xs'>
+          {dayjs(news.attributes.createdAt).format('DD-MM-YYYY')}
+        </span>
+        <span className='text-3xs'>
+          {news.attributes.shortDescription &&
+            truncateString(news.attributes.shortDescription, 40)}
+        </span>
       </div>
     </div>
   )
