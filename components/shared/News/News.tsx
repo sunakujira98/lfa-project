@@ -24,7 +24,7 @@ export function News({ news }: NewsProps) {
       <div className='grid grid-cols-1 gap-20'>
         <div className='flex flex-row gap-6' key={news.id}>
           <img
-            src={`${process.env.NEXT_PUBLIC_CMS_HOST}${news.attributes.thumbnail.data.attributes.url}`}
+            src={`${process.env.NEXT_PUBLIC_CMS_HOST}${news.attributes.thumbnail?.data.attributes.url}`}
             className='max-w-96 h-64'
             alt={news.attributes.title}
           />
