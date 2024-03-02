@@ -1,2 +1,2 @@
-# Redirects from what the browser requests to what we serve
-/api/* http://34.124.221.58/api/:splat 200!
+/api/* http://34.124.221.58/api/:splat 200
+/* /index.html 200
