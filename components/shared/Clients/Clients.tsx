@@ -5,39 +5,41 @@
 import { useGetAllClientQuery } from '@/hooks/query/useClientQuery'
 
 export function Clients() {
-  const { data } = useGetAllClientQuery()
+  const { data, isSuccess } = useGetAllClientQuery()
 
   return (
-    <div className='max-w-screen-xl mx-auto py-10'>
-      <div className='border-y-[1px] border-charcoal-100 py-9'>
-        <span className='font-neue text-3xs text-gray-50'>CLIENTELE</span>
-        <div className='relative flex overflow-x-hidden'>
-          <div className='flex flex-row gap-24 animate-marquee whitespace-nowrap'>
-            {data?.data.map((client) => {
-              return (
-                <div className='py-4' key={client.id}>
-                  <img
-                    src={`${process.env.NEXT_PUBLIC_CMS_HOST}${client.attributes.image.data.attributes.url}`}
-                    alt={client.attributes.clientName}
-                  />
-                </div>
-              )
-            })}
-          </div>
-          <div className='px-24 absolute top-0 flex flex-row gap-24 animate-marquee2 whitespace-nowrap'>
-            {data?.data.map((client) => {
-              return (
-                <div className='py-4' key={`client-2nd-marquee-${client.id}`}>
-                  <img
-                    src={`${process.env.NEXT_PUBLIC_CMS_HOST}${client.attributes.image.data.attributes.url}`}
-                    alt={client.attributes.clientName}
-                  />
-                </div>
-              )
-            })}
+    isSuccess && (
+      <div className='max-w-screen-xl mx-auto py-10'>
+        <div className='border-y-[1px] border-charcoal-100 py-9'>
+          <span className='font-neue text-3xs text-gray-50'>CLIENTELE</span>
+          <div className='relative flex overflow-x-hidden'>
+            <div className='flex flex-row gap-24 animate-marquee whitespace-nowrap'>
+              {data?.data?.map((client) => {
+                return (
+                  <div className='py-4' key={client.id}>
+                    <img
+                      src={`${process.env.NEXT_PUBLIC_CMS_HOST}${client.attributes.image.data.attributes.url}`}
+                      alt={client.attributes.clientName}
+                    />
+                  </div>
+                )
+              })}
+            </div>
+            <div className='px-24 absolute top-0 flex flex-row gap-24 animate-marquee2 whitespace-nowrap'>
+              {data?.data?.map((client) => {
+                return (
+                  <div className='py-4' key={`client-2nd-marquee-${client.id}`}>
+                    <img
+                      src={`${process.env.NEXT_PUBLIC_CMS_HOST}${client.attributes.image.data.attributes.url}`}
+                      alt={client.attributes.clientName}
+                    />
+                  </div>
+                )
+              })}
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    )
   )
 }

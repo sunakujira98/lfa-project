@@ -1,5 +1,6 @@
 'use client'
 
+import { SectionHeader } from '@/components/shared/SectionHeader'
 import { ServiceWithImage } from '@/components/shared/ServiceWithImage'
 import { SideBySideTestimonial } from '@/components/shared/SideBySideTestimonial'
 import { useGetAllTestimonialQuery } from '@/hooks/query/useTestimonialQuery'
@@ -10,16 +11,12 @@ export function TestimonialSection() {
   return (
     <>
       <div className='container py-28'>
-        <div className='flex justify-between gap-40'>
-          <h3 className='font-thin w-1/3'>Testimonials</h3>
-          <div className='flex flex-col w-2/3'>
-            <h4 className='font-thin' style={{ paddingBottom: '50px' }}>
-              Our clients' stories reveal how we craft award-winning office
+        <SectionHeader
+          displayName='Testimonials'
+          title="Our clients' stories reveal how we craft award-winning office
               designs, blending the best office interior design principles with
-              innovative corporate interior design in Singapore.
-            </h4>
-            <span className='text-xs font-thin'>
-              Discover the transformative power of LFA Studio, a leader among
+              innovative corporate interior design in Singapore."
+          subtitle='Discover the transformative power of LFA Studio, a leader among
               commercial interior design firms in Singapore. Dive into
               testimonials that showcase our expertise in office renovation in
               Singapore, where every commercial office renovation project
@@ -29,10 +26,8 @@ export function TestimonialSection() {
               excellence in workplace design in Singapore. Experience how we
               turn visions into reality, creating personalised spaces that
               resonate with the spirit of corporate office interior design and
-              interior design for commercial spaces, one project at a time.
-            </span>
-          </div>
-        </div>
+              interior design for commercial spaces, one project at a time.'
+        />
       </div>
       {isSuccess && (
         <div className='container'>

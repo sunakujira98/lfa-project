@@ -16,7 +16,7 @@ export function BigTestimonial() {
         </div>
       </div>
       {isSuccess &&
-        data.data.map((testimonial) => {
+        data.data?.map((testimonial) => {
           return <Testimonial data={testimonial} key={testimonial.id} />
         })}
     </div>
