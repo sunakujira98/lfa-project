@@ -116,10 +116,7 @@ export function Header() {
               </a>
             </li>
             <li className='relative whitespace-nowrap'>
-              <a
-                className='nav-link scrollto border-[1px] px-4 py-1 border-lfaWhite rounded-full'
-                href='#contact'
-              >
+              <a className='outline-button' href='/contact'>
                 Contact
               </a>
             </li>
