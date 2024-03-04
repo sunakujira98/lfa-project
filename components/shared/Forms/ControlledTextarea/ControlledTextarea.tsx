@@ -1,5 +1,6 @@
 'use client'
 
+import { getFormErrorMessage } from '@/utils/Forms/Forms.utils'
 import {
   Control,
   Controller,
@@ -22,19 +23,26 @@ export function ControlledTextarea<T extends FieldValues>({
   placeholder,
   ...inputProps
 }: ControlledTextareaProps<T>) {
+  const error = getFormErrorMessage(errors, name)
+
   return (
-    <Controller
-      render={({ field }) => (
-        <textarea
-          placeholder={placeholder}
-          className='w-full bg-transparent p-2 font-thin border-primary-600 border-[1px] rounded-lg'
-          {...field}
-          {...inputProps}
-          // error={getFormErrorMessage(errors, name)}
-        />
-      )}
-      name={name}
-      control={control}
-    />
+    <div className='w-full'>
+      <Controller
+        render={({ field }) => (
+          <textarea
+            placeholder={placeholder}
+            className='w-full bg-transparent p-2 font-thin border-primary-600 border-[1px] rounded-lg'
+            {...field}
+            {...inputProps}
+            // error={getFormErrorMessage(errors, name)}
+          />
+        )}
+        name={name}
+        control={control}
+      />
+      <div className='w-full'>
+        {error && <span className='text-error'>{error}</span>}
+      </div>
+    </div>
   )
 }

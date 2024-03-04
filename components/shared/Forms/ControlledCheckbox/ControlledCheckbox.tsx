@@ -10,7 +10,7 @@ import {
   Path,
 } from 'react-hook-form'
 
-type ControlledInputProps<T extends FieldValues> = Omit<
+type ControlledCheckboxProps<T extends FieldValues> = Omit<
   ComponentPropsWithoutRef<'input'>,
   'size'
 > & {
@@ -19,27 +19,26 @@ type ControlledInputProps<T extends FieldValues> = Omit<
   errors?: FieldErrors<T>
 }
 
-export function ControlledInput<T extends FieldValues>({
+export function ControlledCheckbox<T extends FieldValues>({
   control,
   errors,
   name,
   ...inputProps
-}: ControlledInputProps<T>) {
+}: ControlledCheckboxProps<T>) {
   const error = getFormErrorMessage(errors, name)
-
+  console.log('error', error)
   return (
     <div className='w-full'>
-      <Controller
-        render={({ field }) => (
-          <input
-            className='w-full bg-transparent p-2 font-thin border-primary-600 border-[1px] rounded-lg'
-            {...field}
-            {...inputProps}
-          />
-        )}
-        name={name}
-        control={control}
-      />
+      <div className='flex flex-row gap-2'>
+        <Controller
+          render={({ field }) => <input {...field} {...inputProps} />}
+          name={name}
+          control={control}
+        />
+        <span className='text-xs'>
+          I have read and accept the Privacy Policy and Terms & Conditions
+        </span>
+      </div>
       <div className='w-full'>
         {error && <span className='text-error'>{error}</span>}
       </div>
