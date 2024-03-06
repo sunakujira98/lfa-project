@@ -10,7 +10,7 @@ export function NewsSection() {
 
   return (
     <>
-      <div className='container py-28'>
+      <div className='container pt-28 pb-10 md:py-28 px-4 md:px-0'>
         <SectionHeader
           displayName='News'
           title='Explore the latest in commercial and office interior design with
@@ -30,8 +30,8 @@ export function NewsSection() {
         />
       </div>
       {isSuccess && (
-        <div className='container border-t-[1px]'>
-          <div className='grid grid-cols-3 gap-6'>
+        <div className='container border-t-[1px] px-4 md:px-0'>
+          <div className='grid grid-cols-1 md:grid-cols-3 gap-0 md:gap-6'>
             {data.data.map((news) => {
               return <News news={news} />
             })}

@@ -20,17 +20,17 @@ export function News({ news }: NewsProps) {
   }
 
   return (
-    <div className='container pt-10'>
+    <div className='container py-10 border-b-[1px]'>
       <div className='grid grid-cols-1 gap-20'>
         <div className='flex flex-row gap-6' key={news.id}>
           <img
             src={`${process.env.NEXT_PUBLIC_CMS_HOST}${news.attributes.thumbnail?.data.attributes.url}`}
-            className='max-w-96 h-64'
+            className='w-full max-w-96 h-64'
             alt={news.attributes.title}
           />
         </div>
       </div>
-      <div className='flex flex-col py-6 text-3xs gap-2'>
+      <div className='flex flex-col py-4 md:py-6 text-3xs gap-2'>
         <a href={`/news/${news.id}`}>
           <h4 className='font-light'>{news.attributes.title}</h4>
         </a>

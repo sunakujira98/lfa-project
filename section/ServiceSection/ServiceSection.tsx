@@ -9,7 +9,7 @@ export function ServiceSection() {
 
   return (
     <>
-      <div className='container py-28'>
+      <div className='container md:py-28 py-10 px-4 md:px-0'>
         <SectionHeader
           displayName='Services'
           title='Explore the pinnacle of commercial interior design in Singapore

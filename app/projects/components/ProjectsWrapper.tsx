@@ -11,7 +11,7 @@ export function ProjectsWrapper() {
   return (
     <>
       <ProjectFilter />
-      <div className='grid grid-cols-3 gap-10'>
+      <div className='grid grid-cols-1 md:grid-cols-3 gap-10 overflow-x-hidden'>
         {data?.data.map((project) => {
           return <ProjectSingle project={project} key={project.id} />
         })}

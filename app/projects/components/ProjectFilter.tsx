@@ -14,7 +14,7 @@ export function ProjectFilter() {
   const { data: regions } = useGetAllRegionsQuery()
 
   return (
-    <div className='flex justify-between'>
+    <div className='hidden md:flex justify-between'>
       <div className='flex flex-row gap-6'>
         <Menu as='div' className='relative inline-block text-left'>
           <div className='py-4'>

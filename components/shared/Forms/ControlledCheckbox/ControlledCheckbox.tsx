@@ -36,7 +36,7 @@ export function ControlledCheckbox<T extends FieldValues>({
           name={name}
           control={control}
         />
-        <span className='text-xs'>
+        <span className='text-3xs md:text-xs'>
           I have read and accept the Privacy Policy and Terms & Conditions
         </span>
       </div>

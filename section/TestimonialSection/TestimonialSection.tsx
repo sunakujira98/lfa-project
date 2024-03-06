@@ -10,7 +10,7 @@ export function TestimonialSection() {
 
   return (
     <>
-      <div className='container py-28'>
+      <div className='container pt-28 pb-10 md:py-28'>
         <SectionHeader
           displayName='Testimonials'
           title="Our clients' stories reveal how we craft award-winning office
