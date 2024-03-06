@@ -2,6 +2,7 @@
 'use client'
 
 import { Testimonial as TTestimonial } from '@/domain/types/testimonial.types'
+
 import { QuoteIcon } from '../svg/icons'
 
 type TestimonialProps = {

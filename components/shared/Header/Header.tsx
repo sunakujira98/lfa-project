@@ -3,8 +3,9 @@
 import { useEffect, useRef, useState } from 'react'
 import { twMerge } from 'tailwind-merge'
 
-import { useCommonStore } from '@/store/common.store'
 import { useToggle } from '@/hooks/common/useToggle'
+import { useCommonStore } from '@/store/common.store'
+
 import { HamburgerMenu } from '../HamburgerMenu/HamburgerMenu'
 
 export function Header() {

@@ -2,10 +2,12 @@
 
 'use client'
 
-import { useGetAllServiceQuery } from '@/hooks/query/useServiceQuery'
 import { Disclosure } from '@headlessui/react'
 import { useState } from 'react'
 import { twMerge } from 'tailwind-merge'
+
+import { useGetAllServiceQuery } from '@/hooks/query/useServiceQuery'
+
 import { CircleArrowDownIcon } from '../svg/icons'
 
 export function Service() {
@@ -13,9 +15,9 @@ export function Service() {
   const [activeService, setActiveService] = useState<string>('')
   const { data, isSuccess } = useGetAllServiceQuery()
 
-  const onClickActive = (activeIndex: number, activeService: string) => {
-    setActiveIndex(activeIndex)
-    setActiveService(activeService)
+  const onClickActive = (index: number, description: string) => {
+    setActiveIndex(index)
+    setActiveService(description)
   }
 
   return (
@@ -77,7 +79,7 @@ export function Service() {
               <div className='flex flex-col'>
                 {data?.data.map((service) => {
                   return (
-                    <div className='border-b-[1px] py-4'>
+                    <div className='border-b-[1px] py-4' key={service.id}>
                       <Disclosure defaultOpen={service.id === 1}>
                         <div className='flex flex-row justify-between'>
                           <h4>{service.attributes.title}</h4>

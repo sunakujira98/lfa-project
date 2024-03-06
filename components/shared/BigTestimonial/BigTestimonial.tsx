@@ -18,8 +18,8 @@ export function BigTestimonial() {
       {isSuccess &&
         data.data?.map((testimonial) => {
           return (
-            <div className='pb-10 md:p-0'>
-              <Testimonial data={testimonial} key={testimonial.id} />
+            <div className='pb-10 md:p-0' key={testimonial.id}>
+              <Testimonial data={testimonial} />
             </div>
           )
         })}
