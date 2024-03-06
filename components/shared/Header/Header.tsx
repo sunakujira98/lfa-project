@@ -4,8 +4,11 @@ import { useEffect, useRef, useState } from 'react'
 import { twMerge } from 'tailwind-merge'
 
 import { useCommonStore } from '@/store/common.store'
+import { useToggle } from '@/hooks/common/useToggle'
+import { HamburgerMenu } from '../HamburgerMenu/HamburgerMenu'
 
 export function Header() {
+  const [isOpen, menuMutation] = useToggle()
   const [showBg, setShowBg] = useState(false)
   const showBgRef = useRef(false)
   const navbarRef = useRef<HTMLElement>(null)
@@ -46,34 +49,17 @@ export function Header() {
     <nav
       id='header'
       className={twMerge(
-        'w-full z-50 fixed transition-all top-0 py-1 text-lfaWhite',
+        'w-full z-50 fixed transition-all top-0 md:py-1 text-lfaWhite',
         showBg && 'bg-[#CCC0B4]',
       )}
     >
-      <div className='w-full container mx-auto flex flex-wrap items-center justify-between mt-0 bg-transparent'>
-        <label htmlFor='menu-toggle' className='cursor-pointer md:hidden block'>
-          <svg
-            className='fill-current text-gray-900'
-            xmlns='http://www.w3.org/2000/svg'
-            width='20'
-            height='20'
-            viewBox='0 0 20 20'
-          >
-            <title>menu</title>
-            <path d='M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z'></path>
-          </svg>
-        </label>
-        <input className='hidden' type='checkbox' id='menu-toggle' />
-
-        <div
-          className='hidden md:flex md:items-center md:w-auto w-full order-3 md:order-1'
-          id='menu'
-        >
+      <div className='hidden w-full container mx-auto md:flex flex-wrap items-center justify-between mt-0 bg-transparent'>
+        <div className='md:flex md:items-center md:w-auto w-full order-3 md:order-1'>
           <nav>
             <ul className='md:flex items-center justify-between text-base text-gray-700 md:pt-0'>
               <li>
                 <a
-                  className='inline-block no-underline hover:text-black hover:underline py-2  text-3xl'
+                  className='inline-block no-underline hover:text-black hover:underline py-2 text-3xl'
                   href='#'
                 >
                   LFA
@@ -83,7 +69,7 @@ export function Header() {
           </nav>
         </div>
 
-        <div className='order-2 md:order-3 flex items-center' id='nav-content'>
+        <div className='order-2 md:order-3 flex items-center'>
           <ul className='m-0 p-0 flex list-none items-center space-x-6 font-neue uppercase text-3xs'>
             <li className='relative whitespace-nowrap'>
               <a className='' href='/'>
@@ -121,6 +107,21 @@ export function Header() {
               </a>
             </li>
           </ul>
+        </div>
+      </div>
+
+      <div className='flex flex-row justify-between md:hidden p-4 items-center'>
+        <a
+          className='inline-block no-underline hover:text-black hover:underline py-2 text-3xl'
+          href='#'
+        >
+          LFA
+        </a>
+        <div className='flex flex-row items-center gap-4'>
+          <a className='outline-button' href='/contact'>
+            Contact
+          </a>
+          <HamburgerMenu active={isOpen} onClick={menuMutation.toggle} />
         </div>
       </div>
     </nav>

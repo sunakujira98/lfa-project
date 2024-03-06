@@ -1,60 +1,67 @@
 /* eslint-disable @next/next/no-img-element */
 
+import {
+  ArrowUpIcon,
+  FacebookIcon,
+  InstagramIcon,
+  LinkedinIcon,
+} from '../svg/icons'
+
 export function Footer() {
   return (
-    <footer className='bg-charcoal-1000 pt-16 pb-6'>
+    <footer className='py-10 px-4 bg-charcoal-1000 md:pt-16 md:pb-6 overflow-x-hidden'>
       <div className='container mx-auto'>
-        <div className='w-full flex flex-col md:flex-row py-6 gap-28'>
-          <div className='flex-1 mb-6 text-black'>
+        <div className='w-full flex flex-col md:flex-row gap-28'>
+          <div className='flex-1 mb-6 text-black w-full md:w-auto'>
             <div className='flex flex-col'>
               <span className='text-charcoal-600 uppercase text-3xs'>
                 FIND US ON INSTAGRAM
               </span>
-              <div className='grid grid-cols-1 gap-6 md:grid-cols-3 pb-10 pt-2 gap-4'>
+              <div className='grid grid-cols-2 md:grid-cols-3 pb-10 pt-2 gap-4'>
                 <div className='flex flex-row'>
                   <img
                     src='/images/instagram-1.png'
-                    className='max-w-44 max-h-max-w-44 aspect-square'
+                    className='max-w-[150px] max-h-[150px] max-h md:max-w-44 md:max-h-44 aspect-square'
                     alt='instagram'
                   />
                 </div>
                 <div className='flex flex-row'>
                   <img
                     src='/images/instagram-1.png'
-                    className='max-w-44 max-h-max-w-44 aspect-square'
+                    className='max-w-[150px] max-h-[150px] max-h md:max-w-44 md:max-h-44 aspect-square'
                     alt='instagram'
                   />
                 </div>
                 <div className='flex flex-row'>
                   <img
                     src='/images/instagram-1.png'
-                    className='max-w-44 max-h-max-w-44 aspect-square'
+                    className='max-w-[150px] max-h-[150px] max-h md:max-w-44 md:max-h-44 aspect-square'
                     alt='instagram'
                   />
                 </div>
                 <div className='flex flex-row'>
                   <img
                     src='/images/instagram-1.png'
-                    className='max-w-44 max-h-max-w-44 aspect-square'
+                    className='max-w-[150px] max-h-[150px] max-h md:max-w-44 md:max-h-44 aspect-square'
                     alt='instagram'
                   />
                 </div>
                 <div className='flex flex-row'>
                   <img
                     src='/images/instagram-1.png'
-                    className='max-w-44 max-h-max-w-44 aspect-square'
+                    className='max-w-[150px] max-h-[150px] max-h md:max-w-44 md:max-h-44 aspect-square'
                     alt='instagram'
                   />
                 </div>
                 <div className='flex flex-row'>
                   <img
                     src='/images/instagram-1.png'
-                    className='max-w-44 max-h-max-w-44 aspect-square'
+                    className='max-w-[150px] max-h-[150px] max-h md:max-w-44 md:max-h-44 aspect-square'
                     alt='instagram'
                   />
                 </div>
               </div>
-              <div className='flex flex-row gap-40'>
+              <div className='hidden md:flex flex-row gap-40'>
                 <div className='flex flex-col gap-2'>
                   <span className='uppercase text-charcoal-600 text-3xs'>
                     Risk Management System
@@ -76,7 +83,8 @@ export function Footer() {
               </div>
             </div>
           </div>
-          <div className='flex-1'>
+          <div className='hidden md:flex flex-1 w-full md:w-auto'>
+            {/* Modified */}
             <div className='col-lg-6 col-md-6'>
               <span className='font-vinila text-2xl font-thin text-lfaWhite'>
                 Cultivating Growth Together
@@ -118,7 +126,7 @@ export function Footer() {
             </div>
           </div>
         </div>
-        <nav className='p-0'>
+        <nav className='hidden md:block p-0'>
           <ul className='m-0 p-0 flex flex-row items-center list-none gap-28 font-neue uppercase text-3xs text-lfaWhite'>
             <li className='relative whitespace-nowrap'>
               <a className='' href='#hero'>
@@ -172,6 +180,98 @@ export function Footer() {
           </ul>
           <i className='bi bi-list mobile-nav-toggle'></i>
         </nav>
+
+        {/* Mobile */}
+        <div className='flex md:hidden flex-col gap-10'>
+          <div>
+            <h4 className='text-lfaWhite'>Cultivating Growth Together</h4>
+          </div>
+          <div className='flex flex-col gap-4'>
+            <h6 className='uppercase text-lfaWhite'>Find Us At</h6>
+            <div className='flex flex-col'>
+              <span className='text-2xs'>
+                283 River Valley Road Singapore 238324
+              </span>
+              <span className='text-2xs text-lfaWhite underline'>
+                View on Google Maps
+              </span>
+            </div>
+          </div>
+          <div className='flex flex-col gap-4'>
+            <h6 className='uppercase text-lfaWhite'>Contact Us</h6>
+            <span className='text-2xs text-lfaWhite underline'>
+              enquiry@lfa.com.sg
+            </span>
+          </div>
+          <div className='flex flex-col gap-4'>
+            <h6 className='uppercase text-lfaWhite'>Risk Management System</h6>
+            <span className='text-2xs underline'>bizSAFE Level 3</span>
+          </div>
+          <div className='flex flex-col gap-4'>
+            <div>
+              <h6 className='uppercase text-lfaWhite'>
+                Quality Management System
+              </h6>
+            </div>
+            <div className='flex flex-col'>
+              <span className='text-2xs'>ISO 9001 2015</span>
+              <span className='text-2xs'>ISO 9001 2015</span>
+              <span className='text-2xs'>ISO 9001 2015</span>
+            </div>
+          </div>
+          <div className='flex flex-col gap-4'>
+            <div>
+              <h6 className='uppercase text-lfaWhite'>Stay Connected</h6>
+            </div>
+            <div className='flex flex-row gap-4'>
+              <button className='border-lfaWhite border-[1px] rounded-lg p-[5px]'>
+                <FacebookIcon />
+              </button>
+              <button className='border-lfaWhite border-[1px] rounded-lg p-[5px]'>
+                <InstagramIcon />
+              </button>
+              <button className='border-lfaWhite border-[1px] rounded-lg p-[5px]'>
+                <LinkedinIcon />
+              </button>
+            </div>
+          </div>
+          <nav className='md:hidden p-0 text-lfaWhite flex flex-col gap-10'>
+            <ul className='m-0 p-0 flex flex-row items-center list-none gap-4 font-neue uppercase text-3xs'>
+              <li className='relative whitespace-nowrap'>
+                <a className='nav-link scrollto uppercase' href='#about'>
+                  Privacy Policy
+                </a>
+              </li>
+              <li className='relative whitespace-nowrap'>
+                <a className='nav-link scrollto uppercase' href='#features'>
+                  T&CS
+                </a>
+              </li>
+              <li className='relative whitespace-nowrap'>
+                <a className='nav-link scrollto uppercase' href='#pricing'>
+                  FAQS
+                </a>
+              </li>
+              <li className='relative whitespace-nowrap'>
+                <a className='nav-link scrollto' href='#team'>
+                  sitemap
+                </a>
+              </li>
+            </ul>
+            <ul className='m-0 p-0 flex flex-row justify-between items-center list-none gap-4 font-neue uppercase text-3xs '>
+              <li className='relative whitespace-nowrap'>
+                <a className='' href='#hero'>
+                  © 2023 LFA. All rights reserved.
+                </a>
+              </li>
+              <li className='relative whitespace-nowrap'>
+                <a className='nav-link scrollto' href='#gallery'>
+                  <ArrowUpIcon />
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
       </div>
     </footer>
   )

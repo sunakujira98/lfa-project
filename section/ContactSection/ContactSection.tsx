@@ -30,8 +30,6 @@ export function ContactSection() {
     console.log('data', data)
   }
 
-  console.log('errors', errors)
-
   return (
     isSuccess && (
       <>

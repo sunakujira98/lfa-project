@@ -1,2 +1,6 @@
 export { default as QuoteIcon } from './QuoteIcon'
 export { default as CircleArrowDownIcon } from './CircleArrowDownIcon'
+export { default as FacebookIcon } from './FacebookIcon'
+export { default as LinkedinIcon } from './LinkedinIcon'
+export { default as InstagramIcon } from './InstagramIcon'
+export { default as ArrowUpIcon } from './ArrowUpIcon'
