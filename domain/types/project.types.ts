@@ -1,8 +1,4 @@
-import {
-  AvailableComponents,
-  StrapiImageAttributes,
-  StrapiImageDetails,
-} from './common.types'
+import { AvailableComponents, StrapiImageAttributes } from './common.types'
 import { Award } from './award.types'
 import { Industry } from './industry.types'
 import { Service } from './services.types'

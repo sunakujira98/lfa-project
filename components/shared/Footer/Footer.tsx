@@ -144,7 +144,7 @@ export function Footer() {
               </a>
             </li>
             <li className='relative whitespace-nowrap'>
-              <a className='nav-link scrollto' href='#pricing'>
+              <a className='nav-link scrollto' href='/faq'>
                 frequently Asked questions
               </a>
             </li>

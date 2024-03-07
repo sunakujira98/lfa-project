@@ -10,4 +10,5 @@ export enum EQueryKey {
   'REGION' = 'region',
   'TEAM' = 'team',
   'CONTACT' = 'contact',
+  'FAQ' = 'faq',
 }
