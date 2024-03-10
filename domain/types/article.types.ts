@@ -6,7 +6,7 @@ export type ArticleDetail = {
 }
 
 export type TContent = {
-  type: 'heading' | 'paragraph'
+  type: 'heading' | 'paragraph' | 'text'
   children: {
     type: string
     text: string

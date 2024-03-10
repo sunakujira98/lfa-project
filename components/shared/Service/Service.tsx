@@ -4,10 +4,10 @@
 
 import { Disclosure } from '@headlessui/react'
 import { useState } from 'react'
-import { twMerge } from 'tailwind-merge'
 
 import { useGetAllServiceQuery } from '@/hooks/query/useServiceQuery'
 
+import { BigButton } from '../BigButton/BigButton'
 import { CircleArrowDownIcon } from '../svg/icons'
 
 export function Service() {
@@ -33,31 +33,17 @@ export function Service() {
                 {data?.data?.map((service) => {
                   return (
                     <div className='border-b-[1px] py-4' key={service.id}>
-                      <button
-                        className={twMerge(
-                          activeIndex === service.id
-                            ? 'bg-primary-900 text-greige'
-                            : 'hover:bg-greige',
-                          'w-full  p-4 rounded-full',
-                        )}
+                      <BigButton
+                        active={activeIndex === service.id}
+                        title={service.attributes.title}
+                        icon={service.attributes.icon.data.attributes.url}
                         onClick={() =>
                           onClickActive(
                             service.id,
                             service.attributes.description,
                           )
                         }
-                      >
-                        <div className='flex justify-between items-center'>
-                          <span className='text-xs'>
-                            {service.attributes.title}
-                          </span>
-                          <img
-                            src={`${process.env.NEXT_PUBLIC_CMS_HOST}${service.attributes.icon.data.attributes.url}`}
-                            className='text-charcoal-1000'
-                            alt={service.attributes.title}
-                          />
-                        </div>
-                      </button>
+                      />
                     </div>
                   )
                 })}

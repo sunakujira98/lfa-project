@@ -30,10 +30,12 @@ body {
 
 h1 {
   font-size: 96px;
+  font-weight: 350;
 }
 
 h3 {
   font-size: 32px;
+  font-weight: 350;
 }
 
 h4 {
@@ -43,10 +45,12 @@ h4 {
 
 h5 {
   font-size: 16px;
+  font-weight: 350;
 }
 
 h6 {
   font-size: 12px;
+  font-weight: 350;
 }
 
 p {
@@ -84,7 +88,7 @@ p {
 }
 
 .outline-button {
-  @apply border-[1px] px-4 py-1 border-lfaWhite rounded-full
+  @apply border-[1px] px-4 py-1 border-charcoal-1000 rounded-full
 }
 
 #menu-toggle:checked + #menu {
