@@ -29,7 +29,7 @@ export function ContentRenderer({ data }: ContentRendererProps) {
   }
 
   return (
-    <div className='max-w-screen-xl mx-auto py-10'>
+    <div className='max-w-screen-xl mx-auto py-4'>
       <div className='container'>
         <div className='flex flex-col gap-8'>
           {data.map((content, index) => {

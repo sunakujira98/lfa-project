@@ -11,4 +11,6 @@ export enum EQueryKey {
   'TEAM' = 'team',
   'CONTACT' = 'contact',
   'FAQ' = 'faq',
+  'PRIVACY_POLICY' = 'privacyPolicy',
+  'TNC' = 'tnc',
 }

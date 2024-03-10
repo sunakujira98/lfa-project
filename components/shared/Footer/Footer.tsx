@@ -134,12 +134,12 @@ export function Footer() {
               </a>
             </li>
             <li className='relative whitespace-nowrap'>
-              <a className='nav-link scrollto' href='#about'>
+              <a className='nav-link scrollto' href='/privacy-policy'>
                 privacy policy
               </a>
             </li>
             <li className='relative whitespace-nowrap'>
-              <a className='nav-link scrollto' href='#features'>
+              <a className='nav-link scrollto' href='/terms-and-conditions'>
                 terms & conditions
               </a>
             </li>
@@ -243,12 +243,15 @@ export function Footer() {
                 </a>
               </li>
               <li className='relative whitespace-nowrap'>
-                <a className='nav-link scrollto uppercase' href='#features'>
+                <a
+                  className='nav-link scrollto uppercase'
+                  href='/terms-and-conditions'
+                >
                   T&CS
                 </a>
               </li>
               <li className='relative whitespace-nowrap'>
-                <a className='nav-link scrollto uppercase' href='#pricing'>
+                <a className='nav-link scrollto uppercase' href='/faq'>
                   FAQS
                 </a>
               </li>
