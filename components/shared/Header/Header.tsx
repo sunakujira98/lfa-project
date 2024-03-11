@@ -1,5 +1,6 @@
 'use client'
 
+import { useRouter } from 'next/navigation'
 import { useEffect, useRef, useState } from 'react'
 import { twMerge } from 'tailwind-merge'
 
@@ -9,7 +10,6 @@ import { useCommonStore } from '@/store/common.store'
 import { BigButton } from '../BigButton/BigButton'
 import { HamburgerMenu } from '../HamburgerMenu/HamburgerMenu'
 import { FacebookIcon, InstagramIcon, LinkedinIcon } from '../svg/icons'
-import { useRouter } from 'next/navigation'
 
 export function Header() {
   const router = useRouter()
