@@ -225,13 +225,13 @@ export function Footer() {
             </div>
             <div className='flex flex-row gap-4'>
               <button className='border-lfaWhite border-[1px] rounded-lg p-[5px]'>
-                <FacebookIcon />
+                <FacebookIcon className='#FFFAEF' />
               </button>
               <button className='border-lfaWhite border-[1px] rounded-lg p-[5px]'>
-                <InstagramIcon />
+                <InstagramIcon className='#FFFAEF' />
               </button>
               <button className='border-lfaWhite border-[1px] rounded-lg p-[5px]'>
-                <LinkedinIcon />
+                <LinkedinIcon className='#FFFAEF' />
               </button>
             </div>
           </div>

@@ -14,7 +14,7 @@ export const hamburgerLineStyles = tv(
         true: 'bottom-0',
       },
       active: {
-        true: '-rotate-45',
+        true: '-rotate-45 bg-charcoal-1000',
       },
     },
     compoundVariants: [
