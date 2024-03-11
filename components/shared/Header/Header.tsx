@@ -9,8 +9,10 @@ import { useCommonStore } from '@/store/common.store'
 import { BigButton } from '../BigButton/BigButton'
 import { HamburgerMenu } from '../HamburgerMenu/HamburgerMenu'
 import { FacebookIcon, InstagramIcon, LinkedinIcon } from '../svg/icons'
+import { useRouter } from 'next/navigation'
 
 export function Header() {
+  const router = useRouter()
   const [isOpen, menuMutation] = useToggle()
   const [showBg, setShowBg] = useState(false)
   const showBgRef = useRef(false)
@@ -43,6 +45,11 @@ export function Header() {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
+
+  const onContactClick = () => {
+    menuMutation.close()
+    router.push('/contact')
+  }
 
   // const onSetScrollToSection = (section: SectionName) => () => {
   //   setScrollToSection(section)
@@ -136,35 +143,35 @@ export function Header() {
 
           {isOpen && (
             <>
-              <ul className='absolute -top-[28rem] left-0 flex w-full translate-y-full flex-col gap-1 px-5 py-7 md:hidden text-charcoal-1000'>
-                <li className='pb-6 uppercase border-b-[1px]'>
+              <ul className='absolute -top-[21rem] left-0 flex w-full translate-y-full flex-col gap-1 px-5 py-7 md:hidden text-charcoal-1000'>
+                <li className='pb-4 uppercase border-b-[1px]'>
                   <h6>Home</h6>
                 </li>
-                <li className='py-6 uppercase border-b-[1px]'>
+                <li className='py-4 uppercase border-b-[1px]'>
                   <h6>Projects</h6>
                 </li>
-                <li className='py-6 uppercase border-b-[1px]'>
+                <li className='py-4 uppercase border-b-[1px]'>
                   <h6>About</h6>
                 </li>
-                <li className='py-6 uppercase border-b-[1px]'>
+                <li className='py-4 uppercase border-b-[1px]'>
                   <h6>Services</h6>
                 </li>
-                <li className='py-6 uppercase border-b-[1px]'>
+                <li className='py-4 uppercase border-b-[1px]'>
                   <h6>Testimonials</h6>
                 </li>
-                <li className='py-6 uppercase border-b-[1px]'>
+                <li className='py-4 uppercase border-b-[1px]'>
                   <h6>News</h6>
                 </li>
-                <li className='py-6 uppercase border-b-[1px]'>
+                <li className='py-4 uppercase border-b-[1px]'>
                   <h6>Projects</h6>
                 </li>
               </ul>
 
               <div className='absolute bottom-0 left-0 w-full flex items-center flex-col md:hidden pb-4 gap-4 !text-gray-50 px-5'>
-                <div className='w-full pb-7'>
+                <div className='w-full pb-3'>
                   <BigButton
                     active={true}
-                    onClick={() => console.log()}
+                    onClick={onContactClick}
                     title='CONTACT'
                   />
                 </div>
