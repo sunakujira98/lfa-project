@@ -160,16 +160,16 @@ export function Header() {
                 </li>
               </ul>
 
-              <div className='absolute top-[38rem] left-0 w-full md:hidden px-5'>
-                <BigButton
-                  active={true}
-                  onClick={() => console.log()}
-                  title='CONTACT'
-                />
-              </div>
+              <div className='absolute bottom-0 left-0 w-full flex items-center flex-col md:hidden pb-4 gap-4 !text-gray-50 px-5'>
+                <div className='w-full pb-7'>
+                  <BigButton
+                    active={true}
+                    onClick={() => console.log()}
+                    title='CONTACT'
+                  />
+                </div>
 
-              <div className='absolute bottom-0 left-0 w-full flex items-center flex-col md:hidden pb-4 gap-4 !text-gray-50'>
-                <div className='flex flex-row gap-4'>
+                <div className='flex flex-row gap-4 flex-grow'>
                   <a
                     href='#'
                     className='border-[1px] border-charcoal-1000 rounded-lg'

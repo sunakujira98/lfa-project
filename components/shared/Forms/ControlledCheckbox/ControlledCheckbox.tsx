@@ -27,7 +27,6 @@ export function ControlledCheckbox<T extends FieldValues>({
   ...inputProps
 }: ControlledCheckboxProps<T>) {
   const error = getFormErrorMessage(errors, name)
-  console.log('error', error)
   return (
     <div className='w-full'>
       <div className='flex flex-row gap-2'>

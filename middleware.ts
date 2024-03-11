@@ -37,7 +37,6 @@ export function middleware(request: NextRequest) {
   const redirectPathname = `${pathname}${search}`
   const localeFromPathname = pathname.split('/')[1]
 
-  console.log('pathname', pathname)
   const pathnameIsMissingLocale = LOCALES.every(
     (locale) =>
       !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`,
