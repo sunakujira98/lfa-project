@@ -141,10 +141,7 @@ export function Header() {
           <ul className='m-0 p-0 flex list-none items-center space-x-6 font-neue uppercase text-3xs'>
             {items.map((navItem) => (
               <li className='relative whitespace-nowrap' key={navItem.href}>
-                <a
-                  className='nav-link scrollto'
-                  href={`${lang}${navItem.href}`}
-                >
+                <a className='nav-link scrollto' href={`${navItem.href}`}>
                   {navItem.label}
                 </a>
               </li>
@@ -185,7 +182,7 @@ export function Header() {
 
           {isOpen && (
             <>
-              <ul className='absolute -top-[21rem] left-0 flex w-full translate-y-full flex-col gap-1 px-5 py-7 md:hidden text-charcoal-1000'>
+              <ul className='absolute -top-[13rem] left-0 flex w-full translate-y-full flex-col gap-1 px-5 py-7 md:hidden text-charcoal-1000'>
                 {items.map((navItem) => (
                   <li
                     className='pb-4 uppercase border-b-[1px]'
@@ -230,7 +227,7 @@ export function Header() {
                 <div className='flex flex-row gap-4'>
                   {footerItems.map((footerItem) => (
                     <a
-                      href={`${lang}${footerItem.href}`}
+                      href={`${footerItem.href}`}
                       key={`footer-item-${footerItem.href}`}
                     >
                       <h6 className='uppercase'>{footerItem.label}</h6>
