@@ -37,8 +37,13 @@ export function Recognition() {
             renderDotsOutside={false}
             responsive={{
               desktop: {
-                breakpoint: { max: 3000, min: 0 },
+                breakpoint: { max: 3000, min: 768 },
                 items: 4,
+              },
+              mobile: {
+                breakpoint: { max: 767, min: 0 },
+                items: 1,
+                slidesToSlide: 1,
               },
             }}
             rewind={false}
@@ -52,7 +57,7 @@ export function Recognition() {
           >
             {data?.data?.map((news) => {
               return (
-                <div className='w-80' key={news.id}>
+                <div className='w-full' key={news.id}>
                   <div className='flex flex-col gap-6' key={news.id}>
                     <img
                       src={`${process.env.NEXT_PUBLIC_CMS_HOST}${news.attributes.image.data.attributes.url}`}
