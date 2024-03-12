@@ -188,7 +188,7 @@ export function Header() {
                     className='pb-4 uppercase border-b-[1px]'
                     key={`nav-item-mobile-${navItem.href}`}
                   >
-                    <a href={`${lang}${navItem.href}`}>
+                    <a href={`${navItem.href}`}>
                       <h6>{navItem.label}</h6>
                     </a>
                   </li>
