@@ -34,18 +34,20 @@ export function Testimonial({ data }: TestimonialProps) {
                 </h3>
               </div>
 
-              {data.attributes.companyImage?.data?.attributes?.url && (
-                <img
-                  src={`${process.env.NEXT_PUBLIC_CMS_HOST}${data.attributes.companyImage.data.attributes.url}`}
-                  className='max-w-56'
-                  alt={data.attributes.fullName}
-                />
+              {data.attributes.image?.data?.attributes?.url && (
+                <div className='flex order-first sm:order-none'>
+                  <img
+                    src={`${process.env.NEXT_PUBLIC_CMS_HOST}${data.attributes.image.data.attributes.url}`}
+                    className='max-w-56'
+                    alt={data.attributes.fullName}
+                  />
+                </div>
               )}
             </div>
           </div>
           <div className='w-full md:w-2/3 md:order-first'>
             <div className='gap-4 md:border-t-[1px] md:border-r-[1px] md:rounded-tr-[40px] md:rounded md:py-8 mt-4 md:gap-0'>
-              <QuoteIcon />
+              <QuoteIcon className='mb-4' />
               <p className='md:w-[90%]'>{data.attributes.description}</p>
             </div>
           </div>

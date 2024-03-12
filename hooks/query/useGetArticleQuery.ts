@@ -1,12 +1,13 @@
+import { TQueryParams } from '@/domain/types/common.types'
 import { ArticleApi } from '@/services/articles.api'
 import { useQuery } from '@tanstack/react-query'
 import { EQueryKey } from './constants/react-query.constant'
 
-export const useGetAllArticleQuery = () => {
+export const useGetAllArticleQuery = (params?: TQueryParams) => {
   const query = useQuery({
     queryKey: [EQueryKey.ARTICLE],
     queryFn: async () => {
-      const response = await ArticleApi.getAll()
+      const response = await ArticleApi.getAll(params)
 
       return response
     },

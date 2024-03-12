@@ -1,3 +1,18 @@
+export type PaginationParams = {
+  limit: number
+}
+
+export type SortParams = {
+  [index: number]: {
+    [key: string]: 'asc' | 'desc'
+  }
+}
+
+export type TQueryParams = {
+  pagination?: PaginationParams
+  sort?: SortParams
+}
+
 export type SectionName =
   | 'home'
   | 'about'

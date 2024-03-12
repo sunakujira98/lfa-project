@@ -31,7 +31,10 @@ export function LineByLineText({ data }: LineByLineTextProps) {
 
               return (
                 <h1
-                  className={twMerge('text-6xl my-[-20px]', fontFamily)}
+                  className={twMerge(
+                    'text-3xl md:text-6xl md:my-[-20px]',
+                    fontFamily,
+                  )}
                   key={title.id}
                 >
                   {title.text}

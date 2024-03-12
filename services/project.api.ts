@@ -18,7 +18,7 @@ export const ProjectApi = {
 
   getById: async function (id: string): Promise<StrapiSingleResponse<Project>> {
     const result = await apiInstance.get<StrapiSingleResponse<Project>>(
-      `${BASE_URL}/${id}?populate[detail][populate]=*&populate[industry][populate]=*&populate[service][populate]=*&populate[awards][populate]=*`,
+      `${BASE_URL}/${id}?populate[detail][populate]=*&populate[industry][populate]=*&populate[service][populate]=*&populate[thumbnail]=*&populate[image]=*&populate[awards][populate]=*`,
     )
 
     return result.data

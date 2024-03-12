@@ -88,9 +88,18 @@ p {
 }
 
 .outline-button {
-  @apply border-[1px] px-4 py-1 border-charcoal-1000 rounded-full
+  @apply border-[1px] px-4 py-1 border-lfaWhite rounded-full hover:bg-charcoal-1000 hover:border-charcoal-1000
 }
 
-#menu-toggle:checked + #menu {
-  display: block;
+.react-multi-carousel-list {
+  padding: 0px 0px 40px;
+}
+
+.custom-dot-list-style button{
+  border: none;
+  background: #252525;
+}
+
+.react-multi-carousel-dot.react-multi-carousel-dot--active button {
+  background: #252525 !important;
 }

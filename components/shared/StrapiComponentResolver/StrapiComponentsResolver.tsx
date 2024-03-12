@@ -16,29 +16,44 @@ export function StrapiComponentResolver({
   detail,
 }: StrapiComponentsResolverProps) {
   return (
-    <div>
+    <div className='px-4 md:px-0'>
       {detail.map((componentDetail) => {
         switch (componentDetail.__component) {
           case 'text.1-line-1-font-text':
             return (
               <LineByLineText
                 data={componentDetail as any}
-                key={componentDetail.id}
+                key={`1-line-1-font-text-${componentDetail.id}`}
               />
             )
           case 'text.paragraph':
             return (
               <ContentRenderer
                 data={componentDetail as any}
-                key={componentDetail.id}
+                key={`content-renderer-${componentDetail.id}`}
               />
             )
           case 'images.full-image':
-            return <FullImage data={componentDetail as any} />
+            return (
+              <FullImage
+                data={componentDetail as any}
+                key={`full-image-${componentDetail.id}`}
+              />
+            )
           case 'images.side-by-side-image':
-            return <SideBySideImage data={componentDetail as any} />
+            return (
+              <SideBySideImage
+                data={componentDetail as any}
+                key={`side-by-side-${componentDetail.id}`}
+              />
+            )
           case 'testimonial.testimonial-block':
-            return <Testimonial data={{ attributes: componentDetail } as any} />
+            return (
+              <Testimonial
+                data={{ attributes: componentDetail } as any}
+                key={`testimonial-block-${componentDetail.id}`}
+              />
+            )
           default:
             break
         }

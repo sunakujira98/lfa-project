@@ -9,6 +9,7 @@ export type RecognitionAttribute = {
       attributes: StrapiImageAttributes
     }
   }
+  externalLink: string
   createdAt: string
 }
 

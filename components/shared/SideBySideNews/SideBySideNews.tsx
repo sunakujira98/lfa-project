@@ -7,7 +7,14 @@ import dayjs from 'dayjs'
 import { useGetAllArticleQuery } from '@/hooks/query/useGetArticleQuery'
 
 export function SideBySideNews() {
-  const { isSuccess, data } = useGetAllArticleQuery()
+  const { isSuccess, data } = useGetAllArticleQuery({
+    pagination: {
+      limit: 3,
+    },
+    sort: {
+      0: { createdAt: 'desc' },
+    },
+  })
 
   return (
     isSuccess && (
@@ -37,8 +44,10 @@ export function SideBySideNews() {
               )
             })}
           </div>
-          <div className='flex items-center justify-center py-10 text-3xs border-b-[1px] md:border-none'>
-            VIEW ALL NEWS
+          <div className='flex items-center justify-center py-10 border-b-[1px] md:border-none'>
+            <a href='/news'>
+              <h6 className='uppercase'>View All News</h6>
+            </a>
           </div>
         </div>
       </div>

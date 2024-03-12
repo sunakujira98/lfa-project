@@ -11,6 +11,38 @@ import { BigButton } from '../BigButton/BigButton'
 import { HamburgerMenu } from '../HamburgerMenu/HamburgerMenu'
 import { FacebookIcon, InstagramIcon, LinkedinIcon } from '../svg/icons'
 
+type HeaderItems = {
+  label: string
+  href: string
+}
+
+const items: HeaderItems[] = [
+  {
+    label: 'Home',
+    href: '/',
+  },
+  {
+    label: 'Projects',
+    href: '/projects',
+  },
+  {
+    label: 'About',
+    href: '/about',
+  },
+  {
+    label: 'Services',
+    href: '/service',
+  },
+  {
+    label: 'Testimonials',
+    href: '/testimonial',
+  },
+  {
+    label: 'News',
+    href: '/news',
+  },
+]
+
 export function Header() {
   const router = useRouter()
   const [isOpen, menuMutation] = useToggle()
@@ -82,36 +114,13 @@ export function Header() {
 
         <div className='order-2 md:order-3 flex items-center'>
           <ul className='m-0 p-0 flex list-none items-center space-x-6 font-neue uppercase text-3xs'>
-            <li className='relative whitespace-nowrap'>
-              <a className='' href='/'>
-                Home
-              </a>
-            </li>
-            <li className='relative whitespace-nowrap'>
-              <a className='nav-link scrollto' href='/projects'>
-                Projects
-              </a>
-            </li>
-            <li className='relative whitespace-nowrap'>
-              <a className='nav-link scrollto' href='/about'>
-                About
-              </a>
-            </li>
-            <li className='relative whitespace-nowrap'>
-              <a className='nav-link scrollto' href='/service'>
-                Services
-              </a>
-            </li>
-            <li className='relative whitespace-nowrap'>
-              <a className='nav-link scrollto' href='/testimonial'>
-                Testimonials
-              </a>
-            </li>
-            <li className='relative whitespace-nowrap'>
-              <a className='nav-link scrollto' href='/news'>
-                News
-              </a>
-            </li>
+            {items.map((navItem) => (
+              <li className='relative whitespace-nowrap' key={navItem.href}>
+                <a className='nav-link scrollto' href={navItem.href}>
+                  {navItem.label}
+                </a>
+              </li>
+            ))}
             <li className='relative whitespace-nowrap'>
               <a className='outline-button' href='/contact'>
                 Contact
@@ -129,7 +138,7 @@ export function Header() {
       >
         <a
           className='inline-block no-underline hover:text-black hover:underline py-2 text-3xl'
-          href='#'
+          href='/'
         >
           LFA
         </a>
@@ -144,27 +153,16 @@ export function Header() {
           {isOpen && (
             <>
               <ul className='absolute -top-[21rem] left-0 flex w-full translate-y-full flex-col gap-1 px-5 py-7 md:hidden text-charcoal-1000'>
-                <li className='pb-4 uppercase border-b-[1px]'>
-                  <h6>Home</h6>
-                </li>
-                <li className='py-4 uppercase border-b-[1px]'>
-                  <h6>Projects</h6>
-                </li>
-                <li className='py-4 uppercase border-b-[1px]'>
-                  <h6>About</h6>
-                </li>
-                <li className='py-4 uppercase border-b-[1px]'>
-                  <h6>Services</h6>
-                </li>
-                <li className='py-4 uppercase border-b-[1px]'>
-                  <h6>Testimonials</h6>
-                </li>
-                <li className='py-4 uppercase border-b-[1px]'>
-                  <h6>News</h6>
-                </li>
-                <li className='py-4 uppercase border-b-[1px]'>
-                  <h6>Projects</h6>
-                </li>
+                {items.map((navItem) => (
+                  <li
+                    className='pb-4 uppercase border-b-[1px]'
+                    key={`nav-item-mobile-${navItem.href}`}
+                  >
+                    <a href={navItem.href}>
+                      <h6>{navItem.label}</h6>
+                    </a>
+                  </li>
+                ))}
               </ul>
 
               <div className='absolute bottom-0 left-0 w-full flex items-center flex-col md:hidden pb-4 gap-4 !text-gray-50 px-5'>

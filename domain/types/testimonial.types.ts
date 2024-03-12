@@ -5,7 +5,7 @@ export type TestimonialAttribute = {
   description?: string
   title?: string
   company?: string
-  companyImage?: {
+  image?: {
     data: {
       id: number
       attributes: StrapiImageAttributes
