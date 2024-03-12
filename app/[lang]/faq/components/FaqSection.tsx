@@ -140,7 +140,7 @@ export function FaqSection() {
             <div className='w-full md:w-2/3'>
               <div className='flex flex-col gap-6'>
                 <h4>For any other queries, feel free to drop us a message</h4>
-                <a className='outline-button w-fit' href='/contact'>
+                <a className='outline-button-black w-fit' href='/contact'>
                   Contact
                 </a>
               </div>
