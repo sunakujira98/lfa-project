@@ -22,7 +22,7 @@ export function NewsDetail({ newsId }: NewsDetailProps) {
           style={{ maxWidth: '1680px' }}
         >
           <div
-            className='block h-screen mx-auto flex pt-6 md:pt-0 md:items-center bg-cover bg-right'
+            className='h-screen mx-auto flex pt-6 md:pt-0 md:items-center bg-cover bg-right'
             style={{
               backgroundImage: `url(${process.env.NEXT_PUBLIC_CMS_HOST}${data?.data.attributes.thumbnail?.data.attributes.url})`,
             }}

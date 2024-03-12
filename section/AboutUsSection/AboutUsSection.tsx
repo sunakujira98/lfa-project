@@ -18,7 +18,7 @@ export function AboutUsSection() {
         >
           <div className='relative overflow-hidden w-full'>
             <div
-              className='block h-[70vh] md:h-screen mx-auto flex pt-6 md:pt-0 md:items-center bg-cover bg-right'
+              className='h-[70vh] md:h-screen mx-auto flex pt-6 md:pt-0 md:items-center bg-cover bg-right'
               style={{ backgroundImage: "url('/images/bg-hero.png')" }}
             >
               <div className='flex flex-col md:h-screen'>
