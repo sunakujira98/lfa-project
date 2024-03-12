@@ -2,7 +2,7 @@ import { AboutUs } from '@/components/shared/AboutUs'
 import { Awards } from '@/components/shared/Awards'
 import { BigTestimonial } from '@/components/shared/BigTestimonial'
 import { Clients } from '@/components/shared/Clients'
-import { FeaturedProduct } from '@/components/shared/FeaturedProduct'
+import { FeaturedProject } from '@/components/shared/FeaturedProject'
 import { Hero } from '@/components/shared/Hero'
 import { Recognition } from '@/components/shared/Recognition'
 import { Service } from '@/components/shared/Service'
@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <div>
       <Hero />
-      <FeaturedProduct />
+      <FeaturedProject />
       <Clients />
       <AboutUs />
       <Service />

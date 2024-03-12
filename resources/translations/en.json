@@ -1,0 +1,34 @@
+{
+  "hero" : {
+    "we" : "We",
+    "designBuild" : "Design & Build",
+    "spacesTo" : "Spaces To",
+    "inspireNurture" : "Inspire & Nurture"
+  },
+  "featuredProject" : {
+    "title" : "Featured Projects",
+    "allProjects" : "All Projects"
+  },
+  "client" : {
+    "title" : "CLIENTELE"
+  },
+  "aboutUs" : {
+    "title": "About Us",
+    "paragraph" : {
+      "title" : "We Design & Build",
+      "subtitle" : "Inspire & Nurture",
+      "description" : "As an award-winning Design & Build Studio in Singapore, we collaborate with local businesses to craft exceptional work and commercial spaces. Our expertise lies in creating commercial offices that not only stand out in design but also inspire meaningful social interaction and foster strong communal bonds."
+    }
+  },
+  "services" : {
+    "title" : "Services",
+    "learnMore" : "Learn More"
+  },
+  "testimonials" : {
+    "title" : "Testimonials",
+    "allTestimonials" : "View All Testimonials"
+  },
+  "awards" : {
+    "title" : "AWARDS"
+  }
+}

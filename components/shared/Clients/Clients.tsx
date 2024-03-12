@@ -3,15 +3,17 @@
 'use client'
 
 import { useGetAllClientQuery } from '@/hooks/query/useClientQuery'
+import { useTranslation } from '@/resources/i18n/i18n.hooks'
 
 export function Clients() {
+  const { t } = useTranslation()
   const { data, isSuccess } = useGetAllClientQuery()
 
   return (
     isSuccess && (
       <div className='max-w-screen-xl mx-auto py-10 px-4'>
         <div className='border-y-[1px] border-charcoal-100 py-10'>
-          <h6 className='font-neue text-gray-50'>CLIENTELE</h6>
+          <h6 className='font-neue text-gray-50'>{t('client.title')}</h6>
           <div className='relative flex overflow-x-hidden'>
             <div className='flex flex-row items-center px-6 animate-marquee whitespace-nowrap'>
               {data?.data?.map((client) => {

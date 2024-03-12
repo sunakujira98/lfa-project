@@ -1,0 +1,27 @@
+{
+  "hero": {
+    "we": "我们",
+    "designBuild": "设计与建造",
+    "spacesTo": "空间至",
+    "inspireNurture": "启发与培养"
+  },
+  "featuredProject": {
+    "title": "精选项目",
+    "allProjects": "所有项目"
+  },
+  "client": {
+    "title": "客户"
+  },
+  "aboutUs": {
+    "title": "关于我们",
+    "paragraph": {
+      "title": "我们设计与建造",
+      "subtitle": "启发与培养",
+      "description": "作为新加坡屡获殊荣的设计与建造工作室，我们与本地企业合作，打造出卓越的工作和商业空间。我们的专长在于创建不仅在设计上脱颖而出，而且还能激发有意义的社交互动并培养牢固社区联系的商业办公室。"
+    }
+  },
+  "services": {
+    "title": "服务",
+    "learnMore": "了解更多"
+  }
+}

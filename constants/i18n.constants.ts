@@ -9,11 +9,7 @@ export const SUPPORTED_LOCALES = {
   zh: 'zh',
 }
 export const SUPPORTED_LOCALES_ARRAY = Object.values(SUPPORTED_LOCALES)
-export const LOCALES = [
-  SUPPORTED_LOCALES['en-US'],
-  SUPPORTED_LOCALES['zh-CN'],
-  SUPPORTED_LOCALES['zh-HK'],
-]
+export const LOCALES = [SUPPORTED_LOCALES['en-US'], SUPPORTED_LOCALES['zh-CN']]
 
 export const LOCALES_MAP = {
   [SUPPORTED_LOCALES.en]: 'en-US',

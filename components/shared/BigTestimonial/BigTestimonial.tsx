@@ -2,8 +2,10 @@
 
 import { Testimonial } from '@/components/shared/Testimonial'
 import { useGetAllTestimonialQuery } from '@/hooks/query/useTestimonialQuery'
+import { useTranslation } from '@/resources/i18n/i18n.hooks'
 
 export function BigTestimonial() {
+  const { t } = useTranslation()
   const { data, isSuccess } = useGetAllTestimonialQuery()
 
   return (
@@ -11,7 +13,7 @@ export function BigTestimonial() {
       <div className='container'>
         <div className='pb-10 md:pb-0'>
           <span className='font-neue text-3xs uppercase text-gray-50 tracking-wider'>
-            Testimonials
+            {t('testimonials.title')}
           </span>
         </div>
       </div>
@@ -24,7 +26,7 @@ export function BigTestimonial() {
           )
         })}
       <div className='flex items-center justify-center py-10'>
-        <h6 className='uppercase'>View All Testimonials</h6>
+        <h6 className='uppercase'>{t('testimonials.allTestimonials')}</h6>
       </div>
     </div>
   )

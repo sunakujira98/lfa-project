@@ -1,9 +1,10 @@
 'use client'
 
-import { useRouter } from 'next/navigation'
+import { useParams, useRouter } from 'next/navigation'
 import { useEffect, useRef, useState } from 'react'
 import { twMerge } from 'tailwind-merge'
 
+import { useLanguage } from '@/components/Provider'
 import { useToggle } from '@/hooks/common/useToggle'
 import { useCommonStore } from '@/store/common.store'
 
@@ -43,12 +44,36 @@ const items: HeaderItems[] = [
   },
 ]
 
+const footerItems: HeaderItems[] = [
+  {
+    label: 'Privacy Policy',
+    href: '/privacy-policy',
+  },
+  {
+    label: 'T&CS',
+    href: '/tnc',
+  },
+  {
+    label: 'FAQS',
+    href: '/faq',
+  },
+  {
+    label: 'SITEMAP',
+    href: '/sitemap',
+  },
+]
+
 export function Header() {
+  const { lang } = useParams()
   const router = useRouter()
-  const [isOpen, menuMutation] = useToggle()
   const [showBg, setShowBg] = useState(false)
   const showBgRef = useRef(false)
   const navbarRef = useRef<HTMLElement>(null)
+
+  const { changeLanguage } = useLanguage()
+  const [isOpen, menuMutation] = useToggle()
+
+  const isChinese = lang.includes('zh')
 
   // const currentSection = useCommonStore((state) => state.currentSection)
   // const setScrollToSection = useCommonStore((state) => state.setScrollToSection)
@@ -103,7 +128,7 @@ export function Header() {
               <li>
                 <a
                   className='inline-block no-underline hover:text-black hover:underline py-2 text-3xl'
-                  href='#'
+                  href='/'
                 >
                   LFA
                 </a>
@@ -116,7 +141,10 @@ export function Header() {
           <ul className='m-0 p-0 flex list-none items-center space-x-6 font-neue uppercase text-3xs'>
             {items.map((navItem) => (
               <li className='relative whitespace-nowrap' key={navItem.href}>
-                <a className='nav-link scrollto' href={navItem.href}>
+                <a
+                  className='nav-link scrollto'
+                  href={`${lang}${navItem.href}`}
+                >
                   {navItem.label}
                 </a>
               </li>
@@ -125,6 +153,11 @@ export function Header() {
               <a className='outline-button' href='/contact'>
                 Contact
               </a>
+            </li>
+            <li className='relative whitespace-nowrap border-l-[1px] border-lfaWhite pl-2'>
+              <button onClick={changeLanguage}>
+                {isChinese ? 'EN' : '中文'}
+              </button>
             </li>
           </ul>
         </div>
@@ -158,7 +191,7 @@ export function Header() {
                     className='pb-4 uppercase border-b-[1px]'
                     key={`nav-item-mobile-${navItem.href}`}
                   >
-                    <a href={navItem.href}>
+                    <a href={`${lang}${navItem.href}`}>
                       <h6>{navItem.label}</h6>
                     </a>
                   </li>
@@ -195,18 +228,14 @@ export function Header() {
                   </a>
                 </div>
                 <div className='flex flex-row gap-4'>
-                  <a href='/privacy-policy'>
-                    <h6 className='uppercase'>Privacy Policy</h6>
-                  </a>
-                  <a href='/privacy-policy'>
-                    <h6 className='uppercase'>T&CS</h6>
-                  </a>
-                  <a href='/privacy-policy'>
-                    <h6 className='uppercase'>FAQS</h6>
-                  </a>
-                  <a href='/privacy-policy'>
-                    <h6 className='uppercase'>SITEMAP</h6>
-                  </a>
+                  {footerItems.map((footerItem) => (
+                    <a
+                      href={`${lang}${footerItem.href}`}
+                      key={`footer-item-${footerItem.href}`}
+                    >
+                      <h6 className='uppercase'>{footerItem.label}</h6>
+                    </a>
+                  ))}
                 </div>
                 <div className='flex flex-row'>
                   <h6>&copy; 2023 LFA. All rights reserved.</h6>

@@ -6,11 +6,13 @@ import { Disclosure } from '@headlessui/react'
 import { useState } from 'react'
 
 import { useGetAllServiceQuery } from '@/hooks/query/useServiceQuery'
+import { useTranslation } from '@/resources/i18n/i18n.hooks'
 
 import { BigButton } from '../BigButton/BigButton'
 import { CircleArrowDownIcon } from '../svg/icons'
 
 export function Service() {
+  const { t } = useTranslation()
   const [activeIndex, setActiveIndex] = useState<number>(1)
   const [activeService, setActiveService] = useState<string>('')
   const { data, isSuccess } = useGetAllServiceQuery()
@@ -25,7 +27,7 @@ export function Service() {
       <div className='max-w-screen-xl mx-auto pt-10 px-4 md:px-0'>
         <div className='container bg-greige md:bg-greigeMultiply'>
           <div className='px-4 pt-10 pb-10 md:pb-20 md:pt-0'>
-            <h6 className='uppercase'>Services</h6>
+            <h6 className='uppercase'>{t('services.title')}</h6>
           </div>
           <div className='flex justify-between gap-6'>
             <div className='w-1/3'>
@@ -90,7 +92,7 @@ export function Service() {
           </div>
           <div className='border-b-[1px] flex items-center justify-center py-12'>
             <a href='/service'>
-              <h6 className='uppercase'>Learn More</h6>
+              <h6 className='uppercase'>{t('services.learnMore')}</h6>
             </a>
           </div>
         </div>
