@@ -2,10 +2,10 @@
 
 'use client'
 
-import { Service } from '@/domain/types/services.types'
+import { TService } from '@/domain/types/services.types'
 
 type ServiceWithImageProps = {
-  service: Service
+  service: TService
 }
 
 export function ServiceWithImage({ service }: ServiceWithImageProps) {
