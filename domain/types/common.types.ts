@@ -75,3 +75,18 @@ export type StrapiImageAttributes = {
   createdAt: string
   updatedAt: string
 }
+
+export type TCommonStrapiAttributes = {
+  locale: string
+  localizations: {
+    data: {
+      id: number
+      attributes: TCommonStrapiAttributes
+    }[]
+  }
+}
+
+export type TCommonStrapiData = {
+  id: number
+  attributes: TCommonStrapiAttributes
+}

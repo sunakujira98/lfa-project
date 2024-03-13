@@ -15,7 +15,9 @@ export const ArticleApi = {
     const result = await apiInstance.get<StrapiResponse<Article>>(
       `${BASE_URL}?populate=*`,
       {
-        params,
+        params: {
+          ...params,
+        },
       },
     )
 

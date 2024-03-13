@@ -1,6 +1,6 @@
 import { StrapiImageAttributes } from './common.types'
 
-export type RecognitionAttribute = {
+export type TRecognitionAttribute = {
   title: string
   description: string
   image: {
@@ -10,10 +10,18 @@ export type RecognitionAttribute = {
     }
   }
   externalLink: string
+  locale: string
+  localizations: {
+    data: {
+      id: number
+      attributes: TRecognitionAttribute
+    }[]
+  }
   createdAt: string
 }
 
-export type Recognition = {
+export type TRecognition = {
   id: number
-  attributes: RecognitionAttribute
+  localeId?: number
+  attributes: TRecognitionAttribute
 }

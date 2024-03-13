@@ -3,19 +3,40 @@
 'use client'
 
 import dayjs from 'dayjs'
+import { useParams } from 'next/navigation'
 import Carousel from 'react-multi-carousel'
 import 'react-multi-carousel/lib/styles.css'
 
+import { StrapiResponse } from '@/domain/types/common.types'
+import { TRecognition } from '@/domain/types/recognition.types'
 import { useGetAllRecognitionQuery } from '@/hooks/query/useGetAllRecognitionQuery'
+import { useTranslation } from '@/resources/i18n/i18n.hooks'
+import { findTranslatedData } from '@/utils/FindTranslatedData/FindTranslatedData'
 
 export function Recognition() {
+  const { t } = useTranslation()
+  const { lang } = useParams()
+
   const { data, isSuccess } = useGetAllRecognitionQuery()
+
+  const localizedData = findTranslatedData(
+    lang as string,
+    data,
+  ) as StrapiResponse<TRecognition>
+
+  const recognitions = isSuccess
+    ? localizedData.data.length > 0
+      ? localizedData.data
+      : data?.data
+    : []
 
   return (
     isSuccess && (
       <div className='max-w-screen-xl mx-auto py-10 px-4 md:px-0'>
         <div className='container pb-8'>
-          <span className='font-neue text-3xs text-gray-50'>RECOGNITIONS</span>
+          <span className='font-neue text-3xs text-gray-50'>
+            {t('recognitions.title')}
+          </span>
         </div>
         <div className='container'>
           <Carousel
@@ -55,31 +76,31 @@ export function Recognition() {
             slidesToSlide={3}
             swipeable
           >
-            {data?.data?.map((news) => {
+            {recognitions.map((recognition) => {
               return (
-                <div className='w-full' key={news.id}>
-                  <div className='flex flex-col gap-6' key={news.id}>
+                <div className='w-full' key={recognition.id}>
+                  <div className='flex flex-col gap-6' key={recognition.id}>
                     <img
-                      src={`${process.env.NEXT_PUBLIC_CMS_HOST}${news.attributes.image.data.attributes.url}`}
+                      src={`${process.env.NEXT_PUBLIC_CMS_HOST}${recognition.attributes.image.data.attributes.url}`}
                       className='w-full md:max-w-64'
-                      alt={news.attributes.title}
+                      alt={recognition.attributes.title}
                     />
                     <div className='flex flex-col gap-2'>
                       <h6 className='uppercase'>
-                        {news.attributes.title} &nbsp;
+                        {recognition.attributes.title} &nbsp;
                       </h6>
 
                       <h6>
-                        {dayjs(news.attributes.createdAt).format('DD MMM YYYY')}
+                        {dayjs(recognition.attributes.createdAt).format(
+                          'DD MMM YYYY',
+                        )}
                       </h6>
-                      <h6>{news.attributes.description}</h6>
+                      <h6>{recognition.attributes.description}</h6>
                     </div>
                   </div>
                 </div>
               )
             })}
-            {/* <div className='flex flex-col md:flex-row gap-10 md:gap-20'>
-            </div> */}
           </Carousel>
         </div>
       </div>

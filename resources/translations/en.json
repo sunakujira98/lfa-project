@@ -30,5 +30,12 @@
   },
   "awards" : {
     "title" : "AWARDS"
+  },
+  "news" : {
+    "title" : "News",
+    "allNews": "View All News"
+  },
+  "recognitions" : {
+    "title" : "Recognitions"
   }
 }

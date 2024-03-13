@@ -25,9 +25,17 @@ export type ArticleAttribute = {
     }
   }
   createdAt: string
+  locale: string
+  localizations: {
+    data: {
+      id: number
+      attributes: ArticleAttribute
+    }[]
+  }
 }
 
 export type Article = {
   id: number
+  localeId?: number
   attributes: ArticleAttribute
 }

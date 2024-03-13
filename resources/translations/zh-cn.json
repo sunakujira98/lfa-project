@@ -30,5 +30,12 @@
   },
   "awards": {
     "title": "奖项"
+  },
+  "news" : {
+    "title" : "新闻",
+    "allNews": "查看所有新闻"
+  },
+  "recognitions" : {
+    "title" : "认可"
   }
 }
