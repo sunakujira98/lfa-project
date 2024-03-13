@@ -2,37 +2,42 @@
 
 import { News } from '@/components/shared/News'
 import { SectionHeader } from '@/components/shared/SectionHeader'
-import { SideBySideTestimonial } from '@/components/shared/SideBySideTestimonial'
+import { Article } from '@/domain/types/article.types'
+import { StrapiResponse } from '@/domain/types/common.types'
 import { useGetAllArticleQuery } from '@/hooks/query/useGetArticleQuery'
+import { useTranslation } from '@/resources/i18n/i18n.hooks'
+import { findTranslatedData } from '@/utils/FindTranslatedData/FindTranslatedData'
+import { useParams } from 'next/navigation'
 
 export function NewsSection() {
+  const { lang } = useParams()
+  const { t } = useTranslation()
   const { isSuccess, data } = useGetAllArticleQuery()
+
+  const localizedData = findTranslatedData(
+    lang as string,
+    data,
+  ) as StrapiResponse<Article>
+
+  const articles = isSuccess
+    ? localizedData.data.length > 0
+      ? localizedData.data
+      : data?.data
+    : []
 
   return (
     <>
       <div className='container pt-28 pb-10 md:py-28 px-4 md:px-0'>
         <SectionHeader
-          displayName='News'
-          title='Explore the latest in commercial and office interior design with
-          LFA Studio.'
-          subtitle="Discover insights into Singapore's top commercial interior design
-          firms, including award-winning office designs and innovative
-          workplace concepts. Our news section showcases the best office
-          interior design trends, highlighting significant commercial
-          interior projects and office renovation stories in Singapore. From
-          corporate interior design in Singapore to office renovation cost
-          considerations, stay ahead with LFA Studio's compelling updates on
-          commercial office interior design and interior design for
-          commercial spaces. Join us as we celebrate the art of transforming
-          spaces, whether through an office interior renovation or a
-          complete commercial office renovation, and see why we are among
-          the best in corporate office interior design."
+          displayName={t('news.title')}
+          title={t('news.subtitle')}
+          subtitle={t('news.description')}
         />
       </div>
       {isSuccess && (
         <div className='container border-t-[1px] px-4 md:px-0'>
           <div className='grid grid-cols-1 md:grid-cols-3 gap-0 md:gap-6'>
-            {data.data.map((news) => {
+            {articles.map((news) => {
               return <News news={news} />
             })}
           </div>

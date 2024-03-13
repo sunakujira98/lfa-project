@@ -4,10 +4,12 @@ import { ArrowRightIcon } from '@/components/shared/svg/icons'
 import { Team } from '@/components/shared/Team'
 import { useGetAllAwardQuery } from '@/hooks/query/useAwardQuery'
 import { useGetAllTeamQuery } from '@/hooks/query/useTeamQuery'
+import { useTranslation } from '@/resources/i18n/i18n.hooks'
 
 export function AboutUsSection() {
+  const { t } = useTranslation()
   const { isSuccess: isSuccessTeams, data: teams } = useGetAllTeamQuery()
-  const { isSuccess: isSuccessAwards, data: awards } = useGetAllAwardQuery()
+  const { data: awards } = useGetAllAwardQuery()
 
   return (
     isSuccessTeams && (
@@ -24,7 +26,7 @@ export function AboutUsSection() {
               <div className='flex flex-col md:h-screen'>
                 <div className='flex-1'></div>
                 <div className='self-start px-4 md:px-20 py-10 ml-auto text-lfaWhite'>
-                  <h1 className='text-2xl md:text-6xl'>About Us</h1>
+                  <h1 className='text-2xl md:text-6xl'>{t('aboutUs.title')}</h1>
                 </div>
               </div>
             </div>
@@ -34,15 +36,17 @@ export function AboutUsSection() {
         <div className='max-w-screen-xl h-screen mx-auto flex justify-center items-center py-10 px-4 md:px-0'>
           <div className='container'>
             <div className='flex flex-col items-center'>
-              <h1 className='font-vinila text-2xl md:text-6xl'>Cultivating</h1>
-              <h1 className='font-keppler text-2xl md:text-6xl'>Growth</h1>
-              <h1 className='font-vinila text-2xl md:text-6xl'>Together</h1>
+              <h1 className='font-vinila text-2xl md:text-6xl'>
+                {t('aboutUs.cultivating')}
+              </h1>
+              <h1 className='font-keppler text-2xl md:text-6xl'>
+                {t('aboutUs.growth')}
+              </h1>
+              <h1 className='font-vinila text-2xl md:text-6xl'>
+                {t('aboutUs.together')}
+              </h1>
               <p className='text-center'>
-                As an award-winning Design & Build Studio in Singapore, we
-                collaborate with local businesses to craft exceptional work and
-                commercial spaces. Our expertise lies in creating commercial
-                offices that not only stand out in design but also inspire
-                meaningful social interaction and foster strong communal bonds.
+                {t('aboutUs.paragraph.description')}
               </p>
             </div>
           </div>
@@ -50,7 +54,7 @@ export function AboutUsSection() {
 
         <div className='max-w-screen-xl mx-auto pt-10 md:py-10 border-t-[1px] px-4 md:px-0'>
           <div className='container flex flex-col'>
-            <h6 className='uppercase'>The Lfa Team</h6>
+            <h6 className='uppercase'>{t('aboutUs.theLfaTeam')}</h6>
             <div className='py-10'>
               <img
                 src='/images/teams.png'
@@ -67,7 +71,9 @@ export function AboutUsSection() {
         </div>
         <div className='max-w-screen-xl mx-auto pt-10 md:border-t-[1px] md:px-0 px-4'>
           <div className='container flex flex-col'>
-            <h6 className='uppercase pb-6 border-b-[1px]'>Awards</h6>
+            <h6 className='uppercase pb-6 border-b-[1px]'>
+              {t('awards.title')}
+            </h6>
             {awards?.data.map((award) => {
               return (
                 <div className='flex justify-between border-b-[1px] py-2 text-xs items-center'>

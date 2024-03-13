@@ -18,22 +18,33 @@
       "title" : "We Design & Build",
       "subtitle" : "Inspire & Nurture",
       "description" : "As an award-winning Design & Build Studio in Singapore, we collaborate with local businesses to craft exceptional work and commercial spaces. Our expertise lies in creating commercial offices that not only stand out in design but also inspire meaningful social interaction and foster strong communal bonds."
-    }
+    },
+    "theLfaTeam" : "The LFA Team",
+    "awards" : "Awards",
+    "cultivating" : "Cultivating",
+    "growth" : "Growth",
+    "together" : "Together"
   },
   "services" : {
     "title" : "Services",
-    "learnMore" : "Learn More"
+    "learnMore" : "Learn More",
+    "subtitle" : "Explore the pinnacle of commercial interior design in Singapore with LFA Studio, a name synonymous with excellence in office and commercial space transformations.",
+    "description" : "Our award-winning office designs and corporate interior solutions are tailored to meet the unique demands of a diverse clientele. Specialising in both commercial and office interior design in Singapore, we take pride in our ability to turn ordinary spaces into extraordinary workplaces."
   },
   "testimonials" : {
     "title" : "Testimonials",
-    "allTestimonials" : "View All Testimonials"
+    "allTestimonials" : "View All Testimonials",
+    "subtitle" : "Our clients' stories reveal how we craft award-winning office designs, blending the best office interior design principles with innovative corporate interior design in Singapore.",
+    "description" : "Discover the transformative power of LFA Studio, a leader among commercial interior design firms in Singapore. Dive into testimonials that showcase our expertise in office renovation in Singapore, where every commercial office renovation project reflects a unique journey. From the finesse of office interior renovation in Singapore to the broader scope of commercial interior design, our work is a testament to our commitment to excellence in workplace design in Singapore. Experience how we turn visions into reality, creating personalised spaces that resonate with the spirit of corporate office interior design and interior design for commercial spaces, one project at a time."
   },
   "awards" : {
     "title" : "AWARDS"
   },
   "news" : {
     "title" : "News",
-    "allNews": "View All News"
+    "allNews": "View All News",
+    "subtitle" : "Explore the latest in commercial and office interior design with LFA Studio.",
+    "description" : "Discover insights into Singapore's top commercial interior design firms, including award-winning office designs and innovative workplace concepts. Our news section showcases the best office interior design trends, highlighting significant commercial interior projects and office renovation stories in Singapore. From corporate interior design in Singapore to office renovation cost considerations, stay ahead with LFA Studio's compelling updates on commercial office interior design and interior design for commercial spaces. Join us as we celebrate the art of transforming spaces, whether through an office interior renovation or a complete commercial office renovation, and see why we are among the best in corporate office interior design."
   },
   "recognitions" : {
     "title" : "Recognitions"
