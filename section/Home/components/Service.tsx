@@ -8,8 +8,8 @@ import { useState } from 'react'
 import { useGetAllServiceQuery } from '@/hooks/query/useServiceQuery'
 import { useTranslation } from '@/resources/i18n/i18n.hooks'
 
-import { BigButton } from '../BigButton/BigButton'
-import { CircleArrowDownIcon } from '../svg/icons'
+import { BigButton } from '@/components/shared/BigButton/BigButton'
+import { CircleArrowDownIcon } from '@/components/shared/svg/icons'
 
 export function Service() {
   const { t } = useTranslation()

@@ -1,17 +1,27 @@
-import { Hero } from './components'
+import {
+  AboutUs,
+  Awards,
+  BigTestimonial,
+  Clients,
+  FeaturedProject,
+  Hero,
+  Recognition,
+  Service,
+  SideBySideNews,
+} from './components'
 
 export default function HomeSection() {
   return (
     <div>
       <Hero />
-      {/* <FeaturedProject />
+      <FeaturedProject />
       <Clients />
       <AboutUs />
       <Service />
       <BigTestimonial />
       <Awards />
       <SideBySideNews />
-      <Recognition /> */}
+      <Recognition />
     </div>
   )
 }
