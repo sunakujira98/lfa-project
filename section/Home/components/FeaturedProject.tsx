@@ -1,12 +1,28 @@
 /* eslint-disable @next/next/no-img-element */
 
 'use client'
+import { StrapiResponse } from '@/domain/types/common.types'
+import { Project } from '@/domain/types/project.types'
 import { useGetAllProjectQuery } from '@/hooks/query/useProjectQuery'
 import { useTranslation } from '@/resources/i18n/i18n.hooks'
+import { findTranslatedData } from '@/utils/FindTranslatedData/FindTranslatedData'
+import { useParams } from 'next/navigation'
 
 export function FeaturedProject() {
+  const { lang } = useParams()
   const { t } = useTranslation()
   const { data, isSuccess } = useGetAllProjectQuery()
+
+  const localizedData = findTranslatedData(
+    lang as string,
+    data,
+  ) as StrapiResponse<Project>
+
+  const projects = isSuccess
+    ? localizedData.data.length > 0
+      ? localizedData.data
+      : data?.data
+    : []
 
   return (
     isSuccess && (
@@ -17,8 +33,10 @@ export function FeaturedProject() {
           </span>
         </div>
         <div className='flex flex-col justify-center items-center'>
-          {data?.data?.map((project) => {
+          {projects.map((project) => {
             if (project.attributes.isFeatured) {
+              const projectId = project.localeId || project.id
+
               return (
                 <div className='container pb-10' key={project.id}>
                   <img
@@ -27,9 +45,11 @@ export function FeaturedProject() {
                     alt={project.attributes.title}
                   />
                   <div className='flex flex-col pt-4'>
-                    <h3 className='font-vinila text-2xl text-gray-50 tracking-wide font-light'>
-                      {project.attributes.title}
-                    </h3>
+                    <a href={`${lang}/projects/${projectId}`}>
+                      <h3 className='font-vinila text-2xl text-gray-50 tracking-wide font-light'>
+                        {project.attributes.title}
+                      </h3>
+                    </a>
                     <div className='flex flex-row'>
                       <a href='#'>
                         <span className='text-2xs underline font-light'>

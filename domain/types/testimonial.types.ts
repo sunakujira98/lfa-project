@@ -17,6 +17,13 @@ export type TestimonialAttribute = {
       attributes: StrapiImageAttributes
     }
   }
+  locale: string
+  localizations: {
+    data: {
+      id: number
+      attributes: TestimonialAttribute
+    }[]
+  }
   createdAt: string
   updatedAt: string
   publishedAt: string

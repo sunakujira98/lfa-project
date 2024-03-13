@@ -6,6 +6,7 @@ import { twMerge } from 'tailwind-merge'
 
 import { useLanguage } from '@/components/Provider'
 import { useToggle } from '@/hooks/common/useToggle'
+import { useTranslation } from '@/resources/i18n/i18n.hooks'
 import { useCommonStore } from '@/store/common.store'
 
 import { BigButton } from '../BigButton/BigButton'

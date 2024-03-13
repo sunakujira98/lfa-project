@@ -1,7 +1,7 @@
 import { AvailableComponents, StrapiImageAttributes } from './common.types'
 import { Award } from './award.types'
 import { Industry } from './industry.types'
-import { Service } from './services.types'
+import { TService } from './services.types'
 
 export type ProjectDetail = {
   id: number
@@ -26,15 +26,23 @@ export type ProjectAttribute = {
     data: Industry
   }
   service: {
-    data: Service
+    data: TService
   }
   detail: ProjectDetail[]
   awards: {
     data: Award[]
   }
+  locale: string
+  localizations: {
+    data: {
+      id: number
+      attributes: ProjectAttribute
+    }[]
+  }
 }
 
 export type Project = {
   id: number
+  localeId?: number
   attributes: ProjectAttribute
 }

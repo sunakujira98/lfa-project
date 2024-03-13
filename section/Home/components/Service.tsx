@@ -3,16 +3,21 @@
 'use client'
 
 import { Disclosure } from '@headlessui/react'
+import { useParams } from 'next/navigation'
 import { useState } from 'react'
-
-import { useGetAllServiceQuery } from '@/hooks/query/useServiceQuery'
-import { useTranslation } from '@/resources/i18n/i18n.hooks'
 
 import { BigButton } from '@/components/shared/BigButton/BigButton'
 import { CircleArrowDownIcon } from '@/components/shared/svg/icons'
+import { StrapiResponse } from '@/domain/types/common.types'
+import { TService } from '@/domain/types/services.types'
+import { useGetAllServiceQuery } from '@/hooks/query/useServiceQuery'
+import { useTranslation } from '@/resources/i18n/i18n.hooks'
+import { findTranslatedData } from '@/utils/FindTranslatedData/FindTranslatedData'
 
 export function Service() {
   const { t } = useTranslation()
+  const { lang } = useParams()
+
   const [activeIndex, setActiveIndex] = useState<number>(1)
   const [activeService, setActiveService] = useState<string>('')
   const { data, isSuccess } = useGetAllServiceQuery()
@@ -21,6 +26,17 @@ export function Service() {
     setActiveIndex(index)
     setActiveService(description)
   }
+
+  const localizedData = findTranslatedData(
+    lang as string,
+    data,
+  ) as StrapiResponse<TService>
+
+  const services = isSuccess
+    ? localizedData.data.length > 0
+      ? localizedData.data
+      : data?.data
+    : []
 
   return (
     isSuccess && (
@@ -32,7 +48,7 @@ export function Service() {
           <div className='flex justify-between gap-6'>
             <div className='w-1/3'>
               <div className='hidden md:flex flex-col border-t-[1px]'>
-                {data?.data?.map((service) => {
+                {services.map((service) => {
                   return (
                     <div className='border-b-[1px] py-4' key={service.id}>
                       <BigButton

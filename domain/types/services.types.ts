@@ -1,6 +1,6 @@
 import { StrapiImageAttributes } from './common.types'
 
-export type ServiceAttribute = {
+export type TServiceAttribute = {
   title: string
   description: string
   icon: {
@@ -15,10 +15,17 @@ export type ServiceAttribute = {
       attributes: StrapiImageAttributes
     }
   }
+  locale: string
+  localizations: {
+    data: {
+      id: number
+      attributes: TServiceAttribute
+    }[]
+  }
   createdAt: string
 }
 
-export type Service = {
+export type TService = {
   id: number
-  attributes: ServiceAttribute
+  attributes: TServiceAttribute
 }

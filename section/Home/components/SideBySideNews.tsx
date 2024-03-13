@@ -47,6 +47,7 @@ export function SideBySideNews() {
           <div className='grid grid-cols-1 gap-10 md:gap-20 md:grid-cols-3'>
             {articles.map((news) => {
               const newsId = news.localeId || news.id
+
               return (
                 <div className='flex flex-col md:flex-row gap-6' key={news.id}>
                   <img

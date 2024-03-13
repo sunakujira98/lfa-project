@@ -24,6 +24,13 @@ export const findTranslatedData = (
             ...localizedData.attributes,
           },
         })
+      } else {
+        result.push({
+          id: singleData.id,
+          attributes: {
+            ...singleData.attributes,
+          },
+        })
       }
     }
   }
