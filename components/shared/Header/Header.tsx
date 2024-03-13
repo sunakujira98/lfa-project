@@ -1,16 +1,17 @@
 'use client'
 
-import { useParams, useRouter } from 'next/navigation'
+import { useParams } from 'next/navigation'
 import { useEffect, useRef, useState } from 'react'
 import { twMerge } from 'tailwind-merge'
 
 import { useLanguage } from '@/components/Provider'
+import { useRouter } from '@/hooks/common/useRouter'
 import { useToggle } from '@/hooks/common/useToggle'
-import { useTranslation } from '@/resources/i18n/i18n.hooks'
 import { useCommonStore } from '@/store/common.store'
 
 import { BigButton } from '../BigButton/BigButton'
 import { HamburgerMenu } from '../HamburgerMenu/HamburgerMenu'
+import { Link } from '../Link'
 import { FacebookIcon, InstagramIcon, LinkedinIcon } from '../svg/icons'
 
 type HeaderItems = {
@@ -142,15 +143,15 @@ export function Header() {
           <ul className='m-0 p-0 flex list-none items-center space-x-6 font-neue uppercase text-3xs'>
             {items.map((navItem) => (
               <li className='relative whitespace-nowrap' key={navItem.href}>
-                <a className='nav-link scrollto' href={`${navItem.href}`}>
+                <Link className='nav-link scrollto' href={`${navItem.href}`}>
                   {navItem.label}
-                </a>
+                </Link>
               </li>
             ))}
             <li className='relative whitespace-nowrap'>
-              <a className='outline-button' href='/contact'>
+              <Link className='outline-button' href='/contact'>
                 Contact
-              </a>
+              </Link>
             </li>
             <li className='relative whitespace-nowrap border-l-[1px] border-lfaWhite pl-2'>
               <button onClick={changeLanguage}>
@@ -175,9 +176,9 @@ export function Header() {
         </a>
         <div className='flex flex-row items-center gap-4'>
           {!isOpen && (
-            <a className='outline-button' href='/contact'>
+            <Link className='outline-button' href='/contact'>
               Contact
-            </a>
+            </Link>
           )}
           <HamburgerMenu active={isOpen} onClick={menuMutation.toggle} />
 
@@ -189,9 +190,9 @@ export function Header() {
                     className='pb-4 uppercase border-b-[1px]'
                     key={`nav-item-mobile-${navItem.href}`}
                   >
-                    <a href={`${navItem.href}`}>
+                    <Link href={`${navItem.href}`}>
                       <h6>{navItem.label}</h6>
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -227,12 +228,12 @@ export function Header() {
                 </div>
                 <div className='flex flex-row gap-4'>
                   {footerItems.map((footerItem) => (
-                    <a
+                    <Link
                       href={`${footerItem.href}`}
                       key={`footer-item-${footerItem.href}`}
                     >
                       <h6 className='uppercase'>{footerItem.label}</h6>
-                    </a>
+                    </Link>
                   ))}
                 </div>
                 <div className='flex flex-row'>
