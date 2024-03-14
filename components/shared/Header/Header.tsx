@@ -15,11 +15,6 @@ import { HamburgerMenu } from '../HamburgerMenu/HamburgerMenu'
 import { Link } from '../Link'
 import { FacebookIcon, InstagramIcon, LinkedinIcon } from '../svg/icons'
 
-type HeaderItems = {
-  label: string
-  href: string
-}
-
 export function Header() {
   const { lang } = useParams()
   const { t } = useTranslation()
