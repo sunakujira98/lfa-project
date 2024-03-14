@@ -7,37 +7,18 @@ import { twMerge } from 'tailwind-merge'
 import { useLanguage } from '@/components/Provider'
 import { useRouter } from '@/hooks/common/useRouter'
 import { useToggle } from '@/hooks/common/useToggle'
+import { useTranslation } from '@/resources/i18n/i18n.hooks'
 import { useCommonStore } from '@/store/common.store'
 
 import { BigButton } from '../BigButton/BigButton'
 import { HamburgerMenu } from '../HamburgerMenu/HamburgerMenu'
 import { Link } from '../Link'
 import { FacebookIcon, InstagramIcon, LinkedinIcon } from '../svg/icons'
-import { useTranslation } from '@/resources/i18n/i18n.hooks'
 
 type HeaderItems = {
   label: string
   href: string
 }
-
-const footerItems: HeaderItems[] = [
-  {
-    label: 'Privacy Policy',
-    href: '/privacy-policy',
-  },
-  {
-    label: 'T&CS',
-    href: '/terms-and-conditions',
-  },
-  {
-    label: 'FAQS',
-    href: '/faq',
-  },
-  {
-    label: 'SITEMAP',
-    href: '/sitemap',
-  },
-]
 
 export function Header() {
   const { lang } = useParams()
