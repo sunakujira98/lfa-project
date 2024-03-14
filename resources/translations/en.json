@@ -1,4 +1,19 @@
 {
+  "header" : {
+    "home" : "Home",
+    "projects" : "Projects",
+    "about" : "About",
+    "services" : "Service",
+    "testimonials" : "Testimonials",
+    "news" : "News",
+    "contact" : "Contact",
+    "footer" : {
+			"privacyPolicy" : "Privacy Policy",
+			"tnc" : "T&CS",
+			"faq" : "FAQS",
+			"sitemap" : "SITEMAP"
+		}
+  },
   "hero" : {
     "we" : "We",
     "designBuild" : "Design & Build",

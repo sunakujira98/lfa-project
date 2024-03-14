@@ -1,4 +1,19 @@
 {
+	"header" : {
+    "home" : "首页",
+    "projects" : "项目",
+    "about" : "关于",
+    "services" : "服务",
+    "testimonials" : "客户评价",
+    "news" : "新闻",
+		"contact": "联系我们",
+		"footer": {
+			"privacyPolicy": "隐私政策",
+			"tnc": "条款和条件",
+			"faq": "常见问题解答",
+			"sitemap": "网站地图"
+		}	
+	},
 	"hero": {
 		"we": "我们",
 		"designBuild": "设计与建造",

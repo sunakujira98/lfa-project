@@ -13,38 +13,12 @@ import { BigButton } from '../BigButton/BigButton'
 import { HamburgerMenu } from '../HamburgerMenu/HamburgerMenu'
 import { Link } from '../Link'
 import { FacebookIcon, InstagramIcon, LinkedinIcon } from '../svg/icons'
+import { useTranslation } from '@/resources/i18n/i18n.hooks'
 
 type HeaderItems = {
   label: string
   href: string
 }
-
-const items: HeaderItems[] = [
-  {
-    label: 'Home',
-    href: '/',
-  },
-  {
-    label: 'Projects',
-    href: '/projects',
-  },
-  {
-    label: 'About',
-    href: '/about',
-  },
-  {
-    label: 'Services',
-    href: '/service',
-  },
-  {
-    label: 'Testimonials',
-    href: '/testimonial',
-  },
-  {
-    label: 'News',
-    href: '/news',
-  },
-]
 
 const footerItems: HeaderItems[] = [
   {
@@ -67,6 +41,7 @@ const footerItems: HeaderItems[] = [
 
 export function Header() {
   const { lang } = useParams()
+  const { t } = useTranslation()
   const router = useRouter()
   const [showBg, setShowBg] = useState(false)
   const showBgRef = useRef(false)
@@ -141,16 +116,39 @@ export function Header() {
 
         <div className='order-2 md:order-3 flex items-center'>
           <ul className='m-0 p-0 flex list-none items-center space-x-6 font-neue uppercase text-3xs'>
-            {items.map((navItem) => (
-              <li className='relative whitespace-nowrap' key={navItem.href}>
-                <Link className='nav-link scrollto' href={`${navItem.href}`}>
-                  {navItem.label}
-                </Link>
-              </li>
-            ))}
+            <li className='relative whitespace-nowrap'>
+              <Link className='nav-link scrollto' href='/'>
+                {t('header.home')}
+              </Link>
+            </li>
+            <li className='relative whitespace-nowrap'>
+              <Link className='nav-link scrollto' href='/projects'>
+                {t('header.projects')}
+              </Link>
+            </li>
+            <li className='relative whitespace-nowrap'>
+              <Link className='nav-link scrollto' href='/about'>
+                {t('header.about')}
+              </Link>
+            </li>
+            <li className='relative whitespace-nowrap'>
+              <Link className='nav-link scrollto' href='/service'>
+                {t('header.services')}
+              </Link>
+            </li>
+            <li className='relative whitespace-nowrap'>
+              <Link className='nav-link scrollto' href='/testimonial'>
+                {t('header.testimonials')}
+              </Link>
+            </li>
+            <li className='relative whitespace-nowrap'>
+              <Link className='nav-link scrollto' href='/news'>
+                {t('header.news')}
+              </Link>
+            </li>
             <li className='relative whitespace-nowrap'>
               <Link className='outline-button' href='/contact'>
-                Contact
+                {t('header.contact')}
               </Link>
             </li>
             <li className='relative whitespace-nowrap border-l-[1px] border-lfaWhite pl-2'>
@@ -177,7 +175,7 @@ export function Header() {
         <div className='flex flex-row items-center gap-4'>
           {!isOpen && (
             <Link className='outline-button' href='/contact'>
-              Contact
+              {t('header.contact')}
             </Link>
           )}
           <HamburgerMenu active={isOpen} onClick={menuMutation.toggle} />
@@ -185,16 +183,36 @@ export function Header() {
           {isOpen && (
             <>
               <ul className='absolute -top-[13rem] left-0 flex w-full translate-y-full flex-col gap-1 px-5 py-7 md:hidden text-charcoal-1000'>
-                {items.map((navItem) => (
-                  <li
-                    className='pb-4 uppercase border-b-[1px]'
-                    key={`nav-item-mobile-${navItem.href}`}
-                  >
-                    <Link href={`${navItem.href}`}>
-                      <h6>{navItem.label}</h6>
-                    </Link>
-                  </li>
-                ))}
+                <li className='pb-4 uppercase border-b-[1px]'>
+                  <Link className='nav-link scrollto' href='/'>
+                    {t('header.home')}
+                  </Link>
+                </li>
+                <li className='pb-4 uppercase border-b-[1px]'>
+                  <Link className='nav-link scrollto' href='/projects'>
+                    {t('header.projects')}
+                  </Link>
+                </li>
+                <li className='pb-4 uppercase border-b-[1px]'>
+                  <Link className='nav-link scrollto' href='/about'>
+                    {t('header.about')}
+                  </Link>
+                </li>
+                <li className='pb-4 uppercase border-b-[1px]'>
+                  <Link className='nav-link scrollto' href='/service'>
+                    {t('header.services')}
+                  </Link>
+                </li>
+                <li className='pb-4 uppercase border-b-[1px]'>
+                  <Link className='nav-link scrollto' href='/testimonial'>
+                    {t('header.testimonials')}
+                  </Link>
+                </li>
+                <li className='pb-4 uppercase border-b-[1px]'>
+                  <Link className='nav-link scrollto' href='/news'>
+                    {t('header.news')}
+                  </Link>
+                </li>
               </ul>
 
               <div className='absolute bottom-0 left-0 w-full flex items-center flex-col md:hidden pb-4 gap-4 !text-gray-50 px-5'>
@@ -202,7 +220,7 @@ export function Header() {
                   <BigButton
                     active={true}
                     onClick={onContactClick}
-                    title='CONTACT'
+                    title={t('header.contact')}
                   />
                 </div>
 
@@ -227,17 +245,23 @@ export function Header() {
                   </a>
                 </div>
                 <div className='flex flex-row gap-4'>
-                  {footerItems.map((footerItem) => (
-                    <Link
-                      href={`${footerItem.href}`}
-                      key={`footer-item-${footerItem.href}`}
-                    >
-                      <h6 className='uppercase'>{footerItem.label}</h6>
-                    </Link>
-                  ))}
+                  <Link href='/privacy-policy'>
+                    <h6 className='uppercase'>
+                      {t('header.footer.privacyPolicy')}
+                    </h6>
+                  </Link>
+                  <Link href='/terms-and-conditions'>
+                    <h6 className='uppercase'>{t('header.footer.tnc')}</h6>
+                  </Link>
+                  <Link href='/faq'>
+                    <h6 className='uppercase'>{t('header.footer.faq')}</h6>
+                  </Link>
+                  <Link href='/sitemap'>
+                    <h6 className='uppercase'>{t('header.footer.sitemap')}</h6>
+                  </Link>
                 </div>
                 <div className='flex flex-row'>
-                  <h6>&copy; 2023 LFA. All rights reserved.</h6>
+                  <h6>&copy; {t('footer.copyright')}</h6>
                 </div>
               </div>
             </>
