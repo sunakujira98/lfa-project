@@ -44,9 +44,41 @@
     "title" : "News",
     "allNews": "View All News",
     "subtitle" : "Explore the latest in commercial and office interior design with LFA Studio.",
-    "description" : "Discover insights into Singapore's top commercial interior design firms, including award-winning office designs and innovative workplace concepts. Our news section showcases the best office interior design trends, highlighting significant commercial interior projects and office renovation stories in Singapore. From corporate interior design in Singapore to office renovation cost considerations, stay ahead with LFA Studio's compelling updates on commercial office interior design and interior design for commercial spaces. Join us as we celebrate the art of transforming spaces, whether through an office interior renovation or a complete commercial office renovation, and see why we are among the best in corporate office interior design."
+    "description" : "Discover insights into Singapore's top commercial interior design firms, including award-winning office designs and innovative workplace concepts. Our news section showcases the best office interior design trends, highlighting significant commercial interior projects and office renovation stories in Singapore. From corporate interior design in Singapore to office renovation cost considerations, stay ahead with LFA Studio's compelling updates on commercial office interior design and interior design for commercial spaces. Join us as we celebrate the art of transforming spaces, whether through an office interior renovation or a complete commercial office renovation, and see why we are among the best in corporate office interior design.",
+    "nextPage" : "Next Page: {{title}}"
   },
   "recognitions" : {
     "title" : "Recognitions"
+  },
+  "privacyPolicy" : {
+    "title" : "Privacy Policy"
+  },
+  "queries" : {
+    "subtitle" : "For any other queries, feel free to drop us a message",
+    "contact" : "Contact"
+  },
+  "faq" : {
+    "title" : "Frequently Asked Questions"
+  },
+  "termsAndConditions" : {
+    "title" : "Title And Conditions"
+  },
+  "footer" : {
+    "title" : "Cultivating Growth Together",
+    "stayConnected" : "stayConnected",
+    "contactUs" : "Contact Us",
+    "findUsOnInstagram" : "Find Us On Instagram",
+    "facebook" : "Facebook",
+    "instagram" : "Instagram",
+    "linkedin" : "Linkedin",
+    "findUs" : "Find Us At",
+    "viewOnGoogleMaps" : "View on Google Maps",
+    "qualityManagementSystem" : "Quality Management System",
+    "riskManagementSystem" : "Risk Management System",
+    "privacyPolicy" : "Privacy Policy",
+    "termsAndConditions" : "Terms & Conditions",
+    "faq" : "Frequently Asked Questions",
+    "sitemap" : "Sitemap",
+    "copyright" : "2023 LFA. All rights reserved."
   }
 }

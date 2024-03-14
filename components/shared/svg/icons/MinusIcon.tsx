@@ -14,8 +14,8 @@ const MinusIcon: React.FC<SvgProps> = ({ ...props }) => (
     <path
       d='M7 16H25.6667'
       stroke='#333333'
-      stroke-width='1.33333'
-      stroke-linecap='square'
+      strokeWidth='1.33333'
+      strokeLinecap='square'
     />
   </svg>
 )

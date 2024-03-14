@@ -53,7 +53,7 @@ const footerItems: HeaderItems[] = [
   },
   {
     label: 'T&CS',
-    href: '/tnc',
+    href: '/terms-and-conditions',
   },
   {
     label: 'FAQS',

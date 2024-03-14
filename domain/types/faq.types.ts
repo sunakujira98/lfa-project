@@ -16,6 +16,13 @@ export type TFAQAnswers = {
 export type TFAQAttribute = {
   title: string
   answers: TFAQAnswers[]
+  locale: string
+  localizations: {
+    data: {
+      id: number
+      attributes: TFAQAttribute
+    }[]
+  }
 }
 
 export type TFAQ = {

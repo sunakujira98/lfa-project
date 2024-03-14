@@ -5,14 +5,20 @@
 import dayjs from 'dayjs'
 
 import { ContentRenderer } from '@/components/shared/ContentRenderer/ContentRenderer'
+import { Link } from '@/components/shared/Link'
 import { useGetArticleByIdQuery } from '@/hooks/query/useGetArticleQuery'
+import { useTranslation } from '@/resources/i18n/i18n.hooks'
 
 type NewsDetailProps = {
   newsId: string
 }
 
 export function NewsDetail({ newsId }: NewsDetailProps) {
+  const { t } = useTranslation()
   const { data, isSuccess } = useGetArticleByIdQuery(newsId)
+  const { data: nextData } = useGetArticleByIdQuery(
+    (Number(newsId) + 1).toString(),
+  )
 
   return (
     isSuccess && (
@@ -34,18 +40,31 @@ export function NewsDetail({ newsId }: NewsDetailProps) {
               </div>
             </div>
           </div>
-          <div className='container'>
-            {dayjs(data.data.attributes.createdAt).format('DD-MM-YYYY')}
+          <div className='flex flex-col gap-20'>
+            <div className='max-w-screen-xl mx-auto py-20'>
+              {dayjs(data.data.attributes.createdAt).format('DD-MM-YYYY')}
+
+              <ContentRenderer data={data.data.attributes.content as any} />
+            </div>
           </div>
         </div>
-        <ContentRenderer data={data.data.attributes.content as any} />
         <div className='max-w-screen-xl mx-auto'>
           <div className='container'>
             <div className='flex flex-col'>
               <div className='border-t-[1px]'></div>
               <div className='flex justify-between py-5'>
-                <div>a</div>
-                <div>a</div>
+                <Link href='/news'>
+                  <h6>{t('news.allNews')}</h6>
+                </Link>
+                {nextData && (
+                  <Link href={`/news/${Number(newsId) + 1}`}>
+                    <h6>
+                      {t('news.nextPage', {
+                        title: nextData.data.attributes.title,
+                      })}
+                    </h6>
+                  </Link>
+                )}
               </div>
             </div>
           </div>

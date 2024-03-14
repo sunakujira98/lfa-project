@@ -13,6 +13,8 @@ import { TService } from '@/domain/types/services.types'
 import { useGetAllServiceQuery } from '@/hooks/query/useServiceQuery'
 import { useTranslation } from '@/resources/i18n/i18n.hooks'
 import { findTranslatedData } from '@/utils/FindTranslatedData/FindTranslatedData'
+import MinusIcon from '@/components/shared/svg/icons/MinusIcon'
+import PlusIcon from '@/components/shared/svg/icons/PlusIcon'
 
 export function Service() {
   const { t } = useTranslation()
@@ -37,6 +39,8 @@ export function Service() {
       ? localizedData.data
       : data?.data
     : []
+
+  const firstDescriptionToShow = services[0]?.attributes?.description
 
   return (
     isSuccess && (
@@ -69,11 +73,7 @@ export function Service() {
             </div>
             <div className='hidden md:block md:w-2/3'>
               <div className='border-t-[1px] border-l-[1px] rounded-tl-[40px] rounded p-8 h-full'>
-                <p>
-                  {activeService
-                    ? activeService
-                    : data?.data?.[0]?.attributes.description}
-                </p>
+                <p>{activeService ? activeService : firstDescriptionToShow}</p>
               </div>
             </div>
           </div>
@@ -81,24 +81,28 @@ export function Service() {
           <div className='px-4 md:hidden'>
             <div className='flex flex-col border-t-[1px] w-full'>
               <div className='flex flex-col'>
-                {data?.data.map((service) => {
+                {services.map((service) => {
                   return (
                     <div className='border-b-[1px] py-4' key={service.id}>
                       <Disclosure defaultOpen={service.id === 1}>
-                        <div className='flex flex-row justify-between'>
-                          <h4>{service.attributes.title}</h4>
-                          <Disclosure.Button>
-                            <CircleArrowDownIcon />
-                          </Disclosure.Button>
-                        </div>
-                        <Disclosure.Panel>
-                          <img
-                            src={`${process.env.NEXT_PUBLIC_CMS_HOST}${service.attributes.icon.data.attributes.url}`}
-                            className='text-charcoal-1000 py-4'
-                            alt={service.attributes.title}
-                          />
-                          <p>{service.attributes.description}</p>
-                        </Disclosure.Panel>
+                        {({ open }) => (
+                          <>
+                            <div className='flex flex-row justify-between'>
+                              <h4>{service.attributes.title}</h4>
+                              <Disclosure.Button>
+                                {open ? <MinusIcon /> : <PlusIcon />}
+                              </Disclosure.Button>
+                            </div>
+                            <Disclosure.Panel>
+                              <img
+                                src={`${process.env.NEXT_PUBLIC_CMS_HOST}${service.attributes.icon.data.attributes.url}`}
+                                className='text-charcoal-1000 py-4'
+                                alt={service.attributes.title}
+                              />
+                              <p>{service.attributes.description}</p>
+                            </Disclosure.Panel>
+                          </>
+                        )}
                       </Disclosure>
                     </div>
                   )

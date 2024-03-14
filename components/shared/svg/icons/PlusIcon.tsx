@@ -14,14 +14,14 @@ const PlusIcon: React.FC<SvgProps> = ({ ...props }) => (
     <path
       d='M16.04 6.66666L16.0156 25.3333'
       stroke='#333333'
-      stroke-width='1.33333'
-      stroke-linecap='square'
+      strokeWidth='1.33333'
+      strokeLinecap='square'
     />
     <path
       d='M6.66602 16H25.3327'
       stroke='#333333'
-      stroke-width='1.33333'
-      stroke-linecap='square'
+      strokeWidth='1.33333'
+      strokeLinecap='square'
     />
   </svg>
 )

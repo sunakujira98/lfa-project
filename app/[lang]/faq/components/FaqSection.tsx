@@ -1,153 +1,141 @@
 'use client'
 
 import { Disclosure } from '@headlessui/react'
+import { useParams } from 'next/navigation'
 import { useState } from 'react'
 import { twMerge } from 'tailwind-merge'
 
 import { BigButton } from '@/components/shared/BigButton/BigButton'
+import { OtherQueries } from '@/components/shared/OtherQueries'
 import { StrapiSingleComponentResolver } from '@/components/shared/StrapiComponentResolver/StrapiSingleComponentResolver'
-import { CircleArrowDownIcon } from '@/components/shared/svg/icons'
-import { TFAQAnswers } from '@/domain/types/faq.types'
+import MinusIcon from '@/components/shared/svg/icons/MinusIcon'
+import PlusIcon from '@/components/shared/svg/icons/PlusIcon'
+import { StrapiResponse } from '@/domain/types/common.types'
+import { TFAQ, TFAQAnswers } from '@/domain/types/faq.types'
 import { useGetAllFaqQuery } from '@/hooks/query/useFaqQuery'
+import { useTranslation } from '@/resources/i18n/i18n.hooks'
+import { findTranslatedData } from '@/utils/FindTranslatedData/FindTranslatedData'
 
 export function FaqSection() {
+  const { lang } = useParams()
+  const { t } = useTranslation()
   const [activeIndex, setActiveIndex] = useState<number>(1)
   const [activeAnswer, setActiveAnswer] = useState<TFAQAnswers[] | undefined>(
     undefined,
   )
-  const [titleAbout, setTitleAbout] = useState<string>('')
 
-  const { data } = useGetAllFaqQuery()
+  const { data, isSuccess } = useGetAllFaqQuery()
 
-  const onClickActive = (
-    index: number,
-    answers: TFAQAnswers[],
-    title: string,
-  ) => {
+  const localizedData = findTranslatedData(
+    lang as string,
+    data,
+  ) as StrapiResponse<TFAQ>
+
+  const faqs = isSuccess
+    ? localizedData.data.length > 0
+      ? localizedData.data
+      : data?.data
+    : []
+
+  const firstAnswersToShow = faqs[0]?.attributes?.answers
+
+  const onClickActive = (index: number, answers: TFAQAnswers[]) => {
     setActiveIndex(index)
     setActiveAnswer(answers)
-    setTitleAbout(title)
   }
 
   return (
-    <div className='container pt-28 pb-10 md:py-28 px-4 md:px-0'>
-      <div className='pb-20'>
-        <h3>Frequently Asked Questions</h3>
-      </div>
-      <div className='flex flex-col'>
-        <div className='flex flex-col md:flex-row gap-20 md:gap-14 px-4 md:px-0'>
-          <div className='w-full md:w-1/3'>
-            {data?.data?.map((faq, index) => {
-              const isLastIndex = index === data?.data.length - 1
-
-              return (
-                <div
-                  className={twMerge(
-                    isLastIndex
-                      ? 'border-b-[1px] md:border-none'
-                      : 'border-b-[1px]',
-                    'py-4',
-                  )}
-                  key={faq.id}
-                >
-                  <BigButton
-                    active={activeIndex === faq.id}
-                    title={faq.attributes.title}
-                    onClick={() =>
-                      onClickActive(
-                        faq.id,
-                        faq.attributes.answers,
-                        faq.attributes.title,
-                      )
-                    }
-                  />
-                </div>
-              )
-            })}
-          </div>
-          <div className='w-full md:w-2/3'>
-            {activeAnswer && (
-              <div className='py-4 border-b-[1px]'>
-                <h4>{titleAbout}</h4>
-              </div>
-            )}
-            {activeAnswer ? (
-              activeAnswer.map((answer, index) => {
-                const isLastIndex =
-                  index === activeAnswer.length - 1 && activeAnswer.length > 1
+    isSuccess && (
+      <div className='container pt-28 pb-10 md:py-28 px-4 md:px-0'>
+        <div className='pb-20'>
+          <h3>{t('faq.title')}</h3>
+        </div>
+        <div className='flex flex-col'>
+          <div className='flex flex-col md:flex-row gap-20 md:gap-14 px-4 md:px-0'>
+            <div className='w-full md:w-1/3'>
+              {faqs.map((faq, index) => {
+                const isLastIndex = index === data?.data.length - 1
 
                 return (
-                  <Disclosure key={index}>
-                    <div
-                      className={twMerge(
-                        isLastIndex ? 'border-none' : 'border-b-[1px]',
-                        'py-7 flex flex-row justify-between',
-                      )}
-                    >
-                      <h5>{answer.title}</h5>
-                      <Disclosure.Button>
-                        <CircleArrowDownIcon />
-                      </Disclosure.Button>
-                    </div>
-                    <Disclosure.Panel>
-                      <StrapiSingleComponentResolver
-                        componentDetail={answer.__component}
-                        data={answer.content}
-                      />
-                    </Disclosure.Panel>
-                  </Disclosure>
+                  <div
+                    className={twMerge(
+                      isLastIndex
+                        ? 'border-b-[1px] md:border-none'
+                        : 'border-b-[1px]',
+                      'py-4',
+                    )}
+                    key={faq.id}
+                  >
+                    <BigButton
+                      active={activeIndex === faq.id}
+                      title={faq.attributes.title}
+                      onClick={() =>
+                        onClickActive(faq.id, faq.attributes.answers)
+                      }
+                    />
+                  </div>
                 )
-              })
-            ) : (
-              <>
-                <div className='py-4 border-b-[1px]'>
-                  <h4>{data?.data?.[0]?.attributes.title}</h4>
-                </div>
-                {data?.data?.[0]?.attributes?.answers?.map((answer, index) => {
-                  const isLastIndex =
-                    index === data?.data?.[0]?.attributes?.answers.length - 1 &&
-                    data?.data?.[0]?.attributes?.answers.length > 1
-
+              })}
+            </div>
+            <div className='w-full md:w-2/3'>
+              {activeAnswer ? (
+                activeAnswer.map((answer, index) => {
                   return (
                     <Disclosure key={index}>
-                      <div
-                        className={twMerge(
-                          isLastIndex ? 'border-none' : 'border-b-[1px]',
-                          'py-7 flex flex-row justify-between',
-                        )}
-                      >
-                        <h5>{answer.title}</h5>
-                        <Disclosure.Button>
-                          <CircleArrowDownIcon />
-                        </Disclosure.Button>
-                      </div>
-                      <Disclosure.Panel>
-                        <StrapiSingleComponentResolver
-                          componentDetail={answer.__component}
-                          data={answer.content}
-                        />
-                      </Disclosure.Panel>
+                      {({ open }) => (
+                        <div className='py-7 border-b-[1px]'>
+                          <div className='flex flex-row justify-between'>
+                            <h5>{answer.title}</h5>
+                            <Disclosure.Button>
+                              {open ? <MinusIcon /> : <PlusIcon />}
+                            </Disclosure.Button>
+                          </div>
+                          <div className={twMerge(open ? 'py-4' : 'py-0')}>
+                            <Disclosure.Panel>
+                              <StrapiSingleComponentResolver
+                                componentDetail={answer.__component}
+                                data={answer.content}
+                              />
+                            </Disclosure.Panel>
+                          </div>
+                        </div>
+                      )}
                     </Disclosure>
                   )
-                })}
-              </>
-            )}
-          </div>
-        </div>
-        <div className='md:border-t-[1px] px-4 md:px-0'>
-          <div className='flex flex-col md:flex-row py-20 md:py-10'>
-            <div className='w-full md:w-1/3'></div>
-            <div className='w-full md:w-2/3'>
-              <div className='flex flex-col gap-6'>
-                <h4>For any other queries, feel free to drop us a message</h4>
-                <a className='outline-button-black w-fit' href='/contact'>
-                  Contact
-                </a>
-              </div>
+                })
+              ) : (
+                <>
+                  {firstAnswersToShow.map((answer, index) => {
+                    return (
+                      <Disclosure key={index}>
+                        {({ open }) => (
+                          <div className='py-7 border-b-[1px]'>
+                            <div className='flex flex-row justify-between'>
+                              <h5>{answer.title}</h5>
+                              <Disclosure.Button>
+                                {open ? <MinusIcon /> : <PlusIcon />}
+                              </Disclosure.Button>
+                            </div>
+                            <div className={twMerge(open ? 'py-4' : 'py-0')}>
+                              <Disclosure.Panel>
+                                <StrapiSingleComponentResolver
+                                  componentDetail={answer.__component}
+                                  data={answer.content}
+                                />
+                              </Disclosure.Panel>
+                            </div>
+                          </div>
+                        )}
+                      </Disclosure>
+                    )
+                  })}
+                </>
+              )}
             </div>
           </div>
+          <OtherQueries />
         </div>
       </div>
-    </div>
+    )
   )
 }

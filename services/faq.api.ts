@@ -8,7 +8,7 @@ const BASE_URL = '/faqs'
 export const FaqApi = {
   getAll: async function (): Promise<StrapiResponse<TFAQ>> {
     const result = await apiInstance.get<StrapiResponse<TFAQ>>(
-      `${BASE_URL}?populate=*`,
+      `${BASE_URL}?populate[answers][populate]=*&populate[localizations][populate]=*`,
     )
 
     return result.data

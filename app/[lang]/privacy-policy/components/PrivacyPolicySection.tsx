@@ -1,20 +1,41 @@
 'use client'
 
+import { useParams } from 'next/navigation'
 import { useState } from 'react'
 import { twMerge } from 'tailwind-merge'
 
 import { BigButton } from '@/components/shared/BigButton/BigButton'
 import { ContentRenderer } from '@/components/shared/ContentRenderer/ContentRenderer'
+import { OtherQueries } from '@/components/shared/OtherQueries'
 import { TContent } from '@/domain/types/article.types'
+import { StrapiResponse } from '@/domain/types/common.types'
+import { TPrivacyPolicy } from '@/domain/types/privacyPolicy.types'
 import { useGetAllPrivacyPolicyQuery } from '@/hooks/query/usePrivacyPolicyQuery'
+import { useTranslation } from '@/resources/i18n/i18n.hooks'
+import { findTranslatedData } from '@/utils/FindTranslatedData/FindTranslatedData'
 
 export function PrivacyPolicySection() {
+  const { lang } = useParams()
+  const { t } = useTranslation()
   const [activeIndex, setActiveIndex] = useState<number>(1)
   const [description, setActiveDescription] = useState<TContent[] | undefined>(
     undefined,
   )
 
   const { data, isSuccess } = useGetAllPrivacyPolicyQuery()
+
+  const localizedData = findTranslatedData(
+    lang as string,
+    data,
+  ) as StrapiResponse<TPrivacyPolicy>
+
+  const privacyPolicies = isSuccess
+    ? localizedData.data.length > 0
+      ? localizedData.data
+      : data?.data
+    : []
+
+  const firstDescriptionToShow = privacyPolicies[0]?.attributes?.description
 
   const onClickActive = (index: number, content: TContent[]) => {
     setActiveIndex(index)
@@ -24,13 +45,13 @@ export function PrivacyPolicySection() {
   return (
     <div className='container pt-28 pb-10 md:py-28 px-4 md:px-0'>
       <div className='pb-20'>
-        <h3>Privacy Policy</h3>
+        <h3>{t('privacyPolicy.title')}</h3>
       </div>
       {isSuccess && (
         <div className='flex flex-col'>
           <div className='flex flex-col md:flex-row gap-20 md:gap-14 px-4 md:px-0'>
             <div className='w-full md:w-1/3'>
-              {data?.data?.map((privacyPolicy, index) => {
+              {privacyPolicies.map((privacyPolicy, index) => {
                 const isLastIndex = index === data?.data.length - 1
 
                 return (
@@ -57,29 +78,15 @@ export function PrivacyPolicySection() {
                 )
               })}
             </div>
-            <div className='w-full md:w-2/3'>
+            <div className='py-4 w-full md:w-2/3'>
               {description ? (
                 <ContentRenderer data={description} />
               ) : (
-                <ContentRenderer
-                  data={data?.data?.[0]?.attributes?.description}
-                />
+                <ContentRenderer data={firstDescriptionToShow} />
               )}
             </div>
           </div>
-          <div className='md:border-t-[1px] px-4 md:px-0'>
-            <div className='flex flex-col md:flex-row py-20 md:py-10'>
-              <div className='w-full md:w-1/3'></div>
-              <div className='w-full md:w-2/3'>
-                <div className='flex flex-col gap-6'>
-                  <h4>For any other queries, feel free to drop us a message</h4>
-                  <a className='outline-button-black w-fit' href='/contact'>
-                    Contact
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
+          <OtherQueries />
         </div>
       )}
     </div>

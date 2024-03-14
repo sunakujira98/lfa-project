@@ -38,7 +38,9 @@ export function NewsSection() {
         <div className='container border-t-[1px] px-4 md:px-0'>
           <div className='grid grid-cols-1 md:grid-cols-3 gap-0 md:gap-6'>
             {articles.map((news) => {
-              return <News news={news} />
+              const localeId = news.localeId || news.id
+
+              return <News news={news} localeId={localeId} />
             })}
           </div>
         </div>

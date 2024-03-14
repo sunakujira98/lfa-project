@@ -1,12 +1,14 @@
 /* eslint-disable @next/next/no-img-element */
 
+import { Link } from '@/components/shared/Link'
 import { Project } from '@/domain/types/project.types'
 
 type ProjectSingleProps = {
   project: Project
+  localeId: number
 }
 
-export function ProjectSingle({ project }: ProjectSingleProps) {
+export function ProjectSingle({ project, localeId }: ProjectSingleProps) {
   return (
     <div className='flex flex-col' key={project.id}>
       <img
@@ -15,9 +17,9 @@ export function ProjectSingle({ project }: ProjectSingleProps) {
         alt={project.attributes.title}
       />
       <div className='flex flex-col'>
-        <a href={`/projects/${project.id}`}>
+        <Link href={`/projects/${localeId}`}>
           <h1 className='text-2xl font-light'>{project.attributes.title}</h1>
-        </a>
+        </Link>
         <div className='flex flex-row'>
           <a href='#'>
             <span className='text-2xs underline font-light'>

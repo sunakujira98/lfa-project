@@ -6,11 +6,14 @@ import dayjs from 'dayjs'
 
 import { Article as TNews } from '@/domain/types/article.types'
 
+import { Link } from '../Link'
+
 type NewsProps = {
   news: TNews
+  localeId: number
 }
 
-export function News({ news }: NewsProps) {
+export function News({ news, localeId }: NewsProps) {
   const truncateString = (str: string, maxLength: number) => {
     if (str.length > maxLength) {
       return str.slice(0, maxLength) + '...'
@@ -31,9 +34,9 @@ export function News({ news }: NewsProps) {
         </div>
       </div>
       <div className='flex flex-col py-4 md:py-6 text-3xs gap-2'>
-        <a href={`/news/${news.id}`}>
+        <Link href={`/news/${localeId}`}>
           <h4 className='font-light'>{news.attributes.title}</h4>
-        </a>
+        </Link>
         <span className='text-3xs'>
           {dayjs(news.attributes.createdAt).format('DD-MM-YYYY')}
         </span>

@@ -29,14 +29,14 @@ export function ContentRenderer({ data }: ContentRendererProps) {
   }
 
   return (
-    <div className='max-w-screen-xl mx-auto py-4'>
-      <div className='container'>
-        <div className='flex flex-col gap-8'>
-          {data.map((content, index) => {
-            return <div key={index}>{resolveParagraph(content)}</div>
-          })}
-        </div>
-      </div>
+    <div className='flex flex-col gap-8'>
+      {data.map((content, index) => {
+        return <div key={index}>{resolveParagraph(content)}</div>
+      })}
     </div>
+    // <div className='max-w-screen-xl mx-auto py-4'>
+    //   <div className='container'>
+    //   </div>
+    // </div>
   )
 }
