@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 'use client'
 
 import { ComponentPropsWithoutRef } from 'react'
@@ -18,7 +20,7 @@ type ControlledCheckboxProps<T extends FieldValues> = Omit<
   control: Control<T>
   name: Path<T>
   errors?: FieldErrors<T>
-  text: string | Element | Element[]
+  text: any
 }
 
 export function ControlledCheckbox<T extends FieldValues>({
