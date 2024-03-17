@@ -173,6 +173,9 @@ export function ContactSection() {
                   <span className='text-[#C96115]'>
                     {sendMailMutation.isSuccess && t('contact.form.success')}
                   </span>
+                  <span className='text-[#C96115]'>
+                    {sendMailMutation.isError && t('contact.form.error')}
+                  </span>
                 </div>
               </Disclosure.Panel>
             </div>
