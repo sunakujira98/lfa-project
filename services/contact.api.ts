@@ -1,13 +1,21 @@
 import { StrapiResponse } from '@/domain/types/common.types'
-import { Contact } from '@/domain/types/contact.types'
+import {
+  IBasicContactEnquiry,
+  TContactEnquiry,
+} from '@/domain/types/contactEnquiry.types'
 
 import { apiInstance } from './api'
 
 const BASE_URL = '/contact'
 
 export const ContactApi = {
-  getAll: async function (): Promise<Contact> {
-    const result = await apiInstance.get<Contact>(`${BASE_URL}?populate=*`)
+  sendMail: async function (
+    requestBody: IBasicContactEnquiry,
+  ): Promise<StrapiResponse<TContactEnquiry>> {
+    const result = await apiInstance.post<StrapiResponse<TContactEnquiry>>(
+      `${BASE_URL}/send-mail`,
+      requestBody,
+    )
 
     return result.data
   },

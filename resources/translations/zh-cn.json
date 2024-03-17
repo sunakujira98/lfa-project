@@ -82,10 +82,11 @@
         "label" : "公司名称",
         "placeholder" : "您的公司名称"
       },
-      "termsAndConditions" : {
-        "label" : "我已阅读并接受隐私政策和条款与条件"
-      },
-      "send" : "发送"
+			"termsAndConditions" : {
+				"label" : "我已阅读并接受<a href='{{privacyPolicyLink}}'>隐私政策</a>和<a href='{{termsAndConditionsLink}}'>条款与条件</a>"
+			},
+			"send" : "发送",
+			"success" : "感谢您的电子邮件。我们的团队将会尽快回复您的消息。"
     },
 		"footer" : {
 			"joinLfa" : "加入LFA",

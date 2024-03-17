@@ -1,17 +1,13 @@
+import { IBasicContactEnquiry } from '@/domain/types/contactEnquiry.types'
 import { ContactApi } from '@/services/contact.api'
-import { useQuery } from '@tanstack/react-query'
+import { useMutation } from '@tanstack/react-query'
 
-import { EQueryKey } from './constants/react-query.constant'
-
-export const useGetContactQuery = () => {
-  const query = useQuery({
-    queryKey: [EQueryKey.CONTACT],
-    queryFn: async () => {
-      const response = await ContactApi.getAll()
-
-      return response
+export const useSendMailMutation = () => {
+  const mutation = useMutation({
+    mutationFn: async (requestBody: IBasicContactEnquiry) => {
+      await ContactApi.sendMail(requestBody)
     },
   })
 
-  return query
+  return mutation
 }

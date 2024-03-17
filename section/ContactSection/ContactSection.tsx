@@ -1,12 +1,12 @@
 'use client'
 
 import { yupResolver } from '@hookform/resolvers/yup'
+import parse from 'html-react-parser'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import * as yup from 'yup'
 
 import { SectionHeader } from '@/components/shared/SectionHeader'
 import { CircleArrowDownIcon } from '@/components/shared/svg/icons'
-import { useGetContactQuery } from '@/hooks/query/useContactQuery'
 import { Disclosure } from '@headlessui/react'
 import { ControlledInput } from '@/components/shared/Forms/ControlledInput'
 import { ControlledCheckbox } from '@/components/shared/Forms/ControlledCheckbox'
@@ -14,6 +14,7 @@ import { ControlledTextarea } from '@/components/shared/Forms/ControlledTextarea
 
 import { getContactSchema } from './ContactSection.types'
 import { useTranslation } from '@/resources/i18n/i18n.hooks'
+import { useSendMailMutation } from '@/hooks/query/useContactQuery'
 
 type FormValues = yup.InferType<ReturnType<typeof getContactSchema>>
 
@@ -22,14 +23,15 @@ export function ContactSection() {
   const {
     control,
     handleSubmit,
-    setError,
     formState: { errors },
   } = useForm({
     resolver: yupResolver(getContactSchema()),
   })
 
+  const sendMailMutation = useSendMailMutation()
+
   const onSubmit: SubmitHandler<FormValues> = (data) => {
-    console.log('data', data)
+    sendMailMutation.mutate(data)
   }
 
   return (
@@ -149,18 +151,29 @@ export function ContactSection() {
                           control={control}
                           type='checkbox'
                           errors={errors}
-                          text={t('contact.form.termsAndConditions.label')}
+                          text={parse(
+                            t('contact.form.termsAndConditions.label', {
+                              privacyPolicyLink: '/privacy-policy',
+                              termsAndConditionsLink: '/terms-and-conditions',
+                            }),
+                          )}
                         />
                       </div>
                       <button
                         className='outline-button !border-charcoal-100 w-full md:w-24'
                         type='submit'
+                        disabled={sendMailMutation.isPending}
                       >
                         {t('contact.form.send')}
                       </button>
                     </div>
                   </div>
                 </form>
+                <div className='flex items-center justify-center pt-4'>
+                  <span className='text-[#C96115]'>
+                    {sendMailMutation.isSuccess && t('contact.form.success')}
+                  </span>
+                </div>
               </Disclosure.Panel>
             </div>
           </div>

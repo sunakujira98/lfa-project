@@ -18,7 +18,7 @@ type ControlledCheckboxProps<T extends FieldValues> = Omit<
   control: Control<T>
   name: Path<T>
   errors?: FieldErrors<T>
-  text: string
+  text: string | Element | Element[]
 }
 
 export function ControlledCheckbox<T extends FieldValues>({

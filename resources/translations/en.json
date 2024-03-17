@@ -83,9 +83,10 @@
         "placeholder" : "Your Company Name"
       },
       "termsAndConditions" : {
-        "label" : "I have read and accept the Privacy Policy and Terms & Conditions"
+        "label" : "I have read and accept the <a href='{{privacyPolicyLink}}'>Privacy Policy</a> and <a href='{{termsAndConditionsLink}}'>Terms & Conditions</a>"
       },
-      "send" : "Send"
+      "send" : "Send",
+      "success" : "Thank you for your email. Our team will reply to your message shortly"
     },
     "footer" : {
       "joinLfa" : "Join LFA",
