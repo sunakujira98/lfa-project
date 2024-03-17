@@ -31,9 +31,9 @@ export function SideBySideTestimonial({
         </div>
         <div className='flex-grow flex flex-col mt-auto'></div>
         <div className='flex flex-col order-first sm:order-none gap-1 pb-4'>
-          {testimonial.attributes.image?.data?.attributes?.url && (
+          {testimonial.attributes.companyImage?.data?.attributes?.url && (
             <img
-              src={`${process.env.NEXT_PUBLIC_CMS_HOST}${testimonial.attributes.image.data.attributes.url}`}
+              src={`${process.env.NEXT_PUBLIC_CMS_HOST}${testimonial.attributes.companyImage.data.attributes.url}`}
               className='w-44 md:max-w-56 md:hidden'
               alt={testimonial.attributes.fullName}
             />
