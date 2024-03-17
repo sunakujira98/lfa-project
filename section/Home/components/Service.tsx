@@ -46,7 +46,7 @@ export function Service() {
     isSuccess && (
       <div className='max-w-screen-xl mx-auto pt-10 px-4 md:px-0'>
         <div className='container bg-greige md:bg-greigeMultiply'>
-          <div className='px-4 pt-10 pb-10 md:pb-20 md:pt-0'>
+          <div className='px-4 md:px-0 pt-10 pb-10 md:pb-20 md:pt-0'>
             <h6 className='uppercase'>{t('services.title')}</h6>
           </div>
           <div className='flex justify-between gap-6'>
@@ -72,7 +72,7 @@ export function Service() {
               </div>
             </div>
             <div className='hidden md:block md:w-2/3'>
-              <div className='border-t-[1px] border-l-[1px] rounded-tl-[40px] rounded p-8 h-full'>
+              <div className='border-t-[1px] border-l-[1px] rounded-tl-[40px] rounded-l-[4px] p-8 h-full border-charcoal-1000'>
                 <p>{activeService ? activeService : firstDescriptionToShow}</p>
               </div>
             </div>

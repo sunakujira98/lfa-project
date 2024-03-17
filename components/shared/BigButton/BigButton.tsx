@@ -14,12 +14,12 @@ export function BigButton({ active, onClick, title, icon }: BigButtonProps) {
     <button
       className={twMerge(
         active ? 'bg-primary-900 text-greige' : 'hover:bg-greige',
-        'w-full p-4 rounded-full',
+        'w-full py-4 px-8 rounded-full',
       )}
       onClick={onClick}
     >
       <div className='flex justify-between items-center'>
-        <span className='text-xs'>{title}</span>
+        <span className='text-xs font-thin'>{title}</span>
         {icon && (
           <img
             src={`${process.env.NEXT_PUBLIC_CMS_HOST}${icon}`}

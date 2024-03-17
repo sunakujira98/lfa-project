@@ -39,11 +39,11 @@ export function SideBySideNews() {
     isSuccess && (
       <div className='max-w-screen-xl mx-auto pt-10 px-4 md:px-0'>
         <div className='container pb-8'>
-          <span className='font-neue text-3xs text-gray-50'>
+          <h6 className='font-neue text-3xs text-gray-50 uppercase'>
             {t('news.title')}
-          </span>
+          </h6>
         </div>
-        <div className='container md:border-y-[1px] pt-10'>
+        <div className='container md:border-y-[1px] border-charcoal-1000 pt-4'>
           <div className='grid grid-cols-1 gap-10 md:gap-20 md:grid-cols-3'>
             {articles.map((news) => {
               const newsId = news.localeId || news.id

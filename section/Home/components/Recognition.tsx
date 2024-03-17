@@ -33,10 +33,10 @@ export function Recognition() {
   return (
     isSuccess && (
       <div className='max-w-screen-xl mx-auto py-10 px-4 md:px-0'>
-        <div className='container pb-8'>
-          <span className='font-neue text-3xs text-gray-50'>
+        <div className='container pb-10'>
+          <h6 className='font-neue text-3xs text-gray-50 uppercase'>
             {t('recognitions.title')}
-          </span>
+          </h6>
         </div>
         <div className='container'>
           <Carousel
@@ -79,7 +79,10 @@ export function Recognition() {
             {recognitions.map((recognition) => {
               return (
                 <div className='w-full' key={recognition.id}>
-                  <div className='flex flex-col gap-6' key={recognition.id}>
+                  <div
+                    className='flex flex-col gap-6 items-center'
+                    key={recognition.id}
+                  >
                     <img
                       src={`${process.env.NEXT_PUBLIC_CMS_HOST}${recognition.attributes.image.data.attributes.url}`}
                       className='w-full md:max-w-64'

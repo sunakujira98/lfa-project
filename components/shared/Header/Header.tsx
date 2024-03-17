@@ -70,7 +70,7 @@ export function Header() {
       id='header'
       className={twMerge(
         'w-full z-10 fixed transition-all top-0 md:py-1 text-lfaWhite',
-        showBg && 'bg-[#CCC0B4]',
+        showBg && 'bg-[#CCC0B4] text-charcoal-1000',
         isOpen && 'bg-greige min-h-[100vh]',
       )}
     >
@@ -80,7 +80,7 @@ export function Header() {
             <ul className='md:flex items-center justify-between text-base text-gray-700 md:pt-0'>
               <li>
                 <a
-                  className='inline-block no-underline hover:text-black hover:underline py-2 text-3xl'
+                  className='inline-block no-underline hover:text-black py-2 text-3xl'
                   href='/'
                 >
                   LFA
@@ -91,7 +91,7 @@ export function Header() {
         </div>
 
         <div className='order-2 md:order-3 flex items-center'>
-          <ul className='m-0 p-0 flex list-none items-center space-x-6 font-neue uppercase text-3xs'>
+          <ul className='m-0 p-0 flex list-none items-center gap-8 font-neue uppercase text-3xs'>
             <li className='relative whitespace-nowrap'>
               <Link className='nav-link scrollto' href='/'>
                 {t('header.home')}
@@ -127,7 +127,8 @@ export function Header() {
                 {t('header.contact')}
               </Link>
             </li>
-            <li className='relative whitespace-nowrap border-l-[1px] border-lfaWhite pl-2'>
+            <li className='border-l-[1px] border-lfaWhite'>&nbsp;</li>
+            <li className='relative whitespace-nowrap'>
               <button onClick={changeLanguage}>
                 {isChinese ? 'EN' : '中文'}
               </button>

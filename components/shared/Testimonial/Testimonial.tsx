@@ -16,7 +16,7 @@ export function Testimonial({ data }: TestimonialProps) {
         {data.attributes.video?.data?.attributes?.url && (
           <video
             src={`${process.env.NEXT_PUBLIC_CMS_HOST}${data.attributes.video.data.attributes.url}`}
-            className='w-screen bg-cover bg-center pb-4'
+            className='w-screen bg-cover bg-center pb-4 md:pb-10'
             controls
             muted
           />
@@ -34,11 +34,11 @@ export function Testimonial({ data }: TestimonialProps) {
                 </h3>
               </div>
 
-              {data.attributes.image?.data?.attributes?.url && (
+              {data.attributes.companyImage?.data?.attributes?.url && (
                 <div className='flex order-first sm:order-none'>
                   <img
-                    src={`${process.env.NEXT_PUBLIC_CMS_HOST}${data.attributes.image.data.attributes.url}`}
-                    className='max-w-56'
+                    src={`${process.env.NEXT_PUBLIC_CMS_HOST}${data.attributes.companyImage.data.attributes.url}`}
+                    className='w-20'
                     alt={data.attributes.fullName}
                   />
                 </div>
@@ -46,12 +46,12 @@ export function Testimonial({ data }: TestimonialProps) {
             </div>
           </div>
           <div className='w-full md:w-2/3 md:order-first'>
-            <div className='gap-4 md:border-t-[1px] md:border-r-[1px] md:rounded-tr-[40px] md:rounded md:py-8 mt-4 md:gap-0'>
+            <div className='gap-4 md:border-t-[1px] md:border-r-[1px] md:rounded-tr-[40px] md:py-10 mt-4 md:gap-0 border-charcoal-1000'>
               <QuoteIcon className='mb-4' />
               <p className='md:w-[90%]'>{data.attributes.description}</p>
             </div>
           </div>
-          <div className='pt-10 border-b-[1px]'></div>
+          <div className='md:hidden pt-10 border-b-[1px]'></div>
         </div>
       </div>
     </div>
