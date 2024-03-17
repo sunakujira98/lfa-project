@@ -55,6 +55,44 @@
 	"awards": {
 		"title": "奖项"
 	},
+	"contact" : {
+    "title" : "联系我们",
+    "subtitle" : "您是否有疑问或准备启动您的办公室或商业室内设计项目？",
+    "description" : "无论您是寻求商业室内设计方面的专业指导，还是在思考新加坡最佳办公室室内设计，或者准备改造您的公司空间，我们的团队都在这里为您提供帮助。作为屡获殊荣的办公室设计公司，我们专注于新加坡的商业和办公室室内装修。联系我们，获取一流的工作场所设计、公司办公室室内设计和商业办公室装修解决方案。让我们合作，打造您的梦想空间，考虑到新加坡的办公室装修成本。通过我们的联系方式与我们联系，让我们将您对出色商业室内项目的愿景变成现实！",
+    "enquiryType" : "查询类型",
+    "generalEnquiry" : "一般查询",
+    "form" : {
+      "enquiryType" : {
+        "label" : "查询类型",
+        "placeholder" : "您的消息"
+      },
+      "name" : {
+        "label" : "姓名",
+        "placeholder" : "您的姓名"
+      },
+      "email" : {
+        "label" : "电子邮件",
+        "placeholder" : "您的电子邮件"
+      },
+      "contact" : {
+        "label" : "联系电话",
+        "placeholder" : "您的联系电话"
+      },
+      "companyName": {
+        "label" : "公司名称",
+        "placeholder" : "您的公司名称"
+      },
+      "termsAndConditions" : {
+        "label" : "我已阅读并接受隐私政策和条款与条件"
+      },
+      "send" : "发送"
+    },
+		"footer" : {
+			"joinLfa" : "加入LFA",
+			"title" : "Lorem ipsum dolor sit amet consectetur.",
+			"subtitle" : "Lorem ipsum dolor sit amet consectetur. Consectetur malesuada proin pellentesque urna turpis malesuada. Tincidunt quis duis aenean morbi lobortis. Fermentum in aliquam pellentesque aenean vel et interdum vulputate. Ut a vel posuere est sed pulvinar libero at."
+		}
+  },
 	"news": {
 		"title": "新闻",
 		"allNews": "查看所有新闻",

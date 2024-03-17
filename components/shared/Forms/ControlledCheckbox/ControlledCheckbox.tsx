@@ -18,12 +18,14 @@ type ControlledCheckboxProps<T extends FieldValues> = Omit<
   control: Control<T>
   name: Path<T>
   errors?: FieldErrors<T>
+  text: string
 }
 
 export function ControlledCheckbox<T extends FieldValues>({
   control,
   errors,
   name,
+  text,
   ...inputProps
 }: ControlledCheckboxProps<T>) {
   const error = getFormErrorMessage(errors, name)
@@ -35,12 +37,10 @@ export function ControlledCheckbox<T extends FieldValues>({
           name={name}
           control={control}
         />
-        <span className='text-3xs md:text-xs'>
-          I have read and accept the Privacy Policy and Terms & Conditions
-        </span>
+        <span className='text-3xs md:text-xs'>{text}</span>
       </div>
       <div className='w-full'>
-        {error && <span className='text-error'>{error}</span>}
+        {error && <span className='text-error text-3xs'>{error}</span>}
       </div>
     </div>
   )

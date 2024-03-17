@@ -42,7 +42,7 @@ export function ControlledInput<T extends FieldValues>({
         control={control}
       />
       <div className='w-full'>
-        {error && <span className='text-error'>{error}</span>}
+        {error && <span className='text-error text-3xs'>{error}</span>}
       </div>
     </div>
   )

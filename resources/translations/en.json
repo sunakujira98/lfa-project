@@ -55,6 +55,44 @@
   "awards" : {
     "title" : "AWARDS"
   },
+  "contact" : {
+    "title" : "Contact Us",
+    "subtitle" : "Got a query or are you ready to kick-start your office or commercial interior project?",
+    "description" : "Whether you're seeking expert guidance in commercial interior design, pondering over the best office interior design in Singapore, or ready to transform your corporate space, our team is here to assist. As an award-winning office design firm, we specialise in both commercial and office interior renovation in Singapore. Reach out to us for top-notch workplace design, corporate office interior design, and commercial office renovation solutions. Let's collaborate to create your dream space, keeping in mind your office renovation cost in Singapore. Connect with us through our contact details, and let’s bring your vision for a remarkable commercial interior project to life!",
+    "enquiryType" : "Enquiry Type",
+    "generalEnquiry" : "General Enquiry",
+    "form" : {
+      "enquiryType" : {
+        "label" : "Enquiry Type",
+        "placeholder" : "Your Message"
+      },
+      "name" : {
+        "label" : "Name",
+        "placeholder" : "Your Name"
+      },
+      "email" : {
+        "label" : "Email",
+        "placeholder" : "Your Email"
+      },
+      "contact" : {
+        "label" : "Contact No.",
+        "placeholder" : "Your Contact Number"
+      },
+      "companyName": {
+        "label" : "Company Name",
+        "placeholder" : "Your Company Name"
+      },
+      "termsAndConditions" : {
+        "label" : "I have read and accept the Privacy Policy and Terms & Conditions"
+      },
+      "send" : "Send"
+    },
+    "footer" : {
+      "joinLfa" : "Join LFA",
+      "title" : "Lorem ipsum dolor sit amet consectetur.",
+      "subtitle" : "Lorem ipsum dolor sit amet consectetur. Consectetur malesuada proin pellentesque urna turpis malesuada. Tincidunt quis duis aenean morbi lobortis. Fermentum in aliquam pellentesque aenean vel et interdum vulputate. Ut a vel posuere est sed pulvinar libero at."
+    }
+  },
   "news" : {
     "title" : "News",
     "allNews": "View All News",
