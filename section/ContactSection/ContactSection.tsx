@@ -70,7 +70,7 @@ export function ContactSection() {
                 <form onSubmit={handleSubmit(onSubmit)}>
                   <div className='flex flex-row items-center gap-8 border-b-[1px] py-6'>
                     <div className='flex w-1/4'>
-                      <h4 className='text-3xs md:text-xl'>
+                      <h4 className='text-3xs md:text-md'>
                         {t('contact.form.enquiryType.label')}
                       </h4>
                     </div>
@@ -85,7 +85,7 @@ export function ContactSection() {
                   </div>
                   <div className='flex flex-row items-center gap-8 border-b-[1px] py-6'>
                     <div className='flex w-1/4'>
-                      <h4 className='text-3xs md:text-xl'>
+                      <h4 className='text-3xs md:text-md'>
                         {t('contact.form.name.label')}
                       </h4>
                     </div>
@@ -100,7 +100,7 @@ export function ContactSection() {
                   </div>
                   <div className='flex flex-row items-center gap-8 border-b-[1px] py-6'>
                     <div className='flex w-1/4'>
-                      <h4 className='text-3xs md:text-xl'>
+                      <h4 className='text-3xs md:text-md'>
                         {t('contact.form.email.label')}
                       </h4>
                     </div>
@@ -115,7 +115,7 @@ export function ContactSection() {
                   </div>
                   <div className='flex flex-row items-center gap-8 border-b-[1px] py-6'>
                     <div className='flex w-1/4'>
-                      <h4 className='text-3xs md:text-xl'>
+                      <h4 className='text-3xs md:text-md'>
                         {t('contact.form.contact.label')}
                       </h4>
                     </div>
@@ -130,7 +130,7 @@ export function ContactSection() {
                   </div>
                   <div className='flex flex-row items-center gap-8 border-b-[1px] pt-6 pb-10'>
                     <div className='flex w-1/4'>
-                      <h4 className='text-2xs md:text-xl'>
+                      <h4 className='text-2xs md:text-md'>
                         {t('contact.form.companyName.label')}
                       </h4>
                     </div>

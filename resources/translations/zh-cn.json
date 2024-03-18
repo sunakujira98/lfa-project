@@ -63,7 +63,7 @@
     "generalEnquiry" : "一般查询",
     "form" : {
       "enquiryType" : {
-        "label" : "查询类型",
+				"label": "您的消息",
         "placeholder" : "您的消息"
       },
       "name" : {

@@ -8,6 +8,7 @@ export type AwardAttribute = {
       attributes: StrapiImageAttributes
     }
   }
+  externalLink: string
 }
 
 export type Award = {

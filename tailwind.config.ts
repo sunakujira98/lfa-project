@@ -49,7 +49,7 @@ const config: Config = {
       white: '#FFFFFF',
       lfaWhite: '#FFFAEF',
       greige: '#CCC0B4',
-      greigeMultiply: '#E4DDD6',
+      beige: '#E4DDD6',
       cyan: '#74F1FB',
       error: '#F95E76',
       transparent: 'transparent',

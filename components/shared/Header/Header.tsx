@@ -1,14 +1,16 @@
 'use client'
 
-import { useParams } from 'next/navigation'
+import { useParams, usePathname } from 'next/navigation'
 import { useEffect, useRef, useState } from 'react'
 import { twMerge } from 'tailwind-merge'
 
 import { useLanguage } from '@/components/Provider'
+import { PAGE_HAVE_BG } from '@/domain/constants/common.constants'
 import { useRouter } from '@/hooks/common/useRouter'
 import { useToggle } from '@/hooks/common/useToggle'
 import { useTranslation } from '@/resources/i18n/i18n.hooks'
 import { useCommonStore } from '@/store/common.store'
+import { containsValuesFromString } from '@/utils/ContainsValuesFromString/ContainsValuesFromString'
 
 import { BigButton } from '../BigButton/BigButton'
 import { HamburgerMenu } from '../HamburgerMenu/HamburgerMenu'
@@ -16,9 +18,12 @@ import { Link } from '../Link'
 import { FacebookIcon, InstagramIcon, LinkedinIcon } from '../svg/icons'
 
 export function Header() {
+  const pathname = usePathname()
   const { lang } = useParams()
+
   const { t } = useTranslation()
   const router = useRouter()
+
   const [showBg, setShowBg] = useState(false)
   const showBgRef = useRef(false)
   const navbarRef = useRef<HTMLElement>(null)
@@ -27,6 +32,11 @@ export function Header() {
   const [isOpen, menuMutation] = useToggle()
 
   const isChinese = lang.includes('zh')
+
+  const isHaveBg =
+    containsValuesFromString(pathname, PAGE_HAVE_BG) ||
+    pathname === '/en-US' ||
+    pathname === '/zh-CN'
 
   // const currentSection = useCommonStore((state) => state.currentSection)
   // const setScrollToSection = useCommonStore((state) => state.setScrollToSection)
@@ -70,7 +80,8 @@ export function Header() {
       id='header'
       className={twMerge(
         'w-full z-10 fixed transition-all top-0 md:py-1 text-lfaWhite',
-        showBg && 'bg-[#CCC0B4] text-charcoal-1000',
+        isHaveBg ? 'text-lfaWhite' : 'text-charcoal-1000',
+        showBg && 'bg-beige text-charcoal-1000',
         isOpen && 'bg-greige min-h-[100vh]',
       )}
     >
@@ -91,39 +102,78 @@ export function Header() {
         </div>
 
         <div className='order-2 md:order-3 flex items-center'>
-          <ul className='m-0 p-0 flex list-none items-center gap-8 font-neue uppercase text-3xs'>
+          <ul className='m-0 p-0 flex list-none items-center gap-8 font-neue uppercase text-3xs font-thin'>
             <li className='relative whitespace-nowrap'>
-              <Link className='nav-link scrollto' href='/'>
+              <Link
+                className={twMerge(
+                  pathname === '/en-US' || pathname === '/zh-CN'
+                    ? 'underline'
+                    : '',
+                )}
+                href='/'
+              >
                 {t('header.home')}
               </Link>
             </li>
             <li className='relative whitespace-nowrap'>
-              <Link className='nav-link scrollto' href='/projects'>
+              <Link
+                className={twMerge(
+                  pathname.includes('projects') ? 'underline' : '',
+                )}
+                href='/projects'
+              >
                 {t('header.projects')}
               </Link>
             </li>
             <li className='relative whitespace-nowrap'>
-              <Link className='nav-link scrollto' href='/about'>
+              <Link
+                className={twMerge(
+                  pathname.includes('about') ? 'underline' : '',
+                )}
+                href='/about'
+              >
                 {t('header.about')}
               </Link>
             </li>
             <li className='relative whitespace-nowrap'>
-              <Link className='nav-link scrollto' href='/service'>
+              <Link
+                className={twMerge(
+                  pathname.includes('service') ? 'underline' : '',
+                )}
+                href='/service'
+              >
                 {t('header.services')}
               </Link>
             </li>
             <li className='relative whitespace-nowrap'>
-              <Link className='nav-link scrollto' href='/testimonial'>
+              <Link
+                className={twMerge(
+                  pathname.includes('testimonials') ? 'underline' : '',
+                )}
+                href='/testimonials'
+              >
                 {t('header.testimonials')}
               </Link>
             </li>
             <li className='relative whitespace-nowrap'>
-              <Link className='nav-link scrollto' href='/news'>
+              <Link
+                className={twMerge(
+                  pathname.includes('news') ? 'underline' : '',
+                )}
+                href='/news'
+              >
                 {t('header.news')}
               </Link>
             </li>
             <li className='relative whitespace-nowrap'>
-              <Link className='outline-button' href='/contact'>
+              <Link
+                className={twMerge(
+                  'outline-button',
+                  !isHaveBg && 'outline-button-black',
+                  showBg && 'outline-button-black',
+                )}
+                href='/contact'
+              >
                 {t('header.contact')}
               </Link>
             </li>
@@ -181,7 +231,7 @@ export function Header() {
                   </Link>
                 </li>
                 <li className='pb-4 uppercase border-b-[1px]'>
-                  <Link className='nav-link scrollto' href='/testimonial'>
+                  <Link className='nav-link scrollto' href='/testimonials'>
                     {t('header.testimonials')}
                   </Link>
                 </li>

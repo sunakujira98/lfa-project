@@ -69,19 +69,19 @@ export function AboutUsSection() {
             </div>
           </div>
         </div>
-        <div className='max-w-screen-xl mx-auto pt-10 md:border-t-[1px] md:px-0 px-4'>
+        <div className='max-w-screen-xl mx-auto py-10 md:border-t-[1px] md:px-0 px-4'>
           <div className='container flex flex-col'>
-            <h6 className='uppercase pb-6 border-b-[1px]'>
+            <h6 className='uppercase pb-6 border-b-[1px] md:border-none'>
               {t('awards.title')}
             </h6>
             {awards?.data.map((award) => {
               return (
-                <div className='flex justify-between border-b-[1px] py-2 text-xs items-center'>
-                  {award.attributes.awardName}
-                  <a href='#'>
+                <a href={award.attributes.externalLink}>
+                  <div className='flex justify-between border-b-[1px] py-2 text-xs items-center'>
+                    {award.attributes.awardName}
                     <ArrowRightIcon />
-                  </a>
-                </div>
+                  </div>
+                </a>
               )
             })}
           </div>

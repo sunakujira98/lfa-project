@@ -39,13 +39,18 @@ export function FeaturedProject() {
 
               return (
                 <div className='container pb-10' key={project.id}>
-                  <img
-                    src={`${process.env.NEXT_PUBLIC_CMS_HOST}${project.attributes.thumbnail.data.attributes.url}`}
-                    className='w-96 h-96 aspect-square md:w-screen md:bg-cover md:h-full md:bg-center md:aspect-auto'
-                    alt={project.attributes.title}
-                  />
+                  <a href='/projects'>
+                    <img
+                      src={`${process.env.NEXT_PUBLIC_CMS_HOST}${project.attributes.thumbnail.data.attributes.url}`}
+                      className='w-96 h-96 aspect-square md:w-screen md:bg-cover md:h-full md:bg-center md:aspect-auto transform transition-transform hover:scale-[1.01] cursor-pointer'
+                      alt={project.attributes.title}
+                    />
+                  </a>
                   <div className='flex flex-col pt-4'>
-                    <a href={`${lang}/projects/${projectId}`}>
+                    <a
+                      href={`${lang}/projects/${projectId}`}
+                      className='hover:underline'
+                    >
                       <h3 className='font-vinila text-2xl text-gray-50 tracking-wide font-light'>
                         {project.attributes.title}
                       </h3>

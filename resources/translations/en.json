@@ -63,7 +63,7 @@
     "generalEnquiry" : "General Enquiry",
     "form" : {
       "enquiryType" : {
-        "label" : "Enquiry Type",
+        "label" : "Your Message",
         "placeholder" : "Your Message"
       },
       "name" : {

@@ -45,7 +45,7 @@ export function Service() {
   return (
     isSuccess && (
       <div className='max-w-screen-xl mx-auto pt-10 px-4 md:px-0'>
-        <div className='container bg-greige md:bg-greigeMultiply'>
+        <div className='container bg-greige md:bg-beige'>
           <div className='px-4 md:px-0 pt-10 pb-10 md:pb-20 md:pt-0'>
             <h6 className='uppercase'>{t('services.title')}</h6>
           </div>
