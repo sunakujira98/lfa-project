@@ -38,8 +38,6 @@ export function Header() {
     pathname === '/en-US' ||
     pathname === '/zh-CN'
 
-  // const currentSection = useCommonStore((state) => state.currentSection)
-  // const setScrollToSection = useCommonStore((state) => state.setScrollToSection)
   const setNavbarHeight = useCommonStore((state) => state.setNavbarHeight)
 
   useEffect(() => {
