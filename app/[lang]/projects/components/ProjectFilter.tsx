@@ -295,8 +295,8 @@ export function ProjectFilter({
       <div className='block md:hidden'>
         <Disclosure>
           {({ open }) => (
-            <div className='pt-20 border-b-[1px]'>
-              <div className='flex flex-row justify-between'>
+            <div className='pt-20 pb-10'>
+              <div className='flex flex-row justify-between pb-10'>
                 <div>
                   <h4>Projects</h4>
                 </div>
@@ -307,7 +307,7 @@ export function ProjectFilter({
                   <h5>FILTER</h5>
                 </div>
               </div>
-              <div className={twMerge(open ? 'py-4' : 'py-0')}>
+              <div>
                 <Disclosure.Panel>
                   <div className='md:flex md:justify-between md:items-center pb-10'>
                     <div className='flex flex-col md:flex-row md:gap-6'>
@@ -496,7 +496,7 @@ export function ProjectFilter({
                         </Transition>
                       </Menu>
                     </div>
-                    <div className='flex flex-col md:flex-row gap-6 ml-2 md:ml-0'>
+                    <div className='flex flex-col md:flex-row gap-6 md:ml-0'>
                       <div className='w-full flex items-center'>
                         <div className='flex flex-row gap-1'>
                           <input

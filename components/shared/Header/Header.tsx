@@ -66,9 +66,9 @@ export function Header() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  const onContactClick = () => {
+  const onChangePage = (href: string) => {
     menuMutation.close()
-    router.push('/contact')
+    router.push(href)
   }
 
   // const onSetScrollToSection = (section: SectionName) => () => {
@@ -211,34 +211,57 @@ export function Header() {
             <>
               <ul className='absolute -top-[13rem] left-0 flex w-full translate-y-full flex-col gap-1 px-5 py-7 md:hidden text-charcoal-1000'>
                 <li className='pb-4 uppercase border-b-[1px]'>
-                  <Link className='nav-link scrollto' href='/'>
+                  <button
+                    className={twMerge(
+                      'uppercase',
+                      pathname === '/en-US' || pathname === '/zh-CN'
+                        ? 'underline'
+                        : '',
+                    )}
+                    onClick={() => onChangePage('/')}
+                  >
                     {t('header.home')}
-                  </Link>
+                  </button>
                 </li>
                 <li className='pb-4 uppercase border-b-[1px]'>
-                  <Link className='nav-link scrollto' href='/projects'>
+                  <button
+                    className={'uppercase'}
+                    onClick={() => onChangePage('/projects')}
+                  >
                     {t('header.projects')}
-                  </Link>
+                  </button>
                 </li>
                 <li className='pb-4 uppercase border-b-[1px]'>
-                  <Link className='nav-link scrollto' href='/about'>
+                  <button
+                    className={'uppercase'}
+                    onClick={() => onChangePage('/about')}
+                  >
                     {t('header.about')}
-                  </Link>
+                  </button>
                 </li>
                 <li className='pb-4 uppercase border-b-[1px]'>
-                  <Link className='nav-link scrollto' href='/service'>
+                  <button
+                    className={'uppercase'}
+                    onClick={() => onChangePage('/service')}
+                  >
                     {t('header.services')}
-                  </Link>
+                  </button>
                 </li>
                 <li className='pb-4 uppercase border-b-[1px]'>
-                  <Link className='nav-link scrollto' href='/testimonials'>
+                  <button
+                    className={'uppercase'}
+                    onClick={() => onChangePage('/testimonials')}
+                  >
                     {t('header.testimonials')}
-                  </Link>
+                  </button>
                 </li>
                 <li className='pb-4 uppercase border-b-[1px]'>
-                  <Link className='nav-link scrollto' href='/news'>
+                  <button
+                    className={'uppercase'}
+                    onClick={() => onChangePage('/news')}
+                  >
                     {t('header.news')}
-                  </Link>
+                  </button>
                 </li>
               </ul>
 
@@ -246,7 +269,7 @@ export function Header() {
                 <div className='w-full pb-3'>
                   <BigButton
                     active={true}
-                    onClick={onContactClick}
+                    onClick={() => onChangePage('/contact')}
                     title={t('header.contact')}
                   />
                 </div>

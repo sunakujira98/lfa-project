@@ -28,7 +28,7 @@ export function ServiceSection() {
 
   return (
     <>
-      <div className='container md:py-28 py-10 px-4 md:px-0'>
+      <div className='container pt-28 pb-10 md:py-28'>
         <SectionHeader
           displayName={t('services.title')}
           title={t('services.subtitle')}
