@@ -19,8 +19,6 @@ type FullImageProps = {
 }
 
 export function FullImage({ data }: FullImageProps) {
-  const a = VIDEO_EXT.includes(data.image.data.attributes.ext)
-
   return (
     <div
       className='relative container mx-auto py-5'
