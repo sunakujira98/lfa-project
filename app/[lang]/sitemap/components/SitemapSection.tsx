@@ -8,10 +8,7 @@ import { Article } from '@/domain/types/article.types'
 import { StrapiResponse } from '@/domain/types/common.types'
 import { Project } from '@/domain/types/project.types'
 import { useGetAllArticleQuery } from '@/hooks/query/useGetArticleQuery'
-import {
-  useGetAllProjectQuery,
-  useGetAllProjectQueryWithoutInfinite,
-} from '@/hooks/query/useProjectQuery'
+import { useGetAllProjectQueryWithoutInfinite } from '@/hooks/query/useProjectQuery'
 import { useTranslation } from '@/resources/i18n/i18n.hooks'
 import { findTranslatedData } from '@/utils/FindTranslatedData/FindTranslatedData'
 
