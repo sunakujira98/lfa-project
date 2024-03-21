@@ -49,7 +49,7 @@ export function PrivacyPolicySection() {
       </div>
       {isSuccess && (
         <div className='flex flex-col'>
-          <div className='flex flex-col md:flex-row gap-20 md:gap-14 px-4 md:px-0'>
+          <div className='flex flex-col md:flex-row gap-20 md:gap-14 md:px-0'>
             <div className='w-full md:w-1/3'>
               {privacyPolicies.map((privacyPolicy, index) => {
                 const isLastIndex = index === data?.data.length - 1

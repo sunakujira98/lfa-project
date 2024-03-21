@@ -159,9 +159,12 @@ export function Footer() {
               </Link>
             </li>
             <li className='flex items-end justify-end relative whitespace-nowrap ml-12 self-end text-right'>
-              <a className='nav-link scrollto' href='#gallery'>
+              <button
+                className='nav-link scrollto'
+                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              >
                 <ArrowUpIcon />
-              </a>
+              </button>
             </li>
           </ul>
         </nav>
@@ -260,9 +263,14 @@ export function Footer() {
                 </Link>
               </li>
               <li className='relative whitespace-nowrap'>
-                <a className='nav-link scrollto' href='#gallery'>
+                <button
+                  className='nav-link scrollto'
+                  onClick={() =>
+                    window.scrollTo({ top: 0, behavior: 'smooth' })
+                  }
+                >
                   <ArrowUpIcon />
-                </a>
+                </button>
               </li>
             </ul>
           </nav>

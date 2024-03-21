@@ -295,20 +295,32 @@ export function Header() {
                   </a>
                 </div>
                 <div className='flex flex-row gap-4'>
-                  <Link href='/privacy-policy'>
+                  <button
+                    className={'uppercase'}
+                    onClick={() => onChangePage('/privacy-policy')}
+                  >
                     <h6 className='uppercase'>
                       {t('header.footer.privacyPolicy')}
                     </h6>
-                  </Link>
-                  <Link href='/terms-and-conditions'>
+                  </button>
+                  <button
+                    className={'uppercase'}
+                    onClick={() => onChangePage('/terms-and-conditions')}
+                  >
                     <h6 className='uppercase'>{t('header.footer.tnc')}</h6>
-                  </Link>
-                  <Link href='/faq'>
+                  </button>
+                  <button
+                    className={'uppercase'}
+                    onClick={() => onChangePage('/faq')}
+                  >
                     <h6 className='uppercase'>{t('header.footer.faq')}</h6>
-                  </Link>
-                  <Link href='/sitemap'>
+                  </button>
+                  <button
+                    className={'uppercase'}
+                    onClick={() => onChangePage('/sitemap')}
+                  >
                     <h6 className='uppercase'>{t('header.footer.sitemap')}</h6>
-                  </Link>
+                  </button>
                 </div>
                 <div className='flex flex-row'>
                   <h6>&copy; {t('footer.copyright')}</h6>
