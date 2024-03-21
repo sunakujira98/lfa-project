@@ -30,20 +30,24 @@ export const useGetAllProjectQuery = (data: TProjectFilter) => {
       const response = await ProjectApi.getAll({
         ...data,
         start: pageParam,
-        limit: 9,
+        limit: 6,
       })
 
       return response
     },
     initialPageParam: 0,
-    getNextPageParam: (lastPage) => {
+    getNextPageParam: (lastPage, allPages) => {
       if (
         lastPage.meta.pagination.total <=
-        lastPage.meta.pagination.limit * lastPage.meta.pagination.start
+          lastPage.meta.pagination.limit *
+            Math.max(lastPage.meta.pagination.start, 1) ||
+        allPages?.[0]?.meta?.pagination?.total <
+          lastPage.meta.pagination.limit *
+            Math.max(lastPage.meta.pagination.start, 1)
       ) {
         return undefined
       }
-      return lastPage.meta.pagination.start + 9
+      return lastPage.meta.pagination.start + 6
     },
   })
 
