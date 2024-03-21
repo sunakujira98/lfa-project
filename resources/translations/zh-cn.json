@@ -1,5 +1,5 @@
 {
-  "header": {
+	"header": {
     "home": "首页",
     "projects": "项目",
     "about": "关于",
@@ -112,4 +112,5 @@
     "sitemap" : "网站地图",
     "copyright" : "2023 LFA。保留所有权利。"
   }
+	}
 }
