@@ -3,7 +3,10 @@
 'use client'
 import { StrapiResponse } from '@/domain/types/common.types'
 import { Project } from '@/domain/types/project.types'
-import { useGetAllProjectQuery } from '@/hooks/query/useProjectQuery'
+import {
+  useGetAllProjectQuery,
+  useGetAllProjectQueryWithoutInfinite,
+} from '@/hooks/query/useProjectQuery'
 import { useTranslation } from '@/resources/i18n/i18n.hooks'
 import { findTranslatedData } from '@/utils/FindTranslatedData/FindTranslatedData'
 import { useParams } from 'next/navigation'
@@ -11,7 +14,7 @@ import { useParams } from 'next/navigation'
 export function FeaturedProject() {
   const { lang } = useParams()
   const { t } = useTranslation()
-  const { data, isSuccess } = useGetAllProjectQuery({})
+  const { data, isSuccess } = useGetAllProjectQueryWithoutInfinite({ limit: 3 })
 
   const localizedData = findTranslatedData(
     lang as string,

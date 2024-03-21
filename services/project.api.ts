@@ -17,10 +17,23 @@ interface Filters {
   }
 }
 
+interface Pagination {
+  limit?: number
+  start?: number
+}
+
 export const ProjectApi = {
   getAll: async function (data: TProjectFilter) {
-    const { industryId, serviceId, regionId, hasVideo, isAwardWinning } = data
-    const params: { filters?: Filters } = {}
+    const {
+      industryId,
+      serviceId,
+      regionId,
+      hasVideo,
+      isAwardWinning,
+      limit,
+      start,
+    } = data
+    const params: { filters?: Filters; pagination?: Pagination } = {}
 
     if (industryId) {
       params.filters = { ...params.filters, industry: { id: industryId } }
@@ -40,7 +53,14 @@ export const ProjectApi = {
 
     if (isAwardWinning === 'true') {
       params.filters = { ...params.filters, awards: { $not: 'null' } }
-      console.log('params', params)
+    }
+
+    if (limit) {
+      params.pagination = { ...params.filters, ...params.pagination, limit }
+    }
+
+    if (start) {
+      params.pagination = { ...params.filters, ...params.pagination, start }
     }
 
     const result = await apiInstance.get<StrapiResponse<Project>>(

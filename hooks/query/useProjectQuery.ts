@@ -1,10 +1,65 @@
 import { TProjectFilter } from '@/domain/types/project.types'
 import { ProjectApi } from '@/services/project.api'
-import { useQuery } from '@tanstack/react-query'
+import { useInfiniteQuery, useQuery } from '@tanstack/react-query'
 import { EQueryKey } from './constants/react-query.constant'
 
 export const useGetAllProjectQuery = (data: TProjectFilter) => {
-  const { industryId, serviceId, regionId, hasVideo, isAwardWinning } = data
+  const {
+    industryId,
+    serviceId,
+    regionId,
+    hasVideo,
+    isAwardWinning,
+    limit,
+    start,
+  } = data
+  const query = useInfiniteQuery({
+    queryKey: [
+      EQueryKey.PROJECT,
+      {
+        industryId,
+        serviceId,
+        regionId,
+        hasVideo,
+        isAwardWinning,
+        limit,
+        start,
+      },
+    ],
+    queryFn: async ({ pageParam }) => {
+      const response = await ProjectApi.getAll({
+        ...data,
+        start: pageParam,
+        limit: 9,
+      })
+
+      return response
+    },
+    initialPageParam: 0,
+    getNextPageParam: (lastPage) => {
+      if (
+        lastPage.meta.pagination.total <=
+        lastPage.meta.pagination.limit * lastPage.meta.pagination.start
+      ) {
+        return undefined
+      }
+      return lastPage.meta.pagination.start + 9
+    },
+  })
+
+  return query
+}
+
+export const useGetAllProjectQueryWithoutInfinite = (data: TProjectFilter) => {
+  const {
+    industryId,
+    serviceId,
+    regionId,
+    hasVideo,
+    isAwardWinning,
+    limit,
+    start,
+  } = data
   const query = useQuery({
     queryKey: [
       EQueryKey.PROJECT,
@@ -14,10 +69,14 @@ export const useGetAllProjectQuery = (data: TProjectFilter) => {
         regionId,
         hasVideo,
         isAwardWinning,
+        limit,
+        start,
       },
     ],
     queryFn: async () => {
-      const response = await ProjectApi.getAll(data)
+      const response = await ProjectApi.getAll({
+        ...data,
+      })
 
       return response
     },

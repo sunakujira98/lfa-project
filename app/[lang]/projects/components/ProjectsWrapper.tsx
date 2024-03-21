@@ -1,19 +1,21 @@
 'use client'
 
-import Lottie from 'lottie-react'
 import { useParams } from 'next/navigation'
 import { parseAsString, useQueryState } from 'next-usequerystate'
+import { useEffect } from 'react'
+import { useInView } from 'react-intersection-observer'
 
+import { ScreenSpinner } from '@/components/shared/ScreenSpinner'
 import { StrapiResponse } from '@/domain/types/common.types'
 import { Project } from '@/domain/types/project.types'
 import { useGetAllProjectQuery } from '@/hooks/query/useProjectQuery'
-import lfaLottieJson from '@/lottie-animations/lfa-lottie-animation.json'
 import { findTranslatedData } from '@/utils/FindTranslatedData/FindTranslatedData'
 
 import { ProjectFilter } from './ProjectFilter'
 import { ProjectSingle } from './ProjectSingle'
 
 export function ProjectsWrapper() {
+  const { ref, inView } = useInView()
   const { lang } = useParams()
 
   const [industryQuery, setIndustryQuery] = useQueryState(
@@ -41,13 +43,21 @@ export function ProjectsWrapper() {
     parseAsString.withDefault(''),
   )
 
-  const { data, isSuccess, isLoading } = useGetAllProjectQuery({
-    industryId: industryQuery,
-    serviceId: serviceQuery,
-    regionId: regionQuery,
-    hasVideo,
-    isAwardWinning,
-  })
+  const { data, isLoading, fetchNextPage, error, isFetchingNextPage } =
+    useGetAllProjectQuery({
+      industryId: industryQuery,
+      serviceId: serviceQuery,
+      regionId: regionQuery,
+      hasVideo,
+      isAwardWinning,
+    })
+
+  useEffect(() => {
+    if (inView && !isLoading && !error) {
+      fetchNextPage()
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [inView, isLoading, error])
 
   const onChangeIndustryQuery = (industryValue: number) => {
     setIndustryQuery(industryValue.toString())
@@ -77,19 +87,8 @@ export function ProjectsWrapper() {
     }
   }
 
-  const localizedData = findTranslatedData(
-    lang as string,
-    data,
-  ) as StrapiResponse<Project>
-
-  const projects = isSuccess
-    ? localizedData.data.length > 0
-      ? localizedData.data
-      : data?.data
-    : []
-
   return isLoading ? (
-    <Lottie animationData={lfaLottieJson} loop />
+    <ScreenSpinner />
   ) : (
     <>
       <ProjectFilter
@@ -103,18 +102,32 @@ export function ProjectsWrapper() {
         regionId={regionQuery}
       />
       <div className='grid grid-cols-1 md:grid-cols-3 gap-10 overflow-x-hidden pb-20'>
-        {projects.map((project) => {
-          const localeId = project.localeId || project.id
+        {data?.pages?.flatMap((projects) => {
+          const localizedData = findTranslatedData(
+            lang as string,
+            projects,
+          ) as StrapiResponse<Project>
 
-          return (
-            <ProjectSingle
-              project={project}
-              key={project.id}
-              localeId={localeId}
-            />
-          )
+          const project =
+            localizedData.data.length > 0
+              ? localizedData.data
+              : data?.pages?.[0].data
+
+          return project.map((singleProject) => {
+            const localeId = singleProject.localeId || singleProject.id
+
+            return (
+              <ProjectSingle
+                project={singleProject}
+                key={singleProject.id}
+                localeId={localeId}
+              />
+            )
+          })
         })}
       </div>
+      <div ref={ref} />
+      {isFetchingNextPage && <ScreenSpinner />}
     </>
   )
 }

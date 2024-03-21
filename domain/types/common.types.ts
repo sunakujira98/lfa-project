@@ -41,6 +41,8 @@ export type StrapiResponse<T> = {
       pageSize: number
       pageCount: number
       total: number
+      start: number
+      limit: number
     }
   }
 }

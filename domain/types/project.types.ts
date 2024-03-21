@@ -10,6 +10,8 @@ export type TProjectFilter = {
   regionId?: string
   hasVideo?: string
   isAwardWinning?: string
+  limit?: number
+  start?: number
 }
 
 export type ProjectDetail = {
