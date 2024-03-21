@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 
+import { VIDEO_EXT } from '@/domain/constants/common.constants'
 import {
   AvailableComponents,
   StrapiImageAttributes,
@@ -18,17 +19,27 @@ type FullImageProps = {
 }
 
 export function FullImage({ data }: FullImageProps) {
+  const a = VIDEO_EXT.includes(data.image.data.attributes.ext)
+
   return (
     <div
       className='relative container mx-auto py-5'
       style={{ maxWidth: '1680px' }}
     >
       <div className='h-full mx-auto flex md:pt-0 md:items-center bg-cover bg-right'>
-        <img
-          src={`${process.env.NEXT_PUBLIC_CMS_HOST}${data.image.data.attributes.url}`}
-          className='w-screen'
-          alt={data.image.data.attributes.name}
-        />
+        {VIDEO_EXT.includes(data.image.data.attributes.ext) ? (
+          <video
+            src={`${process.env.NEXT_PUBLIC_CMS_HOST}${data.image.data.attributes.url}`}
+            className='w-screen'
+            controls
+          />
+        ) : (
+          <img
+            src={`${process.env.NEXT_PUBLIC_CMS_HOST}${data.image.data.attributes.url}`}
+            className='w-screen'
+            alt={data.image.data.attributes.name}
+          />
+        )}
       </div>
     </div>
   )
