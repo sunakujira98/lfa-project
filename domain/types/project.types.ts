@@ -2,6 +2,15 @@ import { AvailableComponents, StrapiImageAttributes } from './common.types'
 import { Award } from './award.types'
 import { Industry } from './industry.types'
 import { TService } from './services.types'
+import { Region } from './region.types'
+
+export type TProjectFilter = {
+  industryId?: string
+  serviceId?: string
+  regionId?: string
+  hasVideo?: string
+  isAwardWinning?: string
+}
 
 export type ProjectDetail = {
   id: number
@@ -24,6 +33,9 @@ export type ProjectAttribute = {
   }
   industry: {
     data: Industry
+  }
+  region: {
+    data: Region
   }
   service: {
     data: TService

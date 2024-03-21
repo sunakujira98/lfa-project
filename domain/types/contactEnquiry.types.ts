@@ -4,6 +4,7 @@ export interface IBasicContactEnquiry {
   email: string
   message: string
   name: string
+  enquiryType: string
 }
 
 export interface IContactEnquiryAttribute extends IBasicContactEnquiry {

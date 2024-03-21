@@ -107,3 +107,8 @@ p {
 .react-multi-carousel-dot.react-multi-carousel-dot--active button {
   background: #252525 !important;
 }
+
+.checkbox:checked {
+  background-color: #252525 !important; /* background color when selected */
+}
+

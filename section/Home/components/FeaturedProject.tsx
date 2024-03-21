@@ -11,7 +11,7 @@ import { useParams } from 'next/navigation'
 export function FeaturedProject() {
   const { lang } = useParams()
   const { t } = useTranslation()
-  const { data, isSuccess } = useGetAllProjectQuery()
+  const { data, isSuccess } = useGetAllProjectQuery({})
 
   const localizedData = findTranslatedData(
     lang as string,
@@ -35,11 +35,28 @@ export function FeaturedProject() {
         <div className='flex flex-col justify-center items-center'>
           {projects.map((project) => {
             if (project.attributes.isFeatured) {
+              const params = new URLSearchParams()
+
               const projectId = project.localeId || project.id
+              const industry = project.attributes.industry?.data?.id
+              const service = project.attributes.service?.data?.id
+              const region = project.attributes.region?.data?.id
+
+              if (industry) {
+                params.append('industry', industry.toString())
+              }
+
+              if (service) {
+                params.append('service', service.toString())
+              }
+
+              if (region) {
+                params.append('region', region.toString())
+              }
 
               return (
                 <div className='container pb-10' key={project.id}>
-                  <a href='/projects'>
+                  <a href={`/projects?${params}`}>
                     <img
                       src={`${process.env.NEXT_PUBLIC_CMS_HOST}${project.attributes.thumbnail.data.attributes.url}`}
                       className='w-96 h-96 aspect-square md:w-screen md:bg-cover md:h-full md:bg-center md:aspect-auto transform transition-transform hover:scale-[1.01] cursor-pointer'

@@ -86,7 +86,11 @@
         "label" : "I have read and accept the <a href='{{privacyPolicyLink}}'>Privacy Policy</a> and <a href='{{termsAndConditionsLink}}'>Terms & Conditions</a>"
       },
       "send" : "Send",
-      "success" : "Thank you for your email. Our team will reply to your message shortly",
+      "success" : {
+        "title" : "Thank You For Reaching Out",
+        "subtitle" : "Your message has been successfully submitted, and our team will get in touch with you soon!",
+        "backToHome" : "Back To Home"
+      },
       "error" : "There is an error. Please try again later"
     },
     "footer" : {

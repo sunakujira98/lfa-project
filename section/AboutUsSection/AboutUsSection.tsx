@@ -1,6 +1,6 @@
 'use client'
 
-import { ArrowRightIcon } from '@/components/shared/svg/icons'
+import { ArrowRightUpIcon } from '@/components/shared/svg/icons'
 import { Team } from '@/components/shared/Team'
 import { useGetAllAwardQuery } from '@/hooks/query/useAwardQuery'
 import { useGetAllTeamQuery } from '@/hooks/query/useTeamQuery'
@@ -79,7 +79,7 @@ export function AboutUsSection() {
                 <a href={award.attributes.externalLink}>
                   <div className='flex justify-between border-b-[1px] py-2 text-xs items-center'>
                     {award.attributes.awardName}
-                    <ArrowRightIcon />
+                    <ArrowRightUpIcon />
                   </div>
                 </a>
               )

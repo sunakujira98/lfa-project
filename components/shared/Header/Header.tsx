@@ -85,7 +85,7 @@ export function Header() {
         isOpen && 'bg-greige min-h-[100vh]',
       )}
     >
-      <div className='hidden w-full container mx-auto md:flex flex-wrap items-center justify-between mt-0 bg-transparent'>
+      <div className='hidden max-w-screen-xl container mx-auto md:flex flex-wrap items-center justify-between mt-0 bg-transparent'>
         <div className='md:flex md:items-center md:w-auto w-full order-3 md:order-1'>
           <nav>
             <ul className='md:flex items-center justify-between text-base text-gray-700 md:pt-0'>

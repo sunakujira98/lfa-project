@@ -16,7 +16,7 @@ export function Footer() {
 
   return (
     <footer className='py-10 px-4 bg-charcoal-1000 md:pt-16 md:pb-6 overflow-x-hidden'>
-      <div className='container mx-auto'>
+      <div className='max-w-screen-xl container mx-auto'>
         <div className='w-full flex flex-col md:flex-row gap-28'>
           <div className='flex-1 mb-6 text-black w-full md:w-auto'>
             <div className='flex flex-col'>
@@ -67,7 +67,7 @@ export function Footer() {
                   />
                 </div>
               </div>
-              <div className='hidden md:flex flex-row gap-40'>
+              <div className='hidden md:flex flex-row gap-[150px]'>
                 <div className='flex flex-col gap-2'>
                   <span className='uppercase text-charcoal-600 text-3xs'>
                     {t('footer.riskManagementSystem')}
@@ -90,12 +90,11 @@ export function Footer() {
             </div>
           </div>
           <div className='hidden md:flex flex-1 w-full md:w-auto'>
-            {/* Modified */}
             <div className='col-lg-6 col-md-6'>
-              <span className='font-vinila text-2xl font-thin text-lfaWhite'>
+              <span className='font-vinila text-2xl font-thin text-lfaWhite ml-[55px]'>
                 {t('footer.title')}
               </span>
-              <div className='py-8'>
+              <div className='py-8 ml-[60px]'>
                 <div className='py-8 grid grid-cols-1 md:grid-cols-2 gap-5'>
                   <div className='flex flex-col'>
                     <span className='text-charcoal-600 uppercase text-3xs'>
@@ -111,7 +110,7 @@ export function Footer() {
                       {t('footer.viewOnGoogleMaps')}
                     </span>
                   </div>
-                  <div className='flex flex-col'>
+                  <div className='flex flex-col ml-[89px]'>
                     <span className='text-charcoal-600 uppercase text-3xs'>
                       {t('footer.stayConnected')}
                     </span>
@@ -159,7 +158,7 @@ export function Footer() {
                 {t('footer.sitemap')}
               </Link>
             </li>
-            <li className='flex items-end justify-end relative whitespace-nowrap ml-auto'>
+            <li className='flex items-end justify-end relative whitespace-nowrap ml-12 self-end text-right'>
               <a className='nav-link scrollto' href='#gallery'>
                 <ArrowUpIcon />
               </a>
@@ -240,17 +239,17 @@ export function Footer() {
                   className='nav-link scrollto uppercase'
                   href='/terms-and-conditions'
                 >
-                  {t('footer.termsAndConditions')}
+                  {t('header.footer.tnc')}
                 </Link>
               </li>
               <li className='relative whitespace-nowrap'>
                 <Link className='nav-link scrollto uppercase' href='/faq'>
-                  {t('footer.faq')}
+                  {t('header.footer.faq')}
                 </Link>
               </li>
               <li className='relative whitespace-nowrap'>
                 <Link className='nav-link scrollto' href='#team'>
-                  {t('footer.sitemap')}
+                  {t('header.footer.sitemap')}
                 </Link>
               </li>
             </ul>

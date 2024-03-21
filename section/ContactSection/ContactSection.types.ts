@@ -3,6 +3,7 @@ import * as yup from 'yup'
 export const getContactSchema = () => {
   return yup.object().shape({
     message: yup.string().required('Please fill your message'),
+    enquiryType: yup.string().required('Please select your enquiry type'),
     email: yup
       .string()
       .required('Please fill your email')

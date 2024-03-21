@@ -2,7 +2,7 @@ import React from 'react'
 
 import { SvgProps } from '../svg.types'
 
-const ArrowRightIcon: React.FC<SvgProps> = ({ className, ...props }) => (
+const ArrowRightUpIcon: React.FC<SvgProps> = ({ className, ...props }) => (
   <svg
     xmlns='http://www.w3.org/2000/svg'
     width='32'
@@ -13,18 +13,18 @@ const ArrowRightIcon: React.FC<SvgProps> = ({ className, ...props }) => (
     {...props}
   >
     <path
-      d='M28 16H4'
-      stroke='#464646'
-      strokeWidth='1.33333'
+      d='M12.667 7.3335H24.667V19.3335'
+      stroke='#333333'
+      strokeWidth='0.666667'
       strokeLinecap='square'
     />
     <path
-      d='M20 24L28 16L20 8'
-      stroke='#464646'
-      strokeWidth='1.33333'
+      d='M7.69629 24.3041L24.6668 7.3335'
+      stroke='#333333'
+      strokeWidth='0.666667'
       strokeLinecap='square'
     />
   </svg>
 )
 
-export default ArrowRightIcon
+export default ArrowRightUpIcon
