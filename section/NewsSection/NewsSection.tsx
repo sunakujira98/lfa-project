@@ -1,29 +1,40 @@
 'use client'
 
 import { News } from '@/components/shared/News'
+import { ScreenSpinner } from '@/components/shared/ScreenSpinner'
 import { SectionHeader } from '@/components/shared/SectionHeader'
 import { Article } from '@/domain/types/article.types'
 import { StrapiResponse } from '@/domain/types/common.types'
-import { useGetAllArticleQuery } from '@/hooks/query/useGetArticleQuery'
+import { useGetInfiniteArticleQuery } from '@/hooks/query/useGetArticleQuery'
 import { useTranslation } from '@/resources/i18n/i18n.hooks'
 import { findTranslatedData } from '@/utils/FindTranslatedData/FindTranslatedData'
+
 import { useParams } from 'next/navigation'
+import { useEffect } from 'react'
+import { useInView } from 'react-intersection-observer'
 
 export function NewsSection() {
+  const { ref, inView } = useInView()
+
   const { lang } = useParams()
   const { t } = useTranslation()
-  const { isSuccess, data } = useGetAllArticleQuery()
-
-  const localizedData = findTranslatedData(
-    lang as string,
+  const {
+    isSuccess,
     data,
-  ) as StrapiResponse<Article>
+    isLoading,
+    fetchNextPage,
+    error,
+    isFetchingNextPage,
+  } = useGetInfiniteArticleQuery({
+    limit: 6,
+  })
 
-  const articles = isSuccess
-    ? localizedData.data.length > 0
-      ? localizedData.data
-      : data?.data
-    : []
+  useEffect(() => {
+    if (inView && !isLoading && !error) {
+      fetchNextPage()
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [inView, isLoading, error])
 
   return (
     <>
@@ -37,14 +48,29 @@ export function NewsSection() {
       {isSuccess && (
         <div className='container border-t-[1px] px-4 md:px-0'>
           <div className='grid grid-cols-1 md:grid-cols-3 gap-0 md:gap-6'>
-            {articles.map((news) => {
-              const localeId = news.localeId || news.id
+            {data?.pages?.flatMap((articles) => {
+              const localizedData = findTranslatedData(
+                lang as string,
+                articles,
+              ) as StrapiResponse<Article>
 
-              return <News news={news} localeId={localeId} />
+              const article = isSuccess
+                ? localizedData.data.length > 0
+                  ? localizedData.data
+                  : data?.pages?.[0].data
+                : []
+
+              return article.map((singleArticle) => {
+                const localeId = singleArticle.localeId || singleArticle.id
+
+                return <News news={singleArticle} localeId={localeId} />
+              })
             })}
           </div>
         </div>
       )}
+      <div ref={ref} />
+      {isFetchingNextPage && <ScreenSpinner />}
     </>
   )
 }

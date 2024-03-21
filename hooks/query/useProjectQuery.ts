@@ -12,6 +12,7 @@ export const useGetAllProjectQuery = (data: TProjectFilter) => {
     isAwardWinning,
     limit,
     start,
+    sort,
   } = data
   const query = useInfiniteQuery({
     queryKey: [
@@ -24,6 +25,7 @@ export const useGetAllProjectQuery = (data: TProjectFilter) => {
         isAwardWinning,
         limit,
         start,
+        sort,
       },
     ],
     queryFn: async ({ pageParam }) => {

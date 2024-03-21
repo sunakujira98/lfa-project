@@ -50,6 +50,9 @@ export function ProjectsWrapper() {
       regionId: regionQuery,
       hasVideo,
       isAwardWinning,
+      sort: {
+        0: { createdAt: 'desc' },
+      },
     })
 
   useEffect(() => {

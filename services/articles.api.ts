@@ -1,4 +1,4 @@
-import { Article } from '@/domain/types/article.types'
+import { Article, TArticleFilter } from '@/domain/types/article.types'
 import {
   StrapiResponse,
   StrapiSingleResponse,
@@ -7,6 +7,11 @@ import {
 import { apiInstance } from './api'
 
 const BASE_URL = '/articles'
+
+type TArticlePagination = {
+  limit?: number
+  start?: number
+}
 
 export const ArticleApi = {
   getAll: async function (
@@ -18,6 +23,38 @@ export const ArticleApi = {
         params: {
           ...params,
         },
+      },
+    )
+
+    return result.data
+  },
+
+  getWithFilter: async function (
+    data: TArticleFilter,
+  ): Promise<StrapiResponse<Article>> {
+    const { limit, start, sort } = data
+
+    const params: {
+      pagination?: TArticlePagination
+      sort?: any
+    } = {}
+
+    if (limit) {
+      params.pagination = { ...params.pagination, limit }
+    }
+
+    if (start) {
+      params.pagination = { ...params.pagination, start }
+    }
+
+    if (sort) {
+      params.sort = { ...params.sort, ...sort }
+    }
+
+    const result = await apiInstance.get<StrapiResponse<Article>>(
+      `${BASE_URL}?populate=*`,
+      {
+        params,
       },
     )
 

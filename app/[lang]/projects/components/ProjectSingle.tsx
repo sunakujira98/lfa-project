@@ -18,17 +18,17 @@ export function ProjectSingle({ project, localeId }: ProjectSingleProps) {
       />
       <div className='flex flex-col'>
         <Link href={`/projects/${localeId}`}>
-          <h1 className='text-2xl font-light'>{project.attributes.title}</h1>
+          <h1 className='text-2xl font-thin'>{project.attributes.title}</h1>
         </Link>
         <div className='flex flex-row'>
           <a href='#'>
-            <span className='text-2xs underline font-light'>
+            <span className='text-2xs underline font-thin'>
               {project.attributes.industry.data.attributes.name}
             </span>
           </a>
           <div className='text-xs font-thin'>&nbsp; | &nbsp;</div>
           <a href='#'>
-            <span className='text-2xs underline font-light'>
+            <span className='text-2xs underline font-thin'>
               {project.attributes.service.data.attributes.title}
             </span>
           </a>

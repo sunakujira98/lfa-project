@@ -1,8 +1,18 @@
-import { AvailableComponents, StrapiImageAttributes } from './common.types'
+import {
+  AvailableComponents,
+  SortParams,
+  StrapiImageAttributes,
+} from './common.types'
 
 export type ArticleDetail = {
   id: number
   __component: AvailableComponents
+}
+
+export type TArticleFilter = {
+  limit?: number
+  start?: number
+  sort?: SortParams
 }
 
 export type TContent = {

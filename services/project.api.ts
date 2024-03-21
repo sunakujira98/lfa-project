@@ -1,4 +1,5 @@
 import {
+  SortParams,
   StrapiResponse,
   StrapiSingleResponse,
 } from '@/domain/types/common.types'
@@ -7,7 +8,7 @@ import { apiInstance } from './api'
 
 const BASE_URL = '/projects'
 
-interface Filters {
+type TProjectFilters = {
   industry?: { id: string }
   service?: { id: string }
   region?: { id: string }
@@ -17,7 +18,7 @@ interface Filters {
   }
 }
 
-interface Pagination {
+type TProjectPagination = {
   limit?: number
   start?: number
 }
@@ -32,8 +33,13 @@ export const ProjectApi = {
       isAwardWinning,
       limit,
       start,
+      sort,
     } = data
-    const params: { filters?: Filters; pagination?: Pagination } = {}
+    const params: {
+      filters?: TProjectFilters
+      pagination?: TProjectPagination
+      sort?: any
+    } = {}
 
     if (industryId) {
       params.filters = { ...params.filters, industry: { id: industryId } }
@@ -61,6 +67,10 @@ export const ProjectApi = {
 
     if (start) {
       params.pagination = { ...params.filters, ...params.pagination, start }
+    }
+
+    if (sort) {
+      params.sort = { ...params.sort, ...sort }
     }
 
     const result = await apiInstance.get<StrapiResponse<Project>>(

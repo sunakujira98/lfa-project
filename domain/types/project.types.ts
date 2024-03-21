@@ -1,4 +1,8 @@
-import { AvailableComponents, StrapiImageAttributes } from './common.types'
+import {
+  AvailableComponents,
+  SortParams,
+  StrapiImageAttributes,
+} from './common.types'
 import { Award } from './award.types'
 import { Industry } from './industry.types'
 import { TService } from './services.types'
@@ -12,6 +16,7 @@ export type TProjectFilter = {
   isAwardWinning?: string
   limit?: number
   start?: number
+  sort?: SortParams
 }
 
 export type ProjectDetail = {
