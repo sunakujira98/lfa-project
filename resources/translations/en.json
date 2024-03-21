@@ -120,7 +120,11 @@
     "title" : "Frequently Asked Questions"
   },
   "termsAndConditions" : {
-    "title" : "Title And Conditions"
+    "title" : "Terms And Conditions"
+  },
+  "sitemap" : {
+    "title" : "Sitemap",
+    "pages" : "Pages"
   },
   "footer" : {
     "title" : "Cultivating Growth Together",
