@@ -38,13 +38,13 @@ export function Recognition() {
 
   const goToPrevious = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? data?.data?.length - 1 : prevIndex - 1,
+      prevIndex === 0 && data?.data ? data?.data?.length - 1 : prevIndex - 1,
     )
   }
 
   const goToNext = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex === data?.data?.length - 1 ? 0 : prevIndex + 1,
+      data?.data && prevIndex === data?.data?.length - 1 ? 0 : prevIndex + 1,
     )
   }
 
