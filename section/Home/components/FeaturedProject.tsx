@@ -62,7 +62,7 @@ export function FeaturedProject() {
                   <a href={`/projects?${params}`}>
                     <img
                       src={`${process.env.NEXT_PUBLIC_CMS_HOST}${project.attributes.thumbnail.data.attributes.url}`}
-                      className='w-96 h-96 aspect-square md:w-screen md:bg-cover md:h-full md:bg-center md:aspect-auto transform transition-transform hover:scale-[1.01] cursor-pointer'
+                      className='w-96 h-96 md:w-full md:h-full object-cover object-center transform transition-transform hover:scale-[1.01] cursor-pointer'
                       alt={project.attributes.title}
                     />
                   </a>
@@ -71,13 +71,13 @@ export function FeaturedProject() {
                       href={`${lang}/projects/${projectId}`}
                       className='hover:underline'
                     >
-                      <h3 className='font-vinila text-2xl text-gray-50 tracking-wide font-light'>
+                      <h3 className='font-vinila text-lg md:text-2xl text-gray-50 tracking-wide font-thin'>
                         {project.attributes.title}
                       </h3>
                     </a>
                     <div className='flex flex-row'>
                       <a href='#'>
-                        <span className='text-2xs underline font-light'>
+                        <span className='text-2xs underline font-thin'>
                           {project.attributes.industry.data.attributes.name}
                         </span>
                       </a>

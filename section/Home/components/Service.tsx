@@ -94,11 +94,13 @@ export function Service() {
                               </Disclosure.Button>
                             </div>
                             <Disclosure.Panel>
-                              <img
-                                src={`${process.env.NEXT_PUBLIC_CMS_HOST}${service.attributes.icon.data.attributes.url}`}
-                                className='text-charcoal-1000 py-4'
-                                alt={service.attributes.title}
-                              />
+                              <div className='py-4'>
+                                <img
+                                  src={`${process.env.NEXT_PUBLIC_CMS_HOST}${service.attributes.icon.data.attributes.url}`}
+                                  className='text-charcoal-1000 w-8 h-8'
+                                  alt={service.attributes.title}
+                                />
+                              </div>
                               <p>{service.attributes.description}</p>
                             </Disclosure.Panel>
                           </>

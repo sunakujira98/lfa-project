@@ -6,7 +6,7 @@ export function AboutUs() {
   const { t } = useTranslation()
 
   return (
-    <div className='max-w-screen-xl mx-auto pt-10 px-4 md:px-0'>
+    <div className='max-w-screen-xl mx-auto py-10 md:py-0 md:pt-10 px-4 md:px-0'>
       <div className='container flex justify-center'>
         <div className='flex items-center justify-center mx-auto w-full md:max-w-[65%]'>
           <div className='flex flex-col items-center'>

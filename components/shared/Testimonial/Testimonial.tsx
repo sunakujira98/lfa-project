@@ -38,7 +38,7 @@ export function Testimonial({ data }: TestimonialProps) {
                 <div className='flex order-first sm:order-none'>
                   <img
                     src={`${process.env.NEXT_PUBLIC_CMS_HOST}${data.attributes.companyImage.data.attributes.url}`}
-                    className='w-20'
+                    className='w-20 md:w-40'
                     alt={data.attributes.fullName}
                   />
                 </div>

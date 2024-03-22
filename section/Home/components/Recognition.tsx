@@ -135,7 +135,7 @@ export function Recognition() {
             <img
               src={`${process.env.NEXT_PUBLIC_CMS_HOST}${data?.data?.[currentIndex].attributes.image.data.attributes.url}`}
               alt={`Image ${currentIndex}`}
-              className='w-full max-h-80'
+              className='w-full h-52 object-cover object-contain'
             />
             <div className='flex flex-col gap-2 pt-4'>
               <h6 className='uppercase'>

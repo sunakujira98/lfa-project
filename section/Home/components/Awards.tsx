@@ -15,26 +15,28 @@ export function Awards() {
         <div className='max-w-screen-xl mx-auto py-10 md:py-9 px-4 md:px-0'>
           <h6 className='font-neue text-lfaWhite'>{t('awards.title')}</h6>
           <div className='relative flex overflow-x-hidden'>
-            <div className='flex flex-row gap-24 animate-marquee whitespace-nowrap'>
-              {data?.data?.map((client) => {
-                return (
-                  <div className='pt-4' key={client.id}>
-                    <img
-                      src={`${process.env.NEXT_PUBLIC_CMS_HOST}${client.attributes.image.data.attributes.url}`}
-                      className='h-8'
-                      alt={client.attributes.awardName}
-                    />
-                  </div>
-                )
-              })}
+            <div className='hidden md:flex flex-row gap-24 animate-marquee whitespace-nowrap'>
+              {[...data?.data, ...data?.data, ...data?.data].map(
+                (client, index) => {
+                  return (
+                    <div className='pt-4' key={`client-marquee-${index}`}>
+                      <img
+                        src={`${process.env.NEXT_PUBLIC_CMS_HOST}${client.attributes.image.data.attributes.url}`}
+                        className='h-8 md:h-12'
+                        alt={client.attributes.awardName}
+                      />
+                    </div>
+                  )
+                },
+              )}
             </div>
-            <div className='px-8 absolute top-0 flex flex-row gap-24 animate-marquee2 whitespace-nowrap'>
-              {data?.data?.map((client) => {
+            <div className='flex md:hidden flex-row gap-24 animate-marquee whitespace-nowrap'>
+              {[...data?.data].map((client, index) => {
                 return (
-                  <div className='pt-4' key={`client-2nd-marquee-${client.id}`}>
+                  <div className='pt-4' key={`client-marquee-${index}`}>
                     <img
                       src={`${process.env.NEXT_PUBLIC_CMS_HOST}${client.attributes.image.data.attributes.url}`}
-                      className='h-8'
+                      className='h-8 md:h-12'
                       alt={client.attributes.awardName}
                     />
                   </div>

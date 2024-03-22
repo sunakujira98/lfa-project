@@ -52,7 +52,7 @@ export function SideBySideNews() {
                 <div className='flex flex-col md:flex-row gap-6' key={news.id}>
                   <img
                     src={`${process.env.NEXT_PUBLIC_CMS_HOST}${news.attributes.thumbnail?.data.attributes.url}`}
-                    className='w-full md:max-w-36 md:max-h-36 md:aspect-square'
+                    className='h-full w-full object-cover object-center md:max-w-36 md:max-h-36 md:aspect-square'
                     alt={news.attributes.title}
                   />
                   <div className='flex flex-col gap-2'>
