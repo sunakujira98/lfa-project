@@ -1,17 +1,17 @@
 import type { Metadata } from 'next'
-import { ReactNode } from 'react'
 import NextTopLoader from 'nextjs-toploader'
+import { ReactNode } from 'react'
 
 import { LanguageProvider } from '@/components/Provider'
 import ReactQueryProvider from '@/components/Provider/ReactQuery'
 import { Footer } from '@/components/shared/Footer'
 import { Header } from '@/components/shared/Header'
+import { NavigationEvents } from '@/components/shared/NavigationEvents'
 import { keppler, neue } from '@/lib/fonts'
 import { getTranslationData } from '@/resources/i18n/i18n'
 import { I18nProvider } from '@/resources/i18n/i18n.context'
 
 import './globals.css'
-import { NavigationEvents } from '@/components/shared/NavigationEvents'
 
 export const metadata: Metadata = {
   title: 'LFA - Interior Design',

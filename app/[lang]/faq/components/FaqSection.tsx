@@ -31,6 +31,7 @@ export function FaqSection() {
     data,
   ) as StrapiResponse<TFAQ>
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const faqs = isSuccess
     ? localizedData.data.length > 0
       ? localizedData.data
@@ -40,8 +41,10 @@ export function FaqSection() {
   const firstAnswersToShow = faqs[0]?.attributes?.answers
 
   useEffect(() => {
-    setActiveIndex(faqs[0]?.id)
-  }, [isSuccess])
+    if (isSuccess) {
+      setActiveIndex(faqs[0]?.id)
+    }
+  }, [isSuccess, faqs])
 
   const onClickActive = (index: number, answers: TFAQAnswers[]) => {
     setActiveIndex(index)

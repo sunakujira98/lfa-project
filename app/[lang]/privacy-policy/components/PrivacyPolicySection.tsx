@@ -30,6 +30,7 @@ export function PrivacyPolicySection() {
     data,
   ) as StrapiResponse<TPrivacyPolicy>
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const privacyPolicies = isSuccess
     ? localizedData.data.length > 0
       ? localizedData.data
@@ -40,8 +41,10 @@ export function PrivacyPolicySection() {
   const firstDescriptionToShow = privacyPolicies[0]?.attributes?.description
 
   useEffect(() => {
-    setActiveIndex(privacyPolicies[0]?.id)
-  }, [isSuccess])
+    if (isSuccess) {
+      setActiveIndex(privacyPolicies[0]?.id)
+    }
+  }, [isSuccess, privacyPolicies])
 
   const onClickActive = (
     index: number,

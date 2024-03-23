@@ -31,6 +31,7 @@ export function TermsAndConditionsSection() {
     data,
   ) as StrapiResponse<TTnc>
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const termsAndConditions = isSuccess
     ? localizedData.data.length > 0
       ? localizedData.data
@@ -41,8 +42,10 @@ export function TermsAndConditionsSection() {
   const firstDescriptionToShow = termsAndConditions[0]?.attributes?.description
 
   useEffect(() => {
-    setActiveIndex(termsAndConditions[0]?.id)
-  }, [isSuccess])
+    if (isSuccess) {
+      setActiveIndex(termsAndConditions[0]?.id)
+    }
+  }, [isSuccess, termsAndConditions])
 
   const onClickActive = (
     index: number,
