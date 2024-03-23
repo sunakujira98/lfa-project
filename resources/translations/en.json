@@ -113,6 +113,8 @@
     "title" : "Privacy Policy"
   },
   "queries" : {
+    "privacyPolicySubtitle" : "For any queries regarding our privacy policy, feel free to drop us a message",
+    "tncSubtitle" : "For any other queries regarding our terms & conditions, feel free to drop us a message",
     "subtitle" : "For any other queries, feel free to drop us a message",
     "contact" : "Contact"
   },

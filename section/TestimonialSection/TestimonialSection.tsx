@@ -28,7 +28,7 @@ export function TestimonialSection() {
 
   return (
     <>
-      <div className='container pt-28 pb-10 md:py-28'>
+      <div className='container pt-28 pb-10 lg:py-28'>
         <SectionHeader
           displayName={t('testimonials.title')}
           title={t('testimonials.subtitle')}
@@ -36,12 +36,10 @@ export function TestimonialSection() {
         />
       </div>
       {isSuccess && (
-        <div className='container'>
-          <div className='flex flex-col'>
-            {testimonials.map((testimonial) => {
-              return <SideBySideTestimonial testimonial={testimonial} />
-            })}
-          </div>
+        <div className='flex flex-col'>
+          {testimonials.map((testimonial) => {
+            return <SideBySideTestimonial testimonial={testimonial} />
+          })}
         </div>
       )}
     </>

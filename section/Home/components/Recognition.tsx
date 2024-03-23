@@ -50,13 +50,13 @@ export function Recognition() {
 
   return (
     isSuccess && (
-      <div className='max-w-screen-xl mx-auto py-10 px-4 md:px-0'>
+      <div className='max-w-screen-xl mx-auto py-10 px-4 lg:px-0'>
         <div className='container pb-10'>
           <h6 className='font-neue text-3xs text-gray-50 uppercase'>
             {t('recognitions.title')}
           </h6>
         </div>
-        <div className='hidden md:block'>
+        <div className='hidden lg:block'>
           <Carousel
             additionalTransfrom={0}
             arrows
@@ -104,12 +104,12 @@ export function Recognition() {
               return (
                 <div className='w-full' key={recognition.id}>
                   <div
-                    className='flex flex-col md:items-center justify-center gap-6'
+                    className='flex flex-col lg:items-center justify-center gap-6'
                     key={recognition.id}
                   >
                     <img
                       src={`${process.env.NEXT_PUBLIC_CMS_HOST}${recognition.attributes.image.data.attributes.url}`}
-                      className='w-full h-fit md:w-[200px] md:h-[120px]'
+                      className='w-full h-fit lg:w-[200px] lg:h-[120px]'
                       alt={recognition.attributes.title}
                     />
                     <div className='flex flex-col gap-2'>
@@ -130,12 +130,12 @@ export function Recognition() {
             })}
           </Carousel>
         </div>
-        <div className='relative md:hidden'>
+        <div className='relative lg:hidden'>
           <div className='overflow-hidden'>
             <img
               src={`${process.env.NEXT_PUBLIC_CMS_HOST}${data?.data?.[currentIndex].attributes.image.data.attributes.url}`}
               alt={`Image ${currentIndex}`}
-              className='w-full h-52 object-cover object-contain'
+              className='w-full h-52 md:h-full object-center'
             />
             <div className='flex flex-col gap-2 pt-4'>
               <h6 className='uppercase'>

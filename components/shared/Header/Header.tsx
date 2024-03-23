@@ -77,16 +77,16 @@ export function Header() {
     <nav
       id='header'
       className={twMerge(
-        'w-full z-10 fixed transition-all top-0 md:py-1 text-lfaWhite',
+        'w-full z-10 fixed transition-all top-0 lg:py-1 text-lfaWhite',
         isHaveBg ? 'text-lfaWhite' : 'text-charcoal-1000',
         showBg && 'bg-beige text-charcoal-1000',
         isOpen && 'bg-greige min-h-[100vh]',
       )}
     >
-      <div className='hidden max-w-screen-xl container mx-auto md:flex flex-wrap items-center justify-between mt-0 bg-transparent'>
-        <div className='md:flex md:items-center md:w-auto w-full order-3 md:order-1'>
+      <div className='hidden max-w-screen-xl container mx-auto lg:flex flex-wrap items-center justify-between mt-0 bg-transparent'>
+        <div className='lg:flex lg:items-center lg:w-auto w-full order-3 lg:order-1'>
           <nav>
-            <ul className='md:flex items-center justify-between text-base text-gray-700 md:pt-0'>
+            <ul className='lg:flex items-center justify-between text-base text-gray-700 lg:pt-0'>
               <li>
                 <a
                   className='inline-block no-underline hover:text-black py-2 text-3xl'
@@ -99,7 +99,7 @@ export function Header() {
           </nav>
         </div>
 
-        <div className='order-2 md:order-3 flex items-center'>
+        <div className='order-2 lg:order-3 flex items-center'>
           <ul className='m-0 p-0 flex list-none items-center gap-8 font-neue uppercase text-3xs font-thin'>
             <li className='relative whitespace-nowrap'>
               <Link
@@ -187,7 +187,7 @@ export function Header() {
 
       <div
         className={twMerge(
-          'flex flex-row justify-between md:hidden p-4 items-center',
+          'flex flex-row justify-between lg:hidden p-4 items-center',
           isOpen && 'text-charcoal-1000',
         )}
       >
@@ -207,7 +207,7 @@ export function Header() {
 
           {isOpen && (
             <>
-              <ul className='absolute -top-[13rem] left-0 flex w-full translate-y-full flex-col gap-1 px-5 py-7 md:hidden text-charcoal-1000'>
+              <ul className='absolute -top-[13rem] left-0 flex w-full translate-y-full flex-col gap-1 px-5 py-7 lg:hidden text-charcoal-1000'>
                 <li className='pb-4 uppercase border-b-[1px]'>
                   <button
                     className={twMerge(
@@ -263,7 +263,7 @@ export function Header() {
                 </li>
               </ul>
 
-              <div className='absolute bottom-0 left-0 w-full flex items-center flex-col md:hidden pb-4 gap-4 !text-gray-50 px-5'>
+              <div className='absolute bottom-0 left-0 w-full flex items-center flex-col lg:hidden pb-4 gap-4 !text-gray-50 px-5'>
                 <div className='w-full pb-3'>
                   <BigButton
                     active={true}

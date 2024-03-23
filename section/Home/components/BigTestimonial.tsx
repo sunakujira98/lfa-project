@@ -25,9 +25,9 @@ export function BigTestimonial() {
     : []
 
   return (
-    <div className='max-w-screen-xl mx-auto py-10 px-4 md:px-0'>
+    <div className='max-w-screen-xl mx-auto py-10 px-4 lg:px-0'>
       <div className='container'>
-        <div className='pb-10 md:pb-0'>
+        <div className='pb-10 lg:pb-0'>
           <span className='font-neue text-3xs uppercase text-gray-50 tracking-wider'>
             {t('testimonials.title')}
           </span>
@@ -36,12 +36,12 @@ export function BigTestimonial() {
       {isSuccess &&
         testimonials.map((testimonial) => {
           return (
-            <div className='pb-10 md:p-0' key={testimonial.id}>
+            <div className='pb-10 lg:p-0' key={testimonial.id}>
               <Testimonial data={testimonial} />
             </div>
           )
         })}
-      <div className='flex items-center justify-center md:py-10'>
+      <div className='flex items-center justify-center lg:py-10'>
         <h6 className='uppercase'>{t('testimonials.allTestimonials')}</h6>
       </div>
     </div>

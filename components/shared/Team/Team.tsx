@@ -10,7 +10,7 @@ type TeamProps = {
 export function Team({ data }: TeamProps) {
   return (
     <div className='flex flex-col pb-6'>
-      <div className='relative md:h-80 h-64'>
+      <div className='relative h-64 lg:h-80 '>
         <img
           src='/images/background-figure.png'
           className='absolute inset-0 w-full h-full object-cover'

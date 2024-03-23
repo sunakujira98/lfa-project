@@ -104,7 +104,7 @@ export function ProjectsWrapper() {
         serviceId={serviceQuery}
         regionId={regionQuery}
       />
-      <div className='grid grid-cols-1 md:grid-cols-3 gap-10 overflow-x-hidden pb-20'>
+      <div className='grid grid-cols-1 lg:grid-cols-3 gap-10 overflow-x-hidden pb-20'>
         {data?.pages?.flatMap((projects) => {
           const localizedData = findTranslatedData(
             lang as string,

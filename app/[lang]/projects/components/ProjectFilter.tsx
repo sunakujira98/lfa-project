@@ -90,12 +90,12 @@ export function ProjectFilter({
 
   return (
     <>
-      <div className='hidden md:flex md:justify-between md:items-center pb-10'>
-        <div className='flex flex-col md:flex-row md:gap-6'>
+      <div className='hidden lg:flex lg:justify-between lg:items-center pb-10'>
+        <div className='flex flex-col lg:flex-row lg:gap-6'>
           <Menu as='div' className='relative inline-block text-left'>
             <div className='py-4'>
               {selectedIndustry ? (
-                <Menu.Button className='inline-flex w-full justify-between md:justify-center md:items-center gap-x-1.5 rounded-sm px-3 py-2 font-light bg-charcoal-1000 text-2xs uppercase text-lfaWhite'>
+                <Menu.Button className='inline-flex w-full justify-between lg:justify-center lg:items-center gap-x-1.5 rounded-sm px-3 py-2 font-light bg-charcoal-1000 text-2xs uppercase text-lfaWhite'>
                   {selectedIndustry}
                   <ChevronDownIcon
                     className='-mr-1 h-5 w-5 text-gray-400'
@@ -103,7 +103,7 @@ export function ProjectFilter({
                   />
                 </Menu.Button>
               ) : (
-                <Menu.Button className='inline-flex w-full justify-between md:justify-center md:items-center gap-x-1.5 rounded-sm bg-transparent px-3 py-2 font-light hover:bg-charcoal-100 text-2xs'>
+                <Menu.Button className='inline-flex w-full justify-between lg:justify-center lg:items-center gap-x-1.5 rounded-sm bg-transparent px-3 py-2 font-light hover:bg-charcoal-100 text-2xs'>
                   INDUSTRIES
                   <ChevronDownIcon
                     className='-mr-1 h-5 w-5 text-gray-400'
@@ -152,7 +152,7 @@ export function ProjectFilter({
           <Menu as='div' className='relative inline-block text-left'>
             <div className='py-4'>
               {selectedService ? (
-                <Menu.Button className='inline-flex w-full justify-between md:justify-center md:items-center gap-x-1.5 rounded-sm px-3 py-2 font-light bg-charcoal-1000 text-2xs uppercase text-lfaWhite'>
+                <Menu.Button className='inline-flex w-full justify-between lg:justify-center lg:items-center gap-x-1.5 rounded-sm px-3 py-2 font-light bg-charcoal-1000 text-2xs uppercase text-lfaWhite'>
                   {selectedService}
                   <ChevronDownIcon
                     className='-mr-1 h-5 w-5 text-gray-400'
@@ -160,7 +160,7 @@ export function ProjectFilter({
                   />
                 </Menu.Button>
               ) : (
-                <Menu.Button className='inline-flex w-full justify-between md:justify-center md:items-center gap-x-1.5 rounded-sm bg-transparent px-3 py-2 font-light hover:bg-charcoal-100 text-2xs'>
+                <Menu.Button className='inline-flex w-full justify-between lg:justify-center lg:items-center gap-x-1.5 rounded-sm bg-transparent px-3 py-2 font-light hover:bg-charcoal-100 text-2xs'>
                   SERVICES
                   <ChevronDownIcon
                     className='-mr-1 h-5 w-5 text-gray-400'
@@ -208,7 +208,7 @@ export function ProjectFilter({
           <Menu as='div' className='relative inline-block text-left'>
             <div className='py-4'>
               {selectedRegion ? (
-                <Menu.Button className='inline-flex w-full justify-between md:justify-center md:items-center gap-x-1.5 rounded-sm px-3 py-2 font-light bg-charcoal-1000 text-2xs uppercase text-lfaWhite'>
+                <Menu.Button className='inline-flex w-full justify-between lg:justify-center lg:items-center gap-x-1.5 rounded-sm px-3 py-2 font-light bg-charcoal-1000 text-2xs uppercase text-lfaWhite'>
                   {selectedRegion}
                   <ChevronDownIcon
                     className='-mr-1 h-5 w-5 text-gray-400'
@@ -216,7 +216,7 @@ export function ProjectFilter({
                   />
                 </Menu.Button>
               ) : (
-                <Menu.Button className='inline-flex w-full justify-between md:justify-center md:items-center gap-x-1.5 rounded-sm bg-transparent px-3 py-2 font-light hover:bg-charcoal-100 text-2xs'>
+                <Menu.Button className='inline-flex w-full justify-between lg:justify-center lg:items-center gap-x-1.5 rounded-sm bg-transparent px-3 py-2 font-light hover:bg-charcoal-100 text-2xs'>
                   REGIONS
                   <ChevronDownIcon
                     className='-mr-1 h-5 w-5 text-gray-400'
@@ -262,7 +262,7 @@ export function ProjectFilter({
             </Transition>
           </Menu>
         </div>
-        <div className='flex flex-col md:flex-row gap-6 ml-2 md:ml-0'>
+        <div className='flex flex-col lg:flex-row gap-6 ml-2 lg:ml-0'>
           <div className='w-full flex items-center'>
             <div className='flex flex-row gap-1'>
               <input
@@ -292,7 +292,7 @@ export function ProjectFilter({
         </div>
       </div>
       {/*  mobile */}
-      <div className='block md:hidden'>
+      <div className='block lg:hidden'>
         <Disclosure>
           {({ open }) => (
             <div className='pt-20 pb-10'>
@@ -309,15 +309,15 @@ export function ProjectFilter({
               </div>
               <div>
                 <Disclosure.Panel>
-                  <div className='md:flex md:justify-between md:items-center pb-10'>
-                    <div className='flex flex-col md:flex-row md:gap-6'>
+                  <div className='lg:flex lg:justify-between lg:items-center pb-10'>
+                    <div className='flex flex-col lg:flex-row lg:gap-6'>
                       <Menu
                         as='div'
                         className='relative inline-block text-left'
                       >
                         <div className='pb-2'>
                           {selectedIndustry ? (
-                            <Menu.Button className='inline-flex w-full justify-between md:justify-center md:items-center gap-x-1.5 rounded-sm px-3 py-2 font-light bg-charcoal-1000 text-2xs uppercase text-lfaWhite'>
+                            <Menu.Button className='inline-flex w-full justify-between lg:justify-center lg:items-center gap-x-1.5 rounded-sm px-3 py-2 font-light bg-charcoal-1000 text-2xs uppercase text-lfaWhite'>
                               {selectedIndustry}
                               <ChevronDownIcon
                                 className='-mr-1 h-5 w-5 text-gray-400'
@@ -325,7 +325,7 @@ export function ProjectFilter({
                               />
                             </Menu.Button>
                           ) : (
-                            <Menu.Button className='inline-flex w-full justify-between md:justify-center md:items-center gap-x-1.5 rounded-sm bg-transparent px-3 py-2 font-light hover:bg-charcoal-100 text-2xs'>
+                            <Menu.Button className='inline-flex w-full justify-between lg:justify-center lg:items-center gap-x-1.5 rounded-sm bg-transparent px-3 py-2 font-light hover:bg-charcoal-100 text-2xs'>
                               INDUSTRIES
                               <ChevronDownIcon
                                 className='-mr-1 h-5 w-5 text-gray-400'
@@ -379,7 +379,7 @@ export function ProjectFilter({
                       >
                         <div className='pb-2'>
                           {selectedService ? (
-                            <Menu.Button className='inline-flex w-full justify-between md:justify-center md:items-center gap-x-1.5 rounded-sm px-3 py-2 font-light bg-charcoal-1000 text-2xs uppercase text-lfaWhite'>
+                            <Menu.Button className='inline-flex w-full justify-between lg:justify-center lg:items-center gap-x-1.5 rounded-sm px-3 py-2 font-light bg-charcoal-1000 text-2xs uppercase text-lfaWhite'>
                               {selectedService}
                               <ChevronDownIcon
                                 className='-mr-1 h-5 w-5 text-gray-400'
@@ -387,7 +387,7 @@ export function ProjectFilter({
                               />
                             </Menu.Button>
                           ) : (
-                            <Menu.Button className='inline-flex w-full justify-between md:justify-center md:items-center gap-x-1.5 rounded-sm bg-transparent px-3 py-2 font-light hover:bg-charcoal-100 text-2xs'>
+                            <Menu.Button className='inline-flex w-full justify-between lg:justify-center lg:items-center gap-x-1.5 rounded-sm bg-transparent px-3 py-2 font-light hover:bg-charcoal-100 text-2xs'>
                               SERVICES
                               <ChevronDownIcon
                                 className='-mr-1 h-5 w-5 text-gray-400'
@@ -440,7 +440,7 @@ export function ProjectFilter({
                       >
                         <div className='pb-2'>
                           {selectedRegion ? (
-                            <Menu.Button className='inline-flex w-full justify-between md:justify-center md:items-center gap-x-1.5 rounded-sm px-3 py-2 font-light bg-charcoal-1000 text-2xs uppercase text-lfaWhite'>
+                            <Menu.Button className='inline-flex w-full justify-between lg:justify-center lg:items-center gap-x-1.5 rounded-sm px-3 py-2 font-light bg-charcoal-1000 text-2xs uppercase text-lfaWhite'>
                               {selectedRegion}
                               <ChevronDownIcon
                                 className='-mr-1 h-5 w-5 text-gray-400'
@@ -448,7 +448,7 @@ export function ProjectFilter({
                               />
                             </Menu.Button>
                           ) : (
-                            <Menu.Button className='inline-flex w-full justify-between md:justify-center md:items-center gap-x-1.5 rounded-sm bg-transparent px-3 py-2 font-light hover:bg-charcoal-100 text-2xs'>
+                            <Menu.Button className='inline-flex w-full justify-between lg:justify-center lg:items-center gap-x-1.5 rounded-sm bg-transparent px-3 py-2 font-light hover:bg-charcoal-100 text-2xs'>
                               REGIONS
                               <ChevronDownIcon
                                 className='-mr-1 h-5 w-5 text-gray-400'
@@ -496,7 +496,7 @@ export function ProjectFilter({
                         </Transition>
                       </Menu>
                     </div>
-                    <div className='flex flex-col md:flex-row gap-6 md:ml-0'>
+                    <div className='flex flex-col lg:flex-row gap-6 lg:ml-0'>
                       <div className='w-full flex items-center'>
                         <div className='flex flex-row gap-1'>
                           <input

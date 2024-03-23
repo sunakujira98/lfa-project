@@ -1,7 +1,7 @@
 'use client'
 
 import { useParams } from 'next/navigation'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { twMerge } from 'tailwind-merge'
 
 import { BigButton } from '@/components/shared/BigButton/BigButton'
@@ -17,7 +17,9 @@ import { findTranslatedData } from '@/utils/FindTranslatedData/FindTranslatedDat
 export function TermsAndConditionsSection() {
   const { lang } = useParams()
   const { t } = useTranslation()
+
   const [activeIndex, setActiveIndex] = useState<number>(1)
+  const [title, setTitle] = useState<string>('')
   const [description, setActiveDescription] = useState<TContent[] | undefined>(
     undefined,
   )
@@ -35,42 +37,53 @@ export function TermsAndConditionsSection() {
       : data?.data
     : []
 
+  const firstTitleToShow = termsAndConditions[0]?.attributes?.title
   const firstDescriptionToShow = termsAndConditions[0]?.attributes?.description
 
-  const onClickActive = (index: number, content: TContent[]) => {
+  useEffect(() => {
+    setActiveIndex(termsAndConditions[0]?.id)
+  }, [isSuccess])
+
+  const onClickActive = (
+    index: number,
+    content: TContent[],
+    titleText: string,
+  ) => {
     setActiveIndex(index)
     setActiveDescription(content)
+    setTitle(titleText)
   }
 
   return (
-    <div className='container pt-28 pb-10 md:py-28 px-4 md:px-0'>
+    <div className='pt-28 pb-10 lg:pb-0 lg:pt-28 px-4 lg:px-0'>
       <div className='pb-20'>
         <h3>{t('termsAndConditions.title')}</h3>
       </div>
       {isSuccess && (
-        <div className='flex flex-col'>
-          <div className='flex flex-col md:flex-row gap-20 md:gap-14 px-4 md:px-0'>
-            <div className='w-full md:w-1/3'>
-              {termsAndConditions.map((privacyPolicy, index) => {
+        <div className='flex flex-col px-4 lg:px-0'>
+          <div className='flex flex-col lg:flex-row gap-20 lg:gap-14 '>
+            <div className='w-full lg:w-1/3'>
+              {termsAndConditions.map((tnc, index) => {
                 const isLastIndex = index === data?.data.length - 1
 
                 return (
                   <div
                     className={twMerge(
                       isLastIndex
-                        ? 'border-b-[1px] md:border-none'
+                        ? 'border-b-[1px] lg:border-none'
                         : 'border-b-[1px]',
                       'py-4',
                     )}
-                    key={privacyPolicy.id}
+                    key={tnc.id}
                   >
                     <BigButton
-                      active={activeIndex === privacyPolicy.id}
-                      title={privacyPolicy.attributes.title}
+                      active={activeIndex === tnc.id}
+                      title={tnc.attributes.title}
                       onClick={() =>
                         onClickActive(
-                          privacyPolicy.id,
-                          privacyPolicy.attributes.description,
+                          tnc.id,
+                          tnc.attributes.description,
+                          tnc.attributes.title,
                         )
                       }
                     />
@@ -78,15 +91,29 @@ export function TermsAndConditionsSection() {
                 )
               })}
             </div>
-            <div className='py-4 w-full md:w-2/3'>
+            <div className='py-4 w-full lg:w-2/3'>
               {description ? (
-                <ContentRenderer data={description} />
+                <>
+                  <div className='border-b-[1px] border-charcoal-100 pb-4 lg:hidden'>
+                    <h4 className='text-md font-thin'>{title}</h4>
+                  </div>
+                  <div className='pt-4 lg:pt-0'>
+                    <ContentRenderer data={description} />
+                  </div>
+                </>
               ) : (
-                <ContentRenderer data={firstDescriptionToShow} />
+                <>
+                  <div className='border-b-[1px] border-charcoal-100 pb-4 lg:hidden'>
+                    <h4 className='text-md font-thin'>{firstTitleToShow}</h4>
+                  </div>
+                  <div className='pt-4 lg:pt-0'>
+                    <ContentRenderer data={firstDescriptionToShow} />
+                  </div>
+                </>
               )}
             </div>
           </div>
-          <OtherQueries />
+          <OtherQueries subtitle={t('queries.tncSubtitle')} />
         </div>
       )}
     </div>

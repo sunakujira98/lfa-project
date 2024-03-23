@@ -38,7 +38,7 @@ export function NewsSection() {
 
   return (
     <>
-      <div className='container pt-28 pb-10 md:py-28 px-4 md:px-0'>
+      <div className='container pt-28 pb-10 lg:py-28 px-4 lg:px-0'>
         <SectionHeader
           displayName={t('news.title')}
           title={t('news.subtitle')}
@@ -46,26 +46,28 @@ export function NewsSection() {
         />
       </div>
       {isSuccess && (
-        <div className='container border-t-[1px] px-4 md:px-0'>
-          <div className='grid grid-cols-1 md:grid-cols-3 gap-0 md:gap-6'>
-            {data?.pages?.flatMap((articles) => {
-              const localizedData = findTranslatedData(
-                lang as string,
-                articles,
-              ) as StrapiResponse<Article>
+        <div className='px-4'>
+          <div className='border-t-[1px] lg:px-4'>
+            <div className='grid grid-cols-1 lg:grid-cols-3 gap-0 lg:gap-6'>
+              {data?.pages?.flatMap((articles) => {
+                const localizedData = findTranslatedData(
+                  lang as string,
+                  articles,
+                ) as StrapiResponse<Article>
 
-              const article = isSuccess
-                ? localizedData.data.length > 0
-                  ? localizedData.data
-                  : data?.pages?.[0].data
-                : []
+                const article = isSuccess
+                  ? localizedData.data.length > 0
+                    ? localizedData.data
+                    : data?.pages?.[0].data
+                  : []
 
-              return article.map((singleArticle) => {
-                const localeId = singleArticle.localeId || singleArticle.id
+                return article.map((singleArticle) => {
+                  const localeId = singleArticle.localeId || singleArticle.id
 
-                return <News news={singleArticle} localeId={localeId} />
-              })
-            })}
+                  return <News news={singleArticle} localeId={localeId} />
+                })
+              })}
+            </div>
           </div>
         </div>
       )}

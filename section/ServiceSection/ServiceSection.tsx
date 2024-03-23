@@ -28,7 +28,7 @@ export function ServiceSection() {
 
   return (
     <>
-      <div className='container pt-28 pb-10 md:py-28'>
+      <div className='container pt-28 pb-10 lg:py-28'>
         <SectionHeader
           displayName={t('services.title')}
           title={t('services.subtitle')}
@@ -36,12 +36,10 @@ export function ServiceSection() {
         />
       </div>
       {isSuccess && (
-        <div className='container'>
-          <div className='flex flex-col'>
-            {services.map((service) => {
-              return <ServiceWithImage service={service} />
-            })}
-          </div>
+        <div className='flex flex-col'>
+          {services.map((service) => {
+            return <ServiceWithImage service={service} />
+          })}
         </div>
       )}
     </>

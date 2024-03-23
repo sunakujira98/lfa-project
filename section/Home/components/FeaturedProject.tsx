@@ -29,7 +29,7 @@ export function FeaturedProject() {
 
   return (
     isSuccess && (
-      <div className='max-w-screen-xl mx-auto pt-10 px-4 md:px-0'>
+      <div className='max-w-screen-xl mx-auto pt-10 px-4 lg:px-0'>
         <div className='pb-10'>
           <span className='font-neue text-3xs uppercase text-gray-50 tracking-wider'>
             {t('featuredProject.title')}
@@ -62,7 +62,7 @@ export function FeaturedProject() {
                   <a href={`/projects?${params}`}>
                     <img
                       src={`${process.env.NEXT_PUBLIC_CMS_HOST}${project.attributes.thumbnail.data.attributes.url}`}
-                      className='w-96 h-96 md:w-full md:h-full object-cover object-center transform transition-transform hover:scale-[1.01] cursor-pointer'
+                      className='w-96 h-96 md:w-full md:w-full lg:w-full lg:h-full object-cover object-center transform transition-transform hover:scale-[1.01] cursor-pointer'
                       alt={project.attributes.title}
                     />
                   </a>
@@ -71,7 +71,7 @@ export function FeaturedProject() {
                       href={`${lang}/projects/${projectId}`}
                       className='hover:underline'
                     >
-                      <h3 className='font-vinila text-lg md:text-2xl text-gray-50 tracking-wide font-thin'>
+                      <h3 className='font-vinila text-lg lg:text-2xl text-gray-50 tracking-wide font-thin'>
                         {project.attributes.title}
                       </h3>
                     </a>

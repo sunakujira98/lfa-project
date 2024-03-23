@@ -39,7 +39,7 @@ export function ControlledCheckbox<T extends FieldValues>({
           name={name}
           control={control}
         />
-        <span className='text-3xs md:text-xs'>{text}</span>
+        <span className='text-3xs lg:text-xs'>{text}</span>
       </div>
       <div className='w-full'>
         {error && <span className='text-error text-3xs'>{error}</span>}

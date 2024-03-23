@@ -13,7 +13,7 @@ export function ProjectSingle({ project, localeId }: ProjectSingleProps) {
     <div className='flex flex-col' key={project.id}>
       <img
         src={`${process.env.NEXT_PUBLIC_CMS_HOST}${project.attributes.thumbnail.data.attributes.url}`}
-        className='w-full max-w-96 h-52 aspect-auto'
+        className='w-full md:w-full aspect-auto object-cover lg:h-52'
         alt={project.attributes.title}
       />
       <div className='flex flex-col'>

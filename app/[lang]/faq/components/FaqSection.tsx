@@ -2,7 +2,7 @@
 
 import { Disclosure } from '@headlessui/react'
 import { useParams } from 'next/navigation'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { twMerge } from 'tailwind-merge'
 
 import { BigButton } from '@/components/shared/BigButton/BigButton'
@@ -39,6 +39,10 @@ export function FaqSection() {
 
   const firstAnswersToShow = faqs[0]?.attributes?.answers
 
+  useEffect(() => {
+    setActiveIndex(faqs[0]?.id)
+  }, [isSuccess])
+
   const onClickActive = (index: number, answers: TFAQAnswers[]) => {
     setActiveIndex(index)
     setActiveAnswer(answers)
@@ -46,13 +50,13 @@ export function FaqSection() {
 
   return (
     isSuccess && (
-      <div className='container pt-28 pb-10 md:py-28 px-4 md:px-0'>
+      <div className='pt-28 pb-10 lg:pb-0 lg:pt-28 px-4 lg:px-0'>
         <div className='pb-20'>
           <h3>{t('faq.title')}</h3>
         </div>
         <div className='flex flex-col'>
-          <div className='flex flex-col md:flex-row gap-20 md:gap-14 px-4 md:px-0'>
-            <div className='w-full md:w-1/3'>
+          <div className='flex flex-col lg:flex-row gap-20 lg:gap-14 px-4 lg:px-0'>
+            <div className='w-full lg:w-1/3'>
               {faqs.map((faq, index) => {
                 const isLastIndex = index === data?.data.length - 1
 
@@ -60,9 +64,9 @@ export function FaqSection() {
                   <div
                     className={twMerge(
                       isLastIndex
-                        ? 'border-b-[1px] md:border-none'
+                        ? 'border-b-[1px] lg:border-none'
                         : 'border-b-[1px]',
-                      'py-4',
+                      'py-[13px] lg:py-4',
                     )}
                     key={faq.id}
                   >
@@ -77,7 +81,7 @@ export function FaqSection() {
                 )
               })}
             </div>
-            <div className='w-full md:w-2/3'>
+            <div className='w-full lg:w-2/3'>
               {activeAnswer ? (
                 activeAnswer.map((answer, index) => {
                   return (
@@ -133,7 +137,9 @@ export function FaqSection() {
               )}
             </div>
           </div>
-          <OtherQueries />
+          <div className='px-4 lg:px-0'>
+            <OtherQueries subtitle={t('queries.subtitle')} />
+          </div>
         </div>
       </div>
     )

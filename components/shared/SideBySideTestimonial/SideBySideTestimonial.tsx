@@ -14,15 +14,15 @@ export function SideBySideTestimonial({
   testimonial,
 }: SideBySideTestimonialProps) {
   return (
-    <div className='flex flex-col md:flex-row border-t-[1px] py-10 gap-10'>
-      <div className='w-full md:w-1/3'>
+    <div className='flex flex-col lg:flex-row border-t-[1px] py-10 gap-10'>
+      <div className='w-full lg:w-1/3'>
         <video
           src={`${process.env.NEXT_PUBLIC_CMS_HOST}${testimonial.attributes.video?.data.attributes.url}`}
-          className='w-full md:max-w-96'
+          className='w-full lg:max-w-96'
           controls
         />
       </div>
-      <div className='w-full md:w-2/3 flex flex-col'>
+      <div className='w-full lg:w-2/3 flex flex-col'>
         <div className='flex justify-between items-center'>
           <div className='flex flex-col gap-2 pb-4'>
             <QuoteIcon />
@@ -34,7 +34,7 @@ export function SideBySideTestimonial({
           {testimonial.attributes.companyImage?.data?.attributes?.url && (
             <img
               src={`${process.env.NEXT_PUBLIC_CMS_HOST}${testimonial.attributes.companyImage.data.attributes.url}`}
-              className='w-44 md:max-w-56 md:hidden'
+              className='w-44 lg:max-w-56 lg:hidden'
               alt={testimonial.attributes.fullName}
             />
           )}

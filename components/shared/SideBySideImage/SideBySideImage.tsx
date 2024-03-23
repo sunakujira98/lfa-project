@@ -35,7 +35,7 @@ export function SideBySideImage({ data }: FullImageProps) {
       className='relative container mx-auto py-5 flex items-center'
       style={{ maxWidth: '1680px' }}
     >
-      <div className='h-full mx-auto flex  md:pt-0 md:items-center bg-cover bg-right'>
+      <div className='h-full mx-auto flex  lg:pt-0 lg:items-center bg-cover bg-right'>
         <div className={twMerge('gap-6', gridClasses)}>
           {data.images.data.map((image, index) => {
             return (

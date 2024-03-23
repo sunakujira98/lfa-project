@@ -44,14 +44,14 @@ export function Service() {
 
   return (
     isSuccess && (
-      <div className='max-w-screen-xl mx-auto pt-10 px-4 md:px-0'>
-        <div className='container bg-greige md:bg-beige'>
-          <div className='px-4 md:px-0 pt-10 pb-10 md:pb-20 md:pt-0'>
+      <div className='max-w-screen-xl mx-auto pt-10 px-4 lg:px-0'>
+        <div className=' bg-greige lg:bg-beige'>
+          <div className='px-4 lg:px-0 pt-10 pb-10 lg:pb-20 lg:pt-0'>
             <h6 className='uppercase'>{t('services.title')}</h6>
           </div>
           <div className='flex justify-between gap-6'>
             <div className='w-1/3'>
-              <div className='hidden md:flex flex-col border-t-[1px]'>
+              <div className='hidden lg:flex flex-col border-t-[1px]'>
                 {services.map((service) => {
                   return (
                     <div className='border-b-[1px] py-4' key={service.id}>
@@ -71,14 +71,14 @@ export function Service() {
                 })}
               </div>
             </div>
-            <div className='hidden md:block md:w-2/3'>
+            <div className='hidden lg:block lg:w-2/3'>
               <div className='border-t-[1px] border-l-[1px] rounded-tl-[40px] rounded-l-[4px] p-8 h-full border-charcoal-1000'>
                 <p>{activeService ? activeService : firstDescriptionToShow}</p>
               </div>
             </div>
           </div>
           {/* Mobile */}
-          <div className='px-4 md:hidden'>
+          <div className='px-4 lg:hidden'>
             <div className='flex flex-col border-t-[1px] w-full'>
               <div className='flex flex-col'>
                 {services.map((service) => {

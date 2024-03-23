@@ -34,9 +34,5 @@ export function ContentRenderer({ data }: ContentRendererProps) {
         return <div key={index}>{resolveParagraph(content)}</div>
       })}
     </div>
-    // <div className='max-w-screen-xl mx-auto py-4'>
-    //   <div className='container'>
-    //   </div>
-    // </div>
   )
 }

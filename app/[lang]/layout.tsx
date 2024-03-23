@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { ReactNode } from 'react'
+import NextTopLoader from 'nextjs-toploader'
 
 import { LanguageProvider } from '@/components/Provider'
 import ReactQueryProvider from '@/components/Provider/ReactQuery'
@@ -10,6 +11,7 @@ import { getTranslationData } from '@/resources/i18n/i18n'
 import { I18nProvider } from '@/resources/i18n/i18n.context'
 
 import './globals.css'
+import { NavigationEvents } from '@/components/shared/NavigationEvents'
 
 export const metadata: Metadata = {
   title: 'LFA - Interior Design',
@@ -33,6 +35,7 @@ export default async function RootLayout({
     <ReactQueryProvider>
       <html lang='en'>
         <body className={`${neue.variable} ${keppler.variable}`}>
+          <NextTopLoader color='#252525' />
           <LanguageProvider lang={params.lang}>
             <I18nProvider data={JSON.parse(JSON.stringify(translationData))}>
               <Header />
@@ -40,6 +43,7 @@ export default async function RootLayout({
               <Footer />
             </I18nProvider>
           </LanguageProvider>
+          <NavigationEvents />
         </body>
       </html>
     </ReactQueryProvider>

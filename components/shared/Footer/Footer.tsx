@@ -15,59 +15,59 @@ export function Footer() {
   const { t } = useTranslation()
 
   return (
-    <footer className='py-10 px-4 bg-charcoal-1000 md:pt-16 md:pb-6 overflow-x-hidden'>
+    <footer className='py-10 px-4 bg-charcoal-1000 lg:pt-16 lg:pb-6 overflow-x-hidden'>
       <div className='max-w-screen-xl container mx-auto'>
-        <div className='w-full flex flex-col md:flex-row gap-28'>
-          <div className='flex-1 mb-6 text-black w-full md:w-auto'>
+        <div className='w-full flex flex-col lg:flex-row gap-28'>
+          <div className='flex-1 mb-6 text-black w-full lg:w-auto'>
             <div className='flex flex-col'>
               <h6 className='text-charcoal-600 uppercase'>
                 {t('footer.findUsOnInstagram')}
               </h6>
-              <div className='grid grid-cols-2 md:grid-cols-3 pb-10 pt-2 gap-4'>
+              <div className='grid grid-cols-2 lg:grid-cols-3 pb-10 pt-2 gap-4'>
                 <div className='flex flex-row'>
                   <img
                     src='/images/instagram-1.png'
-                    className='max-w-[150px] max-h-[150px] max-h md:max-w-44 md:max-h-44 aspect-square'
+                    className='max-w-[150px] max-h-[150px] md:max-w-[300px] md:max-h-[300px] lg:max-w-44 lg:max-h-44 aspect-square'
                     alt='instagram'
                   />
                 </div>
                 <div className='flex flex-row'>
                   <img
                     src='/images/instagram-1.png'
-                    className='max-w-[150px] max-h-[150px] max-h md:max-w-44 md:max-h-44 aspect-square'
+                    className='max-w-[150px] max-h-[150px] md:max-w-[300px] md:max-h-[300px] lg:max-w-44 lg:max-h-44 aspect-square'
                     alt='instagram'
                   />
                 </div>
                 <div className='flex flex-row'>
                   <img
                     src='/images/instagram-1.png'
-                    className='max-w-[150px] max-h-[150px] max-h md:max-w-44 md:max-h-44 aspect-square'
+                    className='max-w-[150px] max-h-[150px] md:max-w-[300px] md:max-h-[300px] lg:max-w-44 lg:max-h-44 aspect-square'
                     alt='instagram'
                   />
                 </div>
                 <div className='flex flex-row'>
                   <img
                     src='/images/instagram-1.png'
-                    className='max-w-[150px] max-h-[150px] max-h md:max-w-44 md:max-h-44 aspect-square'
+                    className='max-w-[150px] max-h-[150px] md:max-w-[300px] md:max-h-[300px] lg:max-w-44 lg:max-h-44 aspect-square'
                     alt='instagram'
                   />
                 </div>
                 <div className='flex flex-row'>
                   <img
                     src='/images/instagram-1.png'
-                    className='max-w-[150px] max-h-[150px] max-h md:max-w-44 md:max-h-44 aspect-square'
+                    className='max-w-[150px] max-h-[150px] md:max-w-[300px] md:max-h-[300px] lg:max-w-44 lg:max-h-44 aspect-square'
                     alt='instagram'
                   />
                 </div>
                 <div className='flex flex-row'>
                   <img
                     src='/images/instagram-1.png'
-                    className='max-w-[150px] max-h-[150px] max-h md:max-w-44 md:max-h-44 aspect-square'
+                    className='max-w-[150px] max-h-[150px] md:max-w-[300px] md:max-h-[300px] lg:max-w-44 lg:max-h-44 aspect-square'
                     alt='instagram'
                   />
                 </div>
               </div>
-              <div className='hidden md:flex flex-row gap-[150px]'>
+              <div className='hidden lg:flex flex-row gap-[150px]'>
                 <div className='flex flex-col gap-2'>
                   <span className='uppercase text-charcoal-600 text-3xs'>
                     {t('footer.riskManagementSystem')}
@@ -89,13 +89,13 @@ export function Footer() {
               </div>
             </div>
           </div>
-          <div className='hidden md:flex flex-1 w-full md:w-auto'>
+          <div className='hidden lg:flex flex-1 w-full lg:w-auto'>
             <div className='col-lg-6 col-md-6'>
               <span className='font-vinila text-2xl font-thin text-lfaWhite ml-[55px]'>
                 {t('footer.title')}
               </span>
               <div className='py-8 ml-[60px]'>
-                <div className='py-8 grid grid-cols-1 md:grid-cols-2 gap-5'>
+                <div className='py-8 grid grid-cols-1 lg:grid-cols-2 gap-5'>
                   <div className='flex flex-col'>
                     <span className='text-charcoal-600 uppercase text-3xs'>
                       {t('footer.findUs')}
@@ -131,7 +131,7 @@ export function Footer() {
             </div>
           </div>
         </div>
-        <nav className='hidden md:block p-0'>
+        <nav className='hidden lg:block p-0'>
           <ul className='m-0 p-0 flex flex-row items-center list-none gap-28 font-neue uppercase text-3xs text-lfaWhite'>
             <li className='relative whitespace-nowrap'>
               <a className='' href='#hero'>
@@ -154,7 +154,7 @@ export function Footer() {
               </Link>
             </li>
             <li className='relative whitespace-nowrap'>
-              <Link className='nav-link scrollto' href='#team'>
+              <Link className='nav-link scrollto' href='/sitemap'>
                 {t('footer.sitemap')}
               </Link>
             </li>
@@ -170,7 +170,7 @@ export function Footer() {
         </nav>
 
         {/* Mobile */}
-        <div className='flex md:hidden flex-col gap-10'>
+        <div className='flex lg:hidden flex-col gap-10'>
           <div>
             <h4 className='text-lfaWhite'>{t('footer.title')}</h4>
           </div>
@@ -227,7 +227,7 @@ export function Footer() {
               </button>
             </div>
           </div>
-          <nav className='md:hidden p-0 text-lfaWhite flex flex-col gap-10'>
+          <nav className='lg:hidden p-0 text-lfaWhite flex flex-col gap-10'>
             <ul className='m-0 p-0 flex flex-row items-center list-none gap-4 font-neue uppercase text-3xs'>
               <li className='relative whitespace-nowrap'>
                 <Link
@@ -251,7 +251,7 @@ export function Footer() {
                 </Link>
               </li>
               <li className='relative whitespace-nowrap'>
-                <Link className='nav-link scrollto' href='#team'>
+                <Link className='nav-link scrollto' href='/sitemap'>
                   {t('header.footer.sitemap')}
                 </Link>
               </li>

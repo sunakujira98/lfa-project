@@ -37,22 +37,22 @@ export function SideBySideNews() {
 
   return (
     isSuccess && (
-      <div className='max-w-screen-xl mx-auto pt-10 px-4 md:px-0'>
+      <div className='max-w-screen-xl mx-auto pt-10 px-4 lg:px-0'>
         <div className='container pb-8'>
           <h6 className='font-neue text-3xs text-gray-50 uppercase'>
             {t('news.title')}
           </h6>
         </div>
-        <div className='container md:border-y-[1px] border-charcoal-1000 pt-4'>
-          <div className='grid grid-cols-1 gap-10 md:gap-20 md:grid-cols-3'>
+        <div className='lg:border-y-[1px] border-charcoal-1000 pt-4'>
+          <div className='grid grid-cols-1 gap-10 lg:gap-20 lg:grid-cols-3'>
             {articles.map((news) => {
               const newsId = news.localeId || news.id
 
               return (
-                <div className='flex flex-col md:flex-row gap-6' key={news.id}>
+                <div className='flex flex-col lg:flex-row gap-6' key={news.id}>
                   <img
                     src={`${process.env.NEXT_PUBLIC_CMS_HOST}${news.attributes.thumbnail?.data.attributes.url}`}
-                    className='h-full w-full object-cover object-center md:max-w-36 md:max-h-36 md:aspect-square'
+                    className='h-full w-full object-cover object-center lg:max-w-36 lg:max-h-36 lg:aspect-square'
                     alt={news.attributes.title}
                   />
                   <div className='flex flex-col gap-2'>
@@ -69,7 +69,7 @@ export function SideBySideNews() {
               )
             })}
           </div>
-          <div className='flex items-center justify-center py-10 border-b-[1px] md:border-none'>
+          <div className='flex items-center justify-center py-10 border-b-[1px] lg:border-none'>
             <a href='/news'>
               <h6 className='uppercase'>{t('news.allNews')}</h6>
             </a>
