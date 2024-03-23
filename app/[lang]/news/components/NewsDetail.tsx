@@ -42,30 +42,37 @@ export function NewsDetail({ newsId }: NewsDetailProps) {
           </div>
           <div className='flex flex-col gap-20'>
             <div className='max-w-screen-xl mx-auto py-20'>
-              {dayjs(data.data.attributes.createdAt).format('DD-MM-YYYY')}
+              <div className='flex flex-row'>
+                <div className='w-1/3'></div>
+                <div className='w-2/3'>
+                  <div className='pb-20 text-3xs uppercase font-thin'>
+                    {dayjs(data.data.attributes.createdAt).format(
+                      'DD MMM YYYY',
+                    )}
+                  </div>
 
-              <ContentRenderer data={data.data.attributes.content as any} />
+                  <ContentRenderer data={data.data.attributes.content as any} />
+                </div>
+              </div>
             </div>
           </div>
         </div>
         <div className='max-w-screen-xl mx-auto'>
-          <div className='container'>
-            <div className='flex flex-col'>
-              <div className='border-t-[1px]'></div>
-              <div className='flex justify-between py-5'>
-                <Link href='/news'>
-                  <h6>{t('news.allNews')}</h6>
+          <div className='flex flex-col'>
+            <div className='border-t-[1px]'></div>
+            <div className='flex justify-between py-5'>
+              <Link href='/news'>
+                <h6 className='uppercase'>{t('news.allNews')}</h6>
+              </Link>
+              {nextData && (
+                <Link href={`/news/${Number(newsId) + 1}`}>
+                  <h6 className='uppercase'>
+                    {t('news.nextPage', {
+                      title: nextData.data.attributes.title,
+                    })}
+                  </h6>
                 </Link>
-                {nextData && (
-                  <Link href={`/news/${Number(newsId) + 1}`}>
-                    <h6>
-                      {t('news.nextPage', {
-                        title: nextData.data.attributes.title,
-                      })}
-                    </h6>
-                  </Link>
-                )}
-              </div>
+              )}
             </div>
           </div>
         </div>

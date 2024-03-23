@@ -51,7 +51,7 @@ const config: Config = {
       greige: '#CCC0B4',
       beige: '#E4DDD6',
       cyan: '#74F1FB',
-      error: '#F95E76',
+      error: '#C96115',
       transparent: 'transparent',
     },
     extend: {

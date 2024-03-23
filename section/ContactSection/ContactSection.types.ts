@@ -9,8 +9,12 @@ export const getContactSchema = () => {
       .required('Please fill your email')
       .matches(/^[^\s@]+@[^\s@]+\.[^\s@]+$/, 'Email must be correct'),
     name: yup.string().required('Please fill your name'),
-    contact: yup.string().required('Please fill your contact'),
+    contact: yup.string().required('Please fill your contact number'),
     companyName: yup.string().optional(),
-    privacyPolicy: yup.string().required('You have to agree on privacy policy'),
+    privacyPolicy: yup
+      .string()
+      .required(
+        'Please check the boxes indicating your agreement to the Privacy Policy and Terms & Conditions.',
+      ),
   })
 }

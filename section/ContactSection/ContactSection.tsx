@@ -74,7 +74,7 @@ export function ContactSection() {
         />
       </div>
       <div className='px-4 lg:px-0'>
-        <div className='flex flex-row lg:justify-between gap-40 py-4 border-t-[1px] border-b-[1px]'>
+        <div className='flex flex-row lg:justify-between gap-40 py-4 border-t-[1px] border-b-[1px] border-charcoal-100'>
           <div className='hidden lg:block lg:w-1/3'></div>
           <div className='w-full lg:w-2/3'>
             <div className='flex flex-row items-center gap-8'>
@@ -101,11 +101,11 @@ export function ContactSection() {
             </div>
           </div>
         </div>
-        <div className='flex justify-between gap-40 py-4 border-b-[1px]'>
+        <div className='flex justify-between gap-40 py-4 border-b-[1px] border-charcoal-100'>
           <div className='hidden lg:block lg:w-1/3'></div>
           <div className='w-full lg:w-2/3'>
             <form onSubmit={handleSubmit(onSubmit)}>
-              <div className='flex flex-row items-center gap-8 border-b-[1px] py-6'>
+              <div className='flex flex-row items-center gap-8 border-b-[1px] border-charcoal-100 py-6'>
                 <div className='flex w-1/4'>
                   <h4 className='text-3xs lg:text-md'>
                     {t('contact.form.enquiryType.label')}
@@ -120,7 +120,7 @@ export function ContactSection() {
                   />
                 </div>
               </div>
-              <div className='flex flex-row items-center gap-8 border-b-[1px] py-6'>
+              <div className='flex flex-row items-center gap-8 border-b-[1px] border-charcoal-100 py-6'>
                 <div className='flex w-1/4'>
                   <h4 className='text-3xs lg:text-md'>
                     {t('contact.form.name.label')}
@@ -135,7 +135,7 @@ export function ContactSection() {
                   />
                 </div>
               </div>
-              <div className='flex flex-row items-center gap-8 border-b-[1px] py-6'>
+              <div className='flex flex-row items-center gap-8 border-b-[1px] border-charcoal-100 py-6'>
                 <div className='flex w-1/4'>
                   <h4 className='text-3xs lg:text-md'>
                     {t('contact.form.email.label')}
@@ -150,7 +150,7 @@ export function ContactSection() {
                   />
                 </div>
               </div>
-              <div className='flex flex-row items-center gap-8 border-b-[1px] py-6'>
+              <div className='flex flex-row items-center gap-8 border-b-[1px] border-charcoal-100 py-6'>
                 <div className='flex w-1/4'>
                   <h4 className='text-3xs lg:text-md'>
                     {t('contact.form.contact.label')}
@@ -165,7 +165,7 @@ export function ContactSection() {
                   />
                 </div>
               </div>
-              <div className='flex flex-row items-center gap-8 border-b-[1px] pt-6 pb-10'>
+              <div className='flex flex-row items-center gap-8 border-b-[1px] border-charcoal-100 pt-6 pb-10'>
                 <div className='flex w-1/4'>
                   <h4 className='text-2xs lg:text-md'>
                     {t('contact.form.companyName.label')}
@@ -180,7 +180,7 @@ export function ContactSection() {
                   />
                 </div>
               </div>
-              <div className='flex flex-col lg:flex-row items-center gap-8 border-b-[1px] py-6'>
+              <div className='flex flex-col lg:flex-row items-center gap-8 py-10 lg:py-6'>
                 <div className='flex w-full flex-grow flex-col lg:flex-row lg:justify-between gap-10 lg:gap-0'>
                   <div className='flex flex-row items-center gap-2'>
                     <ControlledCheckbox
@@ -197,7 +197,7 @@ export function ContactSection() {
                     />
                   </div>
                   <button
-                    className='outline-button !border-charcoal-100 w-full lg:w-24'
+                    className='outline-button-black w-full lg:w-24 py-0 text-2xs uppercase font-thin'
                     type='submit'
                     disabled={sendMailMutation.isPending}
                   >

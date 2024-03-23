@@ -2,6 +2,7 @@
 
 'use client'
 
+import { Link } from '@/components/shared/Link'
 import { StrapiComponentResolver } from '@/components/shared/StrapiComponentResolver'
 import { useGetProjectByIdQuery } from '@/hooks/query/useProjectQuery'
 
@@ -36,19 +37,23 @@ export function ProjectDetail({ projectId }: ProjectDetailProps) {
                   <div className='flex flex-row gap-20 pt-10'>
                     <div className='flex flex-col gap-2'>
                       <h6 className='lg:text-2xs uppercase'>Industry</h6>
-                      <a href='#'>
+                      <Link
+                        href={`/projects?industry=${data.data.attributes.industry?.data?.id}`}
+                      >
                         <h6 className='lg:text-2xs uppercase underline'>
                           {data.data.attributes.industry?.data?.attributes.name}
                         </h6>
-                      </a>
+                      </Link>
                     </div>
                     <div className='flex flex-col gap-2'>
                       <h6 className='uppercase'>SERVICE</h6>
-                      <a href='#'>
+                      <Link
+                        href={`/projects?service=${data.data.attributes.service?.data?.id}`}
+                      >
                         <h6 className='lg:text-2xs underline'>
                           {data.data.attributes.service?.data?.attributes.title}
                         </h6>
-                      </a>
+                      </Link>
                     </div>
                     <div className='flex flex-col gap-2'>
                       <h6 className='lg:text-2xs'>COMPLETION YEAR</h6>
@@ -58,11 +63,13 @@ export function ProjectDetail({ projectId }: ProjectDetailProps) {
                     </div>
                     <div className='flex flex-col gap-2'>
                       <h6 className='lg:text-2xs'>INDUSTRY</h6>
-                      <a href='#'>
+                      <Link
+                        href={`/projects?industry=${data.data.attributes.industry?.data?.id}`}
+                      >
                         <h6 className='lg:text-2xs underline'>
                           {data.data.attributes.industry?.data?.attributes.name}
                         </h6>
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </div>

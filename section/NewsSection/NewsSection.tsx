@@ -47,7 +47,7 @@ export function NewsSection() {
       </div>
       {isSuccess && (
         <div className='px-4'>
-          <div className='border-t-[1px] lg:px-4'>
+          <div className='border-t-[1px] border-charcoal-100 lg:px-4'>
             <div className='grid grid-cols-1 lg:grid-cols-3 gap-0 lg:gap-6'>
               {data?.pages?.flatMap((articles) => {
                 const localizedData = findTranslatedData(

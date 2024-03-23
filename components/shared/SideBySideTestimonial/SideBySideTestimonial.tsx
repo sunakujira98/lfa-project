@@ -14,7 +14,7 @@ export function SideBySideTestimonial({
   testimonial,
 }: SideBySideTestimonialProps) {
   return (
-    <div className='flex flex-col lg:flex-row border-t-[1px] py-10 gap-10'>
+    <div className='flex flex-col lg:flex-row border-t-[1px] border-charcoal-100 py-10 gap-10'>
       <div className='w-full lg:w-1/3'>
         <video
           src={`${process.env.NEXT_PUBLIC_CMS_HOST}${testimonial.attributes.video?.data.attributes.url}`}
@@ -26,7 +26,9 @@ export function SideBySideTestimonial({
         <div className='flex justify-between items-center'>
           <div className='flex flex-col gap-2 pb-4'>
             <QuoteIcon />
-            <p>{testimonial.attributes.description}</p>{' '}
+            <p className='text-justify'>
+              {testimonial.attributes.description}
+            </p>{' '}
           </div>
         </div>
         <div className='flex-grow flex flex-col mt-auto'></div>

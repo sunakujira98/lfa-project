@@ -112,9 +112,11 @@
 	"privacyPolicy" : {
     "title" : "隐私政策"
 	},
-	"queries" : {
-		"subtitle" : "如果有任何其他问题，请随时给我们留言",
-		"contact" : "联系我们"
+	"queries": {
+    "privacyPolicySubtitle": "如有任何关于我们隐私政策的查询，请随时给我们留言",
+    "tncSubtitle": "如有任何其他关于我们条款与条件的查询，请随时给我们留言",
+    "subtitle": "如有任何其他查询，请随时给我们留言",
+    "contact": "联系我们"
 	},
 	"faq": {
     "title": "常见问题"

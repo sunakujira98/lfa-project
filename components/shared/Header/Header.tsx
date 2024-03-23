@@ -175,7 +175,15 @@ export function Header() {
                 {t('header.contact')}
               </Link>
             </li>
-            <li className='border-l-[1px] border-lfaWhite'>&nbsp;</li>
+            <li
+              className={twMerge(
+                'border-l-[1px]',
+                isHaveBg ? 'border-lfaWhite' : 'border-gray-50',
+                showBg && 'border-gray-50',
+              )}
+            >
+              &nbsp;
+            </li>
             <li className='relative whitespace-nowrap'>
               <button onClick={changeLanguage}>
                 {isChinese ? 'EN' : '中文'}

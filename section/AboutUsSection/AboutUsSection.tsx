@@ -36,10 +36,10 @@ export function AboutUsSection() {
         <div className='max-w-screen-xl h-screen mx-auto flex justify-center items-center py-10 px-4 lg:px-0'>
           <div className='container'>
             <div className='flex flex-col items-center'>
-              <h1 className='font-vinila text-2xl lg:text-6xl'>
+              <h1 className='font-vinila text-2xl lg:text-6xl lg:mb-[-30px]'>
                 {t('aboutUs.cultivating')}
               </h1>
-              <h1 className='font-keppler text-2xl lg:text-6xl'>
+              <h1 className='font-keppler text-2xl lg:text-6xl lg:mb-[-40px]'>
                 {t('aboutUs.growth')}
               </h1>
               <h1 className='font-vinila text-2xl lg:text-6xl'>
@@ -69,7 +69,7 @@ export function AboutUsSection() {
             </div>
           </div>
         </div>
-        <div className='max-w-screen-xl mx-auto py-10 lg:border-t-[1px] lg:px-0 px-4'>
+        <div className='max-w-screen-xl mx-auto py-10 lg:border-t-[1px] border-gray-50 lg:px-0 px-4'>
           <div className='container flex flex-col'>
             <h6 className='uppercase pb-6 border-b-[1px] lg:border-none'>
               {t('awards.title')}
@@ -77,7 +77,7 @@ export function AboutUsSection() {
             {awards?.data.map((award) => {
               return (
                 <a href={award.attributes.externalLink}>
-                  <div className='flex justify-between border-b-[1px] py-2 text-xs items-center'>
+                  <div className='flex justify-between border-b-[1px] py-2 text-xs items-center border-charcoal-100'>
                     {award.attributes.awardName}
                     <ArrowRightUpIcon />
                   </div>

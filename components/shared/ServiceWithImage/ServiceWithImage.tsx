@@ -10,7 +10,7 @@ type ServiceWithImageProps = {
 
 export function ServiceWithImage({ service }: ServiceWithImageProps) {
   return (
-    <div className='flex flex-col lg:flex-row justify-between border-t-[1px] py-10 gap-4 lg:gap-40 lg:px-0'>
+    <div className='flex flex-col lg:flex-row justify-between border-t-[1px] border-charcoal-100 py-10 gap-4 lg:gap-40 lg:px-0'>
       <div className='w-full lg:w-1/3'>
         <img
           src={`${process.env.NEXT_PUBLIC_CMS_HOST}${service.attributes.image?.data.attributes.url}`}

@@ -63,7 +63,7 @@
     "generalEnquiry" : "General Enquiry",
     "form" : {
       "enquiryType" : {
-        "label" : "Your Message",
+        "label" : "Message",
         "placeholder" : "Your Message"
       },
       "name" : {
@@ -79,11 +79,11 @@
         "placeholder" : "Your Contact Number"
       },
       "companyName": {
-        "label" : "Company Name",
+        "label" : "Company",
         "placeholder" : "Your Company Name"
       },
       "termsAndConditions" : {
-        "label" : "I have read and accept the <a href='{{privacyPolicyLink}}'>Privacy Policy</a> and <a href='{{termsAndConditionsLink}}'>Terms & Conditions</a>"
+        "label" : "I have read and accept the <a className='underline' href='{{privacyPolicyLink}}'>Privacy Policy</a> and <a className='underline' href='{{termsAndConditionsLink}}'>Terms & Conditions</a>"
       },
       "send" : "Send",
       "success" : {

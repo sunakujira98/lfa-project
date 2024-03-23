@@ -103,6 +103,8 @@ export function ProjectsWrapper() {
         industryId={industryQuery}
         serviceId={serviceQuery}
         regionId={regionQuery}
+        hasVideo={hasVideo}
+        isAwardWinning={isAwardWinning}
       />
       <div className='grid grid-cols-1 lg:grid-cols-3 gap-10 overflow-x-hidden pb-20'>
         {data?.pages?.flatMap((projects) => {

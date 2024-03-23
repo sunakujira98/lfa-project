@@ -35,11 +35,13 @@ export function ControlledCheckbox<T extends FieldValues>({
     <div className='w-full'>
       <div className='flex flex-row gap-2'>
         <Controller
-          render={({ field }) => <input {...field} {...inputProps} />}
+          render={({ field }) => (
+            <input {...field} {...inputProps} className='accent-greige' />
+          )}
           name={name}
           control={control}
         />
-        <span className='text-3xs lg:text-xs'>{text}</span>
+        <span className='text-3xs lg:text-xs font-thin'>{text}</span>
       </div>
       <div className='w-full'>
         {error && <span className='text-error text-3xs'>{error}</span>}
