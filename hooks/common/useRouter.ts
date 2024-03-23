@@ -1,5 +1,6 @@
 import { NavigateOptions } from 'next/dist/shared/lib/app-router-context.shared-runtime'
 import { useRouter as useBaseRouter, useParams } from 'next/navigation'
+import * as Nprogress from 'nprogress'
 
 import { LOCALES } from '@/constants/i18n.constants'
 
@@ -17,6 +18,7 @@ export const useRouter = () => {
       pathname = `/${lang}${path}`
     }
 
+    Nprogress.start()
     router.push(pathname, options)
   }
 

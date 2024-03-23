@@ -69,10 +69,6 @@ export function Header() {
     router.push(href)
   }
 
-  // const onSetScrollToSection = (section: SectionName) => () => {
-  //   setScrollToSection(section)
-  // }
-
   return (
     <nav
       id='header'
