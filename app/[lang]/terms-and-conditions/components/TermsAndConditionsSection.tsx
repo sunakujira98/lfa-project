@@ -45,7 +45,8 @@ export function TermsAndConditionsSection() {
     if (isSuccess) {
       setActiveIndex(termsAndConditions[0]?.id)
     }
-  }, [isSuccess, termsAndConditions])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isSuccess])
 
   const onClickActive = (
     index: number,

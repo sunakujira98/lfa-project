@@ -44,7 +44,8 @@ export function PrivacyPolicySection() {
     if (isSuccess) {
       setActiveIndex(privacyPolicies[0]?.id)
     }
-  }, [isSuccess, privacyPolicies])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isSuccess])
 
   const onClickActive = (
     index: number,

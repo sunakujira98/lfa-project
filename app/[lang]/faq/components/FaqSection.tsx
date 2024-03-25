@@ -44,7 +44,8 @@ export function FaqSection() {
     if (isSuccess) {
       setActiveIndex(faqs[0]?.id)
     }
-  }, [isSuccess, faqs])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isSuccess])
 
   const onClickActive = (index: number, answers: TFAQAnswers[]) => {
     setActiveIndex(index)
