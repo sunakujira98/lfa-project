@@ -1,134 +1,135 @@
 {
-	"header" : {
-    "home" : "首页",
-    "projects" : "项目",
-    "about" : "关于",
-    "services" : "服务",
-    "testimonials" : "客户评价",
-    "news" : "新闻",
-		"contact": "联系我们",
-		"footer": {
-			"privacyPolicy": "隐私政策",
-			"tnc": "条款和条件",
-			"faq": "常见问题解答",
-			"sitemap": "网站地图"
-		}	
-	},
-	"hero": {
-		"we": "我们",
-		"designBuild": "设计与建造",
-		"spacesTo": "空间",
-		"inspireNurture": "激励与培育"
-	},
-	"featuredProject": {
-		"title": "精选项目",
-		"allProjects": "所有项目"
-	},
-	"client": {
-		"title": "客户群"
-	},
-	"aboutUs": {
-		"title": "关于我们",
-		"paragraph": {
-			"title": "我们设计与建造",
-			"subtitle": "激励与培育",
-			"description": "作为新加坡著名的设计与建造工作室，我们与本地企业合作，打造出卓越的工作和商业空间。我们的专长在于打造不仅设计出色，而且能够激发有意义社交互动并促进紧密社区联系的商业办公室。"
-		},
-		"theLfaTeam": "LFA团队",
-		"awards": "奖项",
+  "header": {
+    "home": "首页",
+    "projects": "项目",
+    "about": "关于",
+    "services": "服务",
+    "testimonials": "客户评价",
+    "news": "新闻",
+    "contact": "联系我们",
+    "footer": {
+      "privacyPolicy": "隐私政策",
+      "tnc": "条款和条件",
+      "faq": "常见问题解答",
+      "sitemap": "网站地图"
+    }
+  },
+  "hero": {
+    "we": "我们",
+    "designBuild": "设计与建造",
+    "spacesTo": "空间",
+    "inspireNurture": "激励与培育"
+  },
+  "featuredProject": {
+    "title": "精选项目",
+    "allProjects": "所有项目"
+  },
+  "client": {
+    "title": "客户群"
+  },
+  "aboutUs": {
+    "title": "关于我们",
+    "paragraph": {
+      "title": "我们设计与建造",
+      "spacesTo": "空间",
+      "subtitle": "启发与培育",
+      "description": "成立于2023年，由Oliver Goh、Renee Lim和Jeffrey Lee创立，我们是一个由问题解决者组成的团队，拥有丰富的实践经验，涵盖室内项目开发的各个方面；从概念设计到预算验证和施工，我们全力以赴，致力于分享我们在打造促进联系的空间方面的专业知识。"
+    },
+    "theLfaTeam": "LFA团队",
+    "awards": "奖项",
     "cultivating": "培育",
     "growth": "增长",
-    "together": "共同"  
-	},
-	"services": {
-		"title": "服务",
-		"learnMore": "了解更多",
-		"subtitle": "探索新加坡商业室内设计的巅峰之作，与LFA工作室一同感受卓越的办公和商业空间改造。",
+    "together": "共同"
+  },
+  "services": {
+    "title": "服务",
+    "learnMore": "了解更多",
+    "subtitle": "探索新加坡商业室内设计的巅峰之作，与LFA工作室一同感受卓越的办公和商业空间改造。",
     "description": "我们屡获殊荣的办公室设计和企业内部解决方案根据不同客户的独特需求进行量身定制。作为新加坡商业和办公室室内设计的专业公司，我们自豪地能够将普通的空间打造成非凡的工作场所。"
-	},
-	"testimonials": {
-		"title": "客户评价",
-		"allTestimonials": "查看所有评价",
-		"subtitle": "我们客户的故事揭示了我们如何打造屡获殊荣的办公室设计，将最佳的办公室室内设计原则与新加坡创新的企业室内设计相融合。",
+  },
+  "testimonials": {
+    "title": "客户评价",
+    "allTestimonials": "查看所有评价",
+    "subtitle": "我们客户的故事揭示了我们如何打造屡获殊荣的办公室设计，将最佳的办公室室内设计原则与新加坡创新的企业室内设计相融合。",
     "description": "发现LFA工作室的转型力量，它是新加坡商业室内设计公司中的佼佼者。深入了解那些展示我们在新加坡办公室翻新方面专业知识的客户评价，每个商业办公室翻新项目都反映了一段独特的旅程。从新加坡办公室室内翻新的精湛技艺到更广泛的商业室内设计范围，我们的工作证明了我们对新加坡工作场所设计卓越性的承诺。体验我们如何将愿景变为现实，一次又一次地创建与企业办公室室内设计和商业空间室内设计精神共鸣的个性化空间。"
-	},
-	"awards": {
-		"title": "奖项"
-	},
-	"contact" : {
-    "title" : "联系我们",
-    "subtitle" : "您是否有疑问或准备启动您的办公室或商业室内设计项目？",
-    "description" : "无论您是寻求商业室内设计方面的专业指导，还是在思考新加坡最佳办公室室内设计，或者准备改造您的公司空间，我们的团队都在这里为您提供帮助。作为屡获殊荣的办公室设计公司，我们专注于新加坡的商业和办公室室内装修。联系我们，获取一流的工作场所设计、公司办公室室内设计和商业办公室装修解决方案。让我们合作，打造您的梦想空间，考虑到新加坡的办公室装修成本。通过我们的联系方式与我们联系，让我们将您对出色商业室内项目的愿景变成现实！",
-    "enquiryType" : "查询类型",
-    "generalEnquiry" : "一般查询",
-    "form" : {
-      "enquiryType" : {
-				"label": "您的消息",
-        "placeholder" : "您的消息"
+  },
+  "awards": {
+    "title": "奖项"
+  },
+  "contact": {
+    "title": "联系我们",
+    "subtitle": "您是否有疑问或准备启动您的办公室或商业室内设计项目？",
+    "description": "无论您是寻求商业室内设计方面的专业指导，还是在思考新加坡最佳办公室室内设计，或者准备改造您的公司空间，我们的团队都在这里为您提供帮助。作为屡获殊荣的办公室设计公司，我们专注于新加坡的商业和办公室室内装修。联系我们，获取一流的工作场所设计、公司办公室室内设计和商业办公室装修解决方案。让我们合作，打造您的梦想空间，考虑到新加坡的办公室装修成本。通过我们的联系方式与我们联系，让我们将您对出色商业室内项目的愿景变成现实！",
+    "enquiryType": "查询类型",
+    "generalEnquiry": "一般查询",
+    "form": {
+      "enquiryType": {
+        "label": "您的消息",
+        "placeholder": "您的消息"
       },
-      "name" : {
-        "label" : "姓名",
-        "placeholder" : "您的姓名"
+      "name": {
+        "label": "姓名",
+        "placeholder": "您的姓名"
       },
-      "email" : {
-        "label" : "电子邮件",
-        "placeholder" : "您的电子邮件"
+      "email": {
+        "label": "电子邮件",
+        "placeholder": "您的电子邮件"
       },
-      "contact" : {
-        "label" : "联系电话",
-        "placeholder" : "您的联系电话"
+      "contact": {
+        "label": "联系电话",
+        "placeholder": "您的联系电话"
       },
       "companyName": {
-        "label" : "公司名称",
-        "placeholder" : "您的公司名称"
+        "label": "公司名称",
+        "placeholder": "您的公司名称"
       },
-			"termsAndConditions" : {
-				"label" : "我已阅读并接受<a href='{{privacyPolicyLink}}'>隐私政策</a>和<a href='{{termsAndConditionsLink}}'>条款与条件</a>"
-			},
-			"send": "发送",
-			"success": {
-				"title": "感谢您的联系",
-				"subtitle": "您的消息已成功提交，我们的团队将尽快与您联系！",
-				"backToHome": "返回首页"
-			},
-			"error" : "发生错误，请稍后再试"
+      "termsAndConditions": {
+        "label": "我已阅读并接受<a href='{{privacyPolicyLink}}'>隐私政策</a>和<a href='{{termsAndConditionsLink}}'>条款与条件</a>"
+      },
+      "send": "发送",
+      "success": {
+        "title": "感谢您的联系",
+        "subtitle": "您的消息已成功提交，我们的团队将尽快与您联系！",
+        "backToHome": "返回首页"
+      },
+      "error": "发生错误，请稍后再试"
     },
-		"footer" : {
-			"joinLfa" : "加入LFA",
-			"title" : "Lorem ipsum dolor sit amet consectetur.",
-			"subtitle" : "Lorem ipsum dolor sit amet consectetur. Consectetur malesuada proin pellentesque urna turpis malesuada. Tincidunt quis duis aenean morbi lobortis. Fermentum in aliquam pellentesque aenean vel et interdum vulputate. Ut a vel posuere est sed pulvinar libero at."
-		}
+    "footer": {
+      "joinLfa": "加入LFA",
+      "title": "Lorem ipsum dolor sit amet consectetur.",
+      "subtitle": "Lorem ipsum dolor sit amet consectetur. Consectetur malesuada proin pellentesque urna turpis malesuada. Tincidunt quis duis aenean morbi lobortis. Fermentum in aliquam pellentesque aenean vel et interdum vulputate. Ut a vel posuere est sed pulvinar libero at."
+    }
   },
-	"news": {
-		"title": "新闻",
-		"allNews": "查看所有新闻",
-		"subtitle": "与LFA工作室一起探索商业和办公室室内设计的最新动态。",
+  "news": {
+    "title": "新闻",
+    "allNews": "查看所有新闻",
+    "subtitle": "与LFA工作室一起探索商业和办公室室内设计的最新动态。",
     "description": "了解新加坡顶级商业室内设计公司的见解，包括屡获殊荣的办公室设计和创新的工作场所概念。我们的新闻栏目展示了最佳的办公室室内设计趋势，突出了新加坡重要的商业室内项目和办公室翻新故事。从新加坡的企业室内设计到办公室翻新成本的考虑，通过LFA工作室对商业办公室室内设计和商业空间室内设计的引人入胜的更新，保持领先地位。加入我们，共同庆祝空间转型的艺术，无论是通过办公室室内翻新还是完整的商业办公室翻新，看看我们为何成为企业办公室室内设计中的佼佼者。",
-		"nextPage" : "下一页：{{title}}"
-	},
-	"recognitions": {
-		"title": "认可"
-	},
-	"privacyPolicy" : {
-    "title" : "隐私政策"
-	},
-	"queries": {
+    "nextPage": "下一页：{{title}}"
+  },
+  "recognitions": {
+    "title": "认可"
+  },
+  "privacyPolicy": {
+    "title": "隐私政策"
+  },
+  "queries": {
     "privacyPolicySubtitle": "如有任何关于我们隐私政策的查询，请随时给我们留言",
     "tncSubtitle": "如有任何其他关于我们条款与条件的查询，请随时给我们留言",
     "subtitle": "如有任何其他查询，请随时给我们留言",
     "contact": "联系我们"
-	},
-	"faq": {
+  },
+  "faq": {
     "title": "常见问题"
-	},
-	"termsAndConditions" : {
-    "title" : "条款与条件"
-	},
-	"sitemap" : {
-    "title" : "网站地图",
-    "pages" : "页面"
-	},
-	"footer": {
+  },
+  "termsAndConditions": {
+    "title": "条款与条件"
+  },
+  "sitemap": {
+    "title": "网站地图",
+    "pages": "页面"
+  },
+  "footer": {
     "title": "共同培育成长",
     "stayConnected": "保持联系",
     "contactUs": "联系我们",
