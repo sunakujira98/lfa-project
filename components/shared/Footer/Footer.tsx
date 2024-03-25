@@ -96,35 +96,43 @@ export function Footer() {
               </span>
               <div className='py-8 ml-[60px]'>
                 <div className='py-8 grid grid-cols-1 lg:grid-cols-2 gap-5'>
-                  <div className='flex flex-col'>
+                  <div className='flex flex-col gap-2'>
                     <span className='text-charcoal-600 uppercase text-3xs'>
                       {t('footer.findUs')}
                     </span>
-                    <span className='text-lfaWhite font-light'>
-                      283 River Valley Road
-                    </span>
-                    <span className='text-lfaWhite font-light'>
-                      Singapore 238324
-                    </span>
-                    <span className='text-lfaWhite font-light'>
-                      {t('footer.viewOnGoogleMaps')}
-                    </span>
+                    <div className='flex flex-col'>
+                      <span className='text-lfaWhite font-light'>
+                        283 River Valley Road
+                      </span>
+                      <span className='text-lfaWhite font-light'>
+                        Singapore 238324
+                      </span>
+                      <span className='text-lfaWhite font-light'>
+                        {t('footer.viewOnGoogleMaps')}
+                      </span>
+                    </div>
                   </div>
-                  <div className='flex flex-col ml-[89px]'>
+                  <div className='flex flex-col ml-[89px] gap-2'>
                     <span className='text-charcoal-600 uppercase text-3xs'>
                       {t('footer.stayConnected')}
                     </span>
-                    <span className='text-lfaWhite font-light'>Facebook</span>
-                    <span className='text-lfaWhite font-light'>Instagram</span>
-                    <span className='text-lfaWhite font-light'>Linkedin</span>
+                    <div className='flex flex-col'>
+                      <span className='text-lfaWhite font-light'>Facebook</span>
+                      <span className='text-lfaWhite font-light'>
+                        Instagram
+                      </span>
+                      <span className='text-lfaWhite font-light'>Linkedin</span>
+                    </div>
                   </div>
-                  <div className='flex flex-col'>
+                  <div className='flex flex-col gap-2'>
                     <span className='text-charcoal-600 uppercase text-3xs'>
                       {t('footer.contactUs')}
                     </span>
-                    <span className='text-lfaWhite font-light'>
-                      enquiry@lfa.com.sg
-                    </span>
+                    <div className='flex flex-col'>
+                      <span className='text-lfaWhite font-light'>
+                        enquiry@lfa.com.sg
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>

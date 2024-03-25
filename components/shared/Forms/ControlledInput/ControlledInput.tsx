@@ -33,7 +33,7 @@ export function ControlledInput<T extends FieldValues>({
       <Controller
         render={({ field }) => (
           <input
-            className='w-full p-2 font-thin rounded-lg max-md:placeholder:text-3xs lg:placeholder:text-md lg:placeholder:font-thin lg:placeholder:text-charcoal-100 bg-transparent'
+            className='w-full p-2 font-thin rounded-lg max-md:placeholder:text-3xs lg:placeholder:text-md lg:placeholder:font-thin lg:placeholder:text-charcoal-100 bg-transparent lg:placeholder:tracking-[0.24px] outline-none'
             {...field}
             {...inputProps}
           />

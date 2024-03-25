@@ -23,7 +23,7 @@ export function News({ news, localeId }: NewsProps) {
   }
 
   return (
-    <div className='py-10 border-b-[1px]'>
+    <div className='pb-6'>
       <div className='grid grid-cols-1 gap-20'>
         <div className='flex flex-row gap-6' key={news.id}>
           <Link href={`/news/${localeId}`}>
@@ -35,7 +35,7 @@ export function News({ news, localeId }: NewsProps) {
           </Link>
         </div>
       </div>
-      <div className='flex flex-col py-4 lg:py-6 text-3xs gap-2'>
+      <div className='flex flex-col py-4 lg:pt-6 text-3xs gap-2'>
         <Link href={`/news/${localeId}`}>
           <h4>{news.attributes.title}</h4>
         </Link>

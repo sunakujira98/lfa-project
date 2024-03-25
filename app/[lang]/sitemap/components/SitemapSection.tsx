@@ -50,7 +50,9 @@ export function SitemapSection() {
       <div className='grid grid-cols-1 lg:grid-cols-2 gap-20 lg:gap-8 font-thin lg:font-normal'>
         <div>
           <div className='mb-[31px]'>
-            <h6 className='font-thin uppercase pb-6'>{t('header.projects')}</h6>
+            <h6 className='font-thin uppercase pb-6 letter-[1px]'>
+              {t('header.projects')}
+            </h6>
             <div className='flex flex-col'>
               {projectsData.map((project, index) => {
                 const projectId = project.localeId || project.id
@@ -74,7 +76,9 @@ export function SitemapSection() {
             </div>
           </div>
           <div className='hidden lg:block'>
-            <h6 className='font-thin uppercase pb-6'>{t('news.title')}</h6>
+            <h6 className='font-thin uppercase pb-6 letter-[1px]'>
+              {t('news.title')}
+            </h6>
             <div className='flex flex-col'>
               {newsData?.map((singleNews, index) => {
                 const newsId = singleNews.localeId || singleNews.id
@@ -95,7 +99,9 @@ export function SitemapSection() {
             </div>
           </div>
           <div className='block lg:hidden pt-20 lg:pt-0'>
-            <h6 className='font-thin uppercase pb-6'>{t('sitemap.pages')}</h6>
+            <h6 className='font-thin uppercase pb-6 letter-[1px]'>
+              {t('sitemap.pages')}
+            </h6>
             <div className='flex flex-col'>
               <Link href={'/'}>
                 <div className='flex justify-between border-t-[1px] border-charcoal-100 py-6 text-xs items-center'>

@@ -107,7 +107,7 @@ export function ProjectFilter({
                   />
                 </Menu.Button>
               ) : (
-                <Menu.Button className='inline-flex w-full justify-between lg:justify-center lg:items-center gap-x-1.5 rounded-sm bg-transparent px-3 py-2 font-light hover:bg-charcoal-100 hover:text-lfaWhite text-2xs'>
+                <Menu.Button className='inline-flex w-full justify-between lg:justify-center lg:items-center gap-x-1.5 rounded-sm bg-transparent px-3 py-2 font-light hover:bg-greige hover:text-gray-50 text-2xs '>
                   INDUSTRIES
                   <ChevronDownIcon
                     className='-mr-1 h-5 w-5 text-gray-400'
@@ -164,7 +164,7 @@ export function ProjectFilter({
                   />
                 </Menu.Button>
               ) : (
-                <Menu.Button className='inline-flex w-full justify-between lg:justify-center lg:items-center gap-x-1.5 rounded-sm bg-transparent px-3 py-2 font-light hover:bg-charcoal-100 hover:text-lfaWhite text-2xs'>
+                <Menu.Button className='inline-flex w-full justify-between lg:justify-center lg:items-center gap-x-1.5 rounded-sm bg-transparent px-3 py-2 font-light hover:bg-greige hover:text-gray-50 text-2xs'>
                   SERVICES
                   <ChevronDownIcon
                     className='-mr-1 h-5 w-5 text-gray-400'
@@ -220,7 +220,7 @@ export function ProjectFilter({
                   />
                 </Menu.Button>
               ) : (
-                <Menu.Button className='inline-flex w-full justify-between lg:justify-center lg:items-center gap-x-1.5 rounded-sm bg-transparent px-3 py-2 font-light hover:bg-charcoal-100 hover:text-lfaWhite text-2xs'>
+                <Menu.Button className='inline-flex w-full justify-between lg:justify-center lg:items-center gap-x-1.5 rounded-sm bg-transparent px-3 py-2 font-light hover:bg-greige hover:text-gray-50 text-2xs'>
                   REGIONS
                   <ChevronDownIcon
                     className='-mr-1 h-5 w-5 text-gray-400'
@@ -271,7 +271,7 @@ export function ProjectFilter({
             <div className='flex flex-row gap-1'>
               <input
                 type='checkbox'
-                className='accent-greige cursor-pointer m1-2'
+                className='accent-charcoal-1000 cursor-pointer m1-2'
                 checked={hasVideo === 'true'}
                 onChange={(event) =>
                   onChangeHasVideoQuery(event.target.checked)
@@ -284,7 +284,7 @@ export function ProjectFilter({
             <div className='flex items-center gap-1'>
               <input
                 type='checkbox'
-                className='accent-greige cursor-pointer m1-2'
+                className='accent-charcoal-1000 cursor-pointer m1-2'
                 checked={isAwardWinning === 'true'}
                 onChange={(event) =>
                   onChangeIsAwardWinning(event.target.checked)
@@ -331,7 +331,7 @@ export function ProjectFilter({
                               />
                             </Menu.Button>
                           ) : (
-                            <Menu.Button className='inline-flex w-full justify-between lg:justify-center lg:items-center gap-x-1.5 rounded-sm bg-transparent px-3 py-2 font-light hover:bg-charcoal-100 text-2xs'>
+                            <Menu.Button className='inline-flex w-full justify-between lg:justify-center lg:items-center gap-x-1.5 rounded-sm bg-transparent px-3 py-2 font-light hover:bg-greige text-2xs '>
                               INDUSTRIES
                               <ChevronDownIcon
                                 className='-mr-1 h-5 w-5 text-gray-400'
@@ -393,7 +393,7 @@ export function ProjectFilter({
                               />
                             </Menu.Button>
                           ) : (
-                            <Menu.Button className='inline-flex w-full justify-between lg:justify-center lg:items-center gap-x-1.5 rounded-sm bg-transparent px-3 py-2 font-light hover:bg-charcoal-100 text-2xs'>
+                            <Menu.Button className='inline-flex w-full justify-between lg:justify-center lg:items-center gap-x-1.5 rounded-sm bg-transparent px-3 py-2 font-light hover:bg-greige text-2xs'>
                               SERVICES
                               <ChevronDownIcon
                                 className='-mr-1 h-5 w-5 text-gray-400'
@@ -454,7 +454,7 @@ export function ProjectFilter({
                               />
                             </Menu.Button>
                           ) : (
-                            <Menu.Button className='inline-flex w-full justify-between lg:justify-center lg:items-center gap-x-1.5 rounded-sm bg-transparent px-3 py-2 font-light hover:bg-charcoal-100 text-2xs'>
+                            <Menu.Button className='inline-flex w-full justify-between lg:justify-center lg:items-center gap-x-1.5 rounded-sm bg-transparent px-3 py-2 font-light hover:bg-greige text-2xs'>
                               REGIONS
                               <ChevronDownIcon
                                 className='-mr-1 h-5 w-5 text-gray-400'
@@ -507,7 +507,7 @@ export function ProjectFilter({
                         <div className='flex flex-row gap-1'>
                           <input
                             type='checkbox'
-                            className='accent-greige cursor-pointer m1-2'
+                            className='accent-charcoal-1000 cursor-pointer m1-2'
                             onChange={(event) =>
                               onChangeHasVideoQuery(event.target.checked)
                             }
@@ -519,7 +519,7 @@ export function ProjectFilter({
                         <div className='flex items-center gap-1'>
                           <input
                             type='checkbox'
-                            className='accent-greige cursor-pointer m1-2'
+                            className='accent-charcoal-1000 cursor-pointer m1-2'
                             onChange={(event) =>
                               onChangeIsAwardWinning(event.target.checked)
                             }

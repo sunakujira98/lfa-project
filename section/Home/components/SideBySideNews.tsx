@@ -56,9 +56,9 @@ export function SideBySideNews() {
                     alt={news.attributes.title}
                   />
                   <div className='flex flex-col gap-2'>
-                    <h6>
-                      {dayjs(news.attributes.createdAt).format('DD-MM-YYYY')}
-                    </h6>
+                    <div className='text-3xs uppercase font-thin'>
+                      {dayjs(news.attributes.createdAt).format('DD MMM YYYY')}
+                    </div>
                     <a href={`${lang}/news/${newsId}`}>
                       <span className='text-xs font-thin'>
                         {news.attributes.title}

@@ -36,7 +36,11 @@ export function ControlledCheckbox<T extends FieldValues>({
       <div className='flex flex-row gap-2'>
         <Controller
           render={({ field }) => (
-            <input {...field} {...inputProps} className='accent-greige' />
+            <input
+              {...field}
+              {...inputProps}
+              className='accent-charcoal-1000'
+            />
           )}
           name={name}
           control={control}

@@ -1,149 +1,150 @@
 {
-  "header" : {
-    "home" : "Home",
-    "projects" : "Projects",
-    "about" : "About",
-    "services" : "Service",
-    "testimonials" : "Testimonials",
-    "news" : "News",
-    "contact" : "Contact",
-    "footer" : {
-			"privacyPolicy" : "Privacy Policy",
-			"tnc" : "T&CS",
-			"faq" : "FAQS",
-			"sitemap" : "SITEMAP"
-		}
-  },
-  "hero" : {
-    "we" : "We",
-    "designBuild" : "Design & Build",
-    "spacesTo" : "Spaces To",
-    "inspireNurture" : "Inspire & Nurture"
-  },
-  "featuredProject" : {
-    "title" : "Featured Projects",
-    "allProjects" : "All Projects"
-  },
-  "client" : {
-    "title" : "CLIENTELE"
-  },
-  "aboutUs" : {
-    "title": "About Us",
-    "paragraph" : {
-      "title" : "We Design & Build",
-      "subtitle" : "Inspire & Nurture",
-      "description" : "As an award-winning Design & Build Studio in Singapore, we collaborate with local businesses to craft exceptional work and commercial spaces. Our expertise lies in creating commercial offices that not only stand out in design but also inspire meaningful social interaction and foster strong communal bonds."
-    },
-    "theLfaTeam" : "The LFA Team",
-    "awards" : "Awards",
-    "cultivating" : "Cultivating",
-    "growth" : "Growth",
-    "together" : "Together"
-  },
-  "services" : {
-    "title" : "Services",
-    "learnMore" : "Learn More",
-    "subtitle" : "Explore the pinnacle of commercial interior design in Singapore with LFA Studio, a name synonymous with excellence in office and commercial space transformations.",
-    "description" : "Our award-winning office designs and corporate interior solutions are tailored to meet the unique demands of a diverse clientele. Specialising in both commercial and office interior design in Singapore, we take pride in our ability to turn ordinary spaces into extraordinary workplaces."
-  },
-  "testimonials" : {
-    "title" : "Testimonials",
-    "allTestimonials" : "View All Testimonials",
-    "subtitle" : "Our clients' stories reveal how we craft award-winning office designs, blending the best office interior design principles with innovative corporate interior design in Singapore.",
-    "description" : "Discover the transformative power of LFA Studio, a leader among commercial interior design firms in Singapore. Dive into testimonials that showcase our expertise in office renovation in Singapore, where every commercial office renovation project reflects a unique journey. From the finesse of office interior renovation in Singapore to the broader scope of commercial interior design, our work is a testament to our commitment to excellence in workplace design in Singapore. Experience how we turn visions into reality, creating personalised spaces that resonate with the spirit of corporate office interior design and interior design for commercial spaces, one project at a time."
-  },
-  "awards" : {
-    "title" : "AWARDS"
-  },
-  "contact" : {
-    "title" : "Contact Us",
-    "subtitle" : "Got a query or are you ready to kick-start your office or commercial interior project?",
-    "description" : "Whether you're seeking expert guidance in commercial interior design, pondering over the best office interior design in Singapore, or ready to transform your corporate space, our team is here to assist. As an award-winning office design firm, we specialise in both commercial and office interior renovation in Singapore. Reach out to us for top-notch workplace design, corporate office interior design, and commercial office renovation solutions. Let's collaborate to create your dream space, keeping in mind your office renovation cost in Singapore. Connect with us through our contact details, and let’s bring your vision for a remarkable commercial interior project to life!",
-    "enquiryType" : "Enquiry Type",
-    "generalEnquiry" : "General Enquiry",
-    "form" : {
-      "enquiryType" : {
-        "label" : "Message",
-        "placeholder" : "Your Message"
-      },
-      "name" : {
-        "label" : "Name",
-        "placeholder" : "Your Name"
-      },
-      "email" : {
-        "label" : "Email",
-        "placeholder" : "Your Email"
-      },
-      "contact" : {
-        "label" : "Contact No.",
-        "placeholder" : "Your Contact Number"
-      },
-      "companyName": {
-        "label" : "Company",
-        "placeholder" : "Your Company Name"
-      },
-      "termsAndConditions" : {
-        "label" : "I have read and accept the <a className='underline' href='{{privacyPolicyLink}}'>Privacy Policy</a> and <a className='underline' href='{{termsAndConditionsLink}}'>Terms & Conditions</a>"
-      },
-      "send" : "Send",
-      "success" : {
-        "title" : "Thank You For Reaching Out",
-        "subtitle" : "Your message has been successfully submitted, and our team will get in touch with you soon!",
-        "backToHome" : "Back To Home"
-      },
-      "error" : "There is an error. Please try again later"
-    },
-    "footer" : {
-      "joinLfa" : "Join LFA",
-      "title" : "Lorem ipsum dolor sit amet consectetur.",
-      "subtitle" : "Lorem ipsum dolor sit amet consectetur. Consectetur malesuada proin pellentesque urna turpis malesuada. Tincidunt quis duis aenean morbi lobortis. Fermentum in aliquam pellentesque aenean vel et interdum vulputate. Ut a vel posuere est sed pulvinar libero at."
+  "header": {
+    "home": "Home",
+    "projects": "Projects",
+    "about": "About",
+    "services": "Service",
+    "testimonials": "Testimonials",
+    "news": "News",
+    "contact": "Contact",
+    "footer": {
+      "privacyPolicy": "Privacy Policy",
+      "tnc": "T&CS",
+      "faq": "FAQS",
+      "sitemap": "SITEMAP"
     }
   },
-  "news" : {
-    "title" : "News",
+  "hero": {
+    "we": "We",
+    "designBuild": "Design & Build",
+    "spacesTo": "Spaces To",
+    "inspireNurture": "Inspire & Nurture"
+  },
+  "featuredProject": {
+    "title": "Featured Projects",
+    "allProjects": "All Projects"
+  },
+  "client": {
+    "title": "CLIENTELE"
+  },
+  "aboutUs": {
+    "title": "About Us",
+    "paragraph": {
+      "title": "We Design & Build",
+      "spacesTo": "Spaces To",
+      "subtitle": "Inspire & Nurture",
+      "description": "Founded in 2023 by Oliver Goh, Renee Lim and Jeffrey Lee, we are a team of problem solvers powered by extensive practical experience in every aspect of interior project development; from concept design to budget validation and construction, fully committed to share our expertise in creating spaces that foster connections."
+    },
+    "theLfaTeam": "The LFA Team",
+    "awards": "Awards",
+    "cultivating": "Cultivating",
+    "growth": "Growth",
+    "together": "Together"
+  },
+  "services": {
+    "title": "Services",
+    "learnMore": "Learn More",
+    "subtitle": "Explore the pinnacle of commercial interior design in Singapore with LFA Studio, a name synonymous with excellence in office and commercial space transformations.",
+    "description": "Our award-winning office designs and corporate interior solutions are tailored to meet the unique demands of a diverse clientele. Specialising in both commercial and office interior design in Singapore, we take pride in our ability to turn ordinary spaces into extraordinary workplaces."
+  },
+  "testimonials": {
+    "title": "Testimonials",
+    "allTestimonials": "View All Testimonials",
+    "subtitle": "Our clients' stories reveal how we craft award-winning office designs, blending the best office interior design principles with innovative corporate interior design in Singapore.",
+    "description": "Discover the transformative power of LFA Studio, a leader among commercial interior design firms in Singapore. Dive into testimonials that showcase our expertise in office renovation in Singapore, where every commercial office renovation project reflects a unique journey. From the finesse of office interior renovation in Singapore to the broader scope of commercial interior design, our work is a testament to our commitment to excellence in workplace design in Singapore. Experience how we turn visions into reality, creating personalised spaces that resonate with the spirit of corporate office interior design and interior design for commercial spaces, one project at a time."
+  },
+  "awards": {
+    "title": "AWARDS"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Got a query or are you ready to kick-start your office or commercial interior project?",
+    "description": "Whether you're seeking expert guidance in commercial interior design, pondering over the best office interior design in Singapore, or ready to transform your corporate space, our team is here to assist. As an award-winning office design firm, we specialise in both commercial and office interior renovation in Singapore. Reach out to us for top-notch workplace design, corporate office interior design, and commercial office renovation solutions. Let's collaborate to create your dream space, keeping in mind your office renovation cost in Singapore. Connect with us through our contact details, and let’s bring your vision for a remarkable commercial interior project to life!",
+    "enquiryType": "Enquiry Type",
+    "generalEnquiry": "General Enquiry",
+    "form": {
+      "enquiryType": {
+        "label": "Message",
+        "placeholder": "Your Message"
+      },
+      "name": {
+        "label": "Name",
+        "placeholder": "Your Name"
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "Your Email"
+      },
+      "contact": {
+        "label": "Contact No.",
+        "placeholder": "Your Contact Number"
+      },
+      "companyName": {
+        "label": "Company",
+        "placeholder": "Your Company Name"
+      },
+      "termsAndConditions": {
+        "label": "I have read and accept the <a className='underline' href='{{privacyPolicyLink}}'>Privacy Policy</a> and <a className='underline' href='{{termsAndConditionsLink}}'>Terms & Conditions</a>"
+      },
+      "send": "Send",
+      "success": {
+        "title": "Thank You For Reaching Out",
+        "subtitle": "Your message has been successfully submitted, and our team will get in touch with you soon!",
+        "backToHome": "Back To Home"
+      },
+      "error": "There is an error. Please try again later"
+    },
+    "footer": {
+      "joinLfa": "Join LFA",
+      "title": "Lorem ipsum dolor sit amet consectetur.",
+      "subtitle": "Lorem ipsum dolor sit amet consectetur. Consectetur malesuada proin pellentesque urna turpis malesuada. Tincidunt quis duis aenean morbi lobortis. Fermentum in aliquam pellentesque aenean vel et interdum vulputate. Ut a vel posuere est sed pulvinar libero at."
+    }
+  },
+  "news": {
+    "title": "News",
     "allNews": "View All News",
-    "subtitle" : "Explore the latest in commercial and office interior design with LFA Studio.",
-    "description" : "Discover insights into Singapore's top commercial interior design firms, including award-winning office designs and innovative workplace concepts. Our news section showcases the best office interior design trends, highlighting significant commercial interior projects and office renovation stories in Singapore. From corporate interior design in Singapore to office renovation cost considerations, stay ahead with LFA Studio's compelling updates on commercial office interior design and interior design for commercial spaces. Join us as we celebrate the art of transforming spaces, whether through an office interior renovation or a complete commercial office renovation, and see why we are among the best in corporate office interior design.",
-    "nextPage" : "Next Page: {{title}}"
+    "subtitle": "Explore the latest in commercial and office interior design with LFA Studio.",
+    "description": "Discover insights into Singapore's top commercial interior design firms, including award-winning office designs and innovative workplace concepts. Our news section showcases the best office interior design trends, highlighting significant commercial interior projects and office renovation stories in Singapore. From corporate interior design in Singapore to office renovation cost considerations, stay ahead with LFA Studio's compelling updates on commercial office interior design and interior design for commercial spaces. Join us as we celebrate the art of transforming spaces, whether through an office interior renovation or a complete commercial office renovation, and see why we are among the best in corporate office interior design.",
+    "nextPage": "Next Page: {{title}}"
   },
-  "recognitions" : {
-    "title" : "Recognitions"
+  "recognitions": {
+    "title": "Recognitions"
   },
-  "privacyPolicy" : {
-    "title" : "Privacy Policy"
+  "privacyPolicy": {
+    "title": "Privacy Policy"
   },
-  "queries" : {
-    "privacyPolicySubtitle" : "For any queries regarding our privacy policy, feel free to drop us a message",
-    "tncSubtitle" : "For any other queries regarding our terms & conditions, feel free to drop us a message",
-    "subtitle" : "For any other queries, feel free to drop us a message",
-    "contact" : "Contact"
+  "queries": {
+    "privacyPolicySubtitle": "For any queries regarding our privacy policy, feel free to drop us a message",
+    "tncSubtitle": "For any other queries regarding our terms & conditions, feel free to drop us a message",
+    "subtitle": "For any other queries, feel free to drop us a message",
+    "contact": "Contact"
   },
-  "faq" : {
-    "title" : "Frequently Asked Questions"
+  "faq": {
+    "title": "Frequently Asked Questions"
   },
-  "termsAndConditions" : {
-    "title" : "Terms And Conditions"
+  "termsAndConditions": {
+    "title": "Terms And Conditions"
   },
-  "sitemap" : {
-    "title" : "Sitemap",
-    "pages" : "Pages"
+  "sitemap": {
+    "title": "Sitemap",
+    "pages": "Pages"
   },
-  "footer" : {
-    "title" : "Cultivating Growth Together",
-    "stayConnected" : "stayConnected",
-    "contactUs" : "Contact Us",
-    "findUsOnInstagram" : "Find Us On Instagram",
-    "facebook" : "Facebook",
-    "instagram" : "Instagram",
-    "linkedin" : "Linkedin",
-    "findUs" : "Find Us At",
-    "viewOnGoogleMaps" : "View on Google Maps",
-    "qualityManagementSystem" : "Quality Management System",
-    "riskManagementSystem" : "Risk Management System",
-    "privacyPolicy" : "Privacy Policy",
-    "termsAndConditions" : "Terms & Conditions",
-    "faq" : "Frequently Asked Questions",
-    "sitemap" : "Sitemap",
-    "copyright" : "2023 LFA. All rights reserved."
+  "footer": {
+    "title": "Cultivating Growth Together",
+    "stayConnected": "Stay Connected",
+    "contactUs": "Contact Us",
+    "findUsOnInstagram": "Find Us On Instagram",
+    "facebook": "Facebook",
+    "instagram": "Instagram",
+    "linkedin": "Linkedin",
+    "findUs": "Find Us At",
+    "viewOnGoogleMaps": "View on Google Maps",
+    "qualityManagementSystem": "Quality Management System",
+    "riskManagementSystem": "Risk Management System",
+    "privacyPolicy": "Privacy Policy",
+    "termsAndConditions": "Terms & Conditions",
+    "faq": "Frequently Asked Questions",
+    "sitemap": "Sitemap",
+    "copyright": "2023 LFA. All rights reserved."
   }
 }

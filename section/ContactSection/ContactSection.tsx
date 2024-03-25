@@ -58,7 +58,7 @@ export function ContactSection() {
       <div className='flex flex-col lg:flex-row lg:justify-between gap-10 lg:gap-40 pt-24'>
         <div className='w-full lg:w-1/3'></div>
         <div className='w-full lg:w-2/3'>
-          <a href='/' className='outline-button'>
+          <a href='/' className='outline-button-black uppercase text-3xs'>
             {t('contact.form.success.backToHome')}
           </a>
         </div>
@@ -165,7 +165,7 @@ export function ContactSection() {
                   />
                 </div>
               </div>
-              <div className='flex flex-row items-center gap-8 border-b-[1px] border-charcoal-100 pt-6 pb-10'>
+              <div className='flex flex-row items-center gap-8 border-b-[1px] border-charcoal-100 py-6'>
                 <div className='flex w-1/4'>
                   <h4 className='text-2xs lg:text-md'>
                     {t('contact.form.companyName.label')}
@@ -219,7 +219,7 @@ export function ContactSection() {
           {t('contact.footer.joinLfa')}
         </h3>
         <div className='flex flex-col w-full lg:w-2/3'>
-          <h4 className='hidden lg:block font-thin lg:pb-12'>
+          <h4 className='hidden lg:block font-thin lg:pb-20'>
             {t('contact.footer.title')}
           </h4>
           <span className='text-xs font-thin pb-10'>

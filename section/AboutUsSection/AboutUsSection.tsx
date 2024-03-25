@@ -13,23 +13,19 @@ export function AboutUsSection() {
 
   return (
     isSuccessTeams && (
-      <div>
+      <>
         <div
-          className='relative container mx-auto'
-          style={{ maxWidth: '1680px' }}
-        >
-          <div className='relative overflow-hidden w-full'>
-            <div
-              className='h-[100vh] lg:h-screen mx-auto flex pt-6 lg:pt-0 lg:items-center bg-cover bg-right'
-              style={{ backgroundImage: "url('/images/bg-hero.png')" }}
-            >
-              <div className='flex flex-col lg:h-screen'>
-                <div className='flex-1'></div>
-                <div className='self-start px-4 lg:px-20 py-10 ml-auto text-lfaWhite'>
-                  <h1 className='text-2xl lg:text-6xl'>{t('aboutUs.title')}</h1>
-                </div>
-              </div>
-            </div>
+          className='h-screen flex pt-6 lg:pt-0 lg:items-center bg-cover bg-center absolute inset-0'
+          style={{
+            backgroundImage: "url('/images/bg-hero.png')",
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}
+        ></div>
+        <div className='flex flex-col h-screen max-w-screen-xl mx-auto relative z-10'>
+          <div className='flex-1'></div>
+          <div className='self-start px-2 py-10 text-lfaWhite flex flex-col w-full'>
+            <h1 className='text-2xl lg:text-6xl'>{t('aboutUs.title')}</h1>
           </div>
         </div>
 
@@ -45,7 +41,7 @@ export function AboutUsSection() {
               <h1 className='font-vinila text-2xl lg:text-6xl'>
                 {t('aboutUs.together')}
               </h1>
-              <p className='text-center'>
+              <p className='text-center w-[65%]'>
                 {t('aboutUs.paragraph.description')}
               </p>
             </div>
@@ -77,7 +73,7 @@ export function AboutUsSection() {
             {awards?.data.map((award) => {
               return (
                 <a href={award.attributes.externalLink}>
-                  <div className='flex justify-between border-b-[1px] py-2 text-xs items-center border-charcoal-100'>
+                  <div className='flex justify-between border-b-[1px] py-2 text-xs items-center border-charcoal-100 uppercase'>
                     {award.attributes.awardName}
                     <ArrowRightUpIcon />
                   </div>
@@ -86,7 +82,7 @@ export function AboutUsSection() {
             })}
           </div>
         </div>
-      </div>
+      </>
     )
   )
 }

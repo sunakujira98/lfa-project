@@ -72,12 +72,11 @@ export function Service() {
               </div>
             </div>
             <div className='hidden lg:block lg:w-2/3'>
-              <div className='border-t-[1px] border-l-[1px] rounded-tl-[40px] rounded-l-[4px] p-8 h-full border-charcoal-1000'>
+              <div className='border-t-[1px] border-l-[1px] rounded-tl-[40px] rounded-l-[0px] p-8 h-full border-charcoal-1000'>
                 <p>{activeService ? activeService : firstDescriptionToShow}</p>
               </div>
             </div>
           </div>
-          {/* Mobile */}
           <div className='px-4 lg:hidden'>
             <div className='flex flex-col border-t-[1px] w-full'>
               <div className='flex flex-col'>

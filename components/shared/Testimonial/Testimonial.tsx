@@ -24,7 +24,8 @@ export function Testimonial({ data }: TestimonialProps) {
         <div className='w-full lg:w-1/3 flex lg:justify-end'>
           <div className='flex flex-col pt-4 justify-end'>
             <h3 className='font-light text-xs'>{data.attributes.fullName}</h3>
-            <div className='flex flex-row'>
+            <div className='flex flex-row justify-end'>
+              {' '}
               <h3 className='font-light text-xs'>
                 {data.attributes.title}, &nbsp;
               </h3>
@@ -32,10 +33,11 @@ export function Testimonial({ data }: TestimonialProps) {
             </div>
 
             {data.attributes.companyImage?.data?.attributes?.url && (
-              <div className='flex order-first sm:order-none'>
+              <div className='flex justify-end'>
+                {' '}
                 <img
                   src={`${process.env.NEXT_PUBLIC_CMS_HOST}${data.attributes.companyImage.data.attributes.url}`}
-                  className='max-w-20 lg:w-40'
+                  className='max-w-20 lg:h-12 w-auto'
                   alt={data.attributes.fullName}
                 />
               </div>
