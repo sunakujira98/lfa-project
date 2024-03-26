@@ -99,7 +99,7 @@ export function TermsAndConditionsSection() {
               {description ? (
                 <>
                   <div className='border-b-[1px] border-charcoal-100 pb-4 lg:hidden'>
-                    <h4 className='text-md font-thin'>{title}</h4>
+                    <h4 className='text-md font-light'>{title}</h4>
                   </div>
                   <div className='pt-4 lg:pt-0'>
                     <ContentRenderer data={description} />
@@ -108,7 +108,7 @@ export function TermsAndConditionsSection() {
               ) : (
                 <>
                   <div className='border-b-[1px] border-charcoal-100 pb-4 lg:hidden'>
-                    <h4 className='text-md font-thin'>{firstTitleToShow}</h4>
+                    <h4 className='text-md font-light'>{firstTitleToShow}</h4>
                   </div>
                   <div className='pt-4 lg:pt-0'>
                     <ContentRenderer data={firstDescriptionToShow} />

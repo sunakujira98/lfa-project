@@ -22,7 +22,7 @@ export function AboutUsSection() {
             backgroundPosition: 'center',
           }}
         ></div>
-        <div className='flex flex-col h-screen max-w-screen-xl mx-auto relative z-10'>
+        <div className='flex flex-col h-screen max-w-screen-xl mx-auto relative z-2'>
           <div className='flex-1'></div>
           <div className='self-start px-2 py-10 text-lfaWhite flex flex-col w-full'>
             <h1 className='text-2xl lg:text-6xl'>{t('aboutUs.title')}</h1>

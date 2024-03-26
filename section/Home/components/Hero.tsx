@@ -15,7 +15,7 @@ export function Hero() {
           backgroundPosition: 'center',
         }}
       ></div>
-      <div className='flex flex-col h-screen max-w-screen-xl mx-auto relative z-10'>
+      <div className='flex flex-col h-screen max-w-screen-xl mx-auto relative z-2'>
         <div className='flex-1'></div>
         <div className='self-start py-10 text-lfaWhite flex flex-col w-full'>
           <span className='inline-block lg:mb-[-50px]'>
