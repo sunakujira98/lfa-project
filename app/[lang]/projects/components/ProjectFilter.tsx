@@ -51,6 +51,13 @@ export function ProjectFilter({
     undefined,
   )
 
+  const hasFilter =
+    selectedIndustry !== undefined ||
+    selectedService !== undefined ||
+    selectedRegion !== undefined ||
+    (hasVideo !== '' && hasVideo !== 'false') ||
+    (isAwardWinning !== '' && isAwardWinning !== 'false')
+
   useEffect(() => {
     if (isSuccessIndustry) {
       setSelectedIndustry(
@@ -314,7 +321,7 @@ export function ProjectFilter({
                       <PlusIcon width='16' height='16' />
                     )}
                   </Disclosure.Button>
-                  <h5>FILTER</h5>
+                  <h5>{hasFilter ? 'FILTERED' : 'FILTER'}</h5>
                 </div>
               </div>
               <div>
