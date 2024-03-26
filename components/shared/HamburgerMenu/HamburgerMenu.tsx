@@ -3,9 +3,10 @@ import { hamburgerLineStyles } from './HamburgerMenu.styles'
 type HamburgerMenuProps = {
   active: boolean
   onClick: () => void
+  showBg: boolean
 }
 
-export function HamburgerMenu({ active, onClick }: HamburgerMenuProps) {
+export function HamburgerMenu({ active, onClick, showBg }: HamburgerMenuProps) {
   return (
     <button
       type='button'
@@ -17,14 +18,16 @@ export function HamburgerMenu({ active, onClick }: HamburgerMenuProps) {
           absolute: true,
           top: true,
           active,
+          showBg,
         })}
       />
-      <div className={hamburgerLineStyles({ active })} />
+      <div className={hamburgerLineStyles({ active, showBg })} />
       <div
         className={hamburgerLineStyles({
           absolute: true,
           bottom: true,
           active,
+          showBg,
         })}
       />
     </button>

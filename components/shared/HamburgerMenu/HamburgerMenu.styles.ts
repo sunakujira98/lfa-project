@@ -16,6 +16,9 @@ export const hamburgerLineStyles = tv(
       active: {
         true: '-rotate-45 bg-charcoal-1000',
       },
+      showBg: {
+        true: 'bg-gray-50',
+      },
     },
     compoundVariants: [
       {

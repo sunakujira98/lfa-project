@@ -185,7 +185,7 @@ export function Footer() {
           <div className='flex flex-col gap-4'>
             <h6 className='uppercase text-lfaWhite'>{t('footer.findUs')}</h6>
             <div className='flex flex-col'>
-              <span className='text-2xs'>
+              <span className='text-2xs text-charcoal-600'>
                 283 River Valley Road Singapore 238324
               </span>
               <span className='text-2xs text-lfaWhite underline'>
@@ -203,7 +203,9 @@ export function Footer() {
             <h6 className='uppercase text-lfaWhite'>
               {t('footer.riskManagementSystem')}
             </h6>
-            <span className='text-2xs underline'>bizSAFE Level 3</span>
+            <span className='text-2xs underline text-charcoal-600'>
+              bizSAFE Level 3
+            </span>
           </div>
           <div className='flex flex-col gap-4'>
             <div>
@@ -211,7 +213,7 @@ export function Footer() {
                 {t('footer.qualityManagementSystem')}
               </h6>
             </div>
-            <div className='flex flex-col'>
+            <div className='flex flex-col text-charcoal-600'>
               <span className='text-2xs'>ISO 9001 2015</span>
               <span className='text-2xs'>ISO 9001 2015</span>
               <span className='text-2xs'>ISO 9001 2015</span>

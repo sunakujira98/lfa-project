@@ -17,7 +17,7 @@ export function Hero() {
       ></div>
       <div className='flex flex-col h-screen max-w-screen-xl mx-auto relative z-2'>
         <div className='flex-1'></div>
-        <div className='self-start py-10 text-lfaWhite flex flex-col w-full'>
+        <div className='self-start lg:py-10 text-lfaWhite flex flex-col w-full px-4 lg:px-0'>
           <span className='inline-block lg:mb-[-50px]'>
             <div className='flex items-center'>
               <h1 className='text-left text-3xl lg:text-6xl font-keppler font-bold text-white'>

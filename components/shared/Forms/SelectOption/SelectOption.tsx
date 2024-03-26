@@ -50,7 +50,12 @@ export function SelectOption({
             open ? 'flex-col-reverse' : 'flex-row justify-between'
           }`}
         >
-          <div className={twMerge('font-thin text-md', open && 'hidden')}>
+          <div
+            className={twMerge(
+              'font-thin text-xs lg:text-md',
+              open && 'hidden',
+            )}
+          >
             {displayValue}
           </div>
           <Listbox.Button className='absolute top-0 right-0'>
@@ -63,7 +68,7 @@ export function SelectOption({
               <Listbox.Option
                 key={option.value}
                 value={option.value}
-                className='py-1 w-[93%] ui-selected:bg-greige ui-active:bg-greige text-md font-thin'
+                className='py-1 w-[80%] lg:w-[93%] ui-selected:bg-greige ui-active:bg-greige text-3xs lg:text-md font-thin'
               >
                 {option.label}
               </Listbox.Option>

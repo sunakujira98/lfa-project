@@ -12,7 +12,6 @@ import { useTranslation } from '@/resources/i18n/i18n.hooks'
 import { useCommonStore } from '@/store/common.store'
 import { containsValuesFromString } from '@/utils/ContainsValuesFromString/ContainsValuesFromString'
 
-import { BigButton } from '../BigButton/BigButton'
 import { HamburgerMenu } from '../HamburgerMenu/HamburgerMenu'
 import { Link } from '../Link'
 import { FacebookIcon, InstagramIcon, LinkedinIcon } from '../svg/icons'
@@ -203,19 +202,26 @@ export function Header() {
         </a>
         <div className='flex flex-row items-center gap-4'>
           {!isOpen && (
-            <Link className='outline-button' href='/contact'>
+            <Link
+              className={showBg ? 'outline-button-black' : 'outline-button'}
+              href='/contact'
+            >
               {t('header.contact')}
             </Link>
           )}
-          <HamburgerMenu active={isOpen} onClick={menuMutation.toggle} />
+          <HamburgerMenu
+            active={isOpen}
+            onClick={menuMutation.toggle}
+            showBg={showBg}
+          />
 
           {isOpen && (
             <>
-              <ul className='absolute -top-[13rem] left-0 flex w-full translate-y-full flex-col gap-1 px-5 py-7 lg:hidden text-charcoal-1000'>
+              <ul className='absolute top-[-350px] left-0 flex w-full translate-y-full flex-col gap-1 px-5 lg:hidden text-charcoal-1000 text-3xs'>
                 <li className='pb-4 uppercase border-b-[1px]'>
                   <button
                     className={twMerge(
-                      'uppercase',
+                      'uppercase tracking-[1px]',
                       pathname === '/en-US' || pathname === '/zh-CN'
                         ? 'underline'
                         : '',
@@ -225,55 +231,68 @@ export function Header() {
                     {t('header.home')}
                   </button>
                 </li>
-                <li className='pb-4 uppercase border-b-[1px]'>
+                <li className='py-6 uppercase border-b-[1px]'>
                   <button
-                    className={'uppercase'}
+                    className='uppercase tracking-[1px]'
                     onClick={() => onChangePage('/projects')}
                   >
                     {t('header.projects')}
                   </button>
                 </li>
-                <li className='pb-4 uppercase border-b-[1px]'>
+                <li className='py-6 uppercase border-b-[1px]'>
                   <button
-                    className={'uppercase'}
+                    className='uppercase tracking-[1px]'
                     onClick={() => onChangePage('/about')}
                   >
                     {t('header.about')}
                   </button>
                 </li>
-                <li className='pb-4 uppercase border-b-[1px]'>
+                <li className='py-6 uppercase border-b-[1px]'>
                   <button
-                    className={'uppercase'}
+                    className='uppercase tracking-[1px]'
                     onClick={() => onChangePage('/service')}
                   >
                     {t('header.services')}
                   </button>
                 </li>
-                <li className='pb-4 uppercase border-b-[1px]'>
+                <li className='py-6 uppercase border-b-[1px]'>
                   <button
-                    className={'uppercase'}
+                    className='uppercase tracking-[1px]'
                     onClick={() => onChangePage('/testimonials')}
                   >
                     {t('header.testimonials')}
                   </button>
                 </li>
-                <li className='pb-4 uppercase border-b-[1px]'>
+                <li className='py-6 uppercase border-b-[1px]'>
                   <button
-                    className={'uppercase'}
+                    className='uppercase tracking-[1px]'
                     onClick={() => onChangePage('/news')}
                   >
                     {t('header.news')}
                   </button>
                 </li>
+                <li className='py-6 uppercase'>
+                  <button
+                    className='uppercase tracking-[1px]'
+                    onClick={changeLanguage}
+                  >
+                    {isChinese ? 'EN' : '中文'}
+                  </button>
+                </li>
               </ul>
 
               <div className='absolute bottom-0 left-0 w-full flex items-center flex-col lg:hidden pb-4 gap-4 !text-gray-50 px-5'>
-                <div className='w-full pb-3'>
-                  <BigButton
-                    active={true}
+                <div className='w-full pb-8'>
+                  <button
+                    className='bg-primary-900 text-greige w-full py-4 px-8 rounded-full h-14'
                     onClick={() => onChangePage('/contact')}
-                    title={t('header.contact')}
-                  />
+                  >
+                    <div className='flex justify-center items-center'>
+                      <span className='text-xs font-thin uppercase'>
+                        {t('header.contact')}
+                      </span>
+                    </div>
+                  </button>
                 </div>
 
                 <div className='flex flex-row gap-4 flex-grow'>

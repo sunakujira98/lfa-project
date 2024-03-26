@@ -1,5 +1,7 @@
 'use client'
 
+import { useState } from 'react'
+
 import { ArrowRightUpIcon } from '@/components/shared/svg/icons'
 import { Team } from '@/components/shared/Team'
 import { useGetAllAwardQuery } from '@/hooks/query/useAwardQuery'
@@ -7,9 +9,15 @@ import { useGetAllTeamQuery } from '@/hooks/query/useTeamQuery'
 import { useTranslation } from '@/resources/i18n/i18n.hooks'
 
 export function AboutUsSection() {
+  const [activeIndex, setActiveIndex] = useState<number | undefined>(undefined)
+
   const { t } = useTranslation()
   const { isSuccess: isSuccessTeams, data: teams } = useGetAllTeamQuery()
   const { data: awards } = useGetAllAwardQuery()
+
+  const handleItemClick = (index: number) => {
+    setActiveIndex(index === activeIndex ? undefined : index)
+  }
 
   return (
     isSuccessTeams && (
@@ -58,9 +66,16 @@ export function AboutUsSection() {
               />
             </div>
 
-            <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-5 gap-4'>
-              {teams.data.map((team) => {
-                return <Team data={team} />
+            <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-5 gap-y-10 gap-x-4 lg:gap-4'>
+              {teams.data.map((team, index) => {
+                return (
+                  <Team
+                    key={`team-${index}`}
+                    data={team}
+                    isActive={index === activeIndex}
+                    onClick={() => handleItemClick(index)}
+                  />
+                )
               })}
             </div>
           </div>

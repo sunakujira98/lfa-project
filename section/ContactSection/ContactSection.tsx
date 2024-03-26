@@ -74,44 +74,46 @@ export function ContactSection() {
         />
       </div>
       <div className='px-4 lg:px-0'>
-        <div className='flex flex-row lg:justify-between gap-40 py-4 border-t-[1px] border-b-[1px] border-charcoal-100'>
-          <div className='hidden lg:block lg:w-1/3'></div>
-          <div className='w-full lg:w-2/3'>
-            <div className='flex flex-row items-center gap-8'>
-              <div className='w-1/4'>
-                <div className='flex self-start relative'>
-                  <h4>{t('contact.enquiryType')}</h4>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <div className='flex flex-row lg:justify-between gap-40 py-4 border-t-[1px] border-b-[1px] border-charcoal-100'>
+            <div className='hidden lg:block lg:w-1/3'></div>
+            <div className='w-full lg:w-2/3'>
+              <div className='flex flex-row gap-5 lg:gap-[22px]'>
+                <div className='w-1/4 max-md:pt-1'>
+                  <div className='flex self-start relative'>
+                    <h4 className='text-3xs lg:text-md'>
+                      {t('contact.enquiryType')}
+                    </h4>
+                  </div>
                 </div>
-              </div>
-              <div className='flex flex-grow justify-between'>
-                <Controller
-                  render={({ field: { value, onChange } }) => (
-                    <SelectOption
-                      options={enquiryType}
-                      placeholder='Select enquiry type'
-                      value={value}
-                      onChange={onChange}
-                    />
-                  )}
-                  defaultValue={enquiryType[0].value}
-                  control={control}
-                  name='enquiryType'
-                />
+                <div className='flex flex-grow justify-between'>
+                  <Controller
+                    render={({ field: { value, onChange } }) => (
+                      <SelectOption
+                        options={enquiryType}
+                        placeholder='Select enquiry type'
+                        value={value}
+                        onChange={onChange}
+                      />
+                    )}
+                    defaultValue={enquiryType[0].value}
+                    control={control}
+                    name='enquiryType'
+                  />
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div className='flex justify-between gap-40 py-4 border-b-[1px] border-charcoal-100'>
-          <div className='hidden lg:block lg:w-1/3'></div>
-          <div className='w-full lg:w-2/3'>
-            <form onSubmit={handleSubmit(onSubmit)}>
-              <div className='flex flex-row items-center gap-8 border-b-[1px] border-charcoal-100 py-6'>
-                <div className='flex w-1/4'>
+          <div className='flex justify-between gap-40 py-4 border-b-[1px] border-charcoal-100'>
+            <div className='hidden lg:block lg:w-1/3'></div>
+            <div className='w-full lg:w-2/3'>
+              <div className='flex relative gap-8 border-b-[1px] border-charcoal-100 py-6 h-44'>
+                <div className='w-1/4 absolute top-0 left-0'>
                   <h4 className='text-3xs lg:text-md'>
                     {t('contact.form.enquiryType.label')}
                   </h4>
                 </div>
-                <div className='flex w-3/4 flex-grow justify-between'>
+                <div className='w-3/4 absolute top-0 left-[110px] lg:left-[210px]'>
                   <ControlledTextarea
                     control={control}
                     errors={errors}
@@ -205,14 +207,14 @@ export function ContactSection() {
                   </button>
                 </div>
               </div>
-            </form>
-            <div className='flex items-center justify-center pt-4'>
-              <span className='text-[#C96115]'>
-                {sendMailMutation.isError && t('contact.form.error')}
-              </span>
+              <div className='flex items-center justify-center pt-4'>
+                <span className='text-[#C96115]'>
+                  {sendMailMutation.isError && t('contact.form.error')}
+                </span>
+              </div>
             </div>
           </div>
-        </div>
+        </form>
       </div>
       <div className='flex flex-col lg:flex-row lg:justify-between gap-10 lg:gap-40 py-8 px-4 lg:px-0'>
         <h3 className='font-thin w-full lg:w-1/3'>

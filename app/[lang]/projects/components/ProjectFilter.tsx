@@ -308,7 +308,11 @@ export function ProjectFilter({
                 </div>
                 <div className='flex flex-row items-center gap-2'>
                   <Disclosure.Button>
-                    {open ? <MinusIcon /> : <PlusIcon />}
+                    {open ? (
+                      <MinusIcon width='16' height='16' />
+                    ) : (
+                      <PlusIcon width='16' height='16' />
+                    )}
                   </Disclosure.Button>
                   <h5>FILTER</h5>
                 </div>

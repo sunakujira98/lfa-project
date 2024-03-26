@@ -11,7 +11,7 @@ export function OtherQueries({ subtitle }: OtherQueriesProps) {
   return (
     <div className='lg:py-10'>
       <div className='lg:border-t-[1px] lg:px-0'>
-        <div className='flex flex-col lg:flex-row pt-20 pb-10 lg:pb-0 lg:py-10 lg:gap-14'>
+        <div className='flex flex-col lg:flex-row pt-20 lg:pb-0 lg:py-10 lg:gap-14'>
           <div className='w-full lg:w-1/3'></div>
           <div className='w-full lg:w-2/3'>
             <div className='flex flex-col gap-20 lg:gap-6'>
