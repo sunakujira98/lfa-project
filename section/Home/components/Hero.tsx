@@ -8,14 +8,14 @@ export function Hero() {
   return (
     <>
       <div
-        className='h-screen flex pt-6 lg:pt-0 lg:items-center bg-cover bg-center absolute inset-0'
+        className='h-[95vh] lg:h-screen flex pt-6 lg:pt-0 lg:items-center bg-cover bg-center absolute inset-0'
         style={{
           backgroundImage: "url('/images/bg-hero.png')",
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
       ></div>
-      <div className='flex flex-col h-screen max-w-screen-xl mx-auto relative z-2'>
+      <div className='flex flex-col h-[95vh] lg:h-screen max-w-screen-xl mx-auto relative z-2'>
         <div className='flex-1'></div>
         <div className='self-start lg:py-10 text-lfaWhite flex flex-col w-full px-4 lg:px-0'>
           <span className='inline-block lg:mb-[-50px]'>
