@@ -20,16 +20,16 @@ export function Team({ data, isActive, onClick }: TeamProps) {
         onMouseLeave={onLeave}
         onClick={onClick}
       >
-        <div className='relative h-44 lg:h-80 '>
+        <div className='relative h-[200px] lg:h-80 '>
           <img
             src='/images/background-figure.png'
-            className='absolute inset-0 w-44 h-44 lg:w-full lg:h-full object-cover'
+            className='absolute inset-0 w-44 h-[200px] lg:w-full lg:h-full object-cover'
             alt='background'
           />
 
           <img
             src={`${process.env.NEXT_PUBLIC_CMS_HOST}${data.attributes.image?.data?.attributes.url}`}
-            className='absolute inset-0 w-44 h-44 lg:w-full lg:h-full object-center'
+            className='absolute inset-0 w-44 h-[200px] lg:w-full lg:h-full object-center'
             alt={data.attributes.name}
           />
         </div>
