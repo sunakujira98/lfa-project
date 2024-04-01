@@ -32,7 +32,7 @@ export function FeaturedProject() {
     isSuccess && (
       <div className='max-w-screen-xl mx-auto pt-10 px-4 lg:px-0'>
         <div className='pb-10'>
-          <span className='font-neue text-3xs uppercase text-gray-50 tracking-wider'>
+          <span className='font-neue text-3xs uppercase text-gray-50 tracking-[1px] leading-4'>
             {t('featuredProject.title')}
           </span>
         </div>
@@ -72,7 +72,7 @@ export function FeaturedProject() {
                       href={`${lang}/projects/${projectId}`}
                       className='hover:underline'
                     >
-                      <h3 className='font-vinila text-lg lg:text-2xl text-gray-50 tracking-wide font-thin'>
+                      <h3 className='font-vinila text-lg lg:text-2xl text-gray-50 font-light leading-10 -tracking-[0.96px]'>
                         {project.attributes.title}
                       </h3>
                     </Link>
@@ -80,7 +80,7 @@ export function FeaturedProject() {
                       <Link
                         href={`/projects?industry=${project.attributes.industry.data.id}`}
                       >
-                        <span className='text-2xs underline font-thin'>
+                        <span className='text-3xs underline font-light leading-4 tracking-normal'>
                           {project.attributes.industry.data.attributes.name}
                         </span>
                       </Link>
@@ -101,7 +101,7 @@ export function FeaturedProject() {
         </div>
         <div className='flex justify-center items-center'>
           <a href='/project'>
-            <span className='font-neue text-3xs text-gray-50 uppercase tracking-wider'>
+            <span className='font-neue text-3xs text-gray-50 uppercase leading-4 tracking-[1px]'>
               {t('featuredProject.allProjects')}
             </span>
           </a>

@@ -7,7 +7,6 @@ import { useParams } from 'next/navigation'
 import { useState } from 'react'
 
 import { BigButton } from '@/components/shared/BigButton/BigButton'
-import { CircleArrowDownIcon } from '@/components/shared/svg/icons'
 import { StrapiResponse } from '@/domain/types/common.types'
 import { TService } from '@/domain/types/services.types'
 import { useGetAllServiceQuery } from '@/hooks/query/useServiceQuery'
@@ -15,6 +14,7 @@ import { useTranslation } from '@/resources/i18n/i18n.hooks'
 import { findTranslatedData } from '@/utils/FindTranslatedData/FindTranslatedData'
 import MinusIcon from '@/components/shared/svg/icons/MinusIcon'
 import PlusIcon from '@/components/shared/svg/icons/PlusIcon'
+import { twMerge } from 'tailwind-merge'
 
 export function Service() {
   const { t } = useTranslation()
@@ -46,7 +46,7 @@ export function Service() {
     isSuccess && (
       <div className='max-w-screen-xl mx-auto pt-10 px-4 lg:px-0'>
         <div className=' bg-greige lg:bg-beige'>
-          <div className='px-4 lg:px-0 pt-10 pb-10 lg:pb-20 lg:pt-0'>
+          <div className='px-4 lg:px-0 pt-10 pb-10 lg:pb-20 lg:pt-0 neue-wide'>
             <h6 className='uppercase'>{t('services.title')}</h6>
           </div>
           <div className='flex justify-between gap-6'>
@@ -55,17 +55,33 @@ export function Service() {
                 {services.map((service) => {
                   return (
                     <div className='border-b-[1px] py-4' key={service.id}>
-                      <BigButton
-                        active={activeIndex === service.id}
-                        title={service.attributes.title}
-                        icon={service.attributes.icon.data.attributes.url}
+                      <button
+                        className={twMerge(
+                          activeIndex === service.id
+                            ? 'bg-primary-900 text-greige'
+                            : 'hover:bg-greige',
+                          'w-full py-4 px-8 rounded-full',
+                        )}
                         onClick={() =>
                           onClickActive(
                             service.id,
                             service.attributes.description,
                           )
                         }
-                      />
+                      >
+                        <div className='flex justify-between items-center'>
+                          <span className='font-neue text-xs font-normal leading-6 tracking-[0.16px]'>
+                            {service.attributes.title}
+                          </span>
+                          {service.attributes.icon.data.attributes.url && (
+                            <img
+                              src={`${process.env.NEXT_PUBLIC_CMS_HOST}${service.attributes.icon.data.attributes.url}`}
+                              className='text-charcoal-1000'
+                              alt={service.attributes.title}
+                            />
+                          )}
+                        </div>
+                      </button>
                     </div>
                   )
                 })}
@@ -73,7 +89,9 @@ export function Service() {
             </div>
             <div className='hidden lg:block lg:w-2/3'>
               <div className='border-t-[1px] border-l-[1px] rounded-tl-[40px] rounded-l-[0px] p-8 h-full border-charcoal-1000'>
-                <p>{activeService ? activeService : firstDescriptionToShow}</p>
+                <p className='text-xs font-light leading-6 tracking-[0.16px]'>
+                  {activeService ? activeService : firstDescriptionToShow}
+                </p>
               </div>
             </div>
           </div>
@@ -111,7 +129,7 @@ export function Service() {
               </div>
             </div>
           </div>
-          <div className='border-b-[1px] flex items-center justify-center py-12'>
+          <div className='border-b-[1px] flex items-center justify-center py-12 neue-wide'>
             <a href='/service'>
               <h6 className='uppercase'>{t('services.learnMore')}</h6>
             </a>

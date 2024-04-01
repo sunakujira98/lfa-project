@@ -23,13 +23,17 @@ export function Testimonial({ data }: TestimonialProps) {
       <div className='flex flex-col lg:flex-row justify-between lg:gap-6'>
         <div className='w-full lg:w-1/3 flex lg:justify-end'>
           <div className='flex flex-col pt-4 lg:justify-end'>
-            <h3 className='font-light text-xs'>{data.attributes.fullName}</h3>
+            <h3 className='text-xs font-normal leading-6 tracking-[0.16px]'>
+              {data.attributes.fullName}
+            </h3>
             <div className='flex flex-row ld:justify-end'>
               {' '}
-              <h3 className='font-light text-xs'>
+              <h3 className='text-xs font-normal leading-6 tracking-[0.16px]'>
                 {data.attributes.title}, &nbsp;
               </h3>
-              <h3 className='font-light text-xs'>{data.attributes.company}</h3>
+              <h3 className='text-xs font-normal leading-6 tracking-[0.16px]'>
+                {data.attributes.company}
+              </h3>
             </div>
 
             {data.attributes.companyImage?.data?.attributes?.url && (
@@ -47,7 +51,9 @@ export function Testimonial({ data }: TestimonialProps) {
         <div className='w-full lg:w-2/3 lg:order-first'>
           <div className='gap-4 lg:border-t-[1px] lg:border-r-[1px] lg:rounded-tr-[40px] lg:py-10 mt-4 lg:gap-0 border-charcoal-1000'>
             <QuoteIcon className='mb-4' />
-            <p className='lg:w-[90%]'>{data.attributes.description}</p>
+            <p className='lg:w-[90%] text-xs font-light leading-6 tracking-[0.16px]'>
+              {data.attributes.description}
+            </p>
           </div>
         </div>
         <div className='lg:hidden pt-10 border-b-[1px]'></div>

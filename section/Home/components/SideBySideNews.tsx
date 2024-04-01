@@ -50,17 +50,19 @@ export function SideBySideNews() {
 
               return (
                 <div className='flex flex-col lg:flex-row gap-6' key={news.id}>
-                  <img
-                    src={`${process.env.NEXT_PUBLIC_CMS_HOST}${news.attributes.thumbnail?.data.attributes.url}`}
-                    className='h-full w-full object-cover object-center lg:max-w-36 lg:max-h-36 lg:aspect-square'
-                    alt={news.attributes.title}
-                  />
+                  <a href={`${lang}/news/${newsId}`}>
+                    <img
+                      src={`${process.env.NEXT_PUBLIC_CMS_HOST}${news.attributes.thumbnail?.data.attributes.url}`}
+                      className='h-full w-full object-cover object-center lg:max-w-36 lg:max-h-36 lg:aspect-square'
+                      alt={news.attributes.title}
+                    />
+                  </a>
                   <div className='flex flex-col gap-2'>
-                    <div className='text-3xs uppercase font-thin'>
+                    <div className='text-3xs uppercase font-normal leading-4 tracking-[1px]'>
                       {dayjs(news.attributes.createdAt).format('DD MMM YYYY')}
                     </div>
                     <a href={`${lang}/news/${newsId}`}>
-                      <span className='text-xs font-thin'>
+                      <span className='neue-normal'>
                         {news.attributes.title}
                       </span>
                     </a>
@@ -71,7 +73,7 @@ export function SideBySideNews() {
           </div>
           <div className='flex items-center justify-center py-10 border-b-[1px] lg:border-none'>
             <a href='/news'>
-              <h6 className='uppercase'>{t('news.allNews')}</h6>
+              <h6 className='uppercase neue-wide'>{t('news.allNews')}</h6>
             </a>
           </div>
         </div>

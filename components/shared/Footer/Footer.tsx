@@ -67,23 +67,23 @@ export function Footer() {
                   />
                 </div>
               </div>
-              <div className='hidden lg:flex flex-row gap-[150px]'>
+              <div className='hidden lg:flex flex-row gap-[160px]'>
                 <div className='flex flex-col gap-2'>
-                  <span className='uppercase text-charcoal-600 text-3xs'>
+                  <span className='text-charcoal-600 neue-wide'>
                     {t('footer.riskManagementSystem')}
                   </span>
-                  <div className='flex flex-col text-lfaWhite'>
-                    <span className='text-xs font-thin'>bizSAFE Level 3</span>
+                  <div className='flex flex-col text-lfaWhite neue-tight'>
+                    <span>bizSAFE Level 3</span>
                   </div>
                 </div>
                 <div className='flex flex-col gap-2'>
-                  <span className='uppercase text-charcoal-600 text-3xs'>
+                  <span className='text-charcoal-600 neue-wide'>
                     {t('footer.qualityManagementSystem')}
                   </span>
-                  <div className='text-lfaWhite flex flex-col'>
-                    <span className='text-xs font-thin'>ISO 9001 2015</span>
-                    <span className='text-xs font-thin'>ISO 9001 2015</span>
-                    <span className='text-xs font-thin'>ISO 9001 2015</span>
+                  <div className='text-lfaWhite flex flex-col neue-tight'>
+                    <span>ISO 9001 2015</span>
+                    <span>ISO 9001 2015</span>
+                    <span>ISO 9001 2015</span>
                   </div>
                 </div>
               </div>
@@ -91,45 +91,37 @@ export function Footer() {
           </div>
           <div className='hidden lg:flex flex-1 w-full lg:w-auto'>
             <div className='col-lg-6 col-md-6'>
-              <span className='font-vinila text-2xl font-thin text-lfaWhite ml-[55px]'>
+              <span className='font-vinila text-2xl font-light text-lfaWhite ml-[127px] leading-10 -tracking-[0.96px]'>
                 {t('footer.title')}
               </span>
-              <div className='py-8 ml-[60px]'>
+              <div className='py-8 ml-[127px]'>
                 <div className='py-8 grid grid-cols-1 lg:grid-cols-2 gap-5'>
                   <div className='flex flex-col gap-2'>
-                    <span className='text-charcoal-600 uppercase text-3xs'>
+                    <span className='text-charcoal-600 neue-wide'>
                       {t('footer.findUs')}
                     </span>
-                    <div className='flex flex-col'>
-                      <span className='text-lfaWhite font-light'>
-                        283 River Valley Road
-                      </span>
-                      <span className='text-lfaWhite font-light'>
-                        Singapore 238324
-                      </span>
-                      <span className='text-lfaWhite font-light'>
-                        {t('footer.viewOnGoogleMaps')}
-                      </span>
+                    <div className='flex flex-col text-lfaWhite neue-tight'>
+                      <span>283 River Valley Road</span>
+                      <span>Singapore 238324</span>
+                      <span>{t('footer.viewOnGoogleMaps')}</span>
                     </div>
                   </div>
                   <div className='flex flex-col ml-[89px] gap-2'>
-                    <span className='text-charcoal-600 uppercase text-3xs'>
+                    <span className='text-charcoal-600 neue-wide'>
                       {t('footer.stayConnected')}
                     </span>
-                    <div className='flex flex-col'>
-                      <span className='text-lfaWhite font-light'>Facebook</span>
-                      <span className='text-lfaWhite font-light'>
-                        Instagram
-                      </span>
-                      <span className='text-lfaWhite font-light'>Linkedin</span>
+                    <div className='flex flex-col text-lfaWhite neue-tight'>
+                      <span>Facebook</span>
+                      <span>Instagram</span>
+                      <span>Linkedin</span>
                     </div>
                   </div>
                   <div className='flex flex-col gap-2'>
-                    <span className='text-charcoal-600 uppercase text-3xs'>
+                    <span className='text-charcoal-600 neue-wide'>
                       {t('footer.contactUs')}
                     </span>
                     <div className='flex flex-col'>
-                      <span className='text-lfaWhite font-light'>
+                      <span className='text-lfaWhite neue-tight'>
                         enquiry@lfa.com.sg
                       </span>
                     </div>
@@ -140,7 +132,7 @@ export function Footer() {
           </div>
         </div>
         <nav className='hidden lg:block p-0'>
-          <ul className='m-0 p-0 flex flex-row items-center list-none gap-28 font-neue uppercase text-3xs text-lfaWhite'>
+          <ul className='m-0 p-0 flex flex-row items-center list-none gap-28 neue-wide text-lfaWhite'>
             <li className='relative whitespace-nowrap'>
               <a className='' href='#hero'>
                 &copy; {t('footer.copyright')}

@@ -113,16 +113,18 @@ export function Recognition() {
                       alt={recognition.attributes.title}
                     />
                     <div className='flex flex-col gap-2'>
-                      <h6 className='uppercase'>
-                        {recognition.attributes.title} &nbsp;
-                      </h6>
+                      <div className='flex flex-row neue-wide'>
+                        <h6>{recognition.attributes.title} &nbsp;</h6>
 
-                      <h6>
-                        {dayjs(recognition.attributes.createdAt).format(
-                          'DD MMM YYYY',
-                        )}
+                        <h6>
+                          {dayjs(recognition.attributes.createdAt).format(
+                            'DD MMM YYYY',
+                          )}
+                        </h6>
+                      </div>
+                      <h6 className='text-xs font-light leading-6 tracking-[0.16px]'>
+                        {recognition.attributes.description}
                       </h6>
-                      <h6>{recognition.attributes.description}</h6>
                     </div>
                   </div>
                 </div>
