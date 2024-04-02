@@ -44,10 +44,10 @@ export function NewsDetail({ newsId }: NewsDetailProps) {
 
         <div className='flex flex-col gap-20'>
           <div className='max-w-screen-xl mx-auto py-10 lg:py-20'>
-            <div className='flex flex-col lgflex-row'>
+            <div className='flex flex-col lg:flex-row'>
               <div className='w-full lg:w-1/3'></div>
               <div className='w-full lg:w-2/3 px-4 lg:px-0'>
-                <div className='pb-20 text-3xs uppercase font-thin'>
+                <div className='pb-20 neue-wide'>
                   {dayjs(data.data.attributes.createdAt).format('DD MMM YYYY')}
                 </div>
 
@@ -61,11 +61,11 @@ export function NewsDetail({ newsId }: NewsDetailProps) {
             <div className='border-t-[1px]'></div>
             <div className='flex justify-between py-5'>
               <Link href='/news'>
-                <h6 className='uppercase'>{t('news.allNews')}</h6>
+                <h6 className='neue-wide'>{t('news.allNewsFooter')}</h6>
               </Link>
               {nextData && (
                 <Link href={`/news/${Number(newsId) + 1}`}>
-                  <h6 className='uppercase'>
+                  <h6 className='neue-wide'>
                     {t('news.nextPage', {
                       title: nextData.data.attributes.title,
                     })}

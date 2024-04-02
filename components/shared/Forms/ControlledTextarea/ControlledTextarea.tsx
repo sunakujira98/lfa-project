@@ -32,7 +32,7 @@ export function ControlledTextarea<T extends FieldValues>({
         render={({ field }) => (
           <textarea
             placeholder={placeholder}
-            className='w-full font-thin rounded-lg max-md:placeholder:text-xs lg:placeholder:text-md lg:placeholder:font-thin lg:placeholder:text-charcoal-100 bg-transparent lg:placeholder:tracking-[0.24px] outline-none focus:outline-none focus:ring-0 focus:border-transparent focus:placeholder-transparent lg:text-md'
+            className='w-full font-thin rounded-lg max-md:placeholder:text-xs lg:placeholder:text-md lg:placeholder:font-thin lg:placeholder:text-charcoal-100 bg-transparent lg:placeholder:tracking-[0.24px] lg:placeholder:leading-8 outline-none focus:outline-none focus:ring-0 focus:border-transparent focus:placeholder-transparent lg:text-md'
             {...field}
             {...inputProps}
           />

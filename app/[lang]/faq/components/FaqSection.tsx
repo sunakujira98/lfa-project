@@ -93,7 +93,7 @@ export function FaqSection() {
                       {({ open }) => (
                         <div className='py-7 border-b-[1px]'>
                           <div className='flex flex-row justify-between'>
-                            <h5>{answer.title}</h5>
+                            <h5 className='neue-normal'>{answer.title}</h5>
                             <Disclosure.Button>
                               {open ? <MinusIcon /> : <PlusIcon />}
                             </Disclosure.Button>
@@ -119,7 +119,7 @@ export function FaqSection() {
                         {({ open }) => (
                           <div className='py-7 border-b-[1px]'>
                             <div className='flex flex-row justify-between'>
-                              <h5>{answer.title}</h5>
+                              <h5 className='neue-normal'>{answer.title}</h5>
                               <Disclosure.Button>
                                 {open ? <MinusIcon /> : <PlusIcon />}
                               </Disclosure.Button>

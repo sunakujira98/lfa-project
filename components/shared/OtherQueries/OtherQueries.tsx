@@ -15,7 +15,7 @@ export function OtherQueries({ subtitle }: OtherQueriesProps) {
           <div className='w-full lg:w-1/3'></div>
           <div className='w-full lg:w-2/3'>
             <div className='flex flex-col gap-20 lg:gap-6'>
-              <h4>{subtitle}</h4>
+              <h4 className='neue-wider'>{subtitle}</h4>
               <a
                 className='outline-button-black w-full lg:w-fit font-neue uppercase text-3xs font-thin text-center'
                 href='/contact'

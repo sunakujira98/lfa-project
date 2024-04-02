@@ -24,7 +24,7 @@ export function ContentRenderer({ data }: ContentRendererProps) {
       if (content.children[0].text === '') {
         return null
       }
-      return <p>{content.children[0].text}</p>
+      return <p className='neue-normal'>{content.children[0].text}</p>
     }
   }
 

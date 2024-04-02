@@ -19,7 +19,7 @@ export function BigButton({ active, onClick, title, icon }: BigButtonProps) {
       onClick={onClick}
     >
       <div className='flex justify-between items-center'>
-        <span className='text-xs font-thin'>{title}</span>
+        <span className='neue-normal-button'>{title}</span>
         {icon && (
           <img
             src={`${process.env.NEXT_PUBLIC_CMS_HOST}${icon}`}

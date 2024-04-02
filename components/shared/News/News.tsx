@@ -37,12 +37,12 @@ export function News({ news, localeId }: NewsProps) {
       </div>
       <div className='flex flex-col py-4 lg:pt-6 text-3xs gap-2'>
         <Link href={`/news/${localeId}`}>
-          <h4>{news.attributes.title}</h4>
+          <h4 className='neue-wider'>{news.attributes.title}</h4>
         </Link>
-        <span className='text-3xs uppercase font-thin'>
+        <span className='neue-wide'>
           {dayjs(news.attributes.createdAt).format('DD MMM YYYY')}
         </span>
-        <span className='text-3xs font-thin'>
+        <span className='neue-normal'>
           {news.attributes.shortDescription &&
             truncateString(news.attributes.shortDescription, 40)}
         </span>

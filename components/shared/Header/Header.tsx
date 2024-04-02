@@ -95,7 +95,7 @@ export function Header() {
         </div>
 
         <div className='order-2 lg:order-3 flex items-center'>
-          <ul className='m-0 p-0 flex list-none items-center gap-8 font-neue uppercase text-3xs font-thin'>
+          <ul className='m-0 p-0 flex list-none items-center gap-8 neue-wide'>
             <li className='relative whitespace-nowrap'>
               <Link
                 className={twMerge(

@@ -38,7 +38,7 @@ export function NewsSection() {
 
   return (
     <>
-      <div className='container pt-28 pb-10 lg:py-28 px-4 lg:px-0'>
+      <div className='container pt-28 pb-10 lg:pt-28 lg:pb-20 px-4 lg:px-0'>
         <SectionHeader
           displayName={t('news.title')}
           title={t('news.subtitle')}

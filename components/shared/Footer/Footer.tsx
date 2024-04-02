@@ -20,7 +20,7 @@ export function Footer() {
         <div className='w-full flex flex-col lg:flex-row gap-28'>
           <div className='flex-1 mb-6 text-black w-full lg:w-auto'>
             <div className='flex flex-col'>
-              <h6 className='text-charcoal-600 uppercase'>
+              <h6 className='text-charcoal-600 neue-wide'>
                 {t('footer.findUsOnInstagram')}
               </h6>
               <div className='grid grid-cols-2 lg:grid-cols-3 pb-10 pt-2 gap-4'>
@@ -230,7 +230,7 @@ export function Footer() {
             </div>
           </div>
           <nav className='lg:hidden p-0 text-lfaWhite flex flex-col gap-10'>
-            <ul className='m-0 p-0 flex flex-row items-center list-none gap-4 font-neue uppercase text-3xs'>
+            <ul className='m-0 p-0 flex flex-row items-center list-none gap-4 neue-wide'>
               <li className='relative whitespace-nowrap'>
                 <Link
                   className='nav-link scrollto uppercase'
@@ -258,7 +258,7 @@ export function Footer() {
                 </Link>
               </li>
             </ul>
-            <ul className='m-0 p-0 flex flex-row justify-between items-center list-none gap-4 font-neue uppercase text-3xs '>
+            <ul className='m-0 p-0 flex flex-row justify-between items-center list-none gap-4 neue-wide '>
               <li className='relative whitespace-nowrap'>
                 <Link className='' href='#hero'>
                   {t('footer.sitemap')}

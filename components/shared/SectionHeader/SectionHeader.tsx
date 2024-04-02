@@ -10,11 +10,11 @@ export function SectionHeader({
   subtitle,
 }: SectionHeaderProps) {
   return (
-    <div className='flex flex-col lg:flex-row lg:justify-between gap-10 lg:gap-40'>
-      <h3 className='font-thin w-full lg:w-1/3'>{displayName}</h3>
-      <div className='flex flex-col w-full lg:w-2/3 gap-10'>
-        <h4 className='font-thin lg:pb-12'>{title}</h4>
-        <span className='text-xs font-thin'>{subtitle}</span>
+    <div className='flex flex-col lg:flex-row lg:justify-between gap-10'>
+      <h3 className='vinila-tight w-full lg:w-[30%]'>{displayName}</h3>
+      <div className='flex flex-col w-full lg:w-[70%] gap-[50px]'>
+        <h4 className='neue-wider'>{title}</h4>
+        <span className='neue-normal text-justify'>{subtitle}</span>
       </div>
     </div>
   )

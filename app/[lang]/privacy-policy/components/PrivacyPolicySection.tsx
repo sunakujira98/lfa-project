@@ -60,7 +60,7 @@ export function PrivacyPolicySection() {
   return (
     <div className='pt-28 pb-10 lg:pb-0 lg:pt-28 px-4 lg:px-0'>
       <div className='pb-20'>
-        <h3>{t('privacyPolicy.title')}</h3>
+        <span className='vinila-tight'>{t('privacyPolicy.title')}</span>
       </div>
       {isSuccess && (
         <div className='flex flex-col px-4 lg:px-0'>

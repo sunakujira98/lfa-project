@@ -5,12 +5,15 @@
 import { Link } from '@/components/shared/Link'
 import { StrapiComponentResolver } from '@/components/shared/StrapiComponentResolver'
 import { useGetProjectByIdQuery } from '@/hooks/query/useProjectQuery'
+import { useTranslation } from '@/resources/i18n/i18n.hooks'
+import dayjs from 'dayjs'
 
 type ProjectDetailProps = {
   projectId: string
 }
 
 export function ProjectDetail({ projectId }: ProjectDetailProps) {
+  const { t } = useTranslation()
   const { data, isSuccess } = useGetProjectByIdQuery(projectId)
 
   const background = `${process.env.NEXT_PUBLIC_CMS_HOST}${data?.data?.attributes?.thumbnail?.data?.attributes?.url}`
@@ -25,49 +28,55 @@ export function ProjectDetail({ projectId }: ProjectDetailProps) {
             backgroundSize: 'cover',
             backgroundPosition: 'center',
           }}
-        ></div>
+        >
+          {' '}
+          <div
+            className='absolute inset-0 bg-charcoal-1000 opacity-50'
+            style={{
+              mixBlendMode: 'multiply',
+            }}
+          ></div>
+        </div>
         <div className='flex flex-col h-screen max-w-screen-xl mx-auto relative z-2'>
           <div className='flex-1'></div>
           <div className='self-start lg:py-10 text-lfaWhite flex flex-col w-full px-4 lg:px-0'>
             <h1 className='text-2xl lg:text-6xl'>
               {data?.data.attributes.title}
             </h1>
-            <h6 className='lg:text-2xs uppercase'>
-              {data?.data.attributes.location}
-            </h6>
+            <h6 className='neue-wide'>{data?.data.attributes.location}</h6>
             <div className='flex flex-row gap-20 pt-10'>
               <div className='flex flex-col gap-2'>
-                <h6 className='lg:text-2xs uppercase'>Industry</h6>
+                <h6 className='neue-wide uppercase'>Industry</h6>
                 <Link
                   href={`/projects?industry=${data.data.attributes.industry?.data?.id}`}
                 >
-                  <h6 className='lg:text-2xs uppercase underline'>
+                  <h6 className='neue-wide-light underline !normal-case'>
                     {data.data.attributes.industry?.data?.attributes.name}
                   </h6>
                 </Link>
               </div>
               <div className='flex flex-col gap-2'>
-                <h6 className='uppercase'>SERVICE</h6>
+                <h6 className='neue-wide uppercase'>Services</h6>
                 <Link
                   href={`/projects?service=${data.data.attributes.service?.data?.id}`}
                 >
-                  <h6 className='lg:text-2xs underline'>
+                  <h6 className='neue-wide-light underline !normal-case'>
                     {data.data.attributes.service?.data?.attributes.title}
                   </h6>
                 </Link>
               </div>
               <div className='flex flex-col gap-2'>
-                <h6 className='lg:text-2xs'>COMPLETION YEAR</h6>
-                <h6 className='lg:text-2xs underline'>
-                  {data.data.attributes.completionDate}
+                <h6 className='neue-wide'>COMPLETION YEAR</h6>
+                <h6 className='neue-wide-light underline !normal-case'>
+                  {dayjs(data.data.attributes.completionDate).format('YYYY')}
                 </h6>
               </div>
               <div className='flex flex-col gap-2'>
-                <h6 className='lg:text-2xs'>INDUSTRY</h6>
+                <h6 className='neue-wide'>INDUSTRY</h6>
                 <Link
                   href={`/projects?industry=${data.data.attributes.industry?.data?.id}`}
                 >
-                  <h6 className='lg:text-2xs underline'>
+                  <h6 className='neue-wide-light underline !normal-case'>
                     {data.data.attributes.industry?.data?.attributes.name}
                   </h6>
                 </Link>
@@ -77,7 +86,7 @@ export function ProjectDetail({ projectId }: ProjectDetailProps) {
         </div>
         <div className='bg-charcoal-1000 mb-5 px-4 lg:px-0'>
           <div className='max-w-screen-xl mx-auto py-10'>
-            <span className='font-neue text-3xs text-lfaWhite'>AWARDS</span>
+            <span className='text-lfaWhite neue-wide'>{t('awards.title')}</span>
             <div className='flex justify-between whitespace-nowrap'>
               {data?.data.attributes.awards.data.map((award) => {
                 return (

@@ -33,7 +33,9 @@ export function AboutUsSection() {
         <div className='flex flex-col h-[95vh] lg:h-screen max-w-screen-xl mx-auto relative z-2'>
           <div className='flex-1'></div>
           <div className='self-start px-2 py-10 text-lfaWhite flex flex-col w-full'>
-            <h1 className='text-2xl lg:text-6xl'>{t('aboutUs.title')}</h1>
+            <h1 className='text-2xl lg:text-6xl tracking-[-1.92px] leading-[96px]'>
+              {t('aboutUs.title')}
+            </h1>
           </div>
         </div>
 
@@ -49,7 +51,7 @@ export function AboutUsSection() {
               <h1 className='font-vinila text-2xl lg:text-6xl'>
                 {t('aboutUs.together')}
               </h1>
-              <p className='text-center w-[65%]'>
+              <p className='text-center w-[65%] neue-normal pt-6'>
                 {t('aboutUs.paragraph.description')}
               </p>
             </div>
@@ -82,13 +84,13 @@ export function AboutUsSection() {
         </div>
         <div className='max-w-screen-xl mx-auto py-10 lg:border-t-[1px] border-gray-50 lg:px-0 px-4'>
           <div className='container flex flex-col'>
-            <h6 className='uppercase pb-6 border-b-[1px] lg:border-none'>
+            <h6 className='neue-wide pb-6 border-b-[1px] lg:border-none'>
               {t('awards.title')}
             </h6>
             {awards?.data.map((award) => {
               return (
                 <a href={award.attributes.externalLink}>
-                  <div className='flex justify-between border-b-[1px] py-2 text-xs items-center border-charcoal-100 uppercase'>
+                  <div className='flex justify-between border-b-[1px] py-2 neue-normal !font-normal items-center border-charcoal-100 uppercase'>
                     {award.attributes.awardName}
                     <ArrowRightUpIcon />
                   </div>

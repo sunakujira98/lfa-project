@@ -86,9 +86,7 @@ export function SitemapSection() {
       <div className='grid grid-cols-1 lg:grid-cols-2 gap-20 lg:gap-8 font-thin lg:font-normal'>
         <div>
           <div className='mb-[31px]'>
-            <h6 className='font-thin uppercase pb-6 letter-[1px]'>
-              {t('header.projects')}
-            </h6>
+            <h6 className='neue-wide pb-6'>{t('header.projects')}</h6>
             <div className='flex flex-col'>
               {projectsData.map((project, index) => {
                 const projectId = project.localeId || project.id
@@ -105,10 +103,12 @@ export function SitemapSection() {
                         onMouseLeave={onLeave}
                         className={twMerge(
                           hoveredIndex === index ? 'py-5' : 'py-6',
-                          'project-item flex justify-between border-t-[1px] border-charcoal-100 text-xs items-center max-md:text-2xs',
+                          'project-item flex justify-between border-t-[1px] border-charcoal-100 text-xs items-center',
                         )}
                       >
-                        <span>{project.attributes.title}</span>
+                        <span className='neue-normal-button'>
+                          {project.attributes.title}
+                        </span>
                         <div className='block'>
                           {hoveredIndex === index && (
                             <ArrowRightUpIcon
@@ -126,9 +126,7 @@ export function SitemapSection() {
             </div>
           </div>
           <div className='block'>
-            <h6 className='font-thin uppercase pb-6 letter-[1px]'>
-              {t('news.title')}
-            </h6>
+            <h6 className='neue-wide pb-6'>{t('news.title')}</h6>
             <div className='flex flex-col'>
               {newsData?.map((singleNews, index) => {
                 const newsId = singleNews.localeId || singleNews.id
@@ -144,10 +142,12 @@ export function SitemapSection() {
                         onMouseLeave={onLeaveNews}
                         className={twMerge(
                           hoveredNewsIndex === index ? 'py-5' : 'py-6',
-                          'project-item flex justify-between border-t-[1px] border-charcoal-100 text-xs items-center max-md:text-2xs',
+                          'project-item flex justify-between border-t-[1px] border-charcoal-100 text-xs items-center',
                         )}
                       >
-                        <span>{singleNews.attributes.title}</span>
+                        <span className='neue-normal-button'>
+                          {singleNews.attributes.title}
+                        </span>
                         <div className='block'>
                           {hoveredNewsIndex === index && (
                             <ArrowRightUpIcon
@@ -165,37 +165,35 @@ export function SitemapSection() {
             </div>
           </div>
           <div className='block lg:hidden pt-20 lg:pt-0'>
-            <h6 className='font-thin uppercase pb-6 letter-[1px]'>
-              {t('sitemap.pages')}
-            </h6>
+            <h6 className='neue-wide pb-6'>{t('sitemap.pages')}</h6>
             <div className='flex flex-col'>
               <Link href={'/'}>
-                <div className='flex justify-between border-t-[1px] border-charcoal-100 py-6 text-xs items-center max-md:text-2xs'>
+                <div className='flex justify-between border-t-[1px] border-charcoal-100 py-6 text-xs items-center'>
                   {t('header.home')}
                 </div>
               </Link>
               <Link href={'/projects'}>
-                <div className='flex justify-between border-t-[1px] border-charcoal-100 py-6 text-xs items-center max-md:text-2xs'>
+                <div className='flex justify-between border-t-[1px] border-charcoal-100 py-6 text-xs items-center'>
                   {t('header.projects')}
                 </div>
               </Link>
               <Link href={'/about'}>
-                <div className='flex justify-between border-t-[1px] border-charcoal-100 py-6 text-xs items-center max-md:text-2xs'>
+                <div className='flex justify-between border-t-[1px] border-charcoal-100 py-6 text-xs items-center'>
                   {t('header.about')}
                 </div>
               </Link>
               <Link href={'/services'}>
-                <div className='flex justify-between border-t-[1px] border-charcoal-100 py-6 text-xs items-center max-md:text-2xs'>
+                <div className='flex justify-between border-t-[1px] border-charcoal-100 py-6 text-xs items-center'>
                   {t('header.services')}
                 </div>
               </Link>
               <Link href={'/testimonials'}>
-                <div className='flex justify-between border-t-[1px] border-charcoal-100 py-6 text-xs items-center max-md:text-2xs'>
+                <div className='flex justify-between border-t-[1px] border-charcoal-100 py-6 text-xs items-center'>
                   {t('header.testimonials')}
                 </div>
               </Link>
               <Link href={'/contact'}>
-                <div className='flex justify-between border-t-[1px] border-charcoal-100 py-6 text-xs items-center max-md:text-2xs'>
+                <div className='flex justify-between border-t-[1px] border-charcoal-100 py-6 text-xs items-center'>
                   {t('header.contact')}
                 </div>
               </Link>
@@ -203,14 +201,14 @@ export function SitemapSection() {
           </div>
         </div>
         <div className='block'>
-          <h6 className='font-thin uppercase pb-6'>{t('sitemap.pages')}</h6>
+          <h6 className='neue-wide pb-6'>{t('sitemap.pages')}</h6>
           <div className='flex flex-col'>
             <div onMouseEnter={() => onHoverPage(0)} onMouseLeave={onLeavePage}>
               <Link href={'/'}>
                 <div
                   className={twMerge(
                     hoverPage === 0 ? 'py-5' : 'py-6',
-                    'project-item flex justify-between border-t-[1px] border-charcoal-100 text-xs items-center max-md:text-2xs',
+                    'project-item flex justify-between border-t-[1px] border-charcoal-100 neue-normal-button items-center',
                   )}
                 >
                   {t('header.home')}
@@ -225,7 +223,7 @@ export function SitemapSection() {
                 <div
                   className={twMerge(
                     hoverPage === 1 ? 'py-5' : 'py-6',
-                    'project-item flex justify-between border-t-[1px] border-charcoal-100 text-xs items-center max-md:text-2xs',
+                    'project-item flex justify-between border-t-[1px] border-charcoal-100 neue-normal-button items-center',
                   )}
                 >
                   {t('header.projects')}
@@ -240,7 +238,7 @@ export function SitemapSection() {
                 <div
                   className={twMerge(
                     hoverPage === 2 ? 'py-5' : 'py-6',
-                    'project-item flex justify-between border-t-[1px] border-charcoal-100 text-xs items-center max-md:text-2xs',
+                    'project-item flex justify-between border-t-[1px] border-charcoal-100 neue-normal-button items-center',
                   )}
                 >
                   {t('header.about')}
@@ -255,7 +253,7 @@ export function SitemapSection() {
                 <div
                   className={twMerge(
                     hoverPage === 3 ? 'py-5' : 'py-6',
-                    'project-item flex justify-between border-t-[1px] border-charcoal-100 text-xs items-center max-md:text-2xs',
+                    'project-item flex justify-between border-t-[1px] border-charcoal-100 neue-normal-button items-center',
                   )}
                 >
                   {t('header.services')}
@@ -270,7 +268,7 @@ export function SitemapSection() {
                 <div
                   className={twMerge(
                     hoverPage === 4 ? 'py-5' : 'py-6',
-                    'project-item flex justify-between border-t-[1px] border-charcoal-100 text-xs items-center max-md:text-2xs',
+                    'project-item flex justify-between border-t-[1px] border-charcoal-100 neue-normal-button items-center',
                   )}
                 >
                   {t('header.testimonials')}
@@ -285,7 +283,7 @@ export function SitemapSection() {
                 <div
                   className={twMerge(
                     hoverPage === 5 ? 'py-5' : 'py-6',
-                    'project-item flex justify-between border-t-[1px] border-charcoal-100 text-xs items-center max-md:text-2xs',
+                    'project-item flex justify-between border-t-[1px] border-charcoal-100 neue-normal-button items-center',
                   )}
                 >
                   {t('header.contact')}
@@ -306,7 +304,7 @@ export function SitemapSection() {
               if (index < 3) {
                 return (
                   <a href={`/news/${newsId}`} key={`sitemap-news-${newsId}`}>
-                    <div className='flex justify-between border-t-[1px] border-charcoal-100 py- text-xs items-center max-md:text-2xs'>
+                    <div className='flex justify-between border-t-[1px] border-charcoal-100 py- text-xs items-center'>
                       {newsSingle.attributes.title}
                       <div className='block'>
                         {index === 0 && <ArrowRightUpIcon />}
