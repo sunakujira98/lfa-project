@@ -19,7 +19,7 @@ type LineByLineTextProps = {
 
 export function LineByLineText({ data }: LineByLineTextProps) {
   return (
-    <div className='max-w-screen-xl mx-auto'>
+    <div className='flex justify-center items-center max-md:h-screen lg:mt-[183px] mb-[183px]'>
       <div className='container'>
         <div className='flex items-center mx-auto max-w-[65%]'>
           <div className='flex flex-col items-center'>
@@ -41,7 +41,9 @@ export function LineByLineText({ data }: LineByLineTextProps) {
                 </h1>
               )
             })}
-            <p className='text-center py-6'>{data.description}</p>
+            <p className='text-center py-6 neue-normal w-full lg:w-[37%]'>
+              {data.description}
+            </p>
           </div>
         </div>
       </div>
