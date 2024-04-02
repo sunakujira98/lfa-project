@@ -28,9 +28,7 @@ export function ProjectDetail({ projectId }: ProjectDetailProps) {
       ? nextData?.data?.attributes.industry?.data?.id
       : undefined
   const industryName =
-    nextData?.data?.attributes.locale === lang
-      ? nextData?.data?.attributes.industry?.data?.attributes.name
-      : undefined
+    nextData?.data?.attributes.industry?.data?.attributes.name
 
   if (industryId) {
     params.append('industry', industryId.toString())
