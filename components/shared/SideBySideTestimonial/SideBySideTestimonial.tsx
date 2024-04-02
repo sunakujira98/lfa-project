@@ -23,7 +23,7 @@ export function SideBySideTestimonial({
         />
       </div>
       <div className='w-full lg:w-[68%] flex flex-col'>
-        <div className='flex justify-between items-center'>
+        <div className='flex justify-between items-center max-md:order-2 max-md:pt-4'>
           <div className='flex flex-col gap-2 pb-4'>
             <QuoteIcon />
             <p className='text-justify neue-normal'>
@@ -36,18 +36,18 @@ export function SideBySideTestimonial({
             {testimonial.attributes.companyImage?.data?.attributes?.url && (
               <img
                 src={`${process.env.NEXT_PUBLIC_CMS_HOST}${testimonial.attributes.companyImage.data.attributes.url}`}
-                className='w-44 lg:max-w-56 lg:hidden'
+                className='h-10 lg:hidden'
                 alt={testimonial.attributes.fullName}
               />
             )}
-            <h5 className='neue-normal !font-normal'>
+            <h5 className='neue-normal lg:!font-normal'>
               {testimonial.attributes.fullName}
             </h5>
             <div className='flex flex-row gap-[2px]'>
-              <h5 className='neue-normal !font-normal'>
+              <h5 className='neue-normal lg:!font-normal'>
                 {testimonial.attributes.title},
               </h5>
-              <h5 className='neue-normal !font-normal underline'>
+              <h5 className='neue-normal lg:!font-normal underline'>
                 {testimonial.attributes.company}
               </h5>
             </div>

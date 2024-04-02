@@ -85,7 +85,7 @@ export function SitemapSection() {
       </div>
       <div className='grid grid-cols-1 lg:grid-cols-2 gap-20 lg:gap-8 font-thin lg:font-normal'>
         <div>
-          <div className='mb-[31px]'>
+          <div className='lg:mb-[31px]'>
             <h6 className='neue-wide pb-6'>{t('header.projects')}</h6>
             <div className='flex flex-col'>
               {projectsData.map((project, index) => {
@@ -125,7 +125,7 @@ export function SitemapSection() {
               })}
             </div>
           </div>
-          <div className='block'>
+          <div className='hidden lg:block'>
             <h6 className='neue-wide pb-6'>{t('news.title')}</h6>
             <div className='flex flex-col'>
               {newsData?.map((singleNews, index) => {
@@ -200,7 +200,7 @@ export function SitemapSection() {
             </div>
           </div>
         </div>
-        <div className='block'>
+        <div className='hidden lg:block'>
           <h6 className='neue-wide pb-6'>{t('sitemap.pages')}</h6>
           <div className='flex flex-col'>
             <div onMouseEnter={() => onHoverPage(0)} onMouseLeave={onLeavePage}>
@@ -303,14 +303,29 @@ export function SitemapSection() {
 
               if (index < 3) {
                 return (
-                  <a href={`/news/${newsId}`} key={`sitemap-news-${newsId}`}>
-                    <div className='flex justify-between border-t-[1px] border-charcoal-100 py- text-xs items-center'>
-                      {newsSingle.attributes.title}
+                  <Link href={`/news/${newsId}`} key={`sitemap-news-${newsId}`}>
+                    <div
+                      onMouseEnter={() => onHoverNews(index)}
+                      onMouseLeave={onLeaveNews}
+                      className={twMerge(
+                        hoveredNewsIndex === index ? 'py-5' : 'py-6',
+                        'project-item flex justify-between border-t-[1px] border-charcoal-100 text-xs items-center',
+                      )}
+                    >
+                      <span className='neue-normal-button'>
+                        {newsSingle.attributes.title}
+                      </span>
                       <div className='block'>
-                        {index === 0 && <ArrowRightUpIcon />}
+                        {hoveredNewsIndex === index && (
+                          <ArrowRightUpIcon
+                            className='p-0'
+                            width='32'
+                            height='32'
+                          />
+                        )}
                       </div>
                     </div>
-                  </a>
+                  </Link>
                 )
               }
             })}

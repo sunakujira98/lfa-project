@@ -41,11 +41,13 @@ export function ProjectDetail({ projectId }: ProjectDetailProps) {
         <div className='flex flex-col h-screen max-w-screen-xl mx-auto relative z-2'>
           <div className='flex-1'></div>
           <div className='self-start lg:py-10 text-lfaWhite flex flex-col w-full px-4 lg:px-0'>
-            <h1 className='text-2xl lg:text-6xl'>
+            <h1 className='w-[50%] content-title'>
               {data?.data.attributes.title}
             </h1>
-            <h6 className='neue-wide'>{data?.data.attributes.location}</h6>
-            <div className='flex flex-row gap-20 pt-10'>
+            <h6 className='neue-wide pt-4 lg:pt-0'>
+              {data?.data.attributes.location}
+            </h6>
+            <div className='grid grid-cols-2 gap-4 lg:flex lg:flex-row lg:gap-20 pt-10 pb-6 lg:pb-0'>
               <div className='flex flex-col gap-2'>
                 <h6 className='neue-wide uppercase'>Industry</h6>
                 <Link

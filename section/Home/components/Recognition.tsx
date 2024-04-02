@@ -52,9 +52,7 @@ export function Recognition() {
     isSuccess && (
       <div className='max-w-screen-xl mx-auto py-10 px-4 lg:px-0'>
         <div className='container pb-10'>
-          <h6 className='font-neue text-3xs text-gray-50 uppercase'>
-            {t('recognitions.title')}
-          </h6>
+          <h6 className='text-gray-50 neue-wide'>{t('recognitions.title')}</h6>
         </div>
         <div className='hidden lg:block'>
           <Carousel

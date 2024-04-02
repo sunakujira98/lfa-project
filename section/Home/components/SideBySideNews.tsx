@@ -39,9 +39,7 @@ export function SideBySideNews() {
     isSuccess && (
       <div className='max-w-screen-xl mx-auto pt-10 px-4 lg:px-0'>
         <div className='container pb-8'>
-          <h6 className='font-neue text-3xs text-gray-50 uppercase'>
-            {t('news.title')}
-          </h6>
+          <h6 className='neue-wide'>{t('news.title')}</h6>
         </div>
         <div className='lg:border-y-[1px] border-charcoal-1000 pt-4'>
           <div className='grid grid-cols-1 gap-10 lg:gap-20 lg:grid-cols-3'>
@@ -58,7 +56,7 @@ export function SideBySideNews() {
                     />
                   </a>
                   <div className='flex flex-col gap-2'>
-                    <div className='text-3xs uppercase font-normal leading-4 tracking-[1px]'>
+                    <div className='neue-wide'>
                       {dayjs(news.attributes.createdAt).format('DD MMM YYYY')}
                     </div>
                     <a href={`${lang}/news/${newsId}`}>
@@ -73,7 +71,7 @@ export function SideBySideNews() {
           </div>
           <div className='flex items-center justify-center py-10 border-b-[1px] lg:border-none'>
             <a href='/news'>
-              <h6 className='uppercase neue-wide'>{t('news.allNews')}</h6>
+              <h6 className='neue-wide'>{t('news.allNews')}</h6>
             </a>
           </div>
         </div>

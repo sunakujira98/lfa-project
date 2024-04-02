@@ -22,7 +22,8 @@
   },
   "featuredProject": {
     "title": "精选项目",
-    "allProjects": "所有项目"
+    "allProjects": "所有项目",
+    "filterAll": "全部"
   },
   "client": {
     "title": "客户群"

@@ -33,12 +33,10 @@ export function NewsDetail({ newsId }: NewsDetailProps) {
             backgroundPosition: 'center',
           }}
         ></div>
-        <div className='flex flex-col h-screen max-w-screen-xl mx-auto relative z-2'>
+        <div className='flex flex-col h-screen max-w-screen-xl mx-auto relative z-2 lg:px-0'>
           <div className='flex-1'></div>
-          <div className='self-start px-2 py-10 text-lfaWhite flex flex-col w-full'>
-            <h1 className='text-2xl lg:text-6xl'>
-              {data.data.attributes.title}
-            </h1>
+          <div className='self-start px-4 lg:px-2 py-10 text-lfaWhite flex flex-col w-full'>
+            <h1 className='content-title'>{data.data.attributes.title}</h1>
           </div>
         </div>
 
@@ -78,8 +76,10 @@ export function NewsDetail({ newsId }: NewsDetailProps) {
             <div className='border-t-[1px]'></div>
             <Link href='/news'>
               <div className='flex flex-row justify-between py-4'>
-                <div className='flex w-full justify-between text-xs items-center border-charcoal-100 uppercase'>
-                  <h6 className='uppercase'>{t('news.allNews')}</h6>
+                <div className='flex w-full justify-between text-xs items-center border-charcoal-100'>
+                  <h6 className='neue-wide uppercase'>
+                    {t('news.allNewsFooter')}
+                  </h6>
                   <ArrowRightUpIcon />
                 </div>
               </div>
@@ -87,7 +87,7 @@ export function NewsDetail({ newsId }: NewsDetailProps) {
             {nextData && (
               <Link href={`/news/${Number(newsId) + 1}`}>
                 <div className='flex justify-between items-center py-4 border-t-[1px]'>
-                  <h6 className='uppercase'>
+                  <h6 className='neue-wide uppercase'>
                     {t('news.nextPage', {
                       title: nextData.data.attributes.title,
                     })}

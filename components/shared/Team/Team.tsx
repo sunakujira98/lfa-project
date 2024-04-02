@@ -36,7 +36,7 @@ export function Team({ data, isActive, onClick }: TeamProps) {
         <div className='pt-2 px-2 lg:pt-6 lg:px-0'>
           <div className='flex flex-col'>
             <div className='flex justify-between'>
-              <h6 className='neue-normal !font-normal'>
+              <h6 className='neue-normal lg:!font-normal'>
                 {data.attributes.name}
               </h6>
               <div className='hidden lg:block'>
@@ -47,7 +47,7 @@ export function Team({ data, isActive, onClick }: TeamProps) {
                 )}
               </div>
             </div>
-            <h6 className='w-full lg:w-36 text-xs lg:text-3xs lg:font-light lg:leading-4'>
+            <h6 className='w-full lg:w-36 neue-3xs-normal !no-underline'>
               {data.attributes.position}
             </h6>
             <div className='hidden lg:block'>
@@ -86,8 +86,10 @@ export function Team({ data, isActive, onClick }: TeamProps) {
                 </div>
               </a>
               <div className='flex flex-col gap-2'>
-                <h6 className='text-xs lg:text-3xs'>{data.attributes.name}</h6>
-                <h6 className='w-36 text-xs lg:text-3xs'>
+                <h6 className='neue-normal !no-underline'>
+                  {data.attributes.name}
+                </h6>
+                <h6 className='w-36 neue-3xs-normal !no-underline'>
                   {data.attributes.position}
                 </h6>
               </div>

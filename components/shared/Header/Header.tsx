@@ -203,7 +203,11 @@ export function Header() {
         <div className='flex flex-row items-center gap-4'>
           {!isOpen && (
             <Link
-              className={showBg ? 'outline-button-black' : 'outline-button'}
+              className={
+                showBg
+                  ? 'outline-button-black uppercase text-[10px] !py-[6px]'
+                  : 'outline-button uppercase text-[10px] !py-[6px]'
+              }
               href='/contact'
             >
               {t('header.contact')}

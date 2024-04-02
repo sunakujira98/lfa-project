@@ -22,7 +22,8 @@
   },
   "featuredProject": {
     "title": "Featured Projects",
-    "allProjects": "All Projects"
+    "allProjects": "All Projects",
+    "filterAll": "ALL"
   },
   "client": {
     "title": "CLIENTELE"

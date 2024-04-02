@@ -22,9 +22,9 @@ export function AboutUs() {
             {t('aboutUs.paragraph.homeDescription')}
           </p>
         </div>
-        <div className='flex justify-center items-center py-[76px] neue-wide'>
+        <div className='flex justify-center items-center py-10 lg:py-[76px] neue-wide'>
           <a href='/about'>
-            <h6 className='uppercase'>{t('aboutUs.title')}</h6>
+            <h6 className='neue-wide text-gray-50'>{t('aboutUs.title')}</h6>
           </a>
         </div>
       </div>

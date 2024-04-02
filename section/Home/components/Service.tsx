@@ -46,8 +46,8 @@ export function Service() {
     isSuccess && (
       <div className='max-w-screen-xl mx-auto pt-10 px-4 lg:px-0'>
         <div className=' bg-greige lg:bg-beige'>
-          <div className='px-4 lg:px-0 pt-10 pb-10 lg:pb-20 lg:pt-0 neue-wide'>
-            <h6 className='uppercase'>{t('services.title')}</h6>
+          <div className='px-4 lg:px-0 pt-10 pb-10 lg:pb-20 lg:pt-0'>
+            <h6 className='uppercase neue-wide'>{t('services.title')}</h6>
           </div>
           <div className='flex justify-between gap-6'>
             <div className='w-1/3'>
@@ -105,7 +105,9 @@ export function Service() {
                         {({ open }) => (
                           <>
                             <div className='flex flex-row justify-between'>
-                              <h4>{service.attributes.title}</h4>
+                              <h4 className='vinila-tight'>
+                                {service.attributes.title}
+                              </h4>
                               <Disclosure.Button>
                                 {open ? <MinusIcon /> : <PlusIcon />}
                               </Disclosure.Button>
@@ -118,7 +120,9 @@ export function Service() {
                                   alt={service.attributes.title}
                                 />
                               </div>
-                              <p>{service.attributes.description}</p>
+                              <p className='neue-normal'>
+                                {service.attributes.description}
+                              </p>
                             </Disclosure.Panel>
                           </>
                         )}

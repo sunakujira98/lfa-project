@@ -81,7 +81,7 @@ export function ContactSection() {
               <div className='flex flex-row gap-5 lg:gap-[22px]'>
                 <div className='w-1/4 max-md:pt-1'>
                   <div className='flex self-start relative'>
-                    <h4 className='text-3xs lg:text-md lg:font-light lg:leading-8 lg:tracking-[0.24px] lg:font-light lg:leading-8 lg:tracking-[0.24px]'>
+                    <h4 className='text-3xs font-light leading-4 lg:text-md lg:font-light lg:leading-8 lg:tracking-[0.24px]'>
                       {t('contact.enquiryType')}
                     </h4>
                   </div>
@@ -109,7 +109,7 @@ export function ContactSection() {
             <div className='w-full lg:w-[70%]'>
               <div className='flex relative gap-8 border-b-[1px] border-charcoal-100 py-6 h-44'>
                 <div className='w-1/4 absolute top-0 left-0'>
-                  <h4 className='text-3xs lg:text-md lg:font-light lg:leading-8 lg:tracking-[0.24px]'>
+                  <h4 className='text-3xs font-light leading-4 lg:text-md lg:font-light lg:leading-8 lg:tracking-[0.24px]'>
                     {t('contact.form.enquiryType.label')}
                   </h4>
                 </div>
@@ -124,7 +124,7 @@ export function ContactSection() {
               </div>
               <div className='flex flex-row items-center gap-8 border-b-[1px] border-charcoal-100 py-6'>
                 <div className='flex w-1/4'>
-                  <h4 className='text-3xs lg:text-md lg:font-light lg:leading-8 lg:tracking-[0.24px]'>
+                  <h4 className='text-3xs font-light leading-4 lg:text-md lg:font-light lg:leading-8 lg:tracking-[0.24px]'>
                     {t('contact.form.name.label')}
                   </h4>
                 </div>
@@ -139,7 +139,7 @@ export function ContactSection() {
               </div>
               <div className='flex flex-row items-center gap-8 border-b-[1px] border-charcoal-100 py-6'>
                 <div className='flex w-1/4'>
-                  <h4 className='text-3xs lg:text-md lg:font-light lg:leading-8 lg:tracking-[0.24px]'>
+                  <h4 className='text-3xs font-light leading-4 lg:text-md lg:font-light lg:leading-8 lg:tracking-[0.24px]'>
                     {t('contact.form.email.label')}
                   </h4>
                 </div>
@@ -154,7 +154,7 @@ export function ContactSection() {
               </div>
               <div className='flex flex-row items-center gap-8 border-b-[1px] border-charcoal-100 py-6'>
                 <div className='flex w-1/4'>
-                  <h4 className='text-3xs lg:text-md lg:font-light lg:leading-8 lg:tracking-[0.24px]'>
+                  <h4 className='text-3xs font-light leading-4 lg:text-md lg:font-light lg:leading-8 lg:tracking-[0.24px]'>
                     {t('contact.form.contact.label')}
                   </h4>
                 </div>
@@ -169,7 +169,7 @@ export function ContactSection() {
               </div>
               <div className='flex flex-row items-center gap-8 border-b-[1px] border-charcoal-100 py-6'>
                 <div className='flex w-1/4'>
-                  <h4 className='text-2xs lg:text-md'>
+                  <h4 className='text-3xs font-light leading-4 lg:text-md lg:font-light lg:leading-8 lg:tracking-[0.24px]'>
                     {t('contact.form.companyName.label')}
                   </h4>
                 </div>
@@ -199,7 +199,7 @@ export function ContactSection() {
                     />
                   </div>
                   <button
-                    className='outline-button-black w-full lg:w-24 py-0 text-2xs uppercase font-thin'
+                    className='text-3xs outline-button-black w-full lg:w-24 py-0 lg:text-2xs uppercase font-thin'
                     type='submit'
                     disabled={sendMailMutation.isPending}
                   >

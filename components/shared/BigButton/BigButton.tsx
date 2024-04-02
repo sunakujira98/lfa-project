@@ -14,7 +14,7 @@ export function BigButton({ active, onClick, title, icon }: BigButtonProps) {
     <button
       className={twMerge(
         active ? 'bg-primary-900 text-greige' : 'hover:bg-greige',
-        'w-full py-4 px-8 rounded-full',
+        'w-full py-4 px-[26px] lg:px-8 rounded-full',
       )}
       onClick={onClick}
     >

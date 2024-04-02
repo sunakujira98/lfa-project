@@ -71,16 +71,16 @@ p {
 
 @keyframes marquee2 {
   0% {
-    transform: translateX(100%);
+    transform: translateX(0%);
   }
 
   100% {
-    transform: translateX(0%);
+    transform: translateX(-100%);
   }
 }
 
 .animate-marquee2 {
-  animation: marquee2 23s linear infinite;
+  animation: marquee2 5s linear infinite;
 }
 
 .animate-marquee {
@@ -106,6 +106,15 @@ p {
 
 .react-multi-carousel-dot.react-multi-carousel-dot--active button {
   background: #252525 !important;
+}
+
+.content-title {
+  font-family: var(--font-neue);
+  font-size: 96px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 96px;
+  letter-spacing: -1.92px;
 }
 
 .neue-wider {
@@ -179,4 +188,59 @@ p {
   font-weight: 300;
   line-height: 40px;
   letter-spacing: -0.96px;
+}
+
+@media only screen and (max-width: 768px) {
+  .vinila-tight {
+    font-family: var(--font-vinila);
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 32px;
+    letter-spacing: -0.72px;
+  }
+
+  .neue-wide-light {
+    font-family: var(--font-neue);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 350;
+    line-height: 18px;
+    text-transform: uppercase;
+  }
+
+  .neue-normal-button {
+    font-family: var(--font-neue);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 350;
+    line-height: 24px;
+    letter-spacing: 0.16px;
+  }
+
+  .neue-3xs-normal {
+    font-family: var(--font-neue);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 350;
+    line-height: 18px;
+    text-decoration-line: underline;
+  }
+
+  .content-title {
+    font-family: var(--font-vinila);
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 40px;
+  }
+
+  .neue-wider {
+    font-family: var(--font-vinila);
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 32px;
+    letter-spacing: 0.24px;
+  }
 }

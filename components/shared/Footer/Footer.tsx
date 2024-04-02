@@ -20,7 +20,7 @@ export function Footer() {
         <div className='w-full flex flex-col lg:flex-row gap-28'>
           <div className='flex-1 mb-6 text-black w-full lg:w-auto'>
             <div className='flex flex-col'>
-              <h6 className='text-charcoal-600 neue-wide'>
+              <h6 className='text-lfaWhite pb-10 lg:pb-0 lg:text-charcoal-600 neue-wide'>
                 {t('footer.findUsOnInstagram')}
               </h6>
               <div className='grid grid-cols-2 lg:grid-cols-3 pb-10 pt-2 gap-4'>
@@ -172,43 +172,45 @@ export function Footer() {
         {/* Mobile */}
         <div className='flex lg:hidden flex-col gap-10'>
           <div>
-            <h4 className='text-lfaWhite'>{t('footer.title')}</h4>
+            <h4 className='text-lfaWhite neue-wider'>{t('footer.title')}</h4>
           </div>
           <div className='flex flex-col gap-4'>
-            <h6 className='uppercase text-lfaWhite'>{t('footer.findUs')}</h6>
+            <h6 className='uppercase text-lfaWhite neue-wide'>
+              {t('footer.findUs')}
+            </h6>
             <div className='flex flex-col'>
-              <span className='text-2xs text-charcoal-600'>
+              <span className='text-charcoal-600 neue-wide-light'>
                 283 River Valley Road Singapore 238324
               </span>
-              <span className='text-2xs text-lfaWhite underline'>
+              <span className='text-lfaWhite underline neue-wide-light !normal-case'>
                 {t('footer.viewOnGoogleMaps')}
               </span>
             </div>
           </div>
           <div className='flex flex-col gap-4'>
-            <h6 className='uppercase text-lfaWhite'>{t('footer.contactUs')}</h6>
-            <span className='text-2xs text-lfaWhite underline'>
+            <h6 className='text-lfaWhite neue-wide'>{t('footer.contactUs')}</h6>
+            <span className='text-lfaWhite underline neue-wide-light !normal-case'>
               enquiry@lfa.com.sg
             </span>
           </div>
           <div className='flex flex-col gap-4'>
-            <h6 className='uppercase text-lfaWhite'>
+            <h6 className='text-lfaWhite neue-wide'>
               {t('footer.riskManagementSystem')}
             </h6>
-            <span className='text-2xs underline text-charcoal-600'>
+            <span className='text-charcoal-600 neue-wide-light !normal-case'>
               bizSAFE Level 3
             </span>
           </div>
           <div className='flex flex-col gap-4'>
             <div>
-              <h6 className='uppercase text-lfaWhite'>
+              <h6 className='text-lfaWhite neue-wide'>
                 {t('footer.qualityManagementSystem')}
               </h6>
             </div>
             <div className='flex flex-col text-charcoal-600'>
-              <span className='text-2xs'>ISO 9001 2015</span>
-              <span className='text-2xs'>ISO 9001 2015</span>
-              <span className='text-2xs'>ISO 9001 2015</span>
+              <span className='neue-wide-light'>ISO 9001 2015</span>
+              <span className='neue-wide-light'>ISO 9001 2015</span>
+              <span className='neue-wide-light'>ISO 9001 2015</span>
             </div>
           </div>
           <div className='flex flex-col gap-4'>

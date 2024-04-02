@@ -30,28 +30,24 @@ export function AboutUsSection() {
             backgroundPosition: 'center',
           }}
         ></div>
-        <div className='flex flex-col h-[95vh] lg:h-screen max-w-screen-xl mx-auto relative z-2'>
+        <div className='flex flex-col h-[95vh] lg:h-screen max-w-screen-xl mx-auto relative z-2 px-4 lg:px-0'>
           <div className='flex-1'></div>
           <div className='self-start px-2 py-10 text-lfaWhite flex flex-col w-full'>
-            <h1 className='text-2xl lg:text-6xl tracking-[-1.92px] leading-[96px]'>
-              {t('aboutUs.title')}
-            </h1>
+            <h1 className='content-title'>{t('aboutUs.title')}</h1>
           </div>
         </div>
 
         <div className='max-w-screen-xl h-screen mx-auto flex justify-center items-center py-10 px-4 lg:px-0'>
           <div className='container'>
             <div className='flex flex-col items-center'>
-              <h1 className='font-vinila text-2xl lg:text-6xl lg:mb-[-30px]'>
+              <h1 className='content-title lg:mb-[-30px]'>
                 {t('aboutUs.cultivating')}
               </h1>
-              <h1 className='font-keppler text-2xl lg:text-6xl lg:mb-[-40px]'>
+              <h1 className='font-keppler text-[40px] lg:text-6xl lg:mb-[-30px]'>
                 {t('aboutUs.growth')}
               </h1>
-              <h1 className='font-vinila text-2xl lg:text-6xl'>
-                {t('aboutUs.together')}
-              </h1>
-              <p className='text-center w-[65%] neue-normal pt-6'>
+              <h1 className='content-title'>{t('aboutUs.together')}</h1>
+              <p className='text-center  lg:w-[65%] neue-normal pt-6'>
                 {t('aboutUs.paragraph.description')}
               </p>
             </div>
@@ -90,7 +86,7 @@ export function AboutUsSection() {
             {awards?.data.map((award) => {
               return (
                 <a href={award.attributes.externalLink}>
-                  <div className='flex justify-between border-b-[1px] py-2 neue-normal !font-normal items-center border-charcoal-100 uppercase'>
+                  <div className='flex justify-between border-b-[1px] py-2 neue-3xs-normal !no-underline lg:neue-normal !font-normal items-center border-charcoal-100 uppercase'>
                     {award.attributes.awardName}
                     <ArrowRightUpIcon />
                   </div>

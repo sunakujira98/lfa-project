@@ -59,7 +59,7 @@ export function FaqSection() {
           <h3>{t('faq.title')}</h3>
         </div>
         <div className='flex flex-col'>
-          <div className='flex flex-col lg:flex-row gap-20 lg:gap-14 px-4 lg:px-0'>
+          <div className='flex flex-col lg:flex-row gap-20 lg:gap-14 lg:px-0'>
             <div className='w-full lg:w-1/3'>
               {faqs.map((faq, index) => {
                 const isLastIndex = index === data?.data.length - 1

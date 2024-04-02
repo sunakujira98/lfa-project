@@ -9,11 +9,12 @@ import PlusIcon from '@/components/shared/svg/icons/PlusIcon'
 import { useGetAllIndustryQuery } from '@/hooks/query/useIndustryQuery'
 import { useGetAllRegionsQuery } from '@/hooks/query/useRegionQuery'
 import { useGetAllServiceQuery } from '@/hooks/query/useServiceQuery'
+import { useTranslation } from '@/resources/i18n/i18n.hooks'
 
 type ProjectFilterProps = {
-  onChangeIndustryQuery: (value: number) => void
-  onChangeServiceQuery: (value: number) => void
-  onChangeRegionQuery: (value: number) => void
+  onChangeIndustryQuery: (value?: number | undefined) => void
+  onChangeServiceQuery: (value?: number | undefined) => void
+  onChangeRegionQuery: (value?: number | undefined) => void
   onChangeHasVideoQuery: (value: boolean) => void
   onChangeIsAwardWinning: (value: boolean) => void
   industryId: string
@@ -35,6 +36,7 @@ export function ProjectFilter({
   hasVideo,
   isAwardWinning,
 }: ProjectFilterProps) {
+  const { t } = useTranslation()
   const { data: industries, isSuccess: isSuccessIndustry } =
     useGetAllIndustryQuery()
   const { data: services, isSuccess: isSuccessService } =
@@ -135,6 +137,22 @@ export function ProjectFilter({
             >
               <Menu.Items className='absolute left-0 z-10 ml-1 w-56 origin-top-right rounded-sm bg-beige shadow-lg ring-2 ring-white ring-opacity-100 focus:outline-none'>
                 <div className='py-1'>
+                  <Menu.Item>
+                    {({ active }) => (
+                      <button
+                        onClick={() => {
+                          onChangeIndustryQuery(undefined)
+                          onSetSelectedIndustry('')
+                        }}
+                        className={twMerge(
+                          active && 'bg-greige text-gray-900',
+                          'text-left block px-4 py-2 text-3xs uppercase text-gray-50 w-full font-thin',
+                        )}
+                      >
+                        {t('featuredProject.filterAll')}
+                      </button>
+                    )}
+                  </Menu.Item>
                   {industries?.data.map((industry) => {
                     return (
                       <Menu.Item key={industry.id}>
@@ -192,6 +210,22 @@ export function ProjectFilter({
             >
               <Menu.Items className='absolute left-0 z-10 w-56 origin-top-right rounded-sm bg-beige shadow-lg ring-2 ring-white ring-opacity-100 focus:outline-none'>
                 <div className='py-1'>
+                  <Menu.Item>
+                    {({ active }) => (
+                      <button
+                        onClick={() => {
+                          onChangeServiceQuery(undefined)
+                          onSetSelectedService('')
+                        }}
+                        className={twMerge(
+                          active && 'bg-greige text-gray-900',
+                          'text-left block px-4 py-2 text-3xs uppercase text-gray-50 w-full font-thin',
+                        )}
+                      >
+                        {t('featuredProject.filterAll')}
+                      </button>
+                    )}
+                  </Menu.Item>
                   {services?.data.map((service) => {
                     return (
                       <Menu.Item key={service.id}>
@@ -248,6 +282,22 @@ export function ProjectFilter({
             >
               <Menu.Items className='absolute left-0 z-10 w-56 origin-top-right rounded-sm bg-beige shadow-lg ring-2 ring-white ring-opacity-100 focus:outline-none'>
                 <div className='py-1'>
+                  <Menu.Item>
+                    {({ active }) => (
+                      <button
+                        onClick={() => {
+                          onChangeRegionQuery(undefined)
+                          onSetSelectedRegion('')
+                        }}
+                        className={twMerge(
+                          active && 'bg-greige text-gray-900',
+                          'text-left block px-4 py-2 text-3xs uppercase text-gray-50 w-full font-thin',
+                        )}
+                      >
+                        {t('featuredProject.filterAll')}
+                      </button>
+                    )}
+                  </Menu.Item>
                   {regions?.data.map((region) => {
                     return (
                       <Menu.Item key={region.id}>
@@ -309,9 +359,9 @@ export function ProjectFilter({
         <Disclosure>
           {({ open }) => (
             <div className='pt-20 pb-10'>
-              <div className='flex flex-row justify-between pb-10'>
+              <div className='flex flex-row justify-between'>
                 <div>
-                  <h4>Projects</h4>
+                  <h4>{t('header.projects')}</h4>
                 </div>
                 <div className='flex flex-row items-center gap-2'>
                   <Disclosure.Button>

@@ -13,8 +13,10 @@ import { findTranslatedData } from '@/utils/FindTranslatedData/FindTranslatedDat
 
 import { ProjectFilter } from './ProjectFilter'
 import { ProjectSingle } from './ProjectSingle'
+import { useTranslation } from '@/resources/i18n/i18n.hooks'
 
 export function ProjectsWrapper() {
+  const { t } = useTranslation()
   const { ref, inView } = useInView()
   const { lang } = useParams()
 
@@ -62,16 +64,28 @@ export function ProjectsWrapper() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [inView, isLoading, error])
 
-  const onChangeIndustryQuery = (industryValue: number) => {
-    setIndustryQuery(industryValue.toString())
+  const onChangeIndustryQuery = (industryValue?: number | undefined) => {
+    if (industryValue) {
+      setIndustryQuery(industryValue.toString())
+      return
+    }
+    setIndustryQuery('')
   }
 
-  const onChangeServiceQuery = (serviceValue: number) => {
-    setServiceQuery(serviceValue.toString())
+  const onChangeServiceQuery = (serviceValue?: number | undefined) => {
+    if (serviceValue) {
+      setServiceQuery(serviceValue.toString())
+      return
+    }
+    setServiceQuery('')
   }
 
-  const onChangeRegionQuery = (regionValue: number) => {
-    setRegionQuery(regionValue.toString())
+  const onChangeRegionQuery = (regionValue?: number | undefined) => {
+    if (regionValue) {
+      setRegionQuery(regionValue.toString())
+      return
+    }
+    setRegionQuery('')
   }
 
   const onChangeHasVideoQuery = (hasVideoValue: boolean) => {
@@ -94,6 +108,9 @@ export function ProjectsWrapper() {
     <ScreenSpinner />
   ) : (
     <>
+      <h1 className='hidden lg:block text-2xl py-10 font-thin'>
+        {t('header.projects')}
+      </h1>
       <ProjectFilter
         onChangeIndustryQuery={onChangeIndustryQuery}
         onChangeServiceQuery={onChangeServiceQuery}
@@ -122,11 +139,13 @@ export function ProjectsWrapper() {
             const localeId = singleProject.localeId || singleProject.id
 
             return (
-              <ProjectSingle
-                project={singleProject}
-                key={singleProject.id}
-                localeId={localeId}
-              />
+              <div className='flex flex-col items-center justify-center'>
+                <ProjectSingle
+                  project={singleProject}
+                  key={singleProject.id}
+                  localeId={localeId}
+                />
+              </div>
             )
           })
         })}

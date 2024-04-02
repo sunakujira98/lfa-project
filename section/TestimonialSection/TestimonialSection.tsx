@@ -28,7 +28,7 @@ export function TestimonialSection() {
   return (
     <>
       <div className='container pt-28 pb-10 lg:pt-28 lg:pb-20'>
-        <div className='flex flex-col lg:flex-row lg:justify-between gap-10 lg:gap-10'>
+        <div className='flex flex-col lg:flex-row lg:justify-between gap-10 lg:gap-20'>
           <h3 className='vinila-tight w-full lg:w-[30%]'>
             {t('testimonials.title')}
           </h3>

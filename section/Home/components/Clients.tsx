@@ -20,10 +20,11 @@ export function Clients() {
             <div className='flex flex-row items-center px-9 animate-marquee whitespace-nowrap'>
               {[...data?.data, ...data?.data, ...data?.data].map((client) => {
                 return (
-                  <div className='py-4 px-9 w-44' key={client.id}>
+                  <div className='py-4 px-9 w-52' key={client.id}>
                     <img
                       src={`${process.env.NEXT_PUBLIC_CMS_HOST}${client.attributes.image.data.attributes.url}`}
                       alt={client.attributes.clientName}
+                      className='h-12'
                     />
                   </div>
                 )

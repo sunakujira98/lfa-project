@@ -51,10 +51,7 @@ export function SelectOption({
           }`}
         >
           <div
-            className={twMerge(
-              'font-thin text-xs lg:text-md',
-              open && 'hidden',
-            )}
+            className={twMerge('neue-wider max-md:!text-sm', open && 'hidden')}
           >
             {displayValue}
           </div>

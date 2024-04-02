@@ -63,7 +63,7 @@ export function PrivacyPolicySection() {
         <span className='vinila-tight'>{t('privacyPolicy.title')}</span>
       </div>
       {isSuccess && (
-        <div className='flex flex-col px-4 lg:px-0'>
+        <div className='flex flex-col lg:px-0'>
           <div className='flex flex-col lg:flex-row gap-20 lg:gap-14 lg:px-0'>
             <div className='w-full lg:w-1/3'>
               {privacyPolicies.map((privacyPolicy, index) => {
@@ -98,7 +98,7 @@ export function PrivacyPolicySection() {
               {description ? (
                 <>
                   <div className='border-b-[1px] border-charcoal-100 pb-4 lg:hidden'>
-                    <h4 className='text-md font-thin'>{title}</h4>
+                    <h4 className='neue-wider'>{title}</h4>
                   </div>
                   <div className='pt-4 lg:pt-0'>
                     <ContentRenderer data={description} />
@@ -107,7 +107,7 @@ export function PrivacyPolicySection() {
               ) : (
                 <>
                   <div className='border-b-[1px] border-charcoal-100 pb-4 lg:hidden'>
-                    <h4 className='text-md font-thin'>{firstTitleToShow}</h4>
+                    <h4 className='neue-wider'>{firstTitleToShow}</h4>
                   </div>
                   <div className='pt-4 lg:pt-0'>
                     <ContentRenderer data={firstDescriptionToShow} />
