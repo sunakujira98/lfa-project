@@ -2,11 +2,12 @@
 
 'use client'
 
+import dayjs from 'dayjs'
+
 import { Link } from '@/components/shared/Link'
 import { StrapiComponentResolver } from '@/components/shared/StrapiComponentResolver'
 import { useGetProjectByIdQuery } from '@/hooks/query/useProjectQuery'
 import { useTranslation } from '@/resources/i18n/i18n.hooks'
-import dayjs from 'dayjs'
 
 type ProjectDetailProps = {
   projectId: string
