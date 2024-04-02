@@ -15,6 +15,7 @@ import { findTranslatedData } from '@/utils/FindTranslatedData/FindTranslatedDat
 import MinusIcon from '@/components/shared/svg/icons/MinusIcon'
 import PlusIcon from '@/components/shared/svg/icons/PlusIcon'
 import { twMerge } from 'tailwind-merge'
+import { Link } from '@/components/shared/Link'
 
 export function Service() {
   const { t } = useTranslation()
@@ -134,9 +135,9 @@ export function Service() {
             </div>
           </div>
           <div className='border-b-[1px] flex items-center justify-center py-12 neue-wide'>
-            <a href='/service'>
+            <Link href='/service'>
               <h6 className='uppercase'>{t('services.learnMore')}</h6>
-            </a>
+            </Link>
           </div>
         </div>
       </div>

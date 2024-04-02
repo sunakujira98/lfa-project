@@ -7,6 +7,7 @@ import { Testimonial } from '@/components/shared/Testimonial'
 import { ProjectDetail } from '@/domain/types/project.types'
 
 import { ContentRenderer } from '../ContentRenderer/ContentRenderer'
+import { SustainableMaterials } from '../SustainableMaterials'
 
 type StrapiComponentsResolverProps = {
   detail: ProjectDetail[]
@@ -31,6 +32,13 @@ export function StrapiComponentResolver({
               <ContentRenderer
                 data={componentDetail as any}
                 key={`content-renderer-${componentDetail.id}`}
+              />
+            )
+          case 'images.sustainable-materials':
+            return (
+              <SustainableMaterials
+                data={componentDetail as any}
+                key={`sustainable-materials-${componentDetail.id}`}
               />
             )
           case 'images.full-image':

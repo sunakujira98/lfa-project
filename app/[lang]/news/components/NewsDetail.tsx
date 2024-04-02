@@ -3,6 +3,7 @@
 'use client'
 
 import dayjs from 'dayjs'
+import { useParams } from 'next/navigation'
 
 import { ContentRenderer } from '@/components/shared/ContentRenderer/ContentRenderer'
 import { Link } from '@/components/shared/Link'
@@ -15,11 +16,15 @@ type NewsDetailProps = {
 }
 
 export function NewsDetail({ newsId }: NewsDetailProps) {
+  const { lang } = useParams()
   const { t } = useTranslation()
   const { data, isSuccess } = useGetArticleByIdQuery(newsId)
   const { data: nextData } = useGetArticleByIdQuery(
     (Number(newsId) + 1).toString(),
   )
+
+  const nextNewsId =
+    nextData?.data?.attributes.locale === lang ? nextData?.data?.id : undefined
   const background = `${process.env.NEXT_PUBLIC_CMS_HOST}${data?.data?.attributes?.thumbnail?.data?.attributes?.url}`
 
   return (
@@ -61,7 +66,7 @@ export function NewsDetail({ newsId }: NewsDetailProps) {
               <Link href='/news'>
                 <h6 className='neue-wide'>{t('news.allNewsFooter')}</h6>
               </Link>
-              {nextData && (
+              {nextData && nextNewsId && (
                 <Link href={`/news/${Number(newsId) + 1}`}>
                   <h6 className='neue-wide'>
                     {t('news.nextPage', {
@@ -84,7 +89,7 @@ export function NewsDetail({ newsId }: NewsDetailProps) {
                 </div>
               </div>
             </Link>
-            {nextData && (
+            {nextData && nextNewsId && (
               <Link href={`/news/${Number(newsId) + 1}`}>
                 <div className='flex justify-between items-center py-4 border-t-[1px]'>
                   <h6 className='neue-wide uppercase'>

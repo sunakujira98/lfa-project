@@ -11,6 +11,12 @@ export type TestimonialAttribute = {
       attributes: StrapiImageAttributes
     }
   }
+  image?: {
+    data: {
+      id: number
+      attributes: StrapiImageAttributes
+    }
+  }
   video?: {
     data: {
       id: number

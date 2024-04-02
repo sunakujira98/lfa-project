@@ -23,7 +23,8 @@
   "featuredProject": {
     "title": "精选项目",
     "allProjects": "所有项目",
-    "filterAll": "全部"
+    "filterAll": "全部",
+    "sustainableMaterials": "可持续材料"
   },
   "client": {
     "title": "客户群"

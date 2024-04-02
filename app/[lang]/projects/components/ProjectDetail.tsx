@@ -3,9 +3,11 @@
 'use client'
 
 import dayjs from 'dayjs'
+import { useParams } from 'next/navigation'
 
 import { Link } from '@/components/shared/Link'
 import { StrapiComponentResolver } from '@/components/shared/StrapiComponentResolver'
+import { ArrowRightUpIcon } from '@/components/shared/svg/icons'
 import { useGetProjectByIdQuery } from '@/hooks/query/useProjectQuery'
 import { useTranslation } from '@/resources/i18n/i18n.hooks'
 
@@ -14,8 +16,25 @@ type ProjectDetailProps = {
 }
 
 export function ProjectDetail({ projectId }: ProjectDetailProps) {
+  const { lang } = useParams()
   const { t } = useTranslation()
   const { data, isSuccess } = useGetProjectByIdQuery(projectId)
+  const { data: nextData } = useGetProjectByIdQuery(
+    (Number(projectId) + 1).toString(),
+  )
+  const params = new URLSearchParams()
+  const industryId =
+    nextData?.data?.attributes.locale === lang
+      ? nextData?.data?.attributes.industry?.data?.id
+      : undefined
+  const industryName =
+    nextData?.data?.attributes.locale === lang
+      ? nextData?.data?.attributes.industry?.data?.attributes.name
+      : undefined
+
+  if (industryId) {
+    params.append('industry', industryId.toString())
+  }
 
   const background = `${process.env.NEXT_PUBLIC_CMS_HOST}${data?.data?.attributes?.thumbnail?.data?.attributes?.url}`
 
@@ -106,6 +125,67 @@ export function ProjectDetail({ projectId }: ProjectDetailProps) {
           </div>
         </div>
         <StrapiComponentResolver detail={data.data.attributes.detail} />
+        <div className='max-w-screen-xl mx-auto px-4 lg:px-0'>
+          <div className='hidden flex-col lg:flex'>
+            <div className='border-t-[1px]'></div>
+            <div className='flex justify-between py-5'>
+              <Link href='/projects'>
+                <h6 className='neue-wide'>
+                  {t('featuredProject.allProjects')}
+                </h6>
+              </Link>
+              <Link href={`/projects?${params}`}>
+                <h6 className='neue-wide'>
+                  {industryName}&nbsp;{t('header.projects')}
+                </h6>
+              </Link>
+              {nextData && industryId && (
+                <Link href={`/projects/${Number(projectId) + 1}`}>
+                  <h6 className='neue-wide'>
+                    {t('news.nextPage', {
+                      title: nextData.data.attributes.title,
+                    })}
+                  </h6>
+                </Link>
+              )}
+            </div>
+          </div>
+          <div className='flex flex-col lg:hidden'>
+            <div className='border-t-[1px]'></div>
+            <Link href='/project'>
+              <div className='flex flex-row justify-between py-4'>
+                <div className='flex w-full justify-between text-xs items-center'>
+                  <h6 className='neue-wide uppercase'>
+                    {t('featuredProject.allProjects')}
+                  </h6>
+                  <ArrowRightUpIcon />
+                </div>
+              </div>
+            </Link>
+            <Link href={`/projects?${params}`}>
+              <div className='flex flex-row justify-between py-4 border-t-[1px]'>
+                <div className='flex w-full justify-between text-xs items-center'>
+                  <h6 className='neue-wide'>
+                    {industryName}&nbsp;{t('header.projects')}
+                  </h6>
+                  <ArrowRightUpIcon />
+                </div>
+              </div>
+            </Link>
+            {nextData && industryId && (
+              <Link href={`/projects/${Number(projectId) + 1}`}>
+                <div className='flex justify-between items-center py-4 border-t-[1px]'>
+                  <h6 className='neue-wide uppercase'>
+                    {t('news.nextPage', {
+                      title: nextData.data.attributes.title,
+                    })}
+                  </h6>
+                  <ArrowRightUpIcon />
+                </div>
+              </Link>
+            )}
+          </div>
+        </div>
       </>
     )
   )

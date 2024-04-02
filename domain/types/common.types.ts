@@ -24,6 +24,7 @@ export type SectionName =
 export type AvailableComponents =
   | 'images.full-image'
   | 'images.side-by-side-image'
+  | 'images.sustainable-materials'
   | 'text.1-line-1-font-text'
   | 'text.paragraph'
   | 'testimonial.testimonial-block'

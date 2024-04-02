@@ -15,8 +15,6 @@ export function StrapiSingleComponentResolver({
   componentDetail,
   data,
 }: StrapiSingleComponentResolverProps) {
-  // console.log('componentDetail', componentDetail)
-  // console.log('data', data)
   switch (componentDetail) {
     case 'text.1-line-1-font-text':
       return <LineByLineText data={data as any} />

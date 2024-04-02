@@ -23,7 +23,9 @@ export function Testimonial({ data }: TestimonialProps) {
       <div className='flex flex-col lg:flex-row justify-between lg:gap-6'>
         <div className='hidden lg:flex w-full lg:w-1/3 lg:justify-end'>
           <div className='flex flex-col pt-4 lg:justify-end'>
-            <h3 className='neue-normal-button'>{data.attributes.fullName}</h3>
+            <h3 className='neue-normal-button lg:text-right'>
+              {data.attributes.fullName}
+            </h3>
             <div className='flex flex-row lg:justify-end'>
               {' '}
               <h3 className='neue-normal-button'>
@@ -33,6 +35,17 @@ export function Testimonial({ data }: TestimonialProps) {
                 {data.attributes.company}
               </h3>
             </div>
+
+            {data.attributes.image?.data?.attributes?.url && (
+              <div className='flex lg:justify-end'>
+                <img
+                  src={`${process.env.NEXT_PUBLIC_CMS_HOST}${data.attributes.image.data.attributes.url}`}
+                  className='h-10 lg:h-12 lg:w-full lg:order-2' // Default order on lg screens
+                  style={{ order: '-1' }}
+                  alt={data.attributes.fullName}
+                />
+              </div>
+            )}
 
             {data.attributes.companyImage?.data?.attributes?.url && (
               <div className='flex lg:justify-end'>

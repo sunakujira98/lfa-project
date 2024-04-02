@@ -23,7 +23,8 @@
   "featuredProject": {
     "title": "Featured Projects",
     "allProjects": "All Projects",
-    "filterAll": "ALL"
+    "filterAll": "ALL",
+    "sustainableMaterials": "Sustainable Materials"
   },
   "client": {
     "title": "CLIENTELE"
