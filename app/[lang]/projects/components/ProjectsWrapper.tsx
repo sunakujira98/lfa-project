@@ -9,11 +9,11 @@ import { ScreenSpinner } from '@/components/shared/ScreenSpinner'
 import { StrapiResponse } from '@/domain/types/common.types'
 import { Project } from '@/domain/types/project.types'
 import { useGetAllProjectQuery } from '@/hooks/query/useProjectQuery'
+import { useTranslation } from '@/resources/i18n/i18n.hooks'
 import { findTranslatedData } from '@/utils/FindTranslatedData/FindTranslatedData'
 
 import { ProjectFilter } from './ProjectFilter'
 import { ProjectSingle } from './ProjectSingle'
-import { useTranslation } from '@/resources/i18n/i18n.hooks'
 
 export function ProjectsWrapper() {
   const { t } = useTranslation()
@@ -139,7 +139,10 @@ export function ProjectsWrapper() {
             const localeId = singleProject.localeId || singleProject.id
 
             return (
-              <div className='flex flex-col items-center justify-center'>
+              <div
+                className='flex flex-col items-center justify-center'
+                key={singleProject.id}
+              >
                 <ProjectSingle
                   project={singleProject}
                   key={singleProject.id}
