@@ -19,6 +19,7 @@ export function Testimonial({ data }: TestimonialProps) {
           controls
           muted
           playsInline
+          autoPlay
           loop
         />
       )}

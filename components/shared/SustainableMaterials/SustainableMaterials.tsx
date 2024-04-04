@@ -36,6 +36,7 @@ export function SustainableMaterials({ data }: SustainableMaterialsProps) {
               className='w-screen'
               controls
               playsInline
+              autoPlay
               loop
               muted
             />

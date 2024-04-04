@@ -21,6 +21,7 @@ export function SideBySideTestimonial({
           className='w-full lg:max-w-96'
           controls
           playsInline
+          autoPlay
           loop
           muted
         />

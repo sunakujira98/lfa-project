@@ -31,6 +31,7 @@ export function FullImage({ data }: FullImageProps) {
             className='w-screen'
             controls
             playsInline
+            autoPlay
             loop
             muted
           />
