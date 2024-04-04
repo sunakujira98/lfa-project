@@ -21,7 +21,7 @@ export function Service() {
   const { t } = useTranslation()
   const { lang } = useParams()
 
-  const [activeIndex, setActiveIndex] = useState<number>(1)
+  const [activeIndex, setActiveIndex] = useState<number>(29)
   const [activeService, setActiveService] = useState<string>('')
   const { data, isSuccess } = useGetAllServiceQuery()
 
