@@ -205,8 +205,8 @@ export function Header() {
             <Link
               className={
                 showBg
-                  ? 'outline-button-black uppercase text-[10px] !py-[6px]'
-                  : 'outline-button uppercase text-[10px] !py-[6px]'
+                  ? 'outline-button-black uppercase text-[10px] !py-[6px] '
+                  : 'outline-button uppercase text-[10px] !py-[6px] text-lfaWhite'
               }
               href='/contact'
             >

@@ -102,7 +102,9 @@ export function Service() {
                 {services.map((service) => {
                   return (
                     <div className='border-b-[1px] py-4' key={service.id}>
-                      <Disclosure defaultOpen={service.id === 1}>
+                      <Disclosure
+                        defaultOpen={service.id === 1 || service.id === 29}
+                      >
                         {({ open }) => (
                           <>
                             <div className='flex flex-row justify-between'>

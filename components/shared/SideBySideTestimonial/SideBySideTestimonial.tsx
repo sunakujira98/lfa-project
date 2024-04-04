@@ -20,6 +20,9 @@ export function SideBySideTestimonial({
           src={`${process.env.NEXT_PUBLIC_CMS_HOST}${testimonial.attributes.video?.data.attributes.url}`}
           className='w-full lg:max-w-96'
           controls
+          playsInline
+          loop
+          muted
         />
       </div>
       <div className='w-full lg:w-[68%] flex flex-col'>

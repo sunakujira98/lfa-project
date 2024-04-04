@@ -18,6 +18,8 @@ export function Testimonial({ data }: TestimonialProps) {
           className='w-screen bg-cover bg-center pb-4 lg:pb-10'
           controls
           muted
+          playsInline
+          loop
         />
       )}
       <div className='flex flex-col lg:flex-row justify-between lg:gap-6'>

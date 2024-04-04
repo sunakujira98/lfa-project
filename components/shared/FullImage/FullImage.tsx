@@ -30,6 +30,9 @@ export function FullImage({ data }: FullImageProps) {
             src={`${process.env.NEXT_PUBLIC_CMS_HOST}${data.image.data.attributes.url}`}
             className='w-screen'
             controls
+            playsInline
+            loop
+            muted
           />
         ) : (
           <img
