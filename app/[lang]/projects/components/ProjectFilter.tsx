@@ -116,7 +116,7 @@ export function ProjectFilter({
                   />
                 </Menu.Button>
               ) : (
-                <Menu.Button className='inline-flex w-full justify-between lg:justify-center lg:items-center gap-x-1.5 rounded-sm bg-transparent px-3 py-2 font-light hover:bg-greige hover:text-gray-50 text-2xs '>
+                <Menu.Button className='inline-flex w-full justify-between lg:justify-center lg:items-center gap-x-1.5 rounded-sm bg-transparent px-3 py-2 font-light hover:bg-greige hover:text-gray-50 text-2xs neue-wide'>
                   INDUSTRIES
                   <ChevronDownIcon
                     className='-mr-1 h-5 w-5 text-gray-400'
@@ -146,7 +146,7 @@ export function ProjectFilter({
                         }}
                         className={twMerge(
                           active && 'bg-greige text-gray-900',
-                          'text-left block px-4 py-2 text-3xs uppercase text-gray-50 w-full font-thin',
+                          'text-left block px-4 py-2 neue-wide uppercase text-gray-50 w-full font-thin',
                         )}
                       >
                         {t('featuredProject.filterAll')}
@@ -164,7 +164,7 @@ export function ProjectFilter({
                             }}
                             className={twMerge(
                               active && 'bg-greige text-gray-900',
-                              'text-left block px-4 py-2 text-3xs uppercase text-gray-50 w-full font-thin',
+                              'text-left block px-4 py-2 neue-wide uppercase text-gray-50 w-full font-thin',
                             )}
                           >
                             {industry.attributes.name}
@@ -189,7 +189,7 @@ export function ProjectFilter({
                   />
                 </Menu.Button>
               ) : (
-                <Menu.Button className='inline-flex w-full justify-between lg:justify-center lg:items-center gap-x-1.5 rounded-sm bg-transparent px-3 py-2 font-light hover:bg-greige hover:text-gray-50 text-2xs'>
+                <Menu.Button className='inline-flex w-full justify-between lg:justify-center lg:items-center gap-x-1.5 rounded-sm bg-transparent px-3 py-2 hover:bg-greige hover:text-gray-50 neue-wide'>
                   SERVICES
                   <ChevronDownIcon
                     className='-mr-1 h-5 w-5 text-gray-400'
@@ -219,7 +219,7 @@ export function ProjectFilter({
                         }}
                         className={twMerge(
                           active && 'bg-greige text-gray-900',
-                          'text-left block px-4 py-2 text-3xs uppercase text-gray-50 w-full font-thin',
+                          'text-left block px-4 py-2 neue-wide uppercase text-gray-50 w-full font-thin',
                         )}
                       >
                         {t('featuredProject.filterAll')}
@@ -237,7 +237,7 @@ export function ProjectFilter({
                             }}
                             className={twMerge(
                               active && 'bg-greige text-gray-900',
-                              'text-left block px-4 py-2 text-3xs uppercase text-gray-50 w-full font-thin',
+                              'text-left block px-4 py-2 neue-wide uppercase text-gray-50 w-full font-thin',
                             )}
                           >
                             {service.attributes.title}
@@ -261,7 +261,7 @@ export function ProjectFilter({
                   />
                 </Menu.Button>
               ) : (
-                <Menu.Button className='inline-flex w-full justify-between lg:justify-center lg:items-center gap-x-1.5 rounded-sm bg-transparent px-3 py-2 font-light hover:bg-greige hover:text-gray-50 text-2xs'>
+                <Menu.Button className='inline-flex w-full justify-between lg:justify-center lg:items-center gap-x-1.5 rounded-sm bg-transparent px-3 py-2 hover:bg-greige hover:text-gray-50 neue-wide'>
                   REGIONS
                   <ChevronDownIcon
                     className='-mr-1 h-5 w-5 text-gray-400'
@@ -291,7 +291,7 @@ export function ProjectFilter({
                         }}
                         className={twMerge(
                           active && 'bg-greige text-gray-900',
-                          'text-left block px-4 py-2 text-3xs uppercase text-gray-50 w-full font-thin',
+                          'text-left block px-4 py-2 neue-wide uppercase text-gray-50 w-full font-thin',
                         )}
                       >
                         {t('featuredProject.filterAll')}
@@ -309,7 +309,7 @@ export function ProjectFilter({
                             }}
                             className={twMerge(
                               active && 'bg-greige',
-                              'text-left block px-4 py-2 text-3xs uppercase text-gray-50 w-full font-thin',
+                              'text-left block px-4 py-2 neue-wide uppercase text-gray-50 w-full font-thin',
                             )}
                           >
                             {region.attributes.name}
@@ -426,7 +426,7 @@ export function ProjectFilter({
                                         }}
                                         className={twMerge(
                                           active && 'bg-greige text-gray-900',
-                                          'text-left block px-4 py-2 text-3xs uppercase text-gray-50 w-full font-thin',
+                                          'text-left block px-4 py-2 neue-wide uppercase text-gray-50 w-full font-thin',
                                         )}
                                       >
                                         {industry.attributes.name}
@@ -488,7 +488,7 @@ export function ProjectFilter({
                                         }}
                                         className={twMerge(
                                           active && 'bg-greige text-gray-900',
-                                          'text-left block px-4 py-2 text-3xs uppercase text-gray-50 w-full font-thin',
+                                          'text-left block px-4 py-2 neue-wide uppercase text-gray-50 w-full font-thin',
                                         )}
                                       >
                                         {service.attributes.title}
@@ -549,7 +549,7 @@ export function ProjectFilter({
                                         }}
                                         className={twMerge(
                                           active && 'bg-greige',
-                                          'text-left block px-4 py-2 text-3xs uppercase text-gray-50 w-full font-thin',
+                                          'text-left block px-4 py-2 neue-wide uppercase text-gray-50 w-full font-thin',
                                         )}
                                       >
                                         {region.attributes.name}
