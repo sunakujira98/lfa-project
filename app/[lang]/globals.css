@@ -84,7 +84,7 @@ p {
 }
 
 .animate-marquee {
-  animation: marquee 23s linear infinite;
+  animation: marquee 100s linear infinite;
 }
 
 .outline-button {
@@ -243,4 +243,16 @@ p {
     line-height: 32px;
     letter-spacing: 0.24px;
   }
+}
+
+.img-hover-zoom {
+  overflow: hidden;
+}
+
+.img-hover-zoom img {
+  transition: transform 0.75s ease;
+}
+
+.img-hover-zoom:hover img {
+  transform: scale(1.05);
 }

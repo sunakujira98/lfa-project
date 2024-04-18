@@ -87,7 +87,7 @@ export function Header() {
                   className='inline-block no-underline hover:text-black py-2 text-3xl'
                   href='/'
                 >
-                  LFA
+                  LOGO
                 </a>
               </li>
             </ul>

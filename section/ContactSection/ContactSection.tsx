@@ -199,7 +199,7 @@ export function ContactSection() {
                     />
                   </div>
                   <button
-                    className='text-3xs outline-button-black w-full lg:w-24 py-0 lg:text-2xs uppercase font-thin'
+                    className='outline-button-black uppercase text-3xs w-full lg:w-24'
                     type='submit'
                     disabled={sendMailMutation.isPending}
                   >

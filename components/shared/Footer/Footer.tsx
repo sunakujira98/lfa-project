@@ -1,6 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
 'use client'
 
+import dayjs from 'dayjs'
+
 import { useTranslation } from '@/resources/i18n/i18n.hooks'
 
 import { Link } from '../Link'
@@ -103,7 +105,13 @@ export function Footer() {
                     <div className='flex flex-col text-lfaWhite neue-tight'>
                       <span>283 River Valley Road</span>
                       <span>Singapore 238324</span>
-                      <span>{t('footer.viewOnGoogleMaps')}</span>
+                      <a
+                        href='https://www.google.com/maps/dir//LemonFridge+Studio+1+Commonwealth+Ln+%2303-02+Singapore+149544/@1.3061866,103.7953941,16z/data=!4m8!4m7!1m0!1m5!1m1!1s0x31da1bb0df802e67:0xd82d4185f431e53e!2m2!1d103.796762!2d1.3044812?entry=ttu'
+                        target='_blank'
+                        className='cursor-pointer'
+                      >
+                        <span>{t('footer.viewOnGoogleMaps')}</span>
+                      </a>
                     </div>
                   </div>
                   <div className='flex flex-col ml-[89px] gap-2'>
@@ -121,9 +129,11 @@ export function Footer() {
                       {t('footer.contactUs')}
                     </span>
                     <div className='flex flex-col'>
-                      <span className='text-lfaWhite neue-tight'>
-                        enquiry@lfa.com.sg
-                      </span>
+                      <a href='mailto:enquiry@lfa.com.sg'>
+                        <span className='text-lfaWhite neue-tight'>
+                          enquiry@lfa.com.sg
+                        </span>
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -134,9 +144,7 @@ export function Footer() {
         <nav className='hidden lg:block p-0'>
           <ul className='m-0 p-0 flex flex-row items-center list-none gap-28 neue-wide text-lfaWhite'>
             <li className='relative whitespace-nowrap'>
-              <a className='' href='#hero'>
-                &copy; {t('footer.copyright')}
-              </a>
+              &copy; {dayjs().year()} LFA. All rights reserved.
             </li>
             <li className='relative whitespace-nowrap'>
               <Link className='nav-link scrollto' href='/privacy-policy'>
@@ -182,16 +190,23 @@ export function Footer() {
               <span className='text-charcoal-600 neue-wide-light'>
                 283 River Valley Road Singapore 238324
               </span>
-              <span className='text-lfaWhite underline neue-wide-light !normal-case'>
-                {t('footer.viewOnGoogleMaps')}
-              </span>
+              <a
+                href='https://www.google.com/maps/dir//LemonFridge+Studio+1+Commonwealth+Ln+%2303-02+Singapore+149544/@1.3061866,103.7953941,16z/data=!4m8!4m7!1m0!1m5!1m1!1s0x31da1bb0df802e67:0xd82d4185f431e53e!2m2!1d103.796762!2d1.3044812?entry=ttu'
+                target='_blank'
+              >
+                <span className='text-lfaWhite underline neue-wide-light !normal-case cursor-pointer'>
+                  {t('footer.viewOnGoogleMaps')}
+                </span>
+              </a>
             </div>
           </div>
           <div className='flex flex-col gap-4'>
             <h6 className='text-lfaWhite neue-wide'>{t('footer.contactUs')}</h6>
-            <span className='text-lfaWhite underline neue-wide-light !normal-case'>
-              enquiry@lfa.com.sg
-            </span>
+            <a href='mailto:enquiry@lfa.com.sg'>
+              <span className='text-lfaWhite underline neue-wide-light !normal-case'>
+                enquiry@lfa.com.sg
+              </span>
+            </a>
           </div>
           <div className='flex flex-col gap-4'>
             <h6 className='text-lfaWhite neue-wide'>

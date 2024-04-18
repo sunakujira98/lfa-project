@@ -16,6 +16,7 @@ import { CustomDot } from '@/components/shared/CustomDot'
 import ArrowLeftIcon from '@/components/shared/svg/icons/ArrowLeftIcon'
 import ArrowRightIcon from '@/components/shared/svg/icons/ArrowRightIcon'
 import { useState } from 'react'
+import { Link } from '@/components/shared/Link'
 
 export function Recognition() {
   const [currentIndex, setCurrentIndex] = useState(0)
@@ -105,21 +106,30 @@ export function Recognition() {
                     className='flex flex-col lg:items-center justify-center gap-6'
                     key={recognition.id}
                   >
-                    <img
-                      src={`${process.env.NEXT_PUBLIC_CMS_HOST}${recognition.attributes.image.data.attributes.url}`}
-                      className='w-full h-fit lg:w-[200px] lg:h-[120px]'
-                      alt={recognition.attributes.title}
-                    />
+                    <a
+                      href={`${recognition.attributes.externalLink}`}
+                      target='_blank'
+                    >
+                      <img
+                        src={`${process.env.NEXT_PUBLIC_CMS_HOST}${recognition.attributes.image.data.attributes.url}`}
+                        className='w-full h-fit lg:w-[200px] lg:h-[120px] cursor-pointer'
+                        alt={recognition.attributes.title}
+                      />
+                    </a>
                     <div className='flex flex-col gap-2'>
-                      <div className='flex flex-row neue-wide'>
-                        <h6>{recognition.attributes.title} &nbsp;</h6>
-
-                        <h6>
-                          {dayjs(recognition.attributes.createdAt).format(
-                            'DD MMM YYYY',
-                          )}
-                        </h6>
-                      </div>
+                      <a
+                        href={`${recognition.attributes.externalLink}`}
+                        target='_blank'
+                      >
+                        <div className='flex flex-row neue-wide'>
+                          <h6>{recognition.attributes.title} &nbsp;</h6>
+                          <h6>
+                            {dayjs(recognition.attributes.createdAt).format(
+                              'DD MMM YYYY',
+                            )}
+                          </h6>
+                        </div>
+                      </a>
                       <h6 className='text-xs font-light leading-6 tracking-[0.16px]'>
                         {recognition.attributes.description}
                       </h6>

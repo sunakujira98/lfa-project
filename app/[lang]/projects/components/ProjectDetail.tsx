@@ -123,10 +123,10 @@ export function ProjectDetail({ projectId }: ProjectDetailProps) {
           </div>
         </div>
         <StrapiComponentResolver detail={data.data.attributes.detail} />
-        <div className='max-w-screen-xl mx-auto px-4 lg:px-0'>
+        <div className='max-w-screen-xl mx-auto px-4 lg:px-0 mt-10'>
           <div className='hidden flex-col lg:flex'>
             <div className='border-t-[1px]'></div>
-            <div className='flex justify-between py-5'>
+            <div className='flex justify-between py-6'>
               <Link href='/projects'>
                 <h6 className='neue-wide'>
                   {t('featuredProject.allProjects')}

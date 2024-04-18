@@ -60,6 +60,7 @@ export function StrapiComponentResolver({
               <Testimonial
                 data={{ attributes: componentDetail } as any}
                 key={`testimonial-block-${componentDetail.id}`}
+                shouldShowBorder
               />
             )
           default:

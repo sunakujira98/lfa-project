@@ -7,9 +7,10 @@ import { QuoteIcon } from '../svg/icons'
 
 type TestimonialProps = {
   data: TTestimonial
+  shouldShowBorder?: boolean
 }
 
-export function Testimonial({ data }: TestimonialProps) {
+export function Testimonial({ data, shouldShowBorder }: TestimonialProps) {
   return (
     <div className='max-w-screen-xl mx-auto lg:pt-10'>
       {data.attributes.video?.data?.attributes?.url && (
@@ -97,6 +98,7 @@ export function Testimonial({ data }: TestimonialProps) {
         </div>
         <div className='lg:hidden pt-10 border-b-[1px]'></div>
       </div>
+      {shouldShowBorder && <div className='border-t-[1px] mt-10 mb-10' />}
     </div>
   )
 }

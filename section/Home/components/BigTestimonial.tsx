@@ -1,5 +1,6 @@
 'use client'
 
+import { Link } from '@/components/shared/Link'
 import { Testimonial } from '@/components/shared/Testimonial'
 import { StrapiResponse } from '@/domain/types/common.types'
 import { Testimonial as TTestimonial } from '@/domain/types/testimonial.types'
@@ -40,7 +41,9 @@ export function BigTestimonial() {
           )
         })}
       <div className='flex items-center justify-center lg:py-10'>
-        <h6 className='neue-wide'>{t('testimonials.allTestimonials')}</h6>
+        <Link href='/testimonials'>
+          <h6 className='neue-wide'>{t('testimonials.allTestimonials')}</h6>
+        </Link>
       </div>
     </div>
   )
