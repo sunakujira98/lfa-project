@@ -6,7 +6,9 @@ import { MapContainer, TileLayer, Marker } from 'react-leaflet'
 import 'leaflet/dist/leaflet.css'
 import styles from './map.module.css'
 
-const DEFAULT_CENTER: LatLngExpression = [1.304472255009184, 103.79674786648242]
+const DEFAULT_CENTER: LatLngExpression = [
+  1.2957330959121642, 103.83992040671865,
+]
 
 const customIcon = L.icon({
   iconUrl: '/logo.jpg',
@@ -17,7 +19,7 @@ const customIcon = L.icon({
 
 const openGoogle = () => {
   window.open(
-    'https://www.google.com/maps/place/LemonFridge+Studio/@1.3044812,103.796762,15z/data=!4m2!3m1!1s0x0:0xd82d4185f431e53e?sa=X&ved=1t:2428&ictx=111',
+    'https://www.google.com/maps/place/LFA+-+Commercial+Interior+Design+Studio/@1.2957499,103.8402423,18z/data=!4m6!3m5!1s0x31da19ff09f0bc75:0x596d09a3bdbf523c!8m2!3d1.2957579!4d103.8399365!16s%2Fg%2F11l6y9m_j8?entry=ttu',
     '_blank',
   )
 }

@@ -106,7 +106,7 @@ export function Footer() {
                       <span>283 River Valley Road</span>
                       <span>Singapore 238324</span>
                       <a
-                        href='https://www.google.com/maps/dir//LemonFridge+Studio+1+Commonwealth+Ln+%2303-02+Singapore+149544/@1.3061866,103.7953941,16z/data=!4m8!4m7!1m0!1m5!1m1!1s0x31da1bb0df802e67:0xd82d4185f431e53e!2m2!1d103.796762!2d1.3044812?entry=ttu'
+                        href='https://www.google.com/maps/place/LFA+-+Commercial+Interior+Design+Studio/@1.2957499,103.8402423,18z/data=!4m6!3m5!1s0x31da19ff09f0bc75:0x596d09a3bdbf523c!8m2!3d1.2957579!4d103.8399365!16s%2Fg%2F11l6y9m_j8?entry=ttu'
                         target='_blank'
                         className='cursor-pointer'
                       >
@@ -191,7 +191,7 @@ export function Footer() {
                 283 River Valley Road Singapore 238324
               </span>
               <a
-                href='https://www.google.com/maps/dir//LemonFridge+Studio+1+Commonwealth+Ln+%2303-02+Singapore+149544/@1.3061866,103.7953941,16z/data=!4m8!4m7!1m0!1m5!1m1!1s0x31da1bb0df802e67:0xd82d4185f431e53e!2m2!1d103.796762!2d1.3044812?entry=ttu'
+                href='https://www.google.com/maps/place/LFA+-+Commercial+Interior+Design+Studio/@1.2957499,103.8402423,18z/data=!4m6!3m5!1s0x31da19ff09f0bc75:0x596d09a3bdbf523c!8m2!3d1.2957579!4d103.8399365!16s%2Fg%2F11l6y9m_j8?entry=ttu'
                 target='_blank'
               >
                 <span className='text-lfaWhite underline neue-wide-light !normal-case cursor-pointer'>
