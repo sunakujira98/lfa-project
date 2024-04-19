@@ -5,6 +5,10 @@ import parse from 'html-react-parser'
 import { Controller, SubmitHandler, useForm } from 'react-hook-form'
 import * as yup from 'yup'
 
+import 'leaflet/dist/leaflet.css'
+import 'leaflet-defaulticon-compatibility'
+import 'leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css'
+
 import { SectionHeader } from '@/components/shared/SectionHeader'
 import { ControlledInput } from '@/components/shared/Forms/ControlledInput'
 import { ControlledCheckbox } from '@/components/shared/Forms/ControlledCheckbox'
@@ -15,6 +19,7 @@ import { useTranslation } from '@/resources/i18n/i18n.hooks'
 import { useSendMailMutation } from '@/hooks/query/useContactQuery'
 import { useEffect } from 'react'
 import { SelectOption } from '@/components/shared/Forms/SelectOption'
+import { MapComponent } from '@/components/shared/Map'
 
 type FormValues = yup.InferType<ReturnType<typeof getContactSchema>>
 
@@ -227,13 +232,9 @@ export function ContactSection() {
           <span className='text-xs font-thin pb-10'>
             {t('contact.footer.subtitle')}
           </span>
-          <iframe
-            src='https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12352.325803834814!2d103.79680076265387!3d1.304553861141499!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da1bb0df802e67%3A0xd82d4185f431e53e!2sLemonFridge%20Studio!5e0!3m2!1sen!2sid!4v1709571885757!5m2!1sen!2sid'
-            className='w-full h-[300px] lg:h-[500px] filter grayscale-[100%]'
-            style={{ border: 0 }}
-            loading='lazy'
-            referrerPolicy='no-referrer-when-downgrade'
-          ></iframe>
+          <>
+            <MapComponent />
+          </>
         </div>
       </div>
     </>
