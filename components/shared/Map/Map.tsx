@@ -30,7 +30,7 @@ const Map = () => {
       zoom={18}
       scrollWheelZoom={true}
     >
-      <TileLayer url='https://tiles.stadiamaps.com/tiles/stamen_toner/{z}/{x}/{y}.png' />
+      <TileLayer url='https://tiles.stadiamaps.com/tiles/stamen_toner/{z}/{x}/{y}.png?api_key=ef8499a0-5508-401e-8f55-38d964702ac4' />
       <a href='google.com'>
         <Marker
           position={DEFAULT_CENTER}
