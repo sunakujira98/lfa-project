@@ -1,12 +1,12 @@
 'use client'
 
-import L from 'leaflet'
+import L, { LatLngExpression } from 'leaflet'
 import { MapContainer, TileLayer, Marker } from 'react-leaflet'
 
 import 'leaflet/dist/leaflet.css'
 import styles from './map.module.css'
 
-const DEFAULT_CENTER = [1.304472255009184, 103.79674786648242]
+const DEFAULT_CENTER: LatLngExpression = [1.304472255009184, 103.79674786648242]
 
 const customIcon = L.icon({
   iconUrl: '/logo.jpg',
