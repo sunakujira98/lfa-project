@@ -44,6 +44,13 @@ export function SideBySideTestimonial({
                 alt={testimonial.attributes.fullName}
               />
             )}
+            {testimonial.attributes.image?.data?.attributes?.url && (
+              <img
+                src={`${process.env.NEXT_PUBLIC_CMS_HOST}${testimonial.attributes.image.data.attributes.url}`}
+                className='h-10 lg:hidden'
+                alt={testimonial.attributes.fullName}
+              />
+            )}
             <h5 className='neue-normal lg:!font-normal'>
               {testimonial.attributes.fullName}
             </h5>
@@ -51,9 +58,14 @@ export function SideBySideTestimonial({
               <h5 className='neue-normal lg:!font-normal'>
                 {testimonial.attributes.title},
               </h5>
-              <h5 className='neue-normal lg:!font-normal underline'>
-                {testimonial.attributes.company}
-              </h5>
+              <a
+                href={testimonial.attributes.projectLink}
+                className='cursor-pointer'
+              >
+                <h5 className='neue-normal lg:!font-normal underline'>
+                  {testimonial.attributes.company}
+                </h5>
+              </a>
             </div>
           </div>
         </div>

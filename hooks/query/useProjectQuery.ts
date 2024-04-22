@@ -3,7 +3,10 @@ import { ProjectApi } from '@/services/project.api'
 import { useInfiniteQuery, useQuery } from '@tanstack/react-query'
 import { EQueryKey } from './constants/react-query.constant'
 
-export const useGetAllProjectQuery = (data: TProjectFilter) => {
+export const useGetAllProjectQuery = (
+  data: TProjectFilter,
+  lang: string | string[],
+) => {
   const {
     industryId,
     serviceId,
@@ -27,13 +30,17 @@ export const useGetAllProjectQuery = (data: TProjectFilter) => {
         start,
         sort,
       },
+      lang,
     ],
     queryFn: async ({ pageParam }) => {
-      const response = await ProjectApi.getAll({
-        ...data,
-        start: pageParam,
-        limit: 6,
-      })
+      const response = await ProjectApi.getAll(
+        {
+          ...data,
+          start: pageParam,
+          limit: 6,
+        },
+        lang,
+      )
 
       return response
     },
@@ -56,7 +63,10 @@ export const useGetAllProjectQuery = (data: TProjectFilter) => {
   return query
 }
 
-export const useGetAllProjectQueryWithoutInfinite = (data: TProjectFilter) => {
+export const useGetAllProjectQueryWithoutInfinite = (
+  data: TProjectFilter,
+  lang: string | string[],
+) => {
   const {
     industryId,
     serviceId,
@@ -78,11 +88,15 @@ export const useGetAllProjectQueryWithoutInfinite = (data: TProjectFilter) => {
         limit,
         start,
       },
+      lang,
     ],
     queryFn: async () => {
-      const response = await ProjectApi.getAll({
-        ...data,
-      })
+      const response = await ProjectApi.getAll(
+        {
+          ...data,
+        },
+        lang,
+      )
 
       return response
     },
@@ -91,11 +105,24 @@ export const useGetAllProjectQueryWithoutInfinite = (data: TProjectFilter) => {
   return query
 }
 
-export const useGetProjectByIdQuery = (id: string) => {
+export const useGetProjectByIdQuery = (id: string, lang: string | string[]) => {
   const query = useQuery({
-    queryKey: [EQueryKey.PROJECT, id],
+    queryKey: [EQueryKey.PROJECT, { id, lang }],
     queryFn: async () => {
-      const response = await ProjectApi.getById(id)
+      const response = await ProjectApi.getById(id, lang)
+
+      return response
+    },
+  })
+
+  return query
+}
+
+export const useGetAllProjectQueryMinimal = (lang: string | string[]) => {
+  const query = useQuery({
+    queryKey: [EQueryKey.PROJECT, lang],
+    queryFn: async () => {
+      const response = await ProjectApi.getAllMinimal(lang)
 
       return response
     },

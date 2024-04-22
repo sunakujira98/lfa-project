@@ -15,7 +15,7 @@ import { useParams } from 'next/navigation'
 export function FeaturedProject() {
   const { lang } = useParams()
   const { t } = useTranslation()
-  const { data, isSuccess } = useGetAllProjectQueryWithoutInfinite({})
+  const { data, isSuccess } = useGetAllProjectQueryWithoutInfinite({}, lang)
 
   const localizedData = findTranslatedData(
     lang as string,

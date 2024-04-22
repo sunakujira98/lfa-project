@@ -30,6 +30,7 @@ export type TestimonialAttribute = {
       attributes: TestimonialAttribute
     }[]
   }
+  projectLink?: string
   createdAt: string
   updatedAt: string
   publishedAt: string

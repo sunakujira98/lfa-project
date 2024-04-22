@@ -46,16 +46,19 @@ export function ProjectsWrapper() {
   )
 
   const { data, isLoading, fetchNextPage, error, isFetchingNextPage } =
-    useGetAllProjectQuery({
-      industryId: industryQuery,
-      serviceId: serviceQuery,
-      regionId: regionQuery,
-      hasVideo,
-      isAwardWinning,
-      sort: {
-        0: { createdAt: 'desc' },
+    useGetAllProjectQuery(
+      {
+        industryId: industryQuery,
+        serviceId: serviceQuery,
+        regionId: regionQuery,
+        hasVideo,
+        isAwardWinning,
+        sort: {
+          0: { createdAt: 'desc' },
+        },
       },
-    })
+      lang,
+    )
 
   useEffect(() => {
     if (inView && !isLoading && !error) {

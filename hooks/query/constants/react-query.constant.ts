@@ -1,5 +1,6 @@
 export enum EQueryKey {
   'PROJECT' = 'project',
+  'PROJECT_MINIMAL' = 'projectMinimal',
   'CLIENT' = 'client',
   'AWARD' = 'award',
   'ARTICLE' = 'article',

@@ -1,5 +1,4 @@
 import {
-  SortParams,
   StrapiResponse,
   StrapiSingleResponse,
 } from '@/domain/types/common.types'
@@ -24,7 +23,7 @@ type TProjectPagination = {
 }
 
 export const ProjectApi = {
-  getAll: async function (data: TProjectFilter) {
+  getAll: async function (data: TProjectFilter, lang?: string | string[]) {
     const {
       industryId,
       serviceId,
@@ -73,17 +72,42 @@ export const ProjectApi = {
       params.sort = { ...params.sort, ...sort }
     }
 
+    const appendLang = lang === 'zh-CN' ? '&locale=zh-CN' : '&locale=en'
+
     const result = await apiInstance.get<StrapiResponse<Project>>(
-      `${BASE_URL}?populate=*`,
+      `${BASE_URL}?populate=*${appendLang}`,
       { params },
     )
 
     return result.data
   },
 
-  getById: async function (id: string): Promise<StrapiSingleResponse<Project>> {
-    const result = await apiInstance.get<StrapiSingleResponse<Project>>(
-      `${BASE_URL}/${id}?populate[detail][populate]=*&populate[industry][populate]=*&populate[service][populate]=*&populate[thumbnail]=*&populate[image]=*&populate[awards][populate]=*`,
+  getById: async function (
+    id: string,
+    lang: string | string[],
+  ): Promise<StrapiSingleResponse<Project>> {
+    let result = undefined
+
+    result = await apiInstance.get<StrapiSingleResponse<Project>>(
+      `${BASE_URL}/${id}?populate[detail][populate]=*&populate[industry][populate]=*&populate[service][populate]=*&populate[thumbnail]=*&populate[image]=*&populate[awards][populate]=*&populate[localizations]=*`,
+    )
+
+    if (lang === 'zh-CN') {
+      result = await apiInstance.get<StrapiSingleResponse<Project>>(
+        `${BASE_URL}/${result.data.data.attributes.localizations.data[0].id}?populate[detail][populate]=*&populate[industry][populate]=*&populate[service][populate]=*&populate[thumbnail]=*&populate[image]=*&populate[awards][populate]=*&populate[localizations]=*`,
+      )
+    }
+
+    return result.data
+  },
+
+  getAllMinimal: async function (
+    lang: string | string[],
+  ): Promise<StrapiResponse<Project>> {
+    const appendLang = lang === 'zh-CN' ? '?locale=zh-CN' : '?locale=en'
+
+    const result = await apiInstance.get<StrapiResponse<Project>>(
+      `${BASE_URL}${appendLang}`,
     )
 
     return result.data

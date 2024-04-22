@@ -4,11 +4,16 @@
 
 import dayjs from 'dayjs'
 import { useParams } from 'next/navigation'
+import { useEffect, useState } from 'react'
 
 import { Link } from '@/components/shared/Link'
 import { StrapiComponentResolver } from '@/components/shared/StrapiComponentResolver'
 import { ArrowRightUpIcon } from '@/components/shared/svg/icons'
-import { useGetProjectByIdQuery } from '@/hooks/query/useProjectQuery'
+import { Project } from '@/domain/types/project.types'
+import {
+  useGetAllProjectQueryMinimal,
+  useGetProjectByIdQuery,
+} from '@/hooks/query/useProjectQuery'
 import { useTranslation } from '@/resources/i18n/i18n.hooks'
 
 type ProjectDetailProps = {
@@ -18,17 +23,32 @@ type ProjectDetailProps = {
 export function ProjectDetail({ projectId }: ProjectDetailProps) {
   const { lang } = useParams()
   const { t } = useTranslation()
-  const { data, isSuccess } = useGetProjectByIdQuery(projectId)
-  const { data: nextData } = useGetProjectByIdQuery(
-    (Number(projectId) + 1).toString(),
-  )
+  const [nextData, setNextData] = useState<Project | undefined>(undefined)
+  const { data, isSuccess } = useGetProjectByIdQuery(projectId, lang)
+  const { data: allProjects, isSuccess: isSuccessAllProjects } =
+    useGetAllProjectQueryMinimal(lang)
+
+  useEffect(() => {
+    if (isSuccessAllProjects) {
+      const nextDataIndex = allProjects?.data.findIndex((project) => {
+        return project.id === parseInt(projectId)
+      })
+
+      const fetchedNextData =
+        nextDataIndex !== undefined
+          ? allProjects?.data[nextDataIndex + 1]
+          : undefined
+
+      setNextData(fetchedNextData)
+    }
+  }, [allProjects, isSuccessAllProjects, projectId])
+
   const params = new URLSearchParams()
   const industryId =
-    nextData?.data?.attributes.locale === lang
-      ? nextData?.data?.attributes.industry?.data?.id
+    data?.data?.attributes.locale === lang
+      ? data?.data?.attributes.industry?.data?.id
       : undefined
-  const industryName =
-    nextData?.data?.attributes.industry?.data?.attributes.name
+  const industryName = data?.data?.attributes.industry?.data?.attributes.name
 
   if (industryId) {
     params.append('industry', industryId.toString())
@@ -37,7 +57,8 @@ export function ProjectDetail({ projectId }: ProjectDetailProps) {
   const background = `${process.env.NEXT_PUBLIC_CMS_HOST}${data?.data?.attributes?.thumbnail?.data?.attributes?.url}`
 
   return (
-    isSuccess && (
+    isSuccess &&
+    isSuccessAllProjects && (
       <>
         <div
           className='h-screen flex pt-6 lg:pt-0 lg:items-center bg-cover bg-center absolute inset-0'
@@ -137,11 +158,11 @@ export function ProjectDetail({ projectId }: ProjectDetailProps) {
                   {industryName}&nbsp;{t('header.projects')}
                 </h6>
               </Link>
-              {nextData && industryId && (
-                <Link href={`/projects/${Number(projectId) + 1}`}>
+              {nextData && (
+                <Link href={`/projects/${nextData.id}`}>
                   <h6 className='neue-wide'>
                     {t('news.nextPage', {
-                      title: nextData.data.attributes.title,
+                      title: nextData.attributes.title,
                     })}
                   </h6>
                 </Link>
@@ -170,12 +191,12 @@ export function ProjectDetail({ projectId }: ProjectDetailProps) {
                 </div>
               </div>
             </Link>
-            {nextData && industryId && (
-              <Link href={`/projects/${Number(projectId) + 1}`}>
+            {nextData && (
+              <Link href={`/projects/${nextData.id}`}>
                 <div className='flex justify-between items-center py-4 border-t-[1px]'>
                   <h6 className='neue-wide uppercase'>
                     {t('news.nextPage', {
-                      title: nextData.data.attributes.title,
+                      title: nextData.attributes.title,
                     })}
                   </h6>
                   <ArrowRightUpIcon />
