@@ -4,11 +4,14 @@ import { ArticleApi } from '@/services/articles.api'
 import { useInfiniteQuery, useQuery } from '@tanstack/react-query'
 import { EQueryKey } from './constants/react-query.constant'
 
-export const useGetAllArticleQuery = (params?: TQueryParams) => {
+export const useGetAllArticleQuery = (
+  params?: TQueryParams,
+  lang?: string | string[],
+) => {
   const query = useQuery({
     queryKey: [EQueryKey.ARTICLE],
     queryFn: async () => {
-      const response = await ArticleApi.getAll(params)
+      const response = await ArticleApi.getAll(params, lang)
 
       return response
     },
@@ -17,7 +20,10 @@ export const useGetAllArticleQuery = (params?: TQueryParams) => {
   return query
 }
 
-export const useGetInfiniteArticleQuery = (data: TArticleFilter) => {
+export const useGetInfiniteArticleQuery = (
+  data: TArticleFilter,
+  lang: string | string[],
+) => {
   const { limit, start, sort } = data
   const query = useInfiniteQuery({
     queryKey: [
@@ -29,11 +35,14 @@ export const useGetInfiniteArticleQuery = (data: TArticleFilter) => {
       },
     ],
     queryFn: async ({ pageParam }) => {
-      const response = await ArticleApi.getWithFilter({
-        ...data,
-        start: pageParam,
-        limit,
-      })
+      const response = await ArticleApi.getWithFilter(
+        {
+          ...data,
+          start: pageParam,
+          limit,
+        },
+        lang,
+      )
 
       return response
     },
@@ -56,11 +65,24 @@ export const useGetInfiniteArticleQuery = (data: TArticleFilter) => {
   return query
 }
 
-export const useGetArticleByIdQuery = (id: string) => {
+export const useGetArticleByIdQuery = (id: string, lang: string | string[]) => {
   const query = useQuery({
-    queryKey: [EQueryKey.ARTICLE, id],
+    queryKey: [EQueryKey.ARTICLE, { id, lang }],
     queryFn: async () => {
-      const response = await ArticleApi.getById(id)
+      const response = await ArticleApi.getById(id, lang)
+
+      return response
+    },
+  })
+
+  return query
+}
+
+export const useGetAllArticleQueryMinimal = (lang: string | string[]) => {
+  const query = useQuery({
+    queryKey: [EQueryKey.ARTICLE_MINIMAL, lang],
+    queryFn: async () => {
+      const response = await ArticleApi.getAllMinimal(lang)
 
       return response
     },

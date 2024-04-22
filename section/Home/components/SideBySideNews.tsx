@@ -15,14 +15,17 @@ export function SideBySideNews() {
   const { t } = useTranslation()
   const { lang } = useParams()
 
-  const { isSuccess, data } = useGetAllArticleQuery({
-    pagination: {
-      limit: 3,
+  const { isSuccess, data } = useGetAllArticleQuery(
+    {
+      pagination: {
+        limit: 3,
+      },
+      sort: {
+        0: { createdAt: 'desc' },
+      },
     },
-    sort: {
-      0: { createdAt: 'desc' },
-    },
-  })
+    lang,
+  )
 
   const localizedData = findTranslatedData(
     lang as string,

@@ -54,7 +54,10 @@ export function SitemapSection() {
 
   const { data: projects, isSuccess: isSuccessProjects } =
     useGetAllProjectQueryWithoutInfinite({ limit: 6 }, lang)
-  const { data: news, isSuccess: isSuccessNews } = useGetAllArticleQuery()
+  const { data: news, isSuccess: isSuccessNews } = useGetAllArticleQuery(
+    {},
+    lang,
+  )
 
   const localizedProjects = findTranslatedData(
     lang as string,

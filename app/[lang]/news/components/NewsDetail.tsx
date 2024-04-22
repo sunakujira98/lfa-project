@@ -4,11 +4,16 @@
 
 import dayjs from 'dayjs'
 import { useParams } from 'next/navigation'
+import { useEffect, useState } from 'react'
 
 import { ContentRenderer } from '@/components/shared/ContentRenderer/ContentRenderer'
 import { Link } from '@/components/shared/Link'
 import { ArrowRightUpIcon } from '@/components/shared/svg/icons'
-import { useGetArticleByIdQuery } from '@/hooks/query/useGetArticleQuery'
+import { Article } from '@/domain/types/article.types'
+import {
+  useGetAllArticleQueryMinimal,
+  useGetArticleByIdQuery,
+} from '@/hooks/query/useGetArticleQuery'
 import { useTranslation } from '@/resources/i18n/i18n.hooks'
 
 type NewsDetailProps = {
@@ -18,13 +23,26 @@ type NewsDetailProps = {
 export function NewsDetail({ newsId }: NewsDetailProps) {
   const { lang } = useParams()
   const { t } = useTranslation()
-  const { data, isSuccess } = useGetArticleByIdQuery(newsId)
-  const { data: nextData } = useGetArticleByIdQuery(
-    (Number(newsId) + 1).toString(),
-  )
+  const [nextData, setNextData] = useState<undefined | Article>(undefined)
+  const { data, isSuccess } = useGetArticleByIdQuery(newsId, lang)
+  const { data: allNews, isSuccess: isSuccessAllNews } =
+    useGetAllArticleQueryMinimal(lang)
 
-  const nextNewsId =
-    nextData?.data?.attributes.locale === lang ? nextData?.data?.id : undefined
+  useEffect(() => {
+    if (isSuccessAllNews) {
+      const nextDataIndex = allNews?.data.findIndex((news) => {
+        return news.id === parseInt(newsId)
+      })
+
+      const fetchedNextData =
+        nextDataIndex !== undefined
+          ? allNews?.data[nextDataIndex + 1]
+          : undefined
+
+      setNextData(fetchedNextData)
+    }
+  }, [allNews, isSuccessAllNews, newsId])
+
   const background = `${process.env.NEXT_PUBLIC_CMS_HOST}${data?.data?.attributes?.thumbnail?.data?.attributes?.url}`
 
   return (
@@ -66,11 +84,11 @@ export function NewsDetail({ newsId }: NewsDetailProps) {
               <Link href='/news'>
                 <h6 className='neue-wide'>{t('news.allNewsFooter')}</h6>
               </Link>
-              {nextData && nextNewsId && (
-                <Link href={`/news/${Number(newsId) + 1}`}>
+              {nextData && (
+                <Link href={`/news/${nextData.id}`}>
                   <h6 className='neue-wide'>
                     {t('news.nextPage', {
-                      title: nextData.data.attributes.title,
+                      title: nextData.attributes.title,
                     })}
                   </h6>
                 </Link>
@@ -89,12 +107,12 @@ export function NewsDetail({ newsId }: NewsDetailProps) {
                 </div>
               </div>
             </Link>
-            {nextData && nextNewsId && (
+            {nextData && (
               <Link href={`/news/${Number(newsId) + 1}`}>
                 <div className='flex justify-between items-center py-4 border-t-[1px]'>
                   <h6 className='neue-wide uppercase'>
                     {t('news.nextPage', {
-                      title: nextData.data.attributes.title,
+                      title: nextData.attributes.title,
                     })}
                   </h6>
                   <ArrowRightUpIcon />

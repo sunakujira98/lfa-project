@@ -16,9 +16,12 @@ type TArticlePagination = {
 export const ArticleApi = {
   getAll: async function (
     params?: TQueryParams,
+    lang?: string | string[],
   ): Promise<StrapiResponse<Article>> {
+    const appendLang = lang === 'zh-CN' ? '&locale=zh-CN' : '&locale=en'
+
     const result = await apiInstance.get<StrapiResponse<Article>>(
-      `${BASE_URL}?populate=*`,
+      `${BASE_URL}?populate=*${appendLang}`,
       {
         params: {
           ...params,
@@ -31,6 +34,7 @@ export const ArticleApi = {
 
   getWithFilter: async function (
     data: TArticleFilter,
+    lang: string | string[],
   ): Promise<StrapiResponse<Article>> {
     const { limit, start, sort } = data
 
@@ -51,8 +55,10 @@ export const ArticleApi = {
       params.sort = { ...params.sort, ...sort }
     }
 
+    const appendLang = lang === 'zh-CN' ? '&locale=zh-CN' : '&locale=en'
+
     const result = await apiInstance.get<StrapiResponse<Article>>(
-      `${BASE_URL}?populate=*`,
+      `${BASE_URL}?populate=*${appendLang}`,
       {
         params,
       },
@@ -61,9 +67,32 @@ export const ArticleApi = {
     return result.data
   },
 
-  getById: async function (id: string): Promise<StrapiSingleResponse<Article>> {
-    const result = await apiInstance.get<StrapiSingleResponse<Article>>(
-      `${BASE_URL}/${id}?populate[detail][populate]=*populate=*&populate[thumbnail]=*`,
+  getById: async function (
+    id: string,
+    lang: string | string[],
+  ): Promise<StrapiSingleResponse<Article>> {
+    let result = undefined
+
+    result = await apiInstance.get<StrapiSingleResponse<Article>>(
+      `${BASE_URL}/${id}?populate[detail][populate]=*populate=*&populate[thumbnail]=*&populate[localizations]=*`,
+    )
+
+    if (lang === 'zh-CN') {
+      result = await apiInstance.get<StrapiSingleResponse<Article>>(
+        `${BASE_URL}/${result.data.data.attributes.localizations.data[0].id}?populate[detail][populate]=*populate=*&populate[thumbnail]=*`,
+      )
+    }
+
+    return result.data
+  },
+
+  getAllMinimal: async function (
+    lang: string | string[],
+  ): Promise<StrapiResponse<Article>> {
+    const appendLang = lang === 'zh-CN' ? '?locale=zh-CN' : '?locale=en'
+
+    const result = await apiInstance.get<StrapiResponse<Article>>(
+      `${BASE_URL}${appendLang}`,
     )
 
     return result.data

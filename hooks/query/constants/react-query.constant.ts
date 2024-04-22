@@ -4,6 +4,7 @@ export enum EQueryKey {
   'CLIENT' = 'client',
   'AWARD' = 'award',
   'ARTICLE' = 'article',
+  'ARTICLE_MINIMAL' = 'articleMinimal',
   'RECOGNITION' = 'recognition',
   'SERVICE' = 'service',
   'TESTIMONIAL' = 'testimonial',

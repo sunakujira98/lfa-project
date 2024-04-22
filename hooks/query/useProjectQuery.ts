@@ -120,7 +120,7 @@ export const useGetProjectByIdQuery = (id: string, lang: string | string[]) => {
 
 export const useGetAllProjectQueryMinimal = (lang: string | string[]) => {
   const query = useQuery({
-    queryKey: [EQueryKey.PROJECT, lang],
+    queryKey: [EQueryKey.PROJECT_MINIMAL, lang],
     queryFn: async () => {
       const response = await ProjectApi.getAllMinimal(lang)
 
