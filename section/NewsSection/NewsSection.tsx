@@ -25,9 +25,12 @@ export function NewsSection() {
     fetchNextPage,
     error,
     isFetchingNextPage,
-  } = useGetInfiniteArticleQuery({
-    limit: 6,
-  })
+  } = useGetInfiniteArticleQuery(
+    {
+      limit: 6,
+    },
+    lang,
+  )
 
   useEffect(() => {
     if (inView && !isLoading && !error) {
