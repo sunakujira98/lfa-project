@@ -256,3 +256,71 @@ p {
 .img-hover-zoom:hover img {
   transform: scale(1.05);
 }
+
+.animate-words {
+  display: block;
+  height: 100%;
+  animation: spin_words 6s infinite;
+}
+
+.words {
+  overflow: hidden;
+}
+
+@keyframes spin_words {
+  0%,
+  20% {
+    transform: translateY(6px);
+  }
+
+  33.33%,
+  53.33% {
+    transform: translateY(-80%);
+  }
+
+  66.66%,
+  86.66%,
+  100% {
+    transform: translateY(-160%);
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  @keyframes spin_words {
+    0%,
+    20% {
+      transform: translateY(-24px);
+    }
+
+    33.33%,
+    53.33% {
+      transform: translateY(-175%);
+    }
+
+    66.66%,
+    86.66%,
+    100% {
+      transform: translateY(-325%);
+    }
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  @keyframes spin_words {
+    0%,
+    20% {
+      transform: translateY(-24px);
+    }
+
+    33.33%,
+    53.33% {
+      transform: translateY(-175%);
+    }
+
+    66.66%,
+    86.66%,
+    100% {
+      transform: translateY(-325%);
+    }
+  }
+}

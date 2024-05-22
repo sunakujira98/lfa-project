@@ -4,10 +4,7 @@
 import { Link } from '@/components/shared/Link'
 import { StrapiResponse } from '@/domain/types/common.types'
 import { Project } from '@/domain/types/project.types'
-import {
-  useGetAllProjectQuery,
-  useGetAllProjectQueryWithoutInfinite,
-} from '@/hooks/query/useProjectQuery'
+import { useGetAllProjectQueryWithoutInfinite } from '@/hooks/query/useProjectQuery'
 import { useTranslation } from '@/resources/i18n/i18n.hooks'
 import { findTranslatedData } from '@/utils/FindTranslatedData/FindTranslatedData'
 import { useParams } from 'next/navigation'

@@ -10,8 +10,8 @@ import { OtherQueries } from '@/components/shared/OtherQueries'
 import { StrapiSingleComponentResolver } from '@/components/shared/StrapiComponentResolver/StrapiSingleComponentResolver'
 import MinusIcon from '@/components/shared/svg/icons/MinusIcon'
 import PlusIcon from '@/components/shared/svg/icons/PlusIcon'
-import { StrapiResponse } from '@/domain/types/common.types'
-import { TFAQ, TFAQAnswers } from '@/domain/types/faq.types'
+import { StrapiResponse, TCommonAnswers } from '@/domain/types/common.types'
+import { TFAQ } from '@/domain/types/faq.types'
 import { useGetAllFaqQuery } from '@/hooks/query/useFaqQuery'
 import { useTranslation } from '@/resources/i18n/i18n.hooks'
 import { findTranslatedData } from '@/utils/FindTranslatedData/FindTranslatedData'
@@ -20,9 +20,9 @@ export function FaqSection() {
   const { lang } = useParams()
   const { t } = useTranslation()
   const [activeIndex, setActiveIndex] = useState<number>(1)
-  const [activeAnswer, setActiveAnswer] = useState<TFAQAnswers[] | undefined>(
-    undefined,
-  )
+  const [activeAnswer, setActiveAnswer] = useState<
+    TCommonAnswers[] | undefined
+  >(undefined)
 
   const { data, isSuccess } = useGetAllFaqQuery()
 
@@ -47,7 +47,7 @@ export function FaqSection() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isSuccess])
 
-  const onClickActive = (index: number, answers: TFAQAnswers[]) => {
+  const onClickActive = (index: number, answers: TCommonAnswers[]) => {
     setActiveIndex(index)
     setActiveAnswer(answers)
   }

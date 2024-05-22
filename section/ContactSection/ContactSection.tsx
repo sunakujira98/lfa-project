@@ -28,7 +28,10 @@ const enquiryType = [
   { value: 'Design & Build', label: 'Design & Build' },
   { value: 'Design Consultancy', label: 'Design Consultancy' },
   { value: 'Build', label: 'Build' },
-  { value: 'Office Fit-Out', label: 'Office Fit-Out' },
+  {
+    value: 'Project & Procurement Management',
+    label: 'Project & Procurement Management',
+  },
 ]
 
 export function ContactSection() {

@@ -6,7 +6,6 @@ import { twMerge } from 'tailwind-merge'
 
 import { BigButton } from '@/components/shared/BigButton/BigButton'
 import { ContentRenderer } from '@/components/shared/ContentRenderer/ContentRenderer'
-import { OtherQueries } from '@/components/shared/OtherQueries'
 import { TContent } from '@/domain/types/article.types'
 import { StrapiResponse } from '@/domain/types/common.types'
 import { TTnc } from '@/domain/types/tnc.types'
@@ -102,6 +101,7 @@ export function TermsAndConditionsSection() {
                     <h4 className='neue-wider'>{title}</h4>
                   </div>
                   <div className='pt-4 lg:pt-0'>
+                    <p className='neue-normal pt-4 pb-8'>{title}</p>
                     <ContentRenderer data={description} />
                   </div>
                 </>
@@ -111,13 +111,14 @@ export function TermsAndConditionsSection() {
                     <h4 className='neue-wider'>{firstTitleToShow}</h4>
                   </div>
                   <div className='pt-4 lg:pt-0'>
+                    <p className='neue-normal pt-4 pb-8'>{firstTitleToShow}</p>
                     <ContentRenderer data={firstDescriptionToShow} />
                   </div>
                 </>
               )}
             </div>
           </div>
-          <OtherQueries subtitle={t('queries.tncSubtitle')} />
+          {/* <OtherQueries subtitle={t('queries.tncSubtitle')} /> */}
         </div>
       )}
     </div>

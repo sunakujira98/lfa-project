@@ -24,9 +24,19 @@ export function Hero() {
                 {t('hero.we')}
               </h1>
               <p>&nbsp;&nbsp;&nbsp;</p>
-              <h1 className='italic text-3xl lg:text-6xl font-keppler font-thin text-white'>
-                {t('hero.designBuild')}
-              </h1>
+              <div className='words overflow-hidden h-16 lg:h-24'>
+                <div className='animate-words'>
+                  <h1 className='italic text-3xl lg:text-6xl font-keppler font-thin text-white'>
+                    {t('hero.createConstruct')}
+                  </h1>
+                  <h1 className='italic text-3xl lg:text-6xl font-keppler font-thin text-white'>
+                    {t('hero.shapeForm')}
+                  </h1>
+                  <h1 className='italic text-3xl lg:text-6xl font-keppler font-thin text-white'>
+                    {t('hero.createConstruct')}
+                  </h1>
+                </div>
+              </div>
             </div>
           </span>
           <span className='inline-block lg:mb-[-30px]'>
@@ -37,10 +47,18 @@ export function Hero() {
             </div>
           </span>
           <span className='inline-block pb-10 lg:pb-0'>
-            <div className='flex items-center'>
-              <h1 className='italic text-3xl lg:text-6xl font-keppler font-thin text-white'>
-                {t('hero.inspireNurture')}
-              </h1>
+            <div className='words overflow-hidden h-16 lg:h-24 mt-5'>
+              <div className='animate-words'>
+                <h1 className='italic text-3xl lg:text-6xl font-keppler font-thin text-white'>
+                  {t('hero.fosterCultivative')}
+                </h1>
+                <h1 className='italic text-3xl lg:text-6xl font-keppler font-thin text-white'>
+                  {t('hero.connectTransform')}
+                </h1>
+                <h1 className='italic text-3xl lg:text-6xl font-keppler font-thin text-white'>
+                  {t('hero.fosterCultivative')}
+                </h1>
+              </div>
             </div>
           </span>
         </div>

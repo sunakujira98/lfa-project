@@ -122,7 +122,6 @@ export function ProjectsWrapper() {
         onChangeIsAwardWinning={onChangeIsAwardWinning}
         industryId={industryQuery}
         serviceId={serviceQuery}
-        regionId={regionQuery}
         hasVideo={hasVideo}
         isAwardWinning={isAwardWinning}
       />

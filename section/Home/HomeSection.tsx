@@ -5,7 +5,6 @@ import {
   Clients,
   FeaturedProject,
   Hero,
-  Recognition,
   Service,
   SideBySideNews,
 } from './components'
@@ -21,7 +20,7 @@ export default function HomeSection() {
       <BigTestimonial />
       <Awards />
       <SideBySideNews />
-      <Recognition />
+      {/* <Recognition /> */}
     </div>
   )
 }

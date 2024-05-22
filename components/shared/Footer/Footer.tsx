@@ -78,7 +78,7 @@ export function Footer() {
                     <span>bizSAFE Level 3</span>
                   </div>
                 </div>
-                <div className='flex flex-col gap-2'>
+                {/* <div className='flex flex-col gap-2'>
                   <span className='text-charcoal-600 neue-wide'>
                     {t('footer.qualityManagementSystem')}
                   </span>
@@ -87,7 +87,7 @@ export function Footer() {
                     <span>ISO 9001 2015</span>
                     <span>ISO 9001 2015</span>
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
@@ -216,7 +216,7 @@ export function Footer() {
               bizSAFE Level 3
             </span>
           </div>
-          <div className='flex flex-col gap-4'>
+          {/* <div className='flex flex-col gap-4'>
             <div>
               <h6 className='text-lfaWhite neue-wide'>
                 {t('footer.qualityManagementSystem')}
@@ -227,7 +227,7 @@ export function Footer() {
               <span className='neue-wide-light'>ISO 9001 2015</span>
               <span className='neue-wide-light'>ISO 9001 2015</span>
             </div>
-          </div>
+          </div> */}
           <div className='flex flex-col gap-4'>
             <div>
               <h6 className='uppercase text-lfaWhite'>

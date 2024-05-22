@@ -29,6 +29,19 @@ export type AvailableComponents =
   | 'text.paragraph'
   | 'testimonial.testimonial-block'
 
+export type TCommonAnswers = {
+  id: number
+  __component: AvailableComponents
+  title: string
+  content: {
+    type: string
+    children: {
+      type: string
+      text: string
+    }[]
+  }
+}
+
 export type StrapiSingleResponse<T> = {
   data: T
   meta: object

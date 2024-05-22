@@ -6,7 +6,6 @@ import { twMerge } from 'tailwind-merge'
 
 import { BigButton } from '@/components/shared/BigButton/BigButton'
 import { ContentRenderer } from '@/components/shared/ContentRenderer/ContentRenderer'
-import { OtherQueries } from '@/components/shared/OtherQueries'
 import { TContent } from '@/domain/types/article.types'
 import { StrapiResponse } from '@/domain/types/common.types'
 import { TPrivacyPolicy } from '@/domain/types/privacyPolicy.types'
@@ -56,7 +55,6 @@ export function PrivacyPolicySection() {
     setActiveDescription(content)
     setTitle(titleText)
   }
-
   return (
     <div className='pt-28 pb-10 lg:pb-0 lg:pt-28 px-4 lg:px-0'>
       <div className='pb-20'>
@@ -64,9 +62,9 @@ export function PrivacyPolicySection() {
       </div>
       {isSuccess && (
         <div className='flex flex-col lg:px-0'>
-          <div className='flex flex-col lg:flex-row gap-20 lg:gap-14 lg:px-0'>
+          <div className='flex flex-col lg:flex-row gap-20 lg:gap-14 '>
             <div className='w-full lg:w-1/3'>
-              {privacyPolicies.map((privacyPolicy, index) => {
+              {privacyPolicies.map((tnc, index) => {
                 const isLastIndex = index === data?.data.length - 1
 
                 return (
@@ -75,18 +73,18 @@ export function PrivacyPolicySection() {
                       isLastIndex
                         ? 'border-b-[1px] lg:border-none'
                         : 'border-b-[1px]',
-                      'py-[13px] lg:py-4',
+                      'py-4',
                     )}
-                    key={privacyPolicy.id}
+                    key={tnc.id}
                   >
                     <BigButton
-                      active={activeIndex === privacyPolicy.id}
-                      title={privacyPolicy.attributes.title}
+                      active={activeIndex === tnc.id}
+                      title={tnc.attributes.title}
                       onClick={() =>
                         onClickActive(
-                          privacyPolicy.id,
-                          privacyPolicy.attributes.description,
-                          privacyPolicy.attributes.title,
+                          tnc.id,
+                          tnc.attributes.description,
+                          tnc.attributes.title,
                         )
                       }
                     />
@@ -101,6 +99,7 @@ export function PrivacyPolicySection() {
                     <h4 className='neue-wider'>{title}</h4>
                   </div>
                   <div className='pt-4 lg:pt-0'>
+                    <p className='neue-normal pt-4 pb-8'>{title}</p>
                     <ContentRenderer data={description} />
                   </div>
                 </>
@@ -110,13 +109,14 @@ export function PrivacyPolicySection() {
                     <h4 className='neue-wider'>{firstTitleToShow}</h4>
                   </div>
                   <div className='pt-4 lg:pt-0'>
+                    <p className='neue-normal pt-4 pb-8'>{firstTitleToShow}</p>
                     <ContentRenderer data={firstDescriptionToShow} />
                   </div>
                 </>
               )}
             </div>
           </div>
-          <OtherQueries subtitle={t('queries.privacyPolicySubtitle')} />
+          {/* <OtherQueries subtitle={t('queries.tncSubtitle')} /> */}
         </div>
       )}
     </div>

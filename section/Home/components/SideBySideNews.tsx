@@ -38,6 +38,7 @@ export function SideBySideNews() {
       : data?.data
     : []
 
+  console.log('news', articles)
   return (
     isSuccess && (
       <div className='max-w-screen-xl mx-auto pt-10 px-4 lg:px-0'>
@@ -53,7 +54,7 @@ export function SideBySideNews() {
                 <div className='flex flex-col lg:flex-row gap-6' key={news.id}>
                   <a href={`${lang}/news/${newsId}`}>
                     <img
-                      src={`${process.env.NEXT_PUBLIC_CMS_HOST}${news.attributes.thumbnail?.data.attributes.url}`}
+                      src={`${process.env.NEXT_PUBLIC_CMS_HOST}${news.attributes.thumbnail?.data?.attributes?.url}`}
                       className='h-full w-full object-cover object-center lg:max-w-36 lg:max-h-36 lg:aspect-square'
                       alt={news.attributes.title}
                     />

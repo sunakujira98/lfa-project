@@ -125,24 +125,28 @@ export function ProjectDetail({ projectId }: ProjectDetailProps) {
             </div>
           </div>
         </div>
-        <div className='bg-charcoal-1000 mb-5 px-4 lg:px-0'>
-          <div className='max-w-screen-xl mx-auto py-10'>
-            <span className='text-lfaWhite neue-wide'>{t('awards.title')}</span>
-            <div className='flex justify-between whitespace-nowrap'>
-              {data?.data.attributes.awards.data.map((award) => {
-                return (
-                  <div className='py-4' key={award.id}>
-                    <img
-                      src={`${process.env.NEXT_PUBLIC_CMS_HOST}${award.attributes.image.data.attributes.url}`}
-                      className='max-w-20'
-                      alt={award.attributes.awardName}
-                    />
-                  </div>
-                )
-              })}
+        {data?.data.attributes.awards.data.length > 0 && (
+          <div className='bg-charcoal-1000 mb-5 px-4 lg:px-0'>
+            <div className='max-w-screen-xl mx-auto py-10'>
+              <span className='text-lfaWhite neue-wide'>
+                {t('awards.title')}
+              </span>
+              <div className='flex justify-between whitespace-nowrap'>
+                {data?.data.attributes.awards.data.map((award) => {
+                  return (
+                    <div className='py-4' key={award.id}>
+                      <img
+                        src={`${process.env.NEXT_PUBLIC_CMS_HOST}${award.attributes.image.data.attributes.url}`}
+                        className='max-w-20'
+                        alt={award.attributes.awardName}
+                      />
+                    </div>
+                  )
+                })}
+              </div>
             </div>
           </div>
-        </div>
+        )}
         <StrapiComponentResolver detail={data.data.attributes.detail} />
         <div className='max-w-screen-xl mx-auto px-4 lg:px-0 mt-10'>
           <div className='hidden flex-col lg:flex'>

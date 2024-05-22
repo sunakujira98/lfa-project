@@ -35,9 +35,11 @@ export function Testimonial({ data, shouldShowBorder }: TestimonialProps) {
               <h3 className='neue-normal-button'>
                 {data.attributes.title}, &nbsp;
               </h3>
-              <h3 className='neue-normal-button underline'>
-                {data.attributes.company}
-              </h3>
+              <a href={data.attributes.projectLink} className='cursor-pointer'>
+                <h3 className='neue-normal-button underline'>
+                  {data.attributes.company}
+                </h3>
+              </a>
             </div>
 
             {data.attributes.image?.data?.attributes?.url && (
@@ -82,9 +84,11 @@ export function Testimonial({ data, shouldShowBorder }: TestimonialProps) {
               <h3 className='neue-normal-button'>
                 {data.attributes.title}, &nbsp;
               </h3>
-              <h3 className='neue-normal-button underline'>
-                {data.attributes.company}
-              </h3>
+              <a href={data.attributes.projectLink} className='cursor-pointer'>
+                <h3 className='neue-normal-button underline'>
+                  {data.attributes.company}
+                </h3>
+              </a>
             </div>
           </div>
         </div>

@@ -18,13 +18,18 @@
     "we": "We",
     "designBuild": "Design & Build",
     "spacesTo": "Spaces To",
-    "inspireNurture": "Inspire & Nurture"
+    "inspireNurture": "Inspire & Nurture",
+    "createConstruct": "Create & Construct",
+    "shapeForm": "Shape & Form",
+    "fosterCultivative": "Foster & Cultivative",
+    "connectTransform": "Connect & Transform"
   },
   "featuredProject": {
     "title": "Featured Projects",
     "allProjects": "All Projects",
     "filterAll": "ALL",
-    "sustainableMaterials": "Sustainable Materials"
+    "sustainableMaterials": "Sustainable Materials",
+    "comingSoon": "Coming Soon"
   },
   "client": {
     "title": "CLIENTELE"

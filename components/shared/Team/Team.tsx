@@ -40,14 +40,14 @@ export function Team({ data, isActive, onClick }: TeamProps) {
                 {data.attributes.name}
               </h6>
               <div className='hidden lg:block'>
-                {hover && (
+                {hover && data.attributes.linkedin && (
                   <a href={data.attributes.linkedin} target='_blank'>
                     <LinkedinIcon />
                   </a>
                 )}
               </div>
             </div>
-            <h6 className='w-full lg:w-36 neue-3xs-normal !no-underline'>
+            <h6 className='w-full lg:w-36 neue-3xs-normal !no-underline h-7'>
               {data.attributes.position}
             </h6>
             <div className='hidden lg:block'>

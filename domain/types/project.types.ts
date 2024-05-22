@@ -33,6 +33,7 @@ export type ProjectAttribute = {
   isFeatured: boolean
   location: string
   completionDate: string // date
+  comingSoon: boolean
   thumbnail: {
     data: {
       attributes: StrapiImageAttributes

@@ -7,7 +7,6 @@ import { twMerge } from 'tailwind-merge'
 import MinusIcon from '@/components/shared/svg/icons/MinusIcon'
 import PlusIcon from '@/components/shared/svg/icons/PlusIcon'
 import { useGetAllIndustryQuery } from '@/hooks/query/useIndustryQuery'
-import { useGetAllRegionsQuery } from '@/hooks/query/useRegionQuery'
 import { useGetAllServiceQuery } from '@/hooks/query/useServiceQuery'
 import { useTranslation } from '@/resources/i18n/i18n.hooks'
 
@@ -19,7 +18,6 @@ type ProjectFilterProps = {
   onChangeIsAwardWinning: (value: boolean) => void
   industryId: string
   serviceId: string
-  regionId: string
   hasVideo: string
   isAwardWinning: string
 }
@@ -27,12 +25,10 @@ type ProjectFilterProps = {
 export function ProjectFilter({
   onChangeIndustryQuery,
   onChangeServiceQuery,
-  onChangeRegionQuery,
   onChangeHasVideoQuery,
   onChangeIsAwardWinning,
   industryId,
   serviceId,
-  regionId,
   hasVideo,
   isAwardWinning,
 }: ProjectFilterProps) {
@@ -41,7 +37,6 @@ export function ProjectFilter({
     useGetAllIndustryQuery()
   const { data: services, isSuccess: isSuccessService } =
     useGetAllServiceQuery()
-  const { data: regions, isSuccess: isSuccessRegion } = useGetAllRegionsQuery()
 
   const [selectedIndustry, setSelectedIndustry] = useState<string | undefined>(
     undefined,
@@ -49,14 +44,10 @@ export function ProjectFilter({
   const [selectedService, setSelectedService] = useState<string | undefined>(
     undefined,
   )
-  const [selectedRegion, setSelectedRegion] = useState<string | undefined>(
-    undefined,
-  )
 
   const hasFilter =
     selectedIndustry !== undefined ||
     selectedService !== undefined ||
-    selectedRegion !== undefined ||
     (hasVideo !== '' && hasVideo !== 'false') ||
     (isAwardWinning !== '' && isAwardWinning !== 'false')
 
@@ -80,25 +71,12 @@ export function ProjectFilter({
     }
   }, [isSuccessService, serviceId, services?.data])
 
-  useEffect(() => {
-    if (isSuccessRegion) {
-      setSelectedRegion(
-        regions?.data?.find((region) => region.id === parseInt(regionId, 10))
-          ?.attributes.name,
-      )
-    }
-  }, [isSuccessRegion, regionId, regions?.data])
-
   const onSetSelectedIndustry = (industryName: string) => {
     setSelectedIndustry(industryName)
   }
 
   const onSetSelectedService = (serviceName: string) => {
     setSelectedService(serviceName)
-  }
-
-  const onSetSelectedRegion = (regionName: string) => {
-    setSelectedRegion(regionName)
   }
 
   return (
@@ -241,78 +219,6 @@ export function ProjectFilter({
                             )}
                           >
                             {service.attributes.title}
-                          </button>
-                        )}
-                      </Menu.Item>
-                    )
-                  })}
-                </div>
-              </Menu.Items>
-            </Transition>
-          </Menu>
-          <Menu as='div' className='relative inline-block text-left'>
-            <div className='py-4'>
-              {selectedRegion ? (
-                <Menu.Button className='inline-flex w-full justify-between lg:justify-center lg:items-center gap-x-1.5 rounded-sm px-3 py-2 font-light bg-charcoal-1000 text-2xs uppercase text-lfaWhite'>
-                  {selectedRegion}
-                  <ChevronDownIcon
-                    className='-mr-1 h-5 w-5 text-gray-400'
-                    aria-hidden='true'
-                  />
-                </Menu.Button>
-              ) : (
-                <Menu.Button className='inline-flex w-full justify-between lg:justify-center lg:items-center gap-x-1.5 rounded-sm bg-transparent px-3 py-2 hover:bg-greige hover:text-gray-50 neue-wide'>
-                  REGIONS
-                  <ChevronDownIcon
-                    className='-mr-1 h-5 w-5 text-gray-400'
-                    aria-hidden='true'
-                  />
-                </Menu.Button>
-              )}
-            </div>
-
-            <Transition
-              as={Fragment}
-              enter='transition ease-out duration-100'
-              enterFrom='transform opacity-0 scale-95'
-              enterTo='transform opacity-100 scale-100'
-              leave='transition ease-in duration-75'
-              leaveFrom='transform opacity-100 scale-100'
-              leaveTo='transform opacity-0 scale-95'
-            >
-              <Menu.Items className='absolute left-0 z-10 w-56 origin-top-right rounded-sm bg-beige shadow-lg ring-2 ring-white ring-opacity-100 focus:outline-none'>
-                <div className='py-1'>
-                  <Menu.Item>
-                    {({ active }) => (
-                      <button
-                        onClick={() => {
-                          onChangeRegionQuery(undefined)
-                          onSetSelectedRegion('')
-                        }}
-                        className={twMerge(
-                          active && 'bg-greige text-gray-900',
-                          'text-left block px-4 py-2 neue-wide uppercase text-gray-50 w-full font-thin',
-                        )}
-                      >
-                        {t('featuredProject.filterAll')}
-                      </button>
-                    )}
-                  </Menu.Item>
-                  {regions?.data.map((region) => {
-                    return (
-                      <Menu.Item key={region.id}>
-                        {({ active }) => (
-                          <button
-                            onClick={() => {
-                              onChangeRegionQuery(region.id)
-                              onSetSelectedRegion(region.attributes.name)
-                            }}
-                            className={twMerge(
-                              active && 'bg-greige',
-                              'text-left block px-4 py-2 neue-wide uppercase text-gray-50 w-full font-thin',
-                            )}
-                          >
-                            {region.attributes.name}
                           </button>
                         )}
                       </Menu.Item>
@@ -492,67 +398,6 @@ export function ProjectFilter({
                                         )}
                                       >
                                         {service.attributes.title}
-                                      </button>
-                                    )}
-                                  </Menu.Item>
-                                )
-                              })}
-                            </div>
-                          </Menu.Items>
-                        </Transition>
-                      </Menu>
-                      <Menu
-                        as='div'
-                        className='relative inline-block text-left'
-                      >
-                        <div className='pb-2'>
-                          {selectedRegion ? (
-                            <Menu.Button className='inline-flex w-full justify-between lg:justify-center lg:items-center gap-x-1.5 rounded-sm px-3 py-2 font-light bg-charcoal-1000 text-2xs uppercase text-lfaWhite'>
-                              {selectedRegion}
-                              <ChevronDownIcon
-                                className='-mr-1 h-5 w-5 text-gray-400'
-                                aria-hidden='true'
-                              />
-                            </Menu.Button>
-                          ) : (
-                            <Menu.Button className='inline-flex w-full justify-between lg:justify-center lg:items-center gap-x-1.5 rounded-sm bg-transparent px-3 py-2 font-light hover:bg-greige text-2xs'>
-                              REGIONS
-                              <ChevronDownIcon
-                                className='-mr-1 h-5 w-5 text-gray-400'
-                                aria-hidden='true'
-                              />
-                            </Menu.Button>
-                          )}
-                        </div>
-
-                        <Transition
-                          as={Fragment}
-                          enter='transition ease-out duration-100'
-                          enterFrom='transform opacity-0 scale-95'
-                          enterTo='transform opacity-100 scale-100'
-                          leave='transition ease-in duration-75'
-                          leaveFrom='transform opacity-100 scale-100'
-                          leaveTo='transform opacity-0 scale-95'
-                        >
-                          <Menu.Items className='z-10 w-[98%] origin-top-right rounded-sm bg-beige shadow-lg ring-2 ring-white ring-opacity-100 focus:outline-none'>
-                            <div className='py-1'>
-                              {regions?.data.map((region) => {
-                                return (
-                                  <Menu.Item key={region.id}>
-                                    {({ active }) => (
-                                      <button
-                                        onClick={() => {
-                                          onChangeRegionQuery(region.id)
-                                          onSetSelectedRegion(
-                                            region.attributes.name,
-                                          )
-                                        }}
-                                        className={twMerge(
-                                          active && 'bg-greige',
-                                          'text-left block px-4 py-2 neue-wide uppercase text-gray-50 w-full font-thin',
-                                        )}
-                                      >
-                                        {region.attributes.name}
                                       </button>
                                     )}
                                   </Menu.Item>
