@@ -39,25 +39,29 @@ export function ProjectSingle({ project, localeId }: ProjectSingleProps) {
       </div>
 
       <div className='flex flex-col pt-4'>
-        <Link href={`/projects/${localeId}`}>
-          <h1 className='vinila-tight'>{project.attributes.title}</h1>
-        </Link>
-        <div className='flex flex-row'>
-          <Link
-            href={`/projects?industry=${project.attributes.industry.data.id}`}
-          >
-            <span className='neue-3xs-normal'>
-              {project.attributes.industry.data.attributes.name}
-            </span>
+        <div className='h-10'>
+          <Link href={`/projects/${localeId}`}>
+            <h1 className='vinila-tight'>{project.attributes.title}</h1>
           </Link>
-          <div className='text-xs font-thin'>&nbsp; | &nbsp;</div>
-          <Link
-            href={`/projects?service=${project.attributes.service.data.id}`}
-          >
-            <span className='neue-3xs-normal'>
-              {project.attributes.service.data.attributes.title}
-            </span>
-          </Link>
+          <div className='flex flex-row items-center mt-2 flex-wrap'>
+            <Link
+              href={`/projects?industry=${project.attributes.industry.data.id}`}
+              className='inline-flex'
+            >
+              <span className='neue-3xs-normal'>
+                {project.attributes.industry.data.attributes.name}
+              </span>
+            </Link>
+            <div className='text-xs font-thin'>&nbsp;|&nbsp;</div>
+            <Link
+              href={`/projects?service=${project.attributes.service.data.id}`}
+              className='inline-flex'
+            >
+              <span className='neue-3xs-normal'>
+                {project.attributes.service.data.attributes.title}
+              </span>
+            </Link>
+          </div>
         </div>
       </div>
     </div>
