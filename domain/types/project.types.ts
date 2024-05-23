@@ -21,6 +21,8 @@ export type TProjectFilter = {
 
 export type ProjectDetail = {
   id: number
+  title: string
+  description: string
   __component: AvailableComponents
 }
 

@@ -27,6 +27,8 @@ export type AvailableComponents =
   | 'images.sustainable-materials'
   | 'text.1-line-1-font-text'
   | 'text.paragraph'
+  | 'text.project-text-title'
+  | 'text.project-text'
   | 'testimonial.testimonial-block'
 
 export type TCommonAnswers = {

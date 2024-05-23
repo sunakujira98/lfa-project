@@ -34,6 +34,29 @@ export function StrapiComponentResolver({
                 key={`content-renderer-${componentDetail.id}`}
               />
             )
+          case 'text.project-text-title':
+            return (
+              <div
+                className='relative container mx-auto py-10 flex items-center'
+                style={{ maxWidth: '1680px' }}
+              >
+                <p className='neue-wide'>{componentDetail.title}</p>
+              </div>
+            )
+          case 'text.project-text':
+            return (
+              <div
+                className='relative container mx-auto py-10 flex items-center'
+                style={{ maxWidth: '1680px' }}
+              >
+                <div className='flex flex-row'>
+                  <div className='w-1/3'></div>
+                  <div className='w-2/3'>
+                    <p className='neue-normal'>{componentDetail.description}</p>
+                  </div>
+                </div>
+              </div>
+            )
           case 'images.sustainable-materials':
             return (
               <SustainableMaterials

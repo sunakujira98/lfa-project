@@ -22,7 +22,7 @@ export function Awards() {
                     <div className='pt-4' key={`client-marquee-${index}`}>
                       <img
                         src={`${process.env.NEXT_PUBLIC_CMS_HOST}${client.attributes.image.data.attributes.url}`}
-                        className='h-8 lg:h-12'
+                        className='h-8'
                         alt={client.attributes.awardName}
                       />
                     </div>
@@ -36,7 +36,7 @@ export function Awards() {
                   <div className='pt-4' key={`client-marquee-${index}`}>
                     <img
                       src={`${process.env.NEXT_PUBLIC_CMS_HOST}${client.attributes.image.data.attributes.url}`}
-                      className='h-12'
+                      className='h-8'
                       alt={client.attributes.awardName}
                     />
                   </div>
