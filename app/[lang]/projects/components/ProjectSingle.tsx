@@ -40,9 +40,13 @@ export function ProjectSingle({ project, localeId }: ProjectSingleProps) {
 
       <div className='flex flex-col pt-4'>
         <div className='h-10'>
-          <Link href={`/projects/${localeId}`}>
+          {project.attributes.comingSoon ? (
             <h1 className='vinila-tight'>{project.attributes.title}</h1>
-          </Link>
+          ) : (
+            <Link href={`/projects/${localeId}`}>
+              <h1 className='vinila-tight'>{project.attributes.title}</h1>
+            </Link>
+          )}
           <div className='flex flex-row items-center mt-2 flex-wrap'>
             <Link
               href={`/projects?industry=${project.attributes.industry.data.id}`}

@@ -82,7 +82,7 @@ export function ProjectDetail({ projectId }: ProjectDetailProps) {
             <h1 className='w-[50%] content-title'>
               {data?.data.attributes.title}
             </h1>
-            <h6 className='neue-wide pt-4 lg:pt-0'>
+            <h6 className='neue-wide pt-4 lg:pt-4'>
               {data?.data.attributes.location}
             </h6>
             <div className='grid grid-cols-2 gap-4 lg:flex lg:flex-row lg:gap-20 pt-10 pb-6 lg:pb-0'>
