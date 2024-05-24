@@ -27,7 +27,7 @@ export type TContent = {
 export type ArticleAttribute = {
   title: string
   shortDescription?: string
-  content: TContent[]
+  content: string
   thumbnail?: {
     data: {
       id: number

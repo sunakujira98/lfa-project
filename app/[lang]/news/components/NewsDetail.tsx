@@ -3,10 +3,10 @@
 'use client'
 
 import dayjs from 'dayjs'
+import parse from 'html-react-parser'
 import { useParams } from 'next/navigation'
 import { useEffect, useState } from 'react'
 
-import { ContentRenderer } from '@/components/shared/ContentRenderer/ContentRenderer'
 import { Link } from '@/components/shared/Link'
 import { ArrowRightUpIcon } from '@/components/shared/svg/icons'
 import { Article } from '@/domain/types/article.types'
@@ -28,6 +28,7 @@ export function NewsDetail({ newsId }: NewsDetailProps) {
   const { data: allNews, isSuccess: isSuccessAllNews } =
     useGetAllArticleQueryMinimal(lang)
 
+  console.log('data', data)
   useEffect(() => {
     if (isSuccessAllNews) {
       const nextDataIndex = allNews?.data.findIndex((news) => {
@@ -72,7 +73,8 @@ export function NewsDetail({ newsId }: NewsDetailProps) {
                   {dayjs(data.data.attributes.createdAt).format('DD MMM YYYY')}
                 </div>
 
-                <ContentRenderer data={data.data.attributes.content as any} />
+                {/* <ContentRenderer data={data.data.attributes.content as any} /> */}
+                {parse(data.data.attributes.content)}
               </div>
             </div>
           </div>
