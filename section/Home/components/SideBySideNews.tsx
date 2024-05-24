@@ -38,7 +38,6 @@ export function SideBySideNews() {
       : data?.data
     : []
 
-  console.log('news', articles)
   return (
     isSuccess && (
       <div className='max-w-screen-xl mx-auto pt-10 px-4 lg:px-0'>

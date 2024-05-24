@@ -44,7 +44,7 @@ export type ProjectAttribute = {
   image: {
     data: {
       attributes: StrapiImageAttributes
-    }
+    }[]
   }
   industry: {
     data: Industry

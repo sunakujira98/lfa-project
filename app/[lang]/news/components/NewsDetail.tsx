@@ -28,7 +28,6 @@ export function NewsDetail({ newsId }: NewsDetailProps) {
   const { data: allNews, isSuccess: isSuccessAllNews } =
     useGetAllArticleQueryMinimal(lang)
 
-  console.log('data', data)
   useEffect(() => {
     if (isSuccessAllNews) {
       const nextDataIndex = allNews?.data.findIndex((news) => {
