@@ -12,7 +12,7 @@ type ProjectSingleProps = {
 export function ProjectSingle({ project, localeId }: ProjectSingleProps) {
   const { t } = useTranslation()
   return (
-    <div className='flex flex-col' key={project.id}>
+    <div className='flex flex-col pb-6' key={project.id}>
       <div className='relative'>
         {project.attributes.comingSoon ? (
           <>

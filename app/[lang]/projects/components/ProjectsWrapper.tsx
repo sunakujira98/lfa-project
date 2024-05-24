@@ -142,7 +142,7 @@ export function ProjectsWrapper() {
 
             return (
               <div
-                className='flex flex-col items-center justify-center gap-6'
+                className='flex flex-col items-center justify-center'
                 key={singleProject.id}
               >
                 <ProjectSingle
