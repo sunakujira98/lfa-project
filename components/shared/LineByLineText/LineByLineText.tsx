@@ -41,7 +41,7 @@ export function LineByLineText({ data }: LineByLineTextProps) {
                 </h1>
               )
             })}
-            <p className='text-center py-6 neue-normal w-full lg:w-[37%]'>
+            <p className='text-center py-6 neue-normal w-full lg:w-[88%]'>
               {data.description}
             </p>
           </div>
