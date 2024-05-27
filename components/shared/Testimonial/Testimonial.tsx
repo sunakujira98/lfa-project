@@ -46,7 +46,7 @@ export function Testimonial({ data, shouldShowBorder }: TestimonialProps) {
               <div className='flex lg:justify-end'>
                 <img
                   src={`${process.env.NEXT_PUBLIC_CMS_HOST}${data.attributes.image.data.attributes.url}`}
-                  className='h-8 lg:h-8 lg:order-2' // Default order on lg screens
+                  className='h-10 lg:h-12 lg:order-2' // Default order on lg screens
                   style={{ order: '-1' }}
                   alt={data.attributes.fullName}
                 />
@@ -57,7 +57,7 @@ export function Testimonial({ data, shouldShowBorder }: TestimonialProps) {
               <div className='flex lg:justify-end'>
                 <img
                   src={`${process.env.NEXT_PUBLIC_CMS_HOST}${data.attributes.companyImage.data.attributes.url}`}
-                  className='h-8 lg:h-8 lg:w-full lg:order-2' // Default order on lg screens
+                  className='h-10 lg:h-12 lg:order-2' // Default order on lg screens
                   style={{ order: '-1' }}
                   alt={data.attributes.fullName}
                 />
@@ -72,7 +72,7 @@ export function Testimonial({ data, shouldShowBorder }: TestimonialProps) {
               <div className='flex lg:justify-end'>
                 <img
                   src={`${process.env.NEXT_PUBLIC_CMS_HOST}${data.attributes.companyImage.data.attributes.url}`}
-                  className='h-8 lg:h-8 lg:w-full lg:order-2' // Default order on lg screens
+                  className='h-10 lg:h-12 lg:order-2' // Default order on lg screens
                   style={{ order: '-1' }}
                   alt={data.attributes.fullName}
                 />
