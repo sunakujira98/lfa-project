@@ -51,27 +51,32 @@ export function SideBySideNews() {
 
               return (
                 <div className='flex flex-col lg:flex-row gap-6' key={news.id}>
-                  <a href={`${lang}/news/${newsId}`}>
-                    <img
-                      src={`${process.env.NEXT_PUBLIC_CMS_HOST}${news.attributes.thumbnail?.data?.attributes?.url}`}
-                      className='h-full w-full object-cover object-center lg:w-36 lg:h-36 lg:aspect-square'
-                      alt={news.attributes.title}
-                    />
-                  </a>
+                  <div className='lg:w-36 lg:h-36 flex-shrink-0'>
+                    <a href={`${lang}/news/${newsId}`}>
+                      <img
+                        src={`${process.env.NEXT_PUBLIC_CMS_HOST}${news.attributes.thumbnail?.data?.attributes?.url}`}
+                        className='h-full w-full object-cover object-center'
+                        alt={news.attributes.title}
+                      />
+                    </a>
+                  </div>
                   <div className='flex flex-col gap-2'>
                     <div className='neue-wide'>
                       {dayjs(news.attributes.createdAt).format('DD MMM YYYY')}
                     </div>
-                    <a href={`${lang}/news/${newsId}`}>
-                      <span className='neue-normal'>
-                        {news.attributes.title}
-                      </span>
-                    </a>
+                    <div>
+                      <a href={`${lang}/news/${newsId}`}>
+                        <span className='neue-normal break-words'>
+                          {news.attributes.title}
+                        </span>
+                      </a>
+                    </div>
                   </div>
                 </div>
               )
             })}
           </div>
+
           <div className='flex items-center justify-center py-10 border-b-[1px] lg:border-none'>
             <a href='/news'>
               <h6 className='neue-wide'>{t('news.allNews')}</h6>
