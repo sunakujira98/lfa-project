@@ -54,7 +54,7 @@ export function SideBySideNews() {
                   <a href={`${lang}/news/${newsId}`}>
                     <img
                       src={`${process.env.NEXT_PUBLIC_CMS_HOST}${news.attributes.thumbnail?.data?.attributes?.url}`}
-                      className='h-full w-full object-cover object-center lg:max-w-36 lg:max-h-36 lg:aspect-square'
+                      className='h-full w-full object-cover object-center lg:w-36 lg:h-36 lg:aspect-square'
                       alt={news.attributes.title}
                     />
                   </a>
