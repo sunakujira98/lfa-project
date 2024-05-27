@@ -29,7 +29,7 @@ export function News({ news, localeId }: NewsProps) {
           <Link href={`/news/${localeId}`}>
             <img
               src={`${process.env.NEXT_PUBLIC_CMS_HOST}${news.attributes.thumbnail?.data.attributes.url}`}
-              className='w-full lg:max-w-64 h-64'
+              className='w-full lg:w-64 h-64'
               alt={news.attributes.title}
             />
           </Link>
