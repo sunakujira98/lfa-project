@@ -119,9 +119,24 @@ export function Footer() {
                       {t('footer.stayConnected')}
                     </span>
                     <div className='flex flex-col text-lfaWhite neue-tight'>
-                      <span>Facebook</span>
-                      <span>Instagram</span>
-                      <span>Linkedin</span>
+                      <a
+                        href='https://www.facebook.com/lfastudio.sg'
+                        target='_blank'
+                      >
+                        <span>Facebook</span>
+                      </a>
+                      <a
+                        href='https://www.instagram.com/lfastudio.sg/'
+                        target='_blank'
+                      >
+                        <span>Instagram</span>
+                      </a>
+                      <a
+                        href='https://www.linkedin.com/company/lfastudio/'
+                        target='_blank'
+                      >
+                        <span>Linkedin</span>
+                      </a>
                     </div>
                   </div>
                   <div className='flex flex-col gap-2'>
@@ -235,15 +250,24 @@ export function Footer() {
               </h6>
             </div>
             <div className='flex flex-row gap-4'>
-              <button className='border-lfaWhite border-[1px] rounded-lg p-[5px]'>
-                <FacebookIcon className='text-[#FFFAEF]' />
-              </button>
-              <button className='border-lfaWhite border-[1px] rounded-lg p-[5px]'>
-                <InstagramIcon className='text-[#FFFAEF]' />
-              </button>
-              <button className='border-lfaWhite border-[1px] rounded-lg p-[5px]'>
-                <LinkedinIcon className='text-[#FFFAEF]' />
-              </button>
+              <a href='https://www.facebook.com/lfastudio.sg' target='_blank'>
+                <button className='border-lfaWhite border-[1px] rounded-lg p-[5px]'>
+                  <FacebookIcon className='text-[#FFFAEF]' />
+                </button>
+              </a>
+              <a href='https://www.instagram.com/lfastudio.sg/' target='_blank'>
+                <button className='border-lfaWhite border-[1px] rounded-lg p-[5px]'>
+                  <InstagramIcon className='text-[#FFFAEF]' />
+                </button>
+              </a>
+              <a
+                href='https://www.linkedin.com/company/lfastudio/'
+                target='_blank'
+              >
+                <button className='border-lfaWhite border-[1px] rounded-lg p-[5px]'>
+                  <LinkedinIcon className='text-[#FFFAEF]' />
+                </button>
+              </a>
             </div>
           </div>
           <nav className='lg:hidden p-0 text-lfaWhite flex flex-col gap-10'>
