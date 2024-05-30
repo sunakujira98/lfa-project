@@ -87,6 +87,29 @@ p {
   animation: marquee 100s linear infinite;
 }
 
+.marquee {
+  overflow: hidden;
+}
+
+.marquee-content {
+  display: flex;
+  animation: scrolling 25s linear infinite;
+}
+
+.marquee-item img {
+  display: block;
+  width: 100%;
+}
+
+@keyframes scrolling {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translatex(-144vw);
+  }
+}
+
 .outline-button {
   @apply border-[1px] px-4 py-1 border-lfaWhite rounded-full hover:bg-charcoal-1000 hover:border-charcoal-1000 tracking-[1px];
 }

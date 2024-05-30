@@ -9,6 +9,12 @@ export type TServiceAttribute = {
       attributes: StrapiImageAttributes
     }
   }
+  activeIcon: {
+    data: {
+      id: number
+      attributes: StrapiImageAttributes
+    }
+  }
   image?: {
     data: {
       id: number

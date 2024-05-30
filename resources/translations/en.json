@@ -52,8 +52,14 @@
   "services": {
     "title": "Services",
     "learnMore": "Learn More",
-    "subtitle": "Explore the pinnacle of commercial interior design in Singapore with LFA Studio, a name synonymous with excellence in office and commercial space transformations.",
-    "description": "Our award-winning office designs and corporate interior solutions are tailored to meet the unique demands of a diverse clientele. Specialising in both commercial and office interior design in Singapore, we take pride in our ability to turn ordinary spaces into extraordinary workplaces."
+    "subtitle": "Enhance Your Commercial and Office Interiors with LFA Studio, Leaders in Singapore’s Design Sector.",
+    "description": "LFA Studio is renowned for our sophisticated office designs and commercial interior solutions, each uniquely fashioned to satisfy the distinct needs of our clients. As specialists in both realms within Singapore, we take a thoughtful approach to converting regular areas into inspirational workplaces. Through our Design & Build service, we ensure your vision materializes seamlessly within budget and on schedule, offering streamlined, reliable outcomes. Our Design Consultancy arms you with crucial insights from initial space planning to final execution, fostering an environment that enhances creativity and productivity. Trust in our expert management of construction and procurement for flawless project completion, characterized by superior quality and efficiency.",
+    "items": [
+      {
+        "title": "Design & Build",
+        "description": "From conceptualisation to completion,  Our Design & Build services ensure your project aligns with your vision, budget, and timeline, consistently delivering outstanding results. Streamlined solutions manage design, time, cost, and quality effectively, allowing for 'fast track' delivery with guaranteed quality and cost By entrusting both design and construction to us, you consolidate accountability, reducing delivery time and administrative burden."
+      }
+    ]
   },
   "testimonials": {
     "title": "Testimonials",

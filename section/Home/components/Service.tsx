@@ -16,12 +16,18 @@ import MinusIcon from '@/components/shared/svg/icons/MinusIcon'
 import PlusIcon from '@/components/shared/svg/icons/PlusIcon'
 import { twMerge } from 'tailwind-merge'
 import { Link } from '@/components/shared/Link'
+import {
+  BuildIcon,
+  DesignBuildIcon,
+  DesignConsultancyIcon,
+  ProjectProcurementIcon,
+} from '@/components/shared/svg/icons'
 
 export function Service() {
   const { t } = useTranslation()
   const { lang } = useParams()
 
-  const [activeIndex, setActiveIndex] = useState<number>(29)
+  const [activeIndex, setActiveIndex] = useState<number>(0)
   const [activeService, setActiveService] = useState<string>('')
   const { data, isSuccess } = useGetAllServiceQuery()
 
@@ -53,32 +59,49 @@ export function Service() {
           <div className='flex justify-between gap-6'>
             <div className='w-1/3'>
               <div className='hidden lg:flex flex-col border-t-[1px]'>
-                {services.map((service) => {
+                {services.map((service, index) => {
                   return (
                     <div className='border-b-[1px] py-4' key={service.id}>
                       <button
                         className={twMerge(
-                          activeIndex === service.id
+                          activeIndex === index
                             ? 'bg-primary-900 text-greige'
                             : 'hover:bg-greige',
                           'w-full py-4 px-8 rounded-full',
                         )}
                         onClick={() =>
-                          onClickActive(
-                            service.id,
-                            service.attributes.description,
-                          )
+                          onClickActive(index, service.attributes.description)
                         }
                       >
                         <div className='flex justify-between items-center'>
                           <span className='font-neue text-xs font-normal leading-6 tracking-[0.16px]'>
                             {service.attributes.title}
                           </span>
-                          {service.attributes.icon.data.attributes.url && (
+                          {/* {service.attributes.icon.data.attributes.url && (
                             <img
                               src={`${process.env.NEXT_PUBLIC_CMS_HOST}${service.attributes.icon.data.attributes.url}`}
                               className='text-charcoal-1000'
                               alt={service.attributes.title}
+                            />
+                          )} */}
+                          {index === 0 && (
+                            <DesignBuildIcon
+                              stroke={activeIndex === 0 ? '#ffffff' : '#252525'}
+                            />
+                          )}
+                          {index === 1 && (
+                            <DesignConsultancyIcon
+                              stroke={activeIndex === 1 ? '#ffffff' : '#252525'}
+                            />
+                          )}
+                          {index === 2 && (
+                            <BuildIcon
+                              stroke={activeIndex === 2 ? '#ffffff' : '#252525'}
+                            />
+                          )}
+                          {index === 3 && (
+                            <ProjectProcurementIcon
+                              stroke={activeIndex === 3 ? '#ffffff' : '#252525'}
                             />
                           )}
                         </div>

@@ -22,14 +22,28 @@ export function AboutUsSection() {
   return (
     isSuccessTeams && (
       <>
-        <div
-          className='h-[95vh] lg:h-screen flex pt-6 lg:pt-0 lg:items-center bg-cover bg-center absolute inset-0'
-          style={{
-            backgroundImage: "url('/images/bg-hero.png')",
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-          }}
-        ></div>
+        <div className='h-[95vh] lg:h-screen hidden pt-6 lg:pt-0 lg:items-center absolute inset-0 md:flex'>
+          <video
+            autoPlay
+            loop
+            muted
+            className='absolute inset-0 w-full h-full object-cover'
+          >
+            <source src='/videos/about-us-hero.mp4' type='video/mp4' />
+          </video>
+        </div>
+
+        <div className='h-[95vh] lg:h-screen flex pt-6 lg:pt-0 lg:items-center absolute inset-0 md:hidden'>
+          <video
+            autoPlay
+            loop
+            muted
+            className='absolute inset-0 w-full h-full object-cover'
+          >
+            <source src='/videos/about-us-hero-mobile.mp4' type='video/mp4' />
+          </video>
+        </div>
+
         <div className='flex flex-col h-[95vh] lg:h-screen max-w-screen-xl mx-auto relative z-2 px-4 lg:px-0'>
           <div className='flex-1'></div>
           <div className='self-start px-2 py-10 text-lfaWhite flex flex-col w-full'>

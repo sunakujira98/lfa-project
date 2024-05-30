@@ -16,19 +16,19 @@ export function Clients() {
           <h6 className='font-neue text-gray-50 leading-4 tracking-[1px] font-normal'>
             {t('client.title')}
           </h6>
-          <div className='relative flex overflow-x-hidden'>
-            <div className='flex flex-row items-center px-9 animate-marquee whitespace-nowrap'>
-              {[...data?.data, ...data?.data, ...data?.data].map((client) => {
-                return (
-                  <div className='py-4 px-8 w-48' key={client.id}>
+          <div className='relative flex overflow-x-hidden pt-10 lg:pt-0'>
+            <div className='marquee'>
+              <div className='marquee-content'>
+                {[...data?.data, ...data?.data, ...data?.data].map((client) => {
+                  return (
                     <img
                       src={`${process.env.NEXT_PUBLIC_CMS_HOST}${client.attributes.image.data.attributes.url}`}
                       alt={client.attributes.clientName}
-                      className='h-8'
+                      className='h-8 px-8'
                     />
-                  </div>
-                )
-              })}
+                  )
+                })}
+              </div>
             </div>
           </div>
         </div>
