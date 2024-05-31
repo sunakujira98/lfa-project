@@ -17,7 +17,7 @@ export function StrapiComponentResolver({
   detail,
 }: StrapiComponentsResolverProps) {
   return (
-    <div className='px-4 lg:px-0'>
+    <div className='px-4 xl:px-0'>
       {detail.map((componentDetail) => {
         switch (componentDetail.__component) {
           case 'text.1-line-1-font-text':
