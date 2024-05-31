@@ -7,10 +7,15 @@ import { QuoteIcon } from '../svg/icons'
 
 type TestimonialProps = {
   data: TTestimonial
+  hideLogo?: boolean
   shouldShowBorder?: boolean
 }
 
-export function Testimonial({ data, shouldShowBorder }: TestimonialProps) {
+export function Testimonial({
+  data,
+  hideLogo,
+  shouldShowBorder,
+}: TestimonialProps) {
   return (
     <div className='max-w-screen-xl mx-auto lg:pt-10'>
       {data.attributes.video?.data?.attributes?.url && (
@@ -42,7 +47,7 @@ export function Testimonial({ data, shouldShowBorder }: TestimonialProps) {
               </a>
             </div>
 
-            {data.attributes.image?.data?.attributes?.url && (
+            {data.attributes.image?.data?.attributes?.url && !hideLogo && (
               <div className='flex lg:justify-end'>
                 <img
                   src={`${process.env.NEXT_PUBLIC_CMS_HOST}${data.attributes.image.data.attributes.url}`}

@@ -9,7 +9,11 @@ import { useTranslation } from '@/resources/i18n/i18n.hooks'
 import { findTranslatedData } from '@/utils/FindTranslatedData/FindTranslatedData'
 import { useParams } from 'next/navigation'
 
-export function BigTestimonial() {
+type BigTestimonialProps = {
+  hideLogo?: boolean
+}
+
+export function BigTestimonial({ hideLogo }: BigTestimonialProps) {
   const { t } = useTranslation()
   const { lang } = useParams()
   const { data, isSuccess } = useGetAllTestimonialQuery()
@@ -36,7 +40,7 @@ export function BigTestimonial() {
         testimonials.map((testimonial) => {
           return (
             <div className='pb-10 lg:p-0' key={testimonial.id}>
-              <Testimonial data={testimonial} />
+              <Testimonial data={testimonial} hideLogo={hideLogo} />
             </div>
           )
         })}

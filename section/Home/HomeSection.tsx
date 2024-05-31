@@ -17,7 +17,7 @@ export default function HomeSection() {
       <Clients />
       <AboutUs />
       <Service />
-      <BigTestimonial />
+      <BigTestimonial hideLogo={false} />
       <Awards />
       <SideBySideNews />
       {/* <Recognition /> */}
