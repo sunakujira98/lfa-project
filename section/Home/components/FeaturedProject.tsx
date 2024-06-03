@@ -59,7 +59,7 @@ export function FeaturedProject() {
                     <div className='img-hover-zoom'>
                       <img
                         src={`${process.env.NEXT_PUBLIC_CMS_HOST}${project.attributes.image.data?.[0].attributes.url}`}
-                        className='w-96 h-96 md:w-full lg:w-full lg:h-full object-cover object-center cursor-pointer'
+                        className='w-96 h-96 md:w-full lg:w-full lg:h-[560px] object-cover object-center cursor-pointer'
                         alt={project.attributes.title}
                       />
                     </div>

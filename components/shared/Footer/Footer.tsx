@@ -28,7 +28,7 @@ export function Footer() {
               <div className='grid grid-cols-2 lg:grid-cols-3 pb-10 pt-2 gap-4'>
                 <div className='flex flex-row'>
                   <img
-                    src='/images/instagram-1.png'
+                    src='/images/chapel-of-christ-the'
                     className='max-w-[150px] max-h-[150px] md:max-w-[300px] md:max-h-[300px] lg:max-w-44 lg:max-h-44 aspect-square'
                     alt='instagram'
                   />

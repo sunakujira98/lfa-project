@@ -13,7 +13,7 @@ export function Clients() {
     isSuccess && (
       <div className='max-w-screen-xl mx-auto py-10 lg:py-9 px-4 lg:px-0'>
         <div className='border-y-[1px] border-charcoal-100 py-10 lg:py-9'>
-          <h6 className='font-neue text-gray-50 leading-4 tracking-[1px] font-normal'>
+          <h6 className='font-neue text-gray-50 leading-4 tracking-[1px] font-normal pb-4'>
             {t('client.title')}
           </h6>
           <div className='relative flex overflow-x-hidden pt-10 lg:pt-0'>

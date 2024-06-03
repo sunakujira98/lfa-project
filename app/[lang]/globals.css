@@ -93,12 +93,14 @@ p {
 
 .marquee-content {
   display: flex;
-  animation: scrolling 25s linear infinite;
+  animation: scrolling 100s linear infinite;
 }
 
 .marquee-item img {
   display: block;
   width: 100%;
+  backface-visibility: hidden;
+  transform: translateZ(0);
 }
 
 @keyframes scrolling {
