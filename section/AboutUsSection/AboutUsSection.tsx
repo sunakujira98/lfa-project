@@ -73,8 +73,9 @@ export function AboutUsSection() {
             <h6 className='uppercase'>{t('aboutUs.theLfaTeam')}</h6>
             <div className='py-10'>
               <img
-                src='/images/teams.png'
+                src='/images/lfa-interior-commercial-team-and-professionals.png'
                 className='h-full w-full aspect-auto'
+                alt='Diverse team of professionals from Lemonfridge Associates (LFA), dressed in corporate attire, posing for a company group photo.'
               />
             </div>
 

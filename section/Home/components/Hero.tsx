@@ -43,13 +43,16 @@ export function Hero() {
               <div className='words overflow-hidden h-16 lg:h-24'>
                 <div className='animate-words'>
                   <h1 className='italic text-3xl lg:text-6xl font-keppler font-thin text-white'>
-                    {t('hero.createConstruct')}
+                    {t('hero.designBuild')}
                   </h1>
                   <h1 className='italic text-3xl lg:text-6xl font-keppler font-thin text-white'>
                     {t('hero.shapeForm')}
                   </h1>
                   <h1 className='italic text-3xl lg:text-6xl font-keppler font-thin text-white'>
                     {t('hero.createConstruct')}
+                  </h1>
+                  <h1 className='italic text-3xl lg:text-6xl font-keppler font-thin text-white'>
+                    {t('hero.designBuild')}
                   </h1>
                 </div>
               </div>
@@ -66,13 +69,16 @@ export function Hero() {
             <div className='words overflow-hidden h-16 lg:h-24 mt-5'>
               <div className='animate-words'>
                 <h1 className='italic text-3xl lg:text-6xl font-keppler font-thin text-white'>
-                  {t('hero.fosterCultivative')}
+                  {t('hero.inspireNurture')}
                 </h1>
                 <h1 className='italic text-3xl lg:text-6xl font-keppler font-thin text-white'>
                   {t('hero.connectTransform')}
                 </h1>
                 <h1 className='italic text-3xl lg:text-6xl font-keppler font-thin text-white'>
                   {t('hero.fosterCultivative')}
+                </h1>
+                <h1 className='italic text-3xl lg:text-6xl font-keppler font-thin text-white'>
+                  {t('hero.inspireNurture')}
                 </h1>
               </div>
             </div>
