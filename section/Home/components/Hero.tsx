@@ -35,12 +35,12 @@ export function Hero() {
         <div className='flex-1'></div>
         <div className='self-start lg:py-10 text-lfaWhite flex flex-col w-full px-4 lg:px-0'>
           <span className='inline-block lg:mb-[-50px]'>
-            <div className='flex items-center'>
+            <div className='flex items-center h-full'>
               <h1 className='text-left text-3xl lg:text-6xl font-keppler font-bold text-white'>
                 {t('hero.we')}
               </h1>
               <p>&nbsp;&nbsp;&nbsp;</p>
-              <div className='words overflow-hidden h-16 lg:h-24'>
+              <div className='words h-16 lg:h-32'>
                 <div className='animate-words'>
                   <h1 className='italic text-3xl lg:text-6xl font-keppler font-thin text-white'>
                     {t('hero.designBuild')}
@@ -66,7 +66,7 @@ export function Hero() {
             </div>
           </span>
           <span className='inline-block pb-10 lg:pb-0'>
-            <div className='words overflow-hidden h-16 lg:h-24 mt-5'>
+            <div className='words overflow-hidden h-16 lg:h-32 mt-5'>
               <div className='animate-words'>
                 <h1 className='italic text-3xl lg:text-6xl font-keppler font-thin text-white'>
                   {t('hero.inspireNurture')}
