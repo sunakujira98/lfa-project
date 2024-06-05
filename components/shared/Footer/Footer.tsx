@@ -22,7 +22,7 @@ export function Footer() {
         <div className='w-full flex flex-col lg:flex-row gap-28'>
           <div className='flex-1 mb-6 text-black w-full lg:w-auto'>
             <div className='flex flex-col'>
-              <h6 className='text-lfaWhite pb-10 lg:pb-0 lg:text-charcoal-600 neue-wide'>
+              {/* <h6 className='text-lfaWhite pb-10 lg:pb-0 lg:text-charcoal-600 neue-wide'>
                 {t('footer.findUsOnInstagram')}
               </h6>
               <div className='grid grid-cols-2 lg:grid-cols-3 pb-10 pt-2 gap-4'>
@@ -68,7 +68,7 @@ export function Footer() {
                     alt='instagram'
                   />
                 </div>
-              </div>
+              </div> */}
               <div className='hidden lg:flex flex-row gap-[160px]'>
                 <div className='flex flex-col gap-2'>
                   <span className='text-charcoal-600 neue-wide'>

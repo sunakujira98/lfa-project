@@ -44,7 +44,7 @@ export function SideBySideNews() {
         <div className='container pb-8'>
           <h6 className='neue-wide'>{t('news.title')}</h6>
         </div>
-        <div className='lg:border-y-[1px] border-charcoal-1000 pt-4'>
+        <div className='lg:border-t-[1px] border-charcoal-1000 pt-4'>
           <div className='grid grid-cols-1 gap-10 lg:gap-20 lg:grid-cols-3'>
             {articles.map((news) => {
               const newsId = news.localeId || news.id
