@@ -86,16 +86,18 @@ export function ProjectDetail({ projectId }: ProjectDetailProps) {
               {data?.data.attributes.location}
             </h6>
             <div className='grid grid-cols-2 gap-4 lg:flex lg:flex-row lg:gap-20 pt-10 pb-6 lg:pb-0'>
-              <div className='flex flex-col gap-2'>
-                <h6 className='neue-wide uppercase'>Industry</h6>
-                <Link
-                  href={`/projects?industry=${data.data.attributes.industry?.data?.id}`}
-                >
-                  <h6 className='neue-wide-light underline !normal-case'>
-                    {data.data.attributes.industry?.data?.attributes.name}
-                  </h6>
-                </Link>
-              </div>
+              {data.data.attributes.industry?.data?.id && (
+                <div className='flex flex-col gap-2'>
+                  <h6 className='neue-wide uppercase'>Industry</h6>
+                  <Link
+                    href={`/projects?industry=${data.data.attributes.industry?.data?.id}`}
+                  >
+                    <h6 className='neue-wide-light underline !normal-case'>
+                      {data.data.attributes.industry?.data?.attributes.name}
+                    </h6>
+                  </Link>
+                </div>
+              )}
               <div className='flex flex-col gap-2'>
                 <h6 className='neue-wide uppercase'>Services</h6>
                 <Link
