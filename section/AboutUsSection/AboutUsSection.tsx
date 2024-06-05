@@ -54,10 +54,10 @@ export function AboutUsSection() {
         <div className='max-w-screen-xl h-screen mx-auto flex justify-center items-center py-10 px-4 lg:px-0'>
           <div className='container'>
             <div className='flex flex-col items-center'>
-              <h1 className='content-title lg:mb-[-30px]'>
+              <h1 className='content-title lg:mb-[-25px]'>
                 {t('aboutUs.cultivating')}
               </h1>
-              <h1 className='font-keppler text-[40px] lg:text-6xl lg:mb-[-30px]'>
+              <h1 className='font-keppler text-[40px] lg:text-6xl lg:mb-[-40px]'>
                 {t('aboutUs.growth')}
               </h1>
               <h1 className='content-title'>{t('aboutUs.together')}</h1>

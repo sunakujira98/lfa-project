@@ -18,7 +18,7 @@ export function AboutUs() {
           {t('aboutUs.paragraph.subtitle')}
         </h1>
         <p className='text-center w-[65%] neue-wide-text !normal-case'>
-          {t('aboutUs.paragraph.homeDescription')}
+          {t('aboutUs.paragraph.description')}
         </p>
         <div className='flex justify-center items-center py-10 lg:py-20 neue-wide'>
           <a href='/about'>
