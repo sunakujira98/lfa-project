@@ -16,7 +16,6 @@ export function Testimonial({
   hideLogo,
   shouldShowBorder,
 }: TestimonialProps) {
-  console.log('hideLogo', hideLogo)
   return (
     <div className='max-w-screen-xl mx-auto lg:pt-10'>
       {data.attributes.video?.data?.attributes?.url && (
