@@ -48,14 +48,14 @@ export function ProjectSingle({ project, localeId }: ProjectSingleProps) {
             </Link>
           )}
           <div className='flex flex-row items-center mt-2 flex-wrap'>
-            <Link
+            {/* <Link
               href={`/projects?industry=${project.attributes.industry.data.id}`}
               className='inline-flex'
             >
               <span className='neue-3xs-normal'>
                 {project.attributes.industry.data.attributes.name}
               </span>
-            </Link>
+            </Link> */}
             <div className='text-xs font-thin'>&nbsp;|&nbsp;</div>
             <Link
               href={`/projects?service=${project.attributes.service.data.id}`}
