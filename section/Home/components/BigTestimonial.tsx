@@ -14,6 +14,7 @@ type BigTestimonialProps = {
 }
 
 export function BigTestimonial({ hideLogo }: BigTestimonialProps) {
+  console.log('check for hideLogo', hideLogo)
   const { t } = useTranslation()
   const { lang } = useParams()
   const { data, isSuccess } = useGetAllTestimonialQuery()
