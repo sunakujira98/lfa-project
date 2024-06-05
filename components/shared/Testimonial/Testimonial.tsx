@@ -58,16 +58,17 @@ export function Testimonial({
               </div>
             )}
 
-            {data.attributes.companyImage?.data?.attributes?.url && (
-              <div className='flex lg:justify-end'>
-                <img
-                  src={`${process.env.NEXT_PUBLIC_CMS_HOST}${data.attributes.companyImage.data.attributes.url}`}
-                  className='h-10 lg:h-12 lg:order-2' // Default order on lg screens
-                  style={{ order: '-1' }}
-                  alt={data.attributes.fullName}
-                />
-              </div>
-            )}
+            {data.attributes.companyImage?.data?.attributes?.url &&
+              !hideLogo && (
+                <div className='flex lg:justify-end'>
+                  <img
+                    src={`${process.env.NEXT_PUBLIC_CMS_HOST}${data.attributes.companyImage.data.attributes.url}`}
+                    className='h-10 lg:h-12 lg:order-2' // Default order on lg screens
+                    style={{ order: '-1' }}
+                    alt={data.attributes.fullName}
+                  />
+                </div>
+              )}
           </div>
         </div>
 
