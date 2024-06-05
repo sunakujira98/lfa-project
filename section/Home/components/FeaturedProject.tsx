@@ -74,13 +74,16 @@ export function FeaturedProject() {
                       </h3>
                     </Link>
                     <div className='flex flex-row'>
-                      <Link
-                        href={`/projects?industry=${project.attributes.industry.data.id}`}
-                      >
-                        <span className='neue-wide-light !normal-case underline'>
-                          {project.attributes.industry.data.attributes.name}
-                        </span>
-                      </Link>
+                      {project.attributes.industry?.data?.id && (
+                        <Link
+                          href={`/projects?industry=${project.attributes.industry.data.id}`}
+                        >
+                          <span className='neue-wide-light !normal-case underline'>
+                            {project.attributes.industry.data.attributes.name}
+                          </span>
+                        </Link>
+                      )}
+
                       <div className='text-xs font-thin'>&nbsp; | &nbsp;</div>
                       <Link
                         href={`/projects?service=${project.attributes.service.data.id}`}
