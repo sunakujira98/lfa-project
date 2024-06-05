@@ -112,7 +112,7 @@ export function ProjectDetail({ projectId }: ProjectDetailProps) {
                   {dayjs(data.data.attributes.completionDate).format('YYYY')}
                 </h6>
               </div>
-              <div className='flex flex-col gap-2'>
+              {/* <div className='flex flex-col gap-2'>
                 <h6 className='neue-wide'>INDUSTRY</h6>
                 <Link
                   href={`/projects?industry=${data.data.attributes.industry?.data?.id}`}
@@ -121,7 +121,7 @@ export function ProjectDetail({ projectId }: ProjectDetailProps) {
                     {data.data.attributes.industry?.data?.attributes.name}
                   </h6>
                 </Link>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
