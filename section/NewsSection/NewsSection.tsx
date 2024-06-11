@@ -27,6 +27,9 @@ export function NewsSection() {
     isFetchingNextPage,
   } = useGetInfiniteArticleQuery(
     {
+      sort: {
+        0: { createdAt: 'desc' },
+      },
       limit: 6,
     },
     lang,
