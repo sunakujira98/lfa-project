@@ -57,8 +57,10 @@ export const ArticleApi = {
 
     const appendLang = lang === 'zh-CN' ? '&locale=zh-CN' : '&locale=en'
 
+    console.log('params', params)
+
     const result = await apiInstance.get<StrapiResponse<Article>>(
-      `${BASE_URL}?populate=*${appendLang}`,
+      `${BASE_URL}?${appendLang}&populate[thumbnail][populate]=*&populate[localizations][populate]=*`,
       {
         params,
       },
