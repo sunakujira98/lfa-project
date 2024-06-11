@@ -75,7 +75,7 @@ export const ProjectApi = {
     const appendLang = lang === 'zh-CN' ? '&locale=zh-CN' : '&locale=en'
 
     const result = await apiInstance.get<StrapiResponse<Project>>(
-      `${BASE_URL}?populate=*${appendLang}`,
+      `${BASE_URL}?${appendLang}&populate[image][populate]=*&populate[thumbnail][populate]=*&populate[industry][populate]=*&populate[service][populate]=*&populate[region][populate]=*&populate[awards][populate]=*&populate[localizations][populate]=*`,
       { params },
     )
 
