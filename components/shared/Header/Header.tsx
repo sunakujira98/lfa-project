@@ -275,14 +275,14 @@ export function Header() {
                     {t('header.news')}
                   </button>
                 </li>
-                {/* <li className='py-6 uppercase'>
+                <li className='py-6 uppercase invisible'>
                   <button
                     className='uppercase tracking-[1px]'
                     onClick={changeLanguage}
                   >
                     {isChinese ? 'EN' : '中文'}
                   </button>
-                </li> */}
+                </li>
               </ul>
 
               <div className='absolute bottom-0 left-0 w-full flex items-center flex-col lg:hidden pb-4 gap-4 !text-gray-50 px-5'>
