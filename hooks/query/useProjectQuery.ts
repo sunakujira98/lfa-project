@@ -1,6 +1,8 @@
+import { useInfiniteQuery, useQuery } from '@tanstack/react-query'
+
 import { TProjectFilter } from '@/domain/types/project.types'
 import { ProjectApi } from '@/services/project.api'
-import { useInfiniteQuery, useQuery } from '@tanstack/react-query'
+
 import { EQueryKey } from './constants/react-query.constant'
 
 export const useGetAllProjectQuery = (
@@ -16,6 +18,7 @@ export const useGetAllProjectQuery = (
     limit,
     start,
     sort,
+    comingSoon,
   } = data
   const query = useInfiniteQuery({
     queryKey: [
@@ -29,6 +32,7 @@ export const useGetAllProjectQuery = (
         limit,
         start,
         sort,
+        comingSoon,
       },
       lang,
     ],

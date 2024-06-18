@@ -1,12 +1,12 @@
+import { Award } from './award.types'
 import {
   AvailableComponents,
   SortParams,
   StrapiImageAttributes,
 } from './common.types'
-import { Award } from './award.types'
 import { Industry } from './industry.types'
-import { TService } from './services.types'
 import { Region } from './region.types'
+import { TService } from './services.types'
 
 export type TProjectFilter = {
   industryId?: string
@@ -17,6 +17,7 @@ export type TProjectFilter = {
   limit?: number
   start?: number
   sort?: SortParams
+  comingSoon?: boolean
 }
 
 export type ProjectDetail = {

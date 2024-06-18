@@ -53,9 +53,10 @@ export function ProjectsWrapper() {
         regionId: regionQuery,
         hasVideo,
         isAwardWinning,
-        sort: {
-          0: { createdAt: 'desc' },
-        },
+        sort: [
+          { comingSoon: 'asc' },
+          { createdAt: 'desc' }
+        ],
       },
       lang,
     )
