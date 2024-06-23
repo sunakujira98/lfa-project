@@ -1,13 +1,14 @@
 /* eslint-disable @next/next/no-img-element */
 
 'use client'
+import { useParams } from 'next/navigation'
+
 import { Link } from '@/components/shared/Link'
 import { StrapiResponse } from '@/domain/types/common.types'
 import { Project } from '@/domain/types/project.types'
 import { useGetAllProjectQueryWithoutInfinite } from '@/hooks/query/useProjectQuery'
 import { useTranslation } from '@/resources/i18n/i18n.hooks'
 import { findTranslatedData } from '@/utils/FindTranslatedData/FindTranslatedData'
-import { useParams } from 'next/navigation'
 
 export function FeaturedProject() {
   const { lang } = useParams()
@@ -67,7 +68,7 @@ export function FeaturedProject() {
                   <div className='flex flex-col pt-4'>
                     <Link
                       href={`${lang}/projects/${projectId}`}
-                      className='hover:underline'
+                    // className='hover:underline'
                     >
                       <h3 className='vinila-tight'>
                         {project.attributes.title}

@@ -100,7 +100,7 @@ export function Header() {
               <Link
                 className={twMerge(
                   pathname === '/en-US' || pathname === '/zh-CN'
-                    ? 'underline'
+                    ? ''
                     : '',
                 )}
                 href='/'
@@ -111,7 +111,7 @@ export function Header() {
             <li className='relative whitespace-nowrap'>
               <Link
                 className={twMerge(
-                  pathname.includes('projects') ? 'underline' : '',
+                  pathname.includes('projects') ? '' : '',
                 )}
                 href='/projects'
               >
@@ -121,7 +121,7 @@ export function Header() {
             <li className='relative whitespace-nowrap'>
               <Link
                 className={twMerge(
-                  pathname.includes('about') ? 'underline' : '',
+                  pathname.includes('about') ? '' : '',
                 )}
                 href='/about'
               >
@@ -131,7 +131,7 @@ export function Header() {
             <li className='relative whitespace-nowrap'>
               <Link
                 className={twMerge(
-                  pathname.includes('service') ? 'underline' : '',
+                  pathname.includes('service') ? '' : '',
                 )}
                 href='/service'
               >
@@ -141,7 +141,7 @@ export function Header() {
             <li className='relative whitespace-nowrap'>
               <Link
                 className={twMerge(
-                  pathname.includes('testimonials') ? 'underline' : '',
+                  pathname.includes('testimonials') ? '' : '',
                 )}
                 href='/testimonials'
               >
@@ -151,7 +151,7 @@ export function Header() {
             <li className='relative whitespace-nowrap'>
               <Link
                 className={twMerge(
-                  pathname.includes('news') ? 'underline' : '',
+                  pathname.includes('news') ? '' : '',
                 )}
                 href='/news'
               >
@@ -227,7 +227,7 @@ export function Header() {
                     className={twMerge(
                       'uppercase tracking-[1px]',
                       pathname === '/en-US' || pathname === '/zh-CN'
-                        ? 'underline'
+                        ? ''
                         : '',
                     )}
                     onClick={() => onChangePage('/')}

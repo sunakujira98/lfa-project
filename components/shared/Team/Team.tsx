@@ -29,7 +29,7 @@ export function Team({ data, isActive, onClick }: TeamProps) {
 
           <img
             src={`${process.env.NEXT_PUBLIC_CMS_HOST}${data.attributes.image?.data?.attributes.url}`}
-            className='absolute inset-0 w-44 h-[200px] lg:w-full lg:h-full object-center'
+            className='absolute inset-0 w-44 h-[200px] lg:w-full lg:h-full object-cover'
             alt={data.attributes.name}
           />
         </div>

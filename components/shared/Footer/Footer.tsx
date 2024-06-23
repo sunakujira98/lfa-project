@@ -120,10 +120,10 @@ export function Footer() {
                     </span>
                     <div className='flex flex-col text-lfaWhite neue-tight'>
                       <a
-                        href='https://www.facebook.com/lfastudio.sg'
+                        href='https://www.linkedin.com/company/lfastudio/'
                         target='_blank'
                       >
-                        <span>Facebook</span>
+                        <span>Linkedin</span>
                       </a>
                       <a
                         href='https://www.instagram.com/lfastudio.sg/'
@@ -132,11 +132,13 @@ export function Footer() {
                         <span>Instagram</span>
                       </a>
                       <a
-                        href='https://www.linkedin.com/company/lfastudio/'
+                        href='https://www.facebook.com/lfastudio.sg'
                         target='_blank'
                       >
-                        <span>Linkedin</span>
+                        <span>Facebook</span>
                       </a>
+
+
                     </div>
                   </div>
                   <div className='flex flex-col gap-2'>

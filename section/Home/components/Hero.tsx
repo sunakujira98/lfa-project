@@ -15,7 +15,7 @@ export function Hero() {
           className='absolute inset-0 w-full h-full object-cover'
           poster='/images/bg-hero.png'
         >
-          <source src='/videos/bg-hero.mp4' type='video/mp4' />
+          <source src='/videos/about-us-hero.mp4' type='video/mp4' />
         </video>
       </div>
 
@@ -27,7 +27,7 @@ export function Hero() {
           className='absolute inset-0 w-full h-full object-cover'
           poster='/images/bg-hero.png'
         >
-          <source src='/videos/bg-hero-mobile.mp4' type='video/mp4' />
+          <source src='/videos/bg-hero.mp4' type='video/mp4' />
         </video>
       </div>
 
@@ -40,20 +40,12 @@ export function Hero() {
                 {t('hero.we')}
               </h1>
               <p>&nbsp;&nbsp;&nbsp;</p>
-              <div className='words h-16 lg:h-32'>
-                <div className='animate-words'>
+              <div className='h-16 lg:h-32'>
+                <div className=''>
                   <h1 className='italic text-3xl lg:text-6xl font-keppler font-thin text-white'>
                     {t('hero.designBuild')}
                   </h1>
-                  <h1 className='italic text-3xl lg:text-6xl font-keppler font-thin text-white'>
-                    {t('hero.shapeForm')}
-                  </h1>
-                  <h1 className='italic text-3xl lg:text-6xl font-keppler font-thin text-white'>
-                    {t('hero.createConstruct')}
-                  </h1>
-                  <h1 className='italic text-3xl lg:text-6xl font-keppler font-thin text-white'>
-                    {t('hero.designBuild')}
-                  </h1>
+
                 </div>
               </div>
             </div>

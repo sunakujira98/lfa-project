@@ -13,7 +13,7 @@ export function Awards() {
     isSuccess && (
       <div className='bg-charcoal-1000'>
         <div className='max-w-screen-xl mx-auto py-10 lg:py-9 px-4 lg:px-0'>
-          <h6 className='text-lfaWhite neue-wide'>{t('awards.title')}</h6>
+          <h6 className='text-lfaWhite neue-wide mb-4'>{t('awards.title')}</h6>
           <div className='relative flex overflow-x-hidden'>
             <div className='marquee'>
               <div className='marquee-content'>

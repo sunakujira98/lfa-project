@@ -165,7 +165,7 @@ export function ProjectDetail({ projectId }: ProjectDetailProps) {
               {nextData && (
                 <Link href={`/projects/${nextData.id}`}>
                   <h6 className='neue-wide'>
-                    {t('news.nextPage', {
+                    {t('news.nextProject', {
                       title: nextData.attributes.title,
                     })}
                   </h6>
@@ -199,7 +199,7 @@ export function ProjectDetail({ projectId }: ProjectDetailProps) {
               <Link href={`/projects/${nextData.id}`}>
                 <div className='flex justify-between items-center py-4 border-t-[1px]'>
                   <h6 className='neue-wide uppercase'>
-                    {t('news.nextPage', {
+                    {t('news.nextProject', {
                       title: nextData.attributes.title,
                     })}
                   </h6>

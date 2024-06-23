@@ -29,7 +29,7 @@ export function AboutUsSection() {
             muted
             className='absolute inset-0 w-full h-full object-cover'
           >
-            <source src='/videos/about-us-hero.mp4' type='video/mp4' />
+            <source src='/videos/bg-hero.mp4' type='video/mp4' />
           </video>
         </div>
 
@@ -74,7 +74,7 @@ export function AboutUsSection() {
             <div className='py-10'>
               <img
                 src='/images/lfa-interior-commercial-team-and-professionals.png'
-                className='h-full w-full aspect-auto'
+                className='h-full w-full aspect-auto object-contain'
                 alt='Diverse team of professionals from Lemonfridge Associates (LFA), dressed in corporate attire, posing for a company group photo.'
               />
             </div>
