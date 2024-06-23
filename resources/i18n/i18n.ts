@@ -3,6 +3,7 @@
 import lodashGet from 'lodash/get'
 
 import { SUPPORTED_LOCALES } from '@/constants/i18n.constants'
+
 import {
   Resources,
   TranslateConfig,

@@ -3,6 +3,7 @@
 import { ReactNode, createContext, useContext, useMemo } from 'react'
 
 import { enUS } from '../translations'
+
 import { Resources } from './i18n.types'
 
 type I18nContextProps = {
