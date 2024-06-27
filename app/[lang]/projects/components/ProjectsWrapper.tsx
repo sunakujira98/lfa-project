@@ -126,7 +126,7 @@ export function ProjectsWrapper() {
         hasVideo={hasVideo}
         isAwardWinning={isAwardWinning}
       />
-      <div className='grid grid-cols-1 lg:grid-cols-3 gap-10 overflow-x-hidden pb-20'>
+      <div className='grid grid-cols-1 lg:grid-cols-3 gap-5 overflow-x-hidden pb-20'>
         {data?.pages?.flatMap((projects) => {
           const localizedData = findTranslatedData(
             lang as string,
@@ -143,7 +143,7 @@ export function ProjectsWrapper() {
 
             return (
               <div
-                className='flex flex-col items-center justify-center'
+                className='lg:block lg:flex-none items-center justify-center flex flex-col'
                 key={singleProject.id}
               >
                 <ProjectSingle
