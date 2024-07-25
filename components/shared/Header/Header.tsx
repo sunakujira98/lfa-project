@@ -156,7 +156,7 @@ export function Header() {
                 {t('header.contact')}
               </Link>
             </li>
-            <li
+            {/* <li
               className={twMerge(
                 'border-l-[1px]',
                 isHaveBg ? 'border-lfaWhite' : 'border-gray-50',
@@ -169,7 +169,7 @@ export function Header() {
               <button onClick={changeLanguage}>
                 {isChinese ? 'EN' : '中文'}
               </button>
-            </li>
+            </li> */}
           </ul>
         </div>
       </div>

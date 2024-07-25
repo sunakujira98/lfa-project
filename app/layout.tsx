@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { cookies } from 'next/headers'
 import NextTopLoader from 'nextjs-toploader'
 import { ReactNode } from 'react'
 
@@ -20,23 +21,20 @@ export const metadata: Metadata = {
 
 type RootLayoutProps = {
   children: ReactNode
-  params: {
-    lang: string
-  }
 }
 
-export default async function RootLayout({
-  children,
-  params,
-}: RootLayoutProps) {
-  const translationData = await getTranslationData(params.lang)
+export default async function RootLayout({ children }: RootLayoutProps) {
+  const cookieStore = cookies()
+  const lang = cookieStore.get('LOCALE_COOKIE_KEY')?.value || 'en-US'
+
+  const translationData = await getTranslationData(lang)
 
   return (
     <ReactQueryProvider>
       <html lang='en'>
         <body className={`${neue.variable} ${keppler.variable}`}>
           <NextTopLoader color='#252525' />
-          <LanguageProvider lang={params.lang}>
+          <LanguageProvider>
             <I18nProvider data={JSON.parse(JSON.stringify(translationData))}>
               <Header />
               {children}
