@@ -1,7 +1,9 @@
+import { useInfiniteQuery, useQuery } from '@tanstack/react-query'
+
 import { TArticleFilter } from '@/domain/types/article.types'
 import { TQueryParams } from '@/domain/types/common.types'
 import { ArticleApi } from '@/services/articles.api'
-import { useInfiniteQuery, useQuery } from '@tanstack/react-query'
+
 import { EQueryKey } from './constants/react-query.constant'
 
 export const useGetAllArticleQuery = (
@@ -70,6 +72,22 @@ export const useGetArticleByIdQuery = (id: string, lang: string | string[]) => {
     queryKey: [EQueryKey.ARTICLE, { id, lang }],
     queryFn: async () => {
       const response = await ArticleApi.getById(id, lang)
+
+      return response
+    },
+  })
+
+  return query
+}
+
+export const useGetArticleBySlugQuery = (
+  slug: string,
+  lang: string | string[],
+) => {
+  const query = useQuery({
+    queryKey: [EQueryKey.ARTICLE, { slug, lang }],
+    queryFn: async () => {
+      const response = await ArticleApi.getBySlug(slug, lang)
 
       return response
     },

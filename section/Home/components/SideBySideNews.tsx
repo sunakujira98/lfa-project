@@ -47,12 +47,12 @@ export function SideBySideNews() {
         <div className='lg:border-t-[1px] border-charcoal-1000 pt-4'>
           <div className='grid grid-cols-1 gap-10 lg:gap-20 lg:grid-cols-3'>
             {articles.map((news) => {
-              const newsId = news.localeId || news.id
+              const newsId = news.attributes.slug || news.localeId || news.id
 
               return (
                 <div className='flex flex-col lg:flex-row gap-6' key={news.id}>
                   <div className='lg:w-36 lg:h-36 flex-shrink-0'>
-                    <a href={`${lang}/news/${newsId}`}>
+                    <a href={`/news/${newsId}`}>
                       <img
                         src={`${process.env.NEXT_PUBLIC_CMS_HOST}${news.attributes.thumbnail?.data?.attributes?.url}`}
                         className='h-full w-full object-cover object-center'
@@ -67,7 +67,7 @@ export function SideBySideNews() {
                       )}
                     </div>
                     <div>
-                      <a href={`${lang}/news/${newsId}`}>
+                      <a href={`/news/${newsId}`}>
                         <span className='neue-normal break-words'>
                           {news.attributes.title}
                         </span>

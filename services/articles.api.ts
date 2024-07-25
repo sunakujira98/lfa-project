@@ -88,6 +88,25 @@ export const ArticleApi = {
     return result.data
   },
 
+  getBySlug: async function (
+    slug: string,
+    lang: string | string[],
+  ): Promise<StrapiSingleResponse<Article>> {
+    let result = undefined
+
+    result = await apiInstance.get<any>(
+      `${BASE_URL}?filters][slug][$eq]=${slug}&populate[detail][populate]=*populate=*&populate[thumbnail]=*&populate[localizations]=*`,
+    )
+
+    if (lang === 'zh-CN') {
+      result = await apiInstance.get<any>(
+        `${BASE_URL}/${result.data.data[0].attributes.localizations.data[0].id}?populate[detail][populate]=*populate=*&populate[thumbnail]=*`,
+      )
+    }
+
+    return { data: result.data.data[0], meta: result.data.data[0].meta }
+  },
+
   getAllMinimal: async function (
     lang: string | string[],
   ): Promise<StrapiResponse<Article>> {

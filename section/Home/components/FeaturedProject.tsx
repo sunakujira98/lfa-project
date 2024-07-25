@@ -66,10 +66,7 @@ export function FeaturedProject() {
                     </div>
                   </Link>
                   <div className='flex flex-col pt-4'>
-                    <Link
-                      href={`${lang}/projects/${projectId}`}
-                      // className='hover:underline'
-                    >
+                    <Link href={`/projects/${projectId}`}>
                       <h3 className='vinila-tight'>
                         {project.attributes.title}
                       </h3>
