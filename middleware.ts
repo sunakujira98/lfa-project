@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 
 import {
-  LOCALES,
   LOCALES_MAP,
   LOCALE_COOKIE_KEY,
   SUPPORTED_LOCALES_ARRAY,
@@ -32,39 +31,17 @@ function getLocale(request: NextRequest) {
 }
 
 export function middleware(request: NextRequest) {
-  // Check if there is any supported locale in the pathname
-  const { pathname, search } = request.nextUrl
-  const redirectPathname = `${pathname}${search}`
-  const localeFromPathname = pathname.split('/')[1]
+  const locale = getLocale(request)
 
-  const pathnameIsMissingLocale = LOCALES.every(
-    (locale) =>
-      !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`,
-  )
-
-  // Redirect if there is no locale
-  if (pathnameIsMissingLocale) {
-    const locale = getLocale(request)
-    // e.g. incoming request is /products
-    // The new URL is now /en-US/products
-    return NextResponse.redirect(
-      new URL(`/${locale}${redirectPathname}`, request.url),
-    )
+  if (!request.cookies.get(LOCALE_COOKIE_KEY)?.value) {
+    const response = NextResponse.next()
+    response.cookies.set(LOCALE_COOKIE_KEY, locale, { path: '/' })
+    return response
   }
 
-  const redirectPathnameIncludesLocale = LOCALES.some((locale) =>
-    redirectPathname.startsWith(`/${locale}`),
-  )
-
-  const pathnameToRedirect = redirectPathnameIncludesLocale
-    ? redirectPathname
-    : `/${localeFromPathname}${redirectPathname}`
-
-  if (pathnameToRedirect === `${pathname}${search}`) {
-    return NextResponse.next()
-  }
-
-  return NextResponse.redirect(new URL(pathnameToRedirect, request.url))
+  const response = NextResponse.next()
+  response.headers.set('x-locale', locale)
+  return response
 }
 
 export const config = {

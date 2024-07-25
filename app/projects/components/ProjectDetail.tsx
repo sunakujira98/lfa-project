@@ -3,9 +3,9 @@
 'use client'
 
 import dayjs from 'dayjs'
-import { useParams } from 'next/navigation'
 import { useEffect, useState } from 'react'
 
+import { useLanguage } from '@/components/Provider'
 import { Link } from '@/components/shared/Link'
 import { StrapiComponentResolver } from '@/components/shared/StrapiComponentResolver'
 import { ArrowRightUpIcon } from '@/components/shared/svg/icons'
@@ -21,7 +21,7 @@ type ProjectDetailProps = {
 }
 
 export function ProjectDetail({ projectId }: ProjectDetailProps) {
-  const { lang } = useParams()
+  const { lang } = useLanguage()
   const { t } = useTranslation()
   const [nextData, setNextData] = useState<Project | undefined>(undefined)
   const { data, isSuccess } = useGetProjectBySlugQuery(projectId, lang)

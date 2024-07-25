@@ -4,9 +4,9 @@
 
 import dayjs from 'dayjs'
 import parse from 'html-react-parser'
-import { useParams } from 'next/navigation'
 import { useEffect, useState } from 'react'
 
+import { useLanguage } from '@/components/Provider'
 import { Link } from '@/components/shared/Link'
 import { ArrowRightUpIcon } from '@/components/shared/svg/icons'
 import { Article } from '@/domain/types/article.types'
@@ -21,7 +21,7 @@ type NewsDetailProps = {
 }
 
 export function NewsDetail({ newsId }: NewsDetailProps) {
-  const { lang } = useParams()
+  const { lang } = useLanguage()
   const { t } = useTranslation()
   const [nextData, setNextData] = useState<undefined | Article>(undefined)
   const { data, isSuccess } = useGetArticleByIdQuery(newsId, lang)

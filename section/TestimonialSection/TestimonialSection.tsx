@@ -1,16 +1,15 @@
 'use client'
 
-import { useParams } from 'next/navigation'
-
+import { useLanguage } from '@/components/Provider'
 import { SideBySideTestimonial } from '@/components/shared/SideBySideTestimonial'
+import { StrapiResponse } from '@/domain/types/common.types'
 import { Testimonial as TTestimonial } from '@/domain/types/testimonial.types'
 import { useGetAllTestimonialQuery } from '@/hooks/query/useTestimonialQuery'
 import { useTranslation } from '@/resources/i18n/i18n.hooks'
 import { findTranslatedData } from '@/utils/FindTranslatedData/FindTranslatedData'
-import { StrapiResponse } from '@/domain/types/common.types'
 
 export function TestimonialSection() {
-  const { lang } = useParams()
+  const { lang } = useLanguage()
   const { t } = useTranslation()
   const { isSuccess, data } = useGetAllTestimonialQuery()
 
@@ -45,7 +44,12 @@ export function TestimonialSection() {
       {isSuccess && (
         <div className='flex flex-col'>
           {testimonials.map((testimonial) => {
-            return <SideBySideTestimonial testimonial={testimonial} />
+            return (
+              <SideBySideTestimonial
+                testimonial={testimonial}
+                key={testimonial.id}
+              />
+            )
           })}
         </div>
       )}

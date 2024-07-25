@@ -1,13 +1,21 @@
 'use client'
 
-import { usePathname, useRouter } from 'next/navigation'
-import { createContext, ReactNode, useContext } from 'react'
+import { useRouter } from 'next/navigation'
+import {
+  createContext,
+  ReactNode,
+  useContext,
+  useEffect,
+  useState,
+} from 'react'
 
 type LanguageContextType = {
+  lang: string
   changeLanguage: () => void
 }
 
 const LanguageContext = createContext<LanguageContextType>({
+  lang: 'en-US',
   changeLanguage: () => {},
 })
 
@@ -15,24 +23,37 @@ export const useLanguage = () => useContext(LanguageContext)
 
 type LanguageProviderProps = {
   children: ReactNode
-  lang: string
 }
 
-export const LanguageProvider = ({ children, lang }: LanguageProviderProps) => {
+export const LanguageProvider = ({ children }: LanguageProviderProps) => {
   const router = useRouter()
-  const pathname = usePathname()
+
+  const [lang, setLang] = useState('en-US')
+
+  useEffect(() => {
+    const cookieLang = document.cookie
+      .split('; ')
+      .find((row) => row.startsWith('LOCALE_COOKIE_KEY='))
+      ?.split('=')[1]
+
+    if (cookieLang) {
+      setLang(cookieLang)
+    }
+  }, [])
 
   const changeLanguage = () => {
     const isChinese = lang.includes('zh')
-    const redirect = isChinese ? '/en-US' : '/zh-CN'
+    const newLang = isChinese ? 'en-US' : 'zh-CN'
 
-    const currentPath = pathname.replace(/^\/[a-z]{2}-[A-Z]{2}/, '')
+    document.cookie = `LOCALE_COOKIE_KEY=${newLang}; path=/`
 
-    router.replace(`${redirect}${currentPath}`)
+    setLang(newLang)
+
+    router.refresh()
   }
 
   return (
-    <LanguageContext.Provider value={{ changeLanguage }}>
+    <LanguageContext.Provider value={{ changeLanguage, lang }}>
       {children}
     </LanguageContext.Provider>
   )

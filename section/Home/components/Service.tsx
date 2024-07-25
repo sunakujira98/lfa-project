@@ -3,18 +3,10 @@
 'use client'
 
 import { Disclosure } from '@headlessui/react'
-import { useParams } from 'next/navigation'
 import { useState } from 'react'
-
-import { BigButton } from '@/components/shared/BigButton/BigButton'
-import { StrapiResponse } from '@/domain/types/common.types'
-import { TService } from '@/domain/types/services.types'
-import { useGetAllServiceQuery } from '@/hooks/query/useServiceQuery'
-import { useTranslation } from '@/resources/i18n/i18n.hooks'
-import { findTranslatedData } from '@/utils/FindTranslatedData/FindTranslatedData'
-import MinusIcon from '@/components/shared/svg/icons/MinusIcon'
-import PlusIcon from '@/components/shared/svg/icons/PlusIcon'
 import { twMerge } from 'tailwind-merge'
+
+import { useLanguage } from '@/components/Provider'
 import { Link } from '@/components/shared/Link'
 import {
   BuildIcon,
@@ -22,10 +14,17 @@ import {
   DesignConsultancyIcon,
   ProjectProcurementIcon,
 } from '@/components/shared/svg/icons'
+import MinusIcon from '@/components/shared/svg/icons/MinusIcon'
+import PlusIcon from '@/components/shared/svg/icons/PlusIcon'
+import { StrapiResponse } from '@/domain/types/common.types'
+import { TService } from '@/domain/types/services.types'
+import { useGetAllServiceQuery } from '@/hooks/query/useServiceQuery'
+import { useTranslation } from '@/resources/i18n/i18n.hooks'
+import { findTranslatedData } from '@/utils/FindTranslatedData/FindTranslatedData'
 
 export function Service() {
   const { t } = useTranslation()
-  const { lang } = useParams()
+  const { lang } = useLanguage()
 
   const [activeIndex, setActiveIndex] = useState<number>(0)
   const [activeService, setActiveService] = useState<string>('')

@@ -3,8 +3,8 @@
 'use client'
 
 import dayjs from 'dayjs'
-import { useParams } from 'next/navigation'
 
+import { useLanguage } from '@/components/Provider'
 import { Article } from '@/domain/types/article.types'
 import { StrapiResponse } from '@/domain/types/common.types'
 import { useGetAllArticleQuery } from '@/hooks/query/useGetArticleQuery'
@@ -13,7 +13,7 @@ import { findTranslatedData } from '@/utils/FindTranslatedData/FindTranslatedDat
 
 export function SideBySideNews() {
   const { t } = useTranslation()
-  const { lang } = useParams()
+  const { lang } = useLanguage()
 
   const { isSuccess, data } = useGetAllArticleQuery(
     {

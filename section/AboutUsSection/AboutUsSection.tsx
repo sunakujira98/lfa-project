@@ -100,7 +100,7 @@ export function AboutUsSection() {
             </h6>
             {awards?.data.map((award) => {
               return (
-                <a href={award.attributes.externalLink}>
+                <a href={award.attributes.externalLink} key={award.id}>
                   <div className='flex justify-between border-b-[1px] py-2 neue-3xs-normal !no-underline lg:neue-normal !font-normal items-center border-charcoal-100 uppercase'>
                     {award.attributes.awardName}
                     <ArrowRightUpIcon />

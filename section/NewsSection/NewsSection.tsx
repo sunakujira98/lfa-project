@@ -1,9 +1,9 @@
 'use client'
 
-import { useParams } from 'next/navigation'
 import { useEffect } from 'react'
 import { useInView } from 'react-intersection-observer'
 
+import { useLanguage } from '@/components/Provider'
 import { News } from '@/components/shared/News'
 import { ScreenSpinner } from '@/components/shared/ScreenSpinner'
 import { SectionHeader } from '@/components/shared/SectionHeader'
@@ -16,7 +16,7 @@ import { findTranslatedData } from '@/utils/FindTranslatedData/FindTranslatedDat
 export function NewsSection() {
   const { ref, inView } = useInView()
 
-  const { lang } = useParams()
+  const { lang } = useLanguage()
   const { t } = useTranslation()
   const {
     isSuccess,
