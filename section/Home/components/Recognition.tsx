@@ -3,11 +3,11 @@
 'use client'
 
 import dayjs from 'dayjs'
-import { useParams } from 'next/navigation'
 import { useState } from 'react'
 import Carousel from 'react-multi-carousel'
 import 'react-multi-carousel/lib/styles.css'
 
+import { useLanguage } from '@/components/Provider'
 import { CustomDot } from '@/components/shared/CustomDot'
 import ArrowLeftIcon from '@/components/shared/svg/icons/ArrowLeftIcon'
 import ArrowRightIcon from '@/components/shared/svg/icons/ArrowRightIcon'
@@ -21,7 +21,7 @@ export function Recognition() {
   const [currentIndex, setCurrentIndex] = useState(0)
 
   const { t } = useTranslation()
-  const { lang } = useParams()
+  const { lang } = useLanguage()
 
   const { data, isSuccess } = useGetAllRecognitionQuery()
 

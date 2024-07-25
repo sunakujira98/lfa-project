@@ -1,3 +1,4 @@
+/* eslint-disable no-unsafe-optional-chaining */
 /* eslint-disable @next/next/no-img-element */
 
 'use client'
@@ -19,15 +20,18 @@ export function Clients() {
           <div className='relative flex overflow-x-hidden pt-10 lg:pt-0'>
             <div className='marquee'>
               <div className='marquee-content'>
-                {[...data?.data, ...data?.data, ...data?.data].map((client) => {
-                  return (
-                    <img
-                      src={`${process.env.NEXT_PUBLIC_CMS_HOST}${client.attributes.image.data.attributes.url}`}
-                      alt={client.attributes.clientName}
-                      className='h-8 px-8'
-                    />
-                  )
-                })}
+                {[...data?.data, ...data?.data, ...data?.data].map(
+                  (client, index) => {
+                    return (
+                      <img
+                        key={`client-${client.id}-${index}`}
+                        src={`${process.env.NEXT_PUBLIC_CMS_HOST}${client.attributes.image.data.attributes.url}`}
+                        alt={client.attributes.clientName}
+                        className='h-8 px-8'
+                      />
+                    )
+                  },
+                )}
               </div>
             </div>
           </div>

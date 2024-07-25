@@ -1,10 +1,10 @@
 'use client'
 
 import { Disclosure } from '@headlessui/react'
-import { useParams } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import { twMerge } from 'tailwind-merge'
 
+import { useLanguage } from '@/components/Provider'
 import { BigButton } from '@/components/shared/BigButton/BigButton'
 import { OtherQueries } from '@/components/shared/OtherQueries'
 import { StrapiSingleComponentResolver } from '@/components/shared/StrapiComponentResolver/StrapiSingleComponentResolver'
@@ -17,7 +17,7 @@ import { useTranslation } from '@/resources/i18n/i18n.hooks'
 import { findTranslatedData } from '@/utils/FindTranslatedData/FindTranslatedData'
 
 export function FaqSection() {
-  const { lang } = useParams()
+  const { lang } = useLanguage()
   const { t } = useTranslation()
   const [activeIndex, setActiveIndex] = useState<number>(1)
   const [activeAnswer, setActiveAnswer] = useState<

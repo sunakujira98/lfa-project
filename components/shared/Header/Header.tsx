@@ -1,6 +1,6 @@
 'use client'
 
-import { useParams, usePathname } from 'next/navigation'
+import { usePathname } from 'next/navigation'
 import { useEffect, useRef, useState } from 'react'
 import { twMerge } from 'tailwind-merge'
 
@@ -18,7 +18,6 @@ import { FacebookIcon, InstagramIcon, LinkedinIcon } from '../svg/icons'
 
 export function Header() {
   const pathname = usePathname()
-  const { lang } = useParams()
 
   const { t } = useTranslation()
   const router = useRouter()
@@ -27,15 +26,14 @@ export function Header() {
   const showBgRef = useRef(false)
   const navbarRef = useRef<HTMLElement>(null)
 
-  const { changeLanguage } = useLanguage()
+  const { changeLanguage, lang } = useLanguage()
   const [isOpen, menuMutation] = useToggle()
-
-  const isChinese = lang.includes('zh')
 
   const isHaveBg =
     containsValuesFromString(pathname, PAGE_HAVE_BG) ||
     pathname === '/en-US' ||
     pathname === '/zh-CN'
+  const isChinese = lang == 'zh-CN'
 
   const setNavbarHeight = useCommonStore((state) => state.setNavbarHeight)
 
@@ -99,9 +97,7 @@ export function Header() {
             <li className='relative whitespace-nowrap'>
               <Link
                 className={twMerge(
-                  pathname === '/en-US' || pathname === '/zh-CN'
-                    ? ''
-                    : '',
+                  pathname === '/en-US' || pathname === '/zh-CN' ? '' : '',
                 )}
                 href='/'
               >
@@ -110,9 +106,7 @@ export function Header() {
             </li>
             <li className='relative whitespace-nowrap'>
               <Link
-                className={twMerge(
-                  pathname.includes('projects') ? '' : '',
-                )}
+                className={twMerge(pathname.includes('projects') ? '' : '')}
                 href='/projects'
               >
                 {t('header.projects')}
@@ -120,9 +114,7 @@ export function Header() {
             </li>
             <li className='relative whitespace-nowrap'>
               <Link
-                className={twMerge(
-                  pathname.includes('about') ? '' : '',
-                )}
+                className={twMerge(pathname.includes('about') ? '' : '')}
                 href='/about'
               >
                 {t('header.about')}
@@ -130,9 +122,7 @@ export function Header() {
             </li>
             <li className='relative whitespace-nowrap'>
               <Link
-                className={twMerge(
-                  pathname.includes('service') ? '' : '',
-                )}
+                className={twMerge(pathname.includes('service') ? '' : '')}
                 href='/service'
               >
                 {t('header.services')}
@@ -140,9 +130,7 @@ export function Header() {
             </li>
             <li className='relative whitespace-nowrap'>
               <Link
-                className={twMerge(
-                  pathname.includes('testimonials') ? '' : '',
-                )}
+                className={twMerge(pathname.includes('testimonials') ? '' : '')}
                 href='/testimonials'
               >
                 {t('header.testimonials')}
@@ -150,9 +138,7 @@ export function Header() {
             </li>
             <li className='relative whitespace-nowrap'>
               <Link
-                className={twMerge(
-                  pathname.includes('news') ? '' : '',
-                )}
+                className={twMerge(pathname.includes('news') ? '' : '')}
                 href='/news'
               >
                 {t('header.news')}
@@ -170,7 +156,7 @@ export function Header() {
                 {t('header.contact')}
               </Link>
             </li>
-            {/* <li
+            <li
               className={twMerge(
                 'border-l-[1px]',
                 isHaveBg ? 'border-lfaWhite' : 'border-gray-50',
@@ -183,7 +169,7 @@ export function Header() {
               <button onClick={changeLanguage}>
                 {isChinese ? 'EN' : '中文'}
               </button>
-            </li> */}
+            </li>
           </ul>
         </div>
       </div>
@@ -226,9 +212,7 @@ export function Header() {
                   <button
                     className={twMerge(
                       'uppercase tracking-[1px]',
-                      pathname === '/en-US' || pathname === '/zh-CN'
-                        ? ''
-                        : '',
+                      pathname === '/en-US' || pathname === '/zh-CN' ? '' : '',
                     )}
                     onClick={() => onChangePage('/')}
                   >

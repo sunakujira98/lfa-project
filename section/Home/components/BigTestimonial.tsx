@@ -1,5 +1,6 @@
 'use client'
 
+import { useLanguage } from '@/components/Provider'
 import { Link } from '@/components/shared/Link'
 import { Testimonial } from '@/components/shared/Testimonial'
 import { StrapiResponse } from '@/domain/types/common.types'
@@ -7,7 +8,6 @@ import { Testimonial as TTestimonial } from '@/domain/types/testimonial.types'
 import { useGetAllTestimonialQuery } from '@/hooks/query/useTestimonialQuery'
 import { useTranslation } from '@/resources/i18n/i18n.hooks'
 import { findTranslatedData } from '@/utils/FindTranslatedData/FindTranslatedData'
-import { useParams } from 'next/navigation'
 
 type BigTestimonialProps = {
   hideLogo?: boolean
@@ -15,7 +15,7 @@ type BigTestimonialProps = {
 
 export function BigTestimonial({ hideLogo }: BigTestimonialProps) {
   const { t } = useTranslation()
-  const { lang } = useParams()
+  const { lang } = useLanguage()
   const { data, isSuccess } = useGetAllTestimonialQuery()
 
   const localizedData = findTranslatedData(

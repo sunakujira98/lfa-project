@@ -1,3 +1,4 @@
+/* eslint-disable no-unsafe-optional-chaining */
 /* eslint-disable @next/next/no-img-element */
 
 'use client'
@@ -29,9 +30,10 @@ export function Awards() {
                   ...data?.data,
                   ...data?.data,
                   ...data?.data,
-                ].map((client) => {
+                ].map((client, index) => {
                   return (
                     <img
+                      key={`awards-${client.id}-${index}`}
                       src={`${process.env.NEXT_PUBLIC_CMS_HOST}${client.attributes.image.data.attributes.url}`}
                       alt={client.attributes.awardName}
                       className='h-8 px-8'

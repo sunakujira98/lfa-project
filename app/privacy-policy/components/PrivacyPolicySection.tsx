@@ -1,48 +1,47 @@
 'use client'
 
-import { useParams } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import { twMerge } from 'tailwind-merge'
 
+import { useLanguage } from '@/components/Provider'
 import { BigButton } from '@/components/shared/BigButton/BigButton'
 import { ContentRenderer } from '@/components/shared/ContentRenderer/ContentRenderer'
 import { TContent } from '@/domain/types/article.types'
 import { StrapiResponse } from '@/domain/types/common.types'
-import { TTnc } from '@/domain/types/tnc.types'
-import { useGetAllTncQuery } from '@/hooks/query/useTncQuery'
+import { TPrivacyPolicy } from '@/domain/types/privacyPolicy.types'
+import { useGetAllPrivacyPolicyQuery } from '@/hooks/query/usePrivacyPolicyQuery'
 import { useTranslation } from '@/resources/i18n/i18n.hooks'
 import { findTranslatedData } from '@/utils/FindTranslatedData/FindTranslatedData'
 
-export function TermsAndConditionsSection() {
-  const { lang } = useParams()
+export function PrivacyPolicySection() {
+  const { lang } = useLanguage()
   const { t } = useTranslation()
-
   const [activeIndex, setActiveIndex] = useState<number>(1)
-  const [title, setTitle] = useState<string>('')
   const [description, setActiveDescription] = useState<TContent[] | undefined>(
     undefined,
   )
+  const [title, setTitle] = useState<string>('')
 
-  const { data, isSuccess } = useGetAllTncQuery()
+  const { data, isSuccess } = useGetAllPrivacyPolicyQuery()
 
   const localizedData = findTranslatedData(
     lang as string,
     data,
-  ) as StrapiResponse<TTnc>
+  ) as StrapiResponse<TPrivacyPolicy>
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  const termsAndConditions = isSuccess
+  const privacyPolicies = isSuccess
     ? localizedData.data.length > 0
       ? localizedData.data
       : data?.data
     : []
 
-  const firstTitleToShow = termsAndConditions[0]?.attributes?.title
-  const firstDescriptionToShow = termsAndConditions[0]?.attributes?.description
+  const firstTitleToShow = privacyPolicies[0]?.attributes?.title
+  const firstDescriptionToShow = privacyPolicies[0]?.attributes?.description
 
   useEffect(() => {
     if (isSuccess) {
-      setActiveIndex(termsAndConditions[0]?.id)
+      setActiveIndex(privacyPolicies[0]?.id)
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isSuccess])
@@ -56,17 +55,16 @@ export function TermsAndConditionsSection() {
     setActiveDescription(content)
     setTitle(titleText)
   }
-
   return (
     <div className='pt-28 pb-10 lg:pb-0 lg:pt-28 px-4 lg:px-0'>
       <div className='pb-20'>
-        <span className='vinila-tight'>{t('termsAndConditions.title')}</span>
+        <span className='vinila-tight'>{t('privacyPolicy.title')}</span>
       </div>
       {isSuccess && (
         <div className='flex flex-col lg:px-0'>
           <div className='flex flex-col lg:flex-row gap-20 lg:gap-14 '>
             <div className='w-full lg:w-1/3'>
-              {termsAndConditions.map((tnc, index) => {
+              {privacyPolicies.map((tnc, index) => {
                 const isLastIndex = index === data?.data.length - 1
 
                 return (

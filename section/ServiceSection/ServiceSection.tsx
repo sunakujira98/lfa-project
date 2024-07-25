@@ -1,7 +1,6 @@
 'use client'
 
-import { useParams } from 'next/navigation'
-
+import { useLanguage } from '@/components/Provider'
 import { SectionHeader } from '@/components/shared/SectionHeader'
 import { ServiceWithImage } from '@/components/shared/ServiceWithImage'
 import { StrapiResponse } from '@/domain/types/common.types'
@@ -11,7 +10,7 @@ import { useTranslation } from '@/resources/i18n/i18n.hooks'
 import { findTranslatedData } from '@/utils/FindTranslatedData/FindTranslatedData'
 
 export function ServiceSection() {
-  const { lang } = useParams()
+  const { lang } = useLanguage()
   const { t } = useTranslation()
   const { isSuccess, data } = useGetAllServiceQuery()
 
@@ -38,7 +37,7 @@ export function ServiceSection() {
       {isSuccess && (
         <div className='flex flex-col'>
           {services.map((service) => {
-            return <ServiceWithImage service={service} />
+            return <ServiceWithImage key={service.id} service={service} />
           })}
         </div>
       )}

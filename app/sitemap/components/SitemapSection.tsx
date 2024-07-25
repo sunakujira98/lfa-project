@@ -1,9 +1,9 @@
 'use client'
 
-import { useParams } from 'next/navigation'
 import { useState } from 'react'
 import { twMerge } from 'tailwind-merge'
 
+import { useLanguage } from '@/components/Provider'
 import { Link } from '@/components/shared/Link'
 import { ArrowRightUpIcon } from '@/components/shared/svg/icons'
 import { Article } from '@/domain/types/article.types'
@@ -49,7 +49,7 @@ export function SitemapSection() {
     setHoverPage(undefined)
   }
 
-  const { lang } = useParams()
+  const { lang } = useLanguage()
   const { t } = useTranslation()
 
   const { data: projects, isSuccess: isSuccessProjects } =

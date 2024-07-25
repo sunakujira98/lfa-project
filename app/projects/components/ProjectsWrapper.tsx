@@ -1,10 +1,10 @@
 'use client'
 
-import { useParams } from 'next/navigation'
 import { parseAsString, useQueryState } from 'next-usequerystate'
 import { useEffect } from 'react'
 import { useInView } from 'react-intersection-observer'
 
+import { useLanguage } from '@/components/Provider'
 import { ScreenSpinner } from '@/components/shared/ScreenSpinner'
 import { StrapiResponse } from '@/domain/types/common.types'
 import { Project } from '@/domain/types/project.types'
@@ -18,7 +18,7 @@ import { ProjectSingle } from './ProjectSingle'
 export function ProjectsWrapper() {
   const { t } = useTranslation()
   const { ref, inView } = useInView()
-  const { lang } = useParams()
+  const { lang } = useLanguage()
 
   const [industryQuery, setIndustryQuery] = useQueryState(
     'industry',
