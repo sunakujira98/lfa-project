@@ -69,7 +69,9 @@ export function NewsDetail({ newsId }: NewsDetailProps) {
               <div className='w-full lg:w-1/3'></div>
               <div className='w-full lg:w-2/3 px-4 lg:px-0'>
                 <div className='pb-20 neue-wide'>
-                  {dayjs(data.data.attributes.createdAt).format('DD MMM YYYY')}
+                  {dayjs(data.data.attributes.publishedDate).format(
+                    'DD MMM YYYY',
+                  )}
                 </div>
 
                 {/* <ContentRenderer data={data.data.attributes.content as any} /> */}

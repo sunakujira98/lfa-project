@@ -21,7 +21,7 @@ export function SideBySideNews() {
         limit: 3,
       },
       sort: {
-        0: { createdAt: 'desc' },
+        0: { order: 'asc' },
       },
     },
     lang,
@@ -62,7 +62,9 @@ export function SideBySideNews() {
                   </div>
                   <div className='flex flex-col gap-2'>
                     <div className='neue-wide'>
-                      {dayjs(news.attributes.createdAt).format('DD MMM YYYY')}
+                      {dayjs(news.attributes.publishedDate).format(
+                        'DD MMM YYYY',
+                      )}
                     </div>
                     <div>
                       <a href={`${lang}/news/${newsId}`}>

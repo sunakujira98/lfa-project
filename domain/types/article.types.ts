@@ -35,6 +35,7 @@ export type ArticleAttribute = {
     }
   }
   createdAt: string
+  publishedDate: string
   locale: string
   localizations: {
     data: {

@@ -40,7 +40,7 @@ export function News({ news, localeId }: NewsProps) {
           <h4 className='neue-wider'>{news.attributes.title}</h4>
         </Link>
         <span className='neue-wide'>
-          {dayjs(news.attributes.createdAt).format('DD MMM YYYY')}
+          {dayjs(news.attributes.publishedDate).format('DD MMM YYYY')}
         </span>
         <span className='neue-normal'>
           {news.attributes.shortDescription &&

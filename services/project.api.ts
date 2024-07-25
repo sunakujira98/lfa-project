@@ -1,8 +1,10 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import {
   StrapiResponse,
   StrapiSingleResponse,
 } from '@/domain/types/common.types'
 import { Project, TProjectFilter } from '@/domain/types/project.types'
+
 import { apiInstance } from './api'
 
 const BASE_URL = '/projects'
@@ -99,6 +101,25 @@ export const ProjectApi = {
     }
 
     return result.data
+  },
+
+  getBySlug: async function (
+    slug: string,
+    lang: string | string[],
+  ): Promise<StrapiSingleResponse<Project>> {
+    let result = undefined
+
+    result = await apiInstance.get<any>(
+      `${BASE_URL}?filters[slug][$eq]=${slug}&populate[detail][populate]=*&populate[industry][populate]=*&populate[service][populate]=*&populate[thumbnail]=*&populate[image]=*&populate[awards][populate]=*&populate[localizations]=*`,
+    )
+
+    if (lang === 'zh-CN') {
+      result = await apiInstance.get<any>(
+        `${BASE_URL}/${result.data.data[0].attributes.localizations.data[0].id}?populate[detail][populate]=*&populate[industry][populate]=*&populate[service][populate]=*&populate[thumbnail]=*&populate[image]=*&populate[awards][populate]=*&populate[localizations]=*`,
+      )
+    }
+
+    return { data: result.data.data[0], meta: result.data.data[0].meta }
   },
 
   getAllMinimal: async function (

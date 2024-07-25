@@ -1,5 +1,9 @@
 'use client'
 
+import { useParams } from 'next/navigation'
+import { useEffect } from 'react'
+import { useInView } from 'react-intersection-observer'
+
 import { News } from '@/components/shared/News'
 import { ScreenSpinner } from '@/components/shared/ScreenSpinner'
 import { SectionHeader } from '@/components/shared/SectionHeader'
@@ -8,10 +12,6 @@ import { StrapiResponse } from '@/domain/types/common.types'
 import { useGetInfiniteArticleQuery } from '@/hooks/query/useGetArticleQuery'
 import { useTranslation } from '@/resources/i18n/i18n.hooks'
 import { findTranslatedData } from '@/utils/FindTranslatedData/FindTranslatedData'
-
-import { useParams } from 'next/navigation'
-import { useEffect } from 'react'
-import { useInView } from 'react-intersection-observer'
 
 export function NewsSection() {
   const { ref, inView } = useInView()
@@ -28,7 +28,7 @@ export function NewsSection() {
   } = useGetInfiniteArticleQuery(
     {
       sort: {
-        0: { createdAt: 'desc' },
+        0: { order: 'asc' },
       },
       limit: 6,
     },
@@ -70,7 +70,13 @@ export function NewsSection() {
                 return article.map((singleArticle) => {
                   const localeId = singleArticle.localeId || singleArticle.id
 
-                  return <News news={singleArticle} localeId={localeId} />
+                  return (
+                    <News
+                      key={singleArticle.id}
+                      news={singleArticle}
+                      localeId={localeId}
+                    />
+                  )
                 })
               })}
             </div>

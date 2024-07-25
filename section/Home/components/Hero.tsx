@@ -41,11 +41,10 @@ export function Hero() {
               </h1>
               <p>&nbsp;&nbsp;&nbsp;</p>
               <div className='h-16 lg:h-32'>
-                <div className=''>
+                <div className='max-sm:mt-[5px] mt-[-10px]'>
                   <h1 className='italic text-3xl lg:text-6xl font-keppler font-thin text-white'>
                     {t('hero.designBuild')}
                   </h1>
-
                 </div>
               </div>
             </div>

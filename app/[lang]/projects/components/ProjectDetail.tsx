@@ -12,7 +12,7 @@ import { ArrowRightUpIcon } from '@/components/shared/svg/icons'
 import { Project } from '@/domain/types/project.types'
 import {
   useGetAllProjectQueryMinimal,
-  useGetProjectByIdQuery,
+  useGetProjectBySlugQuery,
 } from '@/hooks/query/useProjectQuery'
 import { useTranslation } from '@/resources/i18n/i18n.hooks'
 
@@ -24,10 +24,9 @@ export function ProjectDetail({ projectId }: ProjectDetailProps) {
   const { lang } = useParams()
   const { t } = useTranslation()
   const [nextData, setNextData] = useState<Project | undefined>(undefined)
-  const { data, isSuccess } = useGetProjectByIdQuery(projectId, lang)
+  const { data, isSuccess } = useGetProjectBySlugQuery(projectId, lang)
   const { data: allProjects, isSuccess: isSuccessAllProjects } =
     useGetAllProjectQueryMinimal(lang)
-
   useEffect(() => {
     if (isSuccessAllProjects) {
       const nextDataIndex = allProjects?.data.findIndex((project) => {

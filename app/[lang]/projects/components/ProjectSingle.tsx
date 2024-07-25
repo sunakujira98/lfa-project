@@ -6,7 +6,7 @@ import { useTranslation } from '@/resources/i18n/i18n.hooks'
 
 type ProjectSingleProps = {
   project: Project
-  localeId: number
+  localeId: string | number
 }
 
 export function ProjectSingle({ project, localeId }: ProjectSingleProps) {

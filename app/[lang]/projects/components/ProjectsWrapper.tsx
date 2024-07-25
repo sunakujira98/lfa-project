@@ -53,10 +53,7 @@ export function ProjectsWrapper() {
         regionId: regionQuery,
         hasVideo,
         isAwardWinning,
-        sort: [
-          { comingSoon: 'asc' },
-          { createdAt: 'desc' }
-        ],
+        sort: [{ comingSoon: 'asc' }, { createdAt: 'desc' }],
       },
       lang,
     )
@@ -139,7 +136,10 @@ export function ProjectsWrapper() {
               : data?.pages?.[0].data
 
           return project.map((singleProject) => {
-            const localeId = singleProject.localeId || singleProject.id
+            const localeId =
+              singleProject.attributes.slug ||
+              singleProject.localeId ||
+              singleProject.id
 
             return (
               <div

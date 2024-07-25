@@ -1,9 +1,11 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Article, TArticleFilter } from '@/domain/types/article.types'
 import {
   StrapiResponse,
   StrapiSingleResponse,
   TQueryParams,
 } from '@/domain/types/common.types'
+
 import { apiInstance } from './api'
 
 const BASE_URL = '/articles'

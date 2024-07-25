@@ -122,6 +122,22 @@ export const useGetProjectByIdQuery = (id: string, lang: string | string[]) => {
   return query
 }
 
+export const useGetProjectBySlugQuery = (
+  slug: string,
+  lang: string | string[],
+) => {
+  const query = useQuery({
+    queryKey: [EQueryKey.PROJECT, { slug, lang }],
+    queryFn: async () => {
+      const response = await ProjectApi.getBySlug(slug, lang)
+
+      return response
+    },
+  })
+
+  return query
+}
+
 export const useGetAllProjectQueryMinimal = (lang: string | string[]) => {
   const query = useQuery({
     queryKey: [EQueryKey.PROJECT_MINIMAL, lang],

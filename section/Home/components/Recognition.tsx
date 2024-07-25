@@ -4,19 +4,18 @@
 
 import dayjs from 'dayjs'
 import { useParams } from 'next/navigation'
+import { useState } from 'react'
 import Carousel from 'react-multi-carousel'
 import 'react-multi-carousel/lib/styles.css'
 
+import { CustomDot } from '@/components/shared/CustomDot'
+import ArrowLeftIcon from '@/components/shared/svg/icons/ArrowLeftIcon'
+import ArrowRightIcon from '@/components/shared/svg/icons/ArrowRightIcon'
 import { StrapiResponse } from '@/domain/types/common.types'
 import { TRecognition } from '@/domain/types/recognition.types'
 import { useGetAllRecognitionQuery } from '@/hooks/query/useGetAllRecognitionQuery'
 import { useTranslation } from '@/resources/i18n/i18n.hooks'
 import { findTranslatedData } from '@/utils/FindTranslatedData/FindTranslatedData'
-import { CustomDot } from '@/components/shared/CustomDot'
-import ArrowLeftIcon from '@/components/shared/svg/icons/ArrowLeftIcon'
-import ArrowRightIcon from '@/components/shared/svg/icons/ArrowRightIcon'
-import { useState } from 'react'
-import { Link } from '@/components/shared/Link'
 
 export function Recognition() {
   const [currentIndex, setCurrentIndex] = useState(0)

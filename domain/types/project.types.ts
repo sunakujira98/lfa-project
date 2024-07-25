@@ -29,6 +29,7 @@ export type ProjectDetail = {
 
 export type ProjectAttribute = {
   title: string
+  slug: string
   description: string
   createdAt: string // date
   updatedAt: string // date
