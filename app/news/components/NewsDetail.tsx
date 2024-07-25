@@ -12,7 +12,7 @@ import { ArrowRightUpIcon } from '@/components/shared/svg/icons'
 import { Article } from '@/domain/types/article.types'
 import {
   useGetAllArticleQueryMinimal,
-  useGetArticleByIdQuery,
+  useGetArticleBySlugQuery,
 } from '@/hooks/query/useGetArticleQuery'
 import { useTranslation } from '@/resources/i18n/i18n.hooks'
 
@@ -24,7 +24,7 @@ export function NewsDetail({ newsId }: NewsDetailProps) {
   const { lang } = useLanguage()
   const { t } = useTranslation()
   const [nextData, setNextData] = useState<undefined | Article>(undefined)
-  const { data, isSuccess } = useGetArticleByIdQuery(newsId, lang)
+  const { data, isSuccess } = useGetArticleBySlugQuery(newsId, lang)
   const { data: allNews, isSuccess: isSuccessAllNews } =
     useGetAllArticleQueryMinimal(lang)
 

@@ -95,7 +95,7 @@ export const ArticleApi = {
     let result = undefined
 
     result = await apiInstance.get<any>(
-      `${BASE_URL}?filters][slug][$eq]=${slug}&populate[detail][populate]=*populate=*&populate[thumbnail]=*&populate[localizations]=*`,
+      `${BASE_URL}?[filters][slug][$eq]=${slug}&populate[detail][populate]=*populate=*&populate[thumbnail]=*&populate[localizations]=*`,
     )
 
     if (lang === 'zh-CN') {
