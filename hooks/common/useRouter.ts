@@ -10,14 +10,7 @@ export const useRouter = () => {
   const { lang } = useLanguage()
 
   const push = (path: string, options?: NavigateOptions) => {
-    const pathnameIsMissingLocale = LOCALES.every(
-      (locale) => !path.startsWith(`/${locale}/`) && path !== `/${locale}`,
-    )
-
     let pathname = path
-    if (pathnameIsMissingLocale) {
-      pathname = `/${lang}${path}`
-    }
 
     Nprogress.start()
     router.push(pathname, options)
