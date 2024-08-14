@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { cookies } from 'next/headers'
+import Script from 'next/script'
 import NextTopLoader from 'nextjs-toploader'
 import { ReactNode } from 'react'
 
@@ -32,6 +33,13 @@ export default async function RootLayout({ children }: RootLayoutProps) {
   return (
     <ReactQueryProvider>
       <html lang='en'>
+        <head>
+          <meta name="google-site-verification" content="h0EHt24PUKTS9IO6LxQooYKlUbNjLqDKUfRdKWDs_EI" />
+          <Script
+            strategy="afterInteractive"
+            src={`https://www.googletagmanager.com/gtag/js?id=G-ZG702WCMGJ`}
+          />
+        </head>
         <body className={`${neue.variable} ${keppler.variable}`}>
           <NextTopLoader color='#252525' />
           <LanguageProvider>
