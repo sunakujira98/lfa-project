@@ -1,3 +1,5 @@
+
+import { GoogleAnalytics } from '@next/third-parties/google'
 import type { Metadata } from 'next'
 import { cookies } from 'next/headers'
 import Script from 'next/script'
@@ -39,6 +41,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
             strategy="afterInteractive"
             src={`https://www.googletagmanager.com/gtag/js?id=G-ZG702WCMGJ`}
           />
+          <GoogleAnalytics gaId="G-ZG702WCMGJ" />
         </head>
         <body className={`${neue.variable} ${keppler.variable}`}>
           <NextTopLoader color='#252525' />
