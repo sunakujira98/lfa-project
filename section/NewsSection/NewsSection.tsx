@@ -68,7 +68,10 @@ export function NewsSection() {
                   : []
 
                 return article.map((singleArticle) => {
-                  const localeId = singleArticle.localeId || singleArticle.id
+                  const localeId =
+                    singleArticle.attributes.slug ||
+                    singleArticle.localeId ||
+                    singleArticle.id
 
                   return (
                     <News

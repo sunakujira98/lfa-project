@@ -10,7 +10,7 @@ import { Link } from '../Link'
 
 type NewsProps = {
   news: TNews
-  localeId: number
+  localeId: string | number
 }
 
 export function News({ news, localeId }: NewsProps) {
