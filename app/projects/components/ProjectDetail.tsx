@@ -53,7 +53,16 @@ export function ProjectDetail({ projectId }: ProjectDetailProps) {
     params.append('industry', industryId.toString())
   }
 
+  const indId = data?.data?.attributes.industry?.data?.id
+
+  if (indId) {
+    params.append('industry', indId.toString())
+  }
+
   const background = `${process.env.NEXT_PUBLIC_CMS_HOST}${data?.data?.attributes?.thumbnail?.data?.attributes?.url}`
+
+  console.log(params)
+  console.log(industryId)
 
   return (
     isSuccess &&
@@ -184,7 +193,7 @@ export function ProjectDetail({ projectId }: ProjectDetailProps) {
                 </div>
               </div>
             </Link>
-            <Link href={`/projects?${params}`}>
+            <Link href={`/projects?${params.toString()}`}>
               <div className='flex flex-row justify-between py-4 border-t-[1px]'>
                 <div className='flex w-full justify-between text-xs items-center'>
                   <h6 className='neue-wide'>
