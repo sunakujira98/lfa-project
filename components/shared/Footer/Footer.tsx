@@ -137,8 +137,6 @@ export function Footer() {
                       >
                         <span>Facebook</span>
                       </a>
-
-
                     </div>
                   </div>
                   <div className='flex flex-col gap-2'>
@@ -161,7 +159,7 @@ export function Footer() {
         <nav className='hidden lg:block p-0'>
           <ul className='m-0 p-0 flex flex-row items-center list-none gap-28 neue-wide text-lfaWhite'>
             <li className='relative whitespace-nowrap'>
-              &copy; {dayjs().year()} LFA Studio Pte. Ltd.
+              &copy; {dayjs().year()} LFA Studio Pte. Ltd. ALL RIGHTS RESERVED.
             </li>
             <li className='relative whitespace-nowrap'>
               <Link className='nav-link scrollto' href='/privacy-policy'>
