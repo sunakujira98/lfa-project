@@ -2,6 +2,7 @@
 
 import { yupResolver } from '@hookform/resolvers/yup'
 import parse from 'html-react-parser'
+import { useEffect } from 'react'
 import { Controller, SubmitHandler, useForm } from 'react-hook-form'
 import * as yup from 'yup'
 
@@ -9,17 +10,16 @@ import 'leaflet/dist/leaflet.css'
 import 'leaflet-defaulticon-compatibility'
 import 'leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css'
 
-import { SectionHeader } from '@/components/shared/SectionHeader'
-import { ControlledInput } from '@/components/shared/Forms/ControlledInput'
 import { ControlledCheckbox } from '@/components/shared/Forms/ControlledCheckbox'
+import { ControlledInput } from '@/components/shared/Forms/ControlledInput'
 import { ControlledTextarea } from '@/components/shared/Forms/ControlledTextarea'
-
-import { getContactSchema } from './ContactSection.types'
-import { useTranslation } from '@/resources/i18n/i18n.hooks'
-import { useSendMailMutation } from '@/hooks/query/useContactQuery'
-import { useEffect } from 'react'
 import { SelectOption } from '@/components/shared/Forms/SelectOption'
 import { MapComponent } from '@/components/shared/Map'
+import { SectionHeader } from '@/components/shared/SectionHeader'
+import { useSendMailMutation } from '@/hooks/query/useContactQuery'
+import { useTranslation } from '@/resources/i18n/i18n.hooks'
+
+import { getContactSchema } from './ContactSection.types'
 
 type FormValues = yup.InferType<ReturnType<typeof getContactSchema>>
 
@@ -232,9 +232,10 @@ export function ContactSection() {
           <h4 className='hidden lg:block font-thin lg:pb-20'>
             {t('contact.footer.title')}
           </h4>
-          <span className='text-xs font-thin pb-10'>
-            {t('contact.footer.subtitle')}
-          </span>
+          <span
+            dangerouslySetInnerHTML={{ __html: t('contact.footer.subtitle') }}
+            className='text-xs font-thin pb-10 [&>a]:underline [&>a]:underline-offset-4'
+          ></span>
           <>
             <MapComponent />
           </>
