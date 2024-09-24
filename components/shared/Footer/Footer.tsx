@@ -161,7 +161,7 @@ export function Footer() {
         <nav className='hidden lg:block p-0'>
           <ul className='m-0 p-0 flex flex-row items-center list-none gap-28 neue-wide text-lfaWhite'>
             <li className='relative whitespace-nowrap'>
-              &copy; {dayjs().year()} LFA. All rights reserved.
+              &copy; {dayjs().year()} LFA Studio Pte. Ltd.
             </li>
             <li className='relative whitespace-nowrap'>
               <Link className='nav-link scrollto' href='/privacy-policy'>
