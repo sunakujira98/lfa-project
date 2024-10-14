@@ -1,57 +1,53 @@
-
 <?xml version="1.0" encoding="UTF-8"?>
-
-   <urlset xmlns="https://www.google.com/schemas/sitemap/0.84">
-<!--  created with Free Online Sitemap Generator www.xml-sitemaps.com  -->
-<url>
-<loc>https://lfa.com.sg/</loc>
-<lastmod>2024-10-14T05:43:14+00:00</lastmod>
-<priority>1.00</priority>
-</url>
-<url>
-<loc>https://lfa.com.sg/projects</loc>
-<lastmod>2024-10-14T05:43:14+00:00</lastmod>
-<priority>0.80</priority>
-</url>
-<url>
-<loc>https://lfa.com.sg/about</loc>
-<lastmod>2024-10-14T05:43:14+00:00</lastmod>
-<priority>0.80</priority>
-</url>
-<url>
-<loc>https://lfa.com.sg/service</loc>
-<lastmod>2024-10-14T05:43:14+00:00</lastmod>
-<priority>0.80</priority>
-</url>
-<url>
-<loc>https://lfa.com.sg/testimonials</loc>
-<lastmod>2024-10-14T05:43:14+00:00</lastmod>
-<priority>0.80</priority>
-</url>
-<url>
-<loc>https://lfa.com.sg/news</loc>
-<lastmod>2024-10-14T05:43:14+00:00</lastmod>
-<priority>0.80</priority>
-</url>
-<url>
-<loc>https://lfa.com.sg/privacy-policy</loc>
-<lastmod>2024-10-14T05:43:14+00:00</lastmod>
-<priority>0.80</priority>
-</url>
-<url>
-<loc>https://lfa.com.sg/terms-and-conditions</loc>
-<lastmod>2024-10-14T05:43:14+00:00</lastmod>
-<priority>0.80</priority>
-</url>
-<url>
-<loc>https://lfa.com.sg/faq</loc>
-<lastmod>2024-10-14T05:43:14+00:00</lastmod>
-<priority>0.80</priority>
-</url>
-<url>
-<loc>https://lfa.com.sg/sitemap</loc>
-<lastmod>2024-10-14T05:43:14+00:00</lastmod>
-<priority>0.80</priority>
-</url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://lfa.com.sg/</loc>
+    <lastmod>2024-10-14T05:43:14+00:00</lastmod>
+    <priority>1.00</priority>
+  </url>
+  <url>
+    <loc>https://lfa.com.sg/projects</loc>
+    <lastmod>2024-10-14T05:43:14+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://lfa.com.sg/about</loc>
+    <lastmod>2024-10-14T05:43:14+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://lfa.com.sg/service</loc>
+    <lastmod>2024-10-14T05:43:14+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://lfa.com.sg/testimonials</loc>
+    <lastmod>2024-10-14T05:43:14+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://lfa.com.sg/news</loc>
+    <lastmod>2024-10-14T05:43:14+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://lfa.com.sg/privacy-policy</loc>
+    <lastmod>2024-10-14T05:43:14+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://lfa.com.sg/terms-and-conditions</loc>
+    <lastmod>2024-10-14T05:43:14+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://lfa.com.sg/faq</loc>
+    <lastmod>2024-10-14T05:43:14+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://lfa.com.sg/sitemap</loc>
+    <lastmod>2024-10-14T05:43:14+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
 </urlset>
-   </xml>
