@@ -43,6 +43,7 @@ export function ProjectDetail({ projectId }: ProjectDetailProps) {
   }, [allProjects, isSuccessAllProjects, projectId])
 
   const params = new URLSearchParams()
+
   const industryId =
     data?.data?.attributes.locale === lang
       ? data?.data?.attributes.industry?.data?.id
@@ -61,8 +62,9 @@ export function ProjectDetail({ projectId }: ProjectDetailProps) {
 
   const background = `${process.env.NEXT_PUBLIC_CMS_HOST}${data?.data?.attributes?.thumbnail?.data?.attributes?.url}`
 
-  console.log(params)
-  console.log(industryId)
+  // console.log("URLSearchParams object:", params);
+  // console.log(`URLSearchParams string: ${params.toString()}`);
+
 
   return (
     isSuccess &&
