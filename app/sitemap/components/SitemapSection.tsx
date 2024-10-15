@@ -97,7 +97,7 @@ export function SitemapSection() {
                 if (index < 3) {
                   return (
                     <Link
-                      href={`/projects/${projectId}`}
+                      href={`/projects/${project.attributes.slug}`}
                       key={`sitemap-project-${projectId}`}
                       className='block'
                     >
@@ -137,7 +137,7 @@ export function SitemapSection() {
                 if (index < 3) {
                   return (
                     <Link
-                      href={`/news/${newsId}`}
+                      href={`/news/${singleNews.attributes.slug}`}
                       key={`sitemap-news-${newsId}`}
                     >
                       <div
@@ -185,7 +185,7 @@ export function SitemapSection() {
                   {t('header.about')}
                 </div>
               </Link>
-              <Link href={'/services'}>
+              <Link href={'/service'}>
                 <div className='flex justify-between border-t-[1px] border-charcoal-100 py-6 text-xs items-center'>
                   {t('header.services')}
                 </div>
@@ -252,7 +252,7 @@ export function SitemapSection() {
               </Link>
             </div>
             <div onMouseEnter={() => onHoverPage(3)} onMouseLeave={onLeavePage}>
-              <Link href={'/services'}>
+              <Link href={'/service'}>
                 <div
                   className={twMerge(
                     hoverPage === 3 ? 'py-5' : 'py-6',
@@ -306,7 +306,10 @@ export function SitemapSection() {
 
               if (index < 3) {
                 return (
-                  <Link href={`/news/${newsId}`} key={`sitemap-news-${newsId}`}>
+                  <Link
+                    href={`/news/${newsSingle.attributes.slug}`}
+                    key={`sitemap-news-${newsId}`}
+                  >
                     <div
                       onMouseEnter={() => onHoverNews(index)}
                       onMouseLeave={onLeaveNews}

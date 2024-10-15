@@ -13,7 +13,10 @@ import { findTranslatedData } from '@/utils/FindTranslatedData/FindTranslatedDat
 export function FeaturedProject() {
   const { lang } = useLanguage()
   const { t } = useTranslation()
-  const { data, isSuccess } = useGetAllProjectQueryWithoutInfinite({}, lang)
+  const { data, isSuccess } = useGetAllProjectQueryWithoutInfinite(
+    { sort: [{ createdAt: 'desc' }] },
+    lang,
+  )
 
   const localizedData = findTranslatedData(
     lang as string,
