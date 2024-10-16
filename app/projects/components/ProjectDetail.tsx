@@ -65,7 +65,6 @@ export function ProjectDetail({ projectId }: ProjectDetailProps) {
   // console.log("URLSearchParams object:", params);
   // console.log(`URLSearchParams string: ${params.toString()}`);
 
-
   return (
     isSuccess &&
     isSuccessAllProjects && (
@@ -173,7 +172,7 @@ export function ProjectDetail({ projectId }: ProjectDetailProps) {
                 </h6>
               </Link>
               {nextData && (
-                <Link href={`/projects/${nextData.id}`}>
+                <Link href={`/projects/${nextData.attributes.slug}`}>
                   <h6 className='neue-wide'>
                     {t('news.nextProject', {
                       title: nextData.attributes.title,
@@ -185,7 +184,7 @@ export function ProjectDetail({ projectId }: ProjectDetailProps) {
           </div>
           <div className='flex flex-col lg:hidden'>
             <div className='border-t-[1px]'></div>
-            <Link href='/project'>
+            <Link href='/projects'>
               <div className='flex flex-row justify-between py-4'>
                 <div className='flex w-full justify-between text-xs items-center'>
                   <h6 className='neue-wide uppercase'>
@@ -206,7 +205,7 @@ export function ProjectDetail({ projectId }: ProjectDetailProps) {
               </div>
             </Link>
             {nextData && (
-              <Link href={`/projects/${nextData.id}`}>
+              <Link href={`/projects/${nextData.attributes.slug}`}>
                 <div className='flex justify-between items-center py-4 border-t-[1px]'>
                   <h6 className='neue-wide uppercase'>
                     {t('news.nextProject', {
