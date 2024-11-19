@@ -37,13 +37,13 @@ export function SideBySideTestimonial({
         </div>
         <div className='flex-grow flex'>
           <div className='mt-auto neue-normal'>
-            {testimonial.attributes.companyImage?.data?.attributes?.url && (
+            {/* {testimonial.attributes.companyImage?.data?.attributes?.url && (
               <img
                 src={`${process.env.NEXT_PUBLIC_CMS_HOST}${testimonial.attributes.companyImage.data.attributes.url}`}
                 className='h-10 lg:hidden'
                 alt={testimonial.attributes.fullName}
               />
-            )}
+            )} */}
             {testimonial.attributes.image?.data?.attributes?.url && (
               <img
                 src={`${process.env.NEXT_PUBLIC_CMS_HOST}${testimonial.attributes.image.data.attributes.url}`}

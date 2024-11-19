@@ -2,9 +2,9 @@
 
 import { useState } from 'react'
 
-// import { ArrowRightUpIcon } from '@/components/shared/svg/icons'
+import { ArrowRightUpIcon } from '@/components/shared/svg/icons'
 import { Team } from '@/components/shared/Team'
-// import { useGetAllAwardQuery } from '@/hooks/query/useAwardQuery'
+import { useGetAllAwardQuery } from '@/hooks/query/useAwardQuery'
 import { useGetAllTeamQuery } from '@/hooks/query/useTeamQuery'
 import { useTranslation } from '@/resources/i18n/i18n.hooks'
 
@@ -13,7 +13,7 @@ export function AboutUsSection() {
 
   const { t } = useTranslation()
   const { isSuccess: isSuccessTeams, data: teams } = useGetAllTeamQuery()
-  // const { data: awards } = useGetAllAwardQuery()
+  const { data: awards } = useGetAllAwardQuery()
 
   const handleItemClick = (index: number) => {
     setActiveIndex(index === activeIndex ? undefined : index)
@@ -93,23 +93,23 @@ export function AboutUsSection() {
             </div>
           </div>
         </div>
-        {/* <div className='max-w-screen-xl mx-auto py-10 lg:border-t-[1px] border-gray-50 lg:px-0 px-4'>
+        <div className='max-w-screen-xl mx-auto py-10 lg:border-t-[1px] border-gray-50 lg:px-0 px-4'>
           <div className='container flex flex-col'>
             <h6 className='neue-wide pb-6 border-b-[1px] lg:border-none'>
               {t('awards.title')}
             </h6>
             {awards?.data.map((award) => {
               return (
-                <a href={award.attributes.externalLink} key={award.id}>
-                  <div className='flex justify-between border-b-[1px] py-2 neue-3xs-normal !no-underline lg:neue-normal !font-normal items-center border-charcoal-100 uppercase'>
+    
+                  <div className='flex justify-between border-b-[1px] py-2 neue-3xs-normal !no-underline lg:neue-normal !font-normal items-center border-charcoal-100 uppercase' key={award.id}>
                     {award.attributes.awardName}
                     <ArrowRightUpIcon />
                   </div>
-                </a>
+
               )
             })}
           </div>
-        </div> */}
+        </div> 
       </>
     )
   )
