@@ -7,7 +7,7 @@ import 'leaflet/dist/leaflet.css'
 import styles from './map.module.css'
 
 const DEFAULT_CENTER: LatLngExpression = [
-  1.2957330959121642, 103.83992040671865,
+  1.2772376664753105, 103.83748115513895,
 ]
 
 const customIcon = L.icon({
@@ -19,7 +19,7 @@ const customIcon = L.icon({
 
 const openGoogle = () => {
   window.open(
-    'https://www.google.com/maps/place/LFA+-+Commercial+Interior+Design+Studio/@1.2957499,103.8402423,18z/data=!4m6!3m5!1s0x31da19ff09f0bc75:0x596d09a3bdbf523c!8m2!3d1.2957579!4d103.8399365!16s%2Fg%2F11l6y9m_j8?entry=ttu',
+    'https://www.google.com/maps/place/153+Neil+Rd,+%2301+01,+Singapore+088881/@1.27705,103.832621,17z/data=!3m1!4b1!4m9!1m2!2m1!1s153+Neil+Road,+%2301-01,+S088881+LFA!3m5!1s0x31da196ef33e0971:0x2cc8169babe78a7b!8m2!3d1.2770446!4d103.8374919!15sCiIxNTMgTmVpbCBSb2FkLCAjMDEtMDEsIFMwODg4ODEgTEZBkgEQY29tcG91bmRfc2VjdGlvbuABAA?entry=ttu&g_ep=EgoyMDI1MDQxNC4xIKXMDSoASAFQAw%3D%3D',
     '_blank',
   )
 }

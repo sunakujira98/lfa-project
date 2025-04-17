@@ -103,10 +103,10 @@ export function Footer() {
                       {t('footer.findUs')}
                     </span>
                     <div className='flex flex-col text-lfaWhite neue-tight'>
-                      <span>283 River Valley Road</span>
-                      <span>Singapore 238324</span>
+                      <span>153 Neil Road, #01-01</span>
+                      <span>Singapore S088881</span>
                       <a
-                        href='https://www.google.com/maps/place/LFA+-+Commercial+Interior+Design+Studio/@1.2957499,103.8402423,18z/data=!4m6!3m5!1s0x31da19ff09f0bc75:0x596d09a3bdbf523c!8m2!3d1.2957579!4d103.8399365!16s%2Fg%2F11l6y9m_j8?entry=ttu'
+                        href='https://www.google.com/maps/place/153+Neil+Rd,+%2301+01,+Singapore+088881/@1.27705,103.832621,17z/data=!3m1!4b1!4m9!1m2!2m1!1s153+Neil+Road,+%2301-01,+S088881!3m5!1s0x31da196ef33e0971:0x2cc8169babe78a7b!8m2!3d1.2770446!4d103.8374919!15sCh4xNTMgTmVpbCBSb2FkLCAjMDEtMDEsIFMwODg4ODGSARBjb21wb3VuZF9zZWN0aW9u4AEA?entry=ttu&g_ep=EgoyMDI1MDQxNC4xIKXMDSoASAFQAw%3D%3D'
                         target='_blank'
                         className='cursor-pointer'
                       >
@@ -203,10 +203,10 @@ export function Footer() {
             </h6>
             <div className='flex flex-col'>
               <span className='text-charcoal-600 neue-wide-light'>
-                283 River Valley Road Singapore 238324
+              153 Neil Road, #01-01, S088881
               </span>
               <a
-                href='https://www.google.com/maps/place/LFA+-+Commercial+Interior+Design+Studio/@1.2957499,103.8402423,18z/data=!4m6!3m5!1s0x31da19ff09f0bc75:0x596d09a3bdbf523c!8m2!3d1.2957579!4d103.8399365!16s%2Fg%2F11l6y9m_j8?entry=ttu'
+                href='https://www.google.com/maps/place/153+Neil+Rd,+%2301+01,+Singapore+088881/@1.27705,103.832621,17z/data=!3m1!4b1!4m9!1m2!2m1!1s153+Neil+Road,+%2301-01,+S088881!3m5!1s0x31da196ef33e0971:0x2cc8169babe78a7b!8m2!3d1.2770446!4d103.8374919!15sCh4xNTMgTmVpbCBSb2FkLCAjMDEtMDEsIFMwODg4ODGSARBjb21wb3VuZF9zZWN0aW9u4AEA?entry=ttu&g_ep=EgoyMDI1MDQxNC4xIKXMDSoASAFQAw%3D%3D'
                 target='_blank'
               >
                 <span className='text-lfaWhite underline neue-wide-light !normal-case cursor-pointer'>
