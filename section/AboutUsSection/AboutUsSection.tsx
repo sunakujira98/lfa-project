@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useMemo, useState } from 'react'
 
 import { ArrowRightUpIcon } from '@/components/shared/svg/icons'
 import { Team } from '@/components/shared/Team'
@@ -18,6 +18,14 @@ export function AboutUsSection() {
   const handleItemClick = (index: number) => {
     setActiveIndex(index === activeIndex ? undefined : index)
   }
+
+  const sortedTeams = useMemo(() => {
+    return teams?.data.sort((a, b) => {
+      const aOrder = a.attributes.order ?? 0
+      const bOrder = b.attributes.order ?? 0
+      return bOrder - aOrder
+    })
+  }, [teams])
 
   return (
     isSuccessTeams && (
@@ -80,7 +88,7 @@ export function AboutUsSection() {
             </div>
 
             <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-5 gap-y-10 gap-x-4 lg:gap-4'>
-              {teams.data.map((team, index) => {
+              {sortedTeams?.map((team, index) => {
                 return (
                   <Team
                     key={`team-${index}`}
@@ -100,16 +108,17 @@ export function AboutUsSection() {
             </h6>
             {awards?.data.map((award) => {
               return (
-    
-                  <div className='flex justify-between border-b-[1px] py-2 neue-3xs-normal !no-underline lg:neue-normal !font-normal items-center border-charcoal-100 uppercase' key={award.id}>
-                    {award.attributes.awardName}
-                    <ArrowRightUpIcon />
-                  </div>
-
+                <div
+                  className='flex justify-between border-b-[1px] py-2 neue-3xs-normal !no-underline lg:neue-normal !font-normal items-center border-charcoal-100 uppercase'
+                  key={award.id}
+                >
+                  {award.attributes.awardName}
+                  <ArrowRightUpIcon />
+                </div>
               )
             })}
           </div>
-        </div> 
+        </div>
       </>
     )
   )

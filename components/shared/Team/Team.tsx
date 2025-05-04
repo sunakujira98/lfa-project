@@ -11,54 +11,70 @@ type TeamProps = {
   isActive: boolean
   onClick: () => void
 }
-export function Team({ data, isActive, onClick }: TeamProps) {
-  const TeamSingle = () => {
-    return (
-      <div
-        className='flex flex-col pb-6 cursor-pointer'
-        onMouseEnter={onHover}
-        onMouseLeave={onLeave}
-        onClick={onClick}
-      >
-        <div className='relative h-[200px] lg:h-80 '>
-          <img
-            src='/images/background-figure.png'
-            className='absolute inset-0 w-44 h-[200px] lg:w-full lg:h-full object-cover'
-            alt='background'
-          />
 
-          <img
-            src={`${process.env.NEXT_PUBLIC_CMS_HOST}${data.attributes.image?.data?.attributes.url}`}
-            className='absolute inset-0 w-44 h-[200px] lg:w-full lg:h-full object-cover'
-            alt={data.attributes.name}
-          />
-        </div>
-        <div className='pt-2 px-2 lg:pt-6 lg:px-0'>
-          <div className='flex flex-col'>
-            <div className='flex justify-between'>
-              <h6 className='neue-normal lg:!font-normal'>
-                {data.attributes.name}
-              </h6>
-              <div className='hidden lg:block'>
-                {hover && data.attributes.linkedin && (
-                  <a href={data.attributes.linkedin} target='_blank'>
-                    <LinkedinIcon />
-                  </a>
-                )}
-              </div>
-            </div>
-            <h6 className='w-full lg:w-36 neue-3xs-normal !no-underline h-7'>
-              {data.attributes.position}
+type TeamSingleProps = {
+  onHover: () => void
+  onLeave: () => void
+  onClick: () => void
+  data: TTeam
+  hover: boolean
+}
+
+const TeamSingle = ({
+  data,
+  hover,
+  onHover,
+  onLeave,
+  onClick,
+}: TeamSingleProps) => {
+  return (
+    <div
+      className='flex flex-col pb-6 cursor-pointer'
+      onMouseEnter={onHover}
+      onMouseLeave={onLeave}
+      onClick={onClick}
+    >
+      <div className='relative h-[200px] lg:h-80 '>
+        <img
+          src='/images/background-figure.png'
+          className='absolute inset-0 w-44 h-[200px] lg:w-full lg:h-full object-cover'
+          alt='background'
+        />
+
+        <img
+          src={`${process.env.NEXT_PUBLIC_CMS_HOST}${data.attributes.image?.data?.attributes.url}`}
+          className='absolute inset-0 w-44 h-[200px] lg:w-full lg:h-full object-cover'
+          alt={data.attributes.name}
+        />
+      </div>
+      <div className='pt-2 px-2 lg:pt-6 lg:px-0'>
+        <div className='flex flex-col'>
+          <div className='flex justify-between'>
+            <h6 className='neue-normal lg:!font-normal'>
+              {data.attributes.name}
             </h6>
             <div className='hidden lg:block'>
-              <div className={!hover ? 'pt-[17px]' : 'pt-4'}></div>
+              {hover && data.attributes.linkedin && (
+                <a href={data.attributes.linkedin} target='_blank'>
+                  <LinkedinIcon />
+                </a>
+              )}
             </div>
-            {hover && <div className='border-b-[1px] hidden lg:block'></div>}
           </div>
+          <h6 className='w-full lg:w-36 neue-3xs-normal !no-underline h-7'>
+            {data.attributes.position}
+          </h6>
+          <div className='hidden lg:block'>
+            <div className={!hover ? 'pt-[17px]' : 'pt-4'}></div>
+          </div>
+          {hover && <div className='border-b-[1px] hidden lg:block'></div>}
         </div>
       </div>
-    )
-  }
+    </div>
+  )
+}
+
+export function Team({ data, isActive, onClick }: TeamProps) {
   const [hover, setHover] = useState(false)
 
   const onHover = () => {
@@ -98,10 +114,22 @@ export function Team({ data, isActive, onClick }: TeamProps) {
         </div>
       </div>
       <div className='hidden lg:block'>
-        <TeamSingle />
+        <TeamSingle
+          onHover={onHover}
+          onLeave={onLeave}
+          onClick={onClick}
+          data={data}
+          hover={hover}
+        />
       </div>
     </>
   ) : (
-    <TeamSingle />
+    <TeamSingle
+      onHover={onHover}
+      onLeave={onLeave}
+      onClick={onClick}
+      data={data}
+      hover={hover}
+    />
   )
 }

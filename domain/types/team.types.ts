@@ -10,6 +10,7 @@ export type TeamAttribute = {
       attributes: StrapiImageAttributes
     }
   }
+  order: number | null
   createdAt: string
 }
 
