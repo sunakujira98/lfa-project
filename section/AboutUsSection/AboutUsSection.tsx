@@ -84,7 +84,7 @@ export function AboutUsSection() {
             <div className='py-10'>
               <img
                 src='/images/lfa-interior-commercial-team-and-professionals.png'
-                className='h-full w-full aspect-auto object-contain'
+                className='h-full w-full aspect-auto object-contain hidden'
                 alt='Diverse team of professionals from Lemonfridge Associates (LFA), dressed in corporate attire, posing for a company group photo.'
               />
             </div>
